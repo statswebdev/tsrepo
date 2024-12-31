@@ -32,6 +32,7 @@
                         <a href="#"><img src="https://statisticsmaldives.gov.mv/mbs/wp-content/themes/neon/images/mbslogo2023.svg" class="mb-4 px-6 border-bottom pb-5" alt="logo-icon"></a>
                         <div class="mb-4">
                             <h1 class="mb-1 fw-bold text-center">Tourism Survey Portal</h1>
+                            <hr>
                             <h2 class="mb-1 fw-bold">Sign in</h2>
                             <span>
                                 Don’t have an account?
