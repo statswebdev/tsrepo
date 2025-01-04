@@ -16,6 +16,10 @@
                             <!-- Form -->
                             <form wire:submit.prevent="submitRecord" class="row">
                                 
+
+                                <h5>Electricity Generation & Consumption </h5>
+                                <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
+                               
                                 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="generated_inhouse">Generated Inhouse</label>
@@ -29,187 +33,244 @@
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="electricity_generated">Electricity Generated</label>
-                                <input type="number" id="electricity_generated" class="form-control" placeholder="Electricity Generated" wire:model="electricity_generated">
+                                <input type="number" id="electricity_generated" class="form-control" placeholder="kWh" wire:model="electricity_generated">
                                 @error('electricity_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="electricity_outsourced">Electricity Outsourced</label>
-                                <input type="text" id="electricity_outsourced" class="form-control" placeholder="Electricity Outsourced" wire:model="electricity_outsourced">
+                                <select id="electricity_outsourced" class="form-control" wire:model="electricity_outsourced">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('electricity_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="outsourced_generated">Outsourced Generated</label>
-                                <input type="number" id="outsourced_generated" class="form-control" placeholder="Outsourced Generated" wire:model="outsourced_generated">
+                                <input type="number" id="outsourced_generated" class="form-control" placeholder="kWh" wire:model="outsourced_generated">
                                 @error('outsourced_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="electricity_othersources">Electricity Other Sources</label>
-                                <input type="text" id="electricity_othersources" class="form-control" placeholder="Electricity Other Sources" wire:model="electricity_othersources">
+                                <select id="electricity_othersources" class="form-control" wire:model="electricity_othersources">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('electricity_othersources')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="othersources_generated">Other Sources Generated</label>
-                                <input type="number" id="othersources_generated" class="form-control" placeholder="Other Sources Generated" wire:model="othersources_generated">
+                                <input type="number" id="othersources_generated" class="form-control" placeholder="kWh" wire:model="othersources_generated">
                                 @error('othersources_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="electricity_consumption">Electricity Consumption</label>
-                                <input type="number" id="electricity_consumption" class="form-control" placeholder="Electricity Consumption" wire:model="electricity_consumption">
+
+                            <div class="mb-3 col-12 col-md-12">
+                                <label class="form-label" for="electricity_consumption">Monthly electricity consumption year end (december)</label>
+                                <input type="number" id="electricity_consumption" class="form-control" placeholder="kWh" wire:model="electricity_consumption">
                                 @error('electricity_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
+                            <hr>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <h5>Integration of Renewal Energy </h5>
+                                <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
+                               
+
+                            <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="solargrid_energy">Solar Grid Energy</label>
-                                <input type="text" id="solargrid_energy" class="form-control" placeholder="Solar Grid Energy" wire:model="solargrid_energy">
+                                <select id="solargrid_energy" class="form-control" wire:model="solargrid_energy">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('solargrid_energy')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="solargrid_production">Solar Grid Production</label>
-                                <input type="number" id="solargrid_production" class="form-control" placeholder="Solar Grid Production" wire:model="solargrid_production">
+                                <input type="number" id="solargrid_production" class="form-control" placeholder="kWh" wire:model="solargrid_production">
                                 @error('solargrid_production')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="solargrid_consumption">Solar Grid Consumption</label>
-                                <input type="number" id="solargrid_consumption" class="form-control" placeholder="Solar Grid Consumption" wire:model="solargrid_consumption">
+                                <input type="number" id="solargrid_consumption" class="form-control" placeholder="kWh" wire:model="solargrid_consumption">
                                 @error('solargrid_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="renewable_other">Renewable Other</label>
-                                <input type="text" id="renewable_other" class="form-control" placeholder="Renewable Other" wire:model="renewable_other">
+                                <select id="renewable_other" class="form-control" wire:model="renewable_other">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('renewable_other')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="renewable_other_production">Renewable Other Production</label>
-                                <input type="number" id="renewable_other_production" class="form-control" placeholder="Renewable Other Production" wire:model="renewable_other_production">
+                                <input type="number" id="renewable_other_production" class="form-control" placeholder="kWh" wire:model="renewable_other_production">
                                 @error('renewable_other_production')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="renewable_other_consumption">Renewable Other Consumption</label>
-                                <input type="number" id="renewable_other_consumption" class="form-control" placeholder="Renewable Other Consumption" wire:model="renewable_other_consumption">
+                                <input type="number" id="renewable_other_consumption" class="form-control" placeholder="kWh" wire:model="renewable_other_consumption">
                                 @error('renewable_other_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
+                            <hr>
+
+                            <h5>Water Production & Consumption</h5>
+                                <small class="mb-3">Year End (december) - Metric Tons (Monthly Production)</small>
+
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="waterinhouse_production">Water Inhouse Production</label>
-                                <input type="text" id="waterinhouse_production" class="form-control" placeholder="Water Inhouse Production" wire:model="waterinhouse_production">
+                                <select id="waterinhouse_production" class="form-control" wire:model="waterinhouse_production">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('waterinhouse_production')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="waterinhouse_monthly">Water Inhouse Monthly</label>
-                                <input type="number" id="waterinhouse_monthly" class="form-control" placeholder="Water Inhouse Monthly" wire:model="waterinhouse_monthly">
+                                <input type="number" id="waterinhouse_monthly" class="form-control" placeholder="Metric Tons" wire:model="waterinhouse_monthly">
                                 @error('waterinhouse_monthly')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="water_outsourced">Water Outsourced</label>
-                                <input type="text" id="water_outsourced" class="form-control" placeholder="Water Outsourced" wire:model="water_outsourced">
+                                <select id="water_outsourced" class="form-control" wire:model="water_outsourced">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('water_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="water_outsourced_monthly">Water Outsourced Monthly</label>
-                                <input type="number" id="water_outsourced_monthly" class="form-control" placeholder="Water Outsourced Monthly" wire:model="water_outsourced_monthly">
+                                <input type="number" id="water_outsourced_monthly" class="form-control" placeholder="Metric Tons" wire:model="water_outsourced_monthly">
                                 @error('water_outsourced_monthly')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_jan">Monthly Water January</label>
-                                <input type="number" id="monthly_water_jan" class="form-control" placeholder="Monthly Water January" wire:model="monthly_water_jan">
+
+                            <h5 class="mt-3"> Water Consumption Monthly</h5>
+                            <small class="mb-3">Monthly Water Consumption for the reporting year</small>
+
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_jan">January</label>
+                                <input type="number" id="monthly_water_jan" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_jan">
                                 @error('monthly_water_jan')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_feb">Monthly Water February</label>
-                                <input type="number" id="monthly_water_feb" class="form-control" placeholder="Monthly Water February" wire:model="monthly_water_feb">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_feb">February</label>
+                                <input type="number" id="monthly_water_feb" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_feb">
                                 @error('monthly_water_feb')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_mar">Monthly Water March</label>
-                                <input type="number" id="monthly_water_mar" class="form-control" placeholder="Monthly Water March" wire:model="monthly_water_mar">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_mar">March</label>
+                                <input type="number" id="monthly_water_mar" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_mar">
                                 @error('monthly_water_mar')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_apr">Monthly Water April</label>
-                                <input type="number" id="monthly_water_apr" class="form-control" placeholder="Monthly Water April" wire:model="monthly_water_apr">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_apr">April</label>
+                                <input type="number" id="monthly_water_apr" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_apr">
                                 @error('monthly_water_apr')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_may">Monthly Water May</label>
-                                <input type="number" id="monthly_water_may" class="form-control" placeholder="Monthly Water May" wire:model="monthly_water_may">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_may">May</label>
+                                <input type="number" id="monthly_water_may" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_may">
                                 @error('monthly_water_may')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_jun">Monthly Water June</label>
-                                <input type="number" id="monthly_water_jun" class="form-control" placeholder="Monthly Water June" wire:model="monthly_water_jun">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_jun">June</label>
+                                <input type="number" id="monthly_water_jun" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_jun">
                                 @error('monthly_water_jun')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_july">Monthly Water July</label>
-                                <input type="number" id="monthly_water_july" class="form-control" placeholder="Monthly Water July" wire:model="monthly_water_july">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_july">July</label>
+                                <input type="number" id="monthly_water_july" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_july">
                                 @error('monthly_water_july')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_aug">Monthly Water August</label>
-                                <input type="number" id="monthly_water_aug" class="form-control" placeholder="Monthly Water August" wire:model="monthly_water_aug">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_aug">August</label>
+                                <input type="number" id="monthly_water_aug" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_aug">
                                 @error('monthly_water_aug')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_sep">Monthly Water September</label>
-                                <input type="number" id="monthly_water_sep" class="form-control" placeholder="Monthly Water September" wire:model="monthly_water_sep">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_sep">September</label>
+                                <input type="number" id="monthly_water_sep" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_sep">
                                 @error('monthly_water_sep')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_oct">Monthly Water October</label>
-                                <input type="number" id="monthly_water_oct" class="form-control" placeholder="Monthly Water October" wire:model="monthly_water_oct">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_oct">October</label>
+                                <input type="number" id="monthly_water_oct" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_oct">
                                 @error('monthly_water_oct')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_nov">Monthly Water November</label>
-                                <input type="number" id="monthly_water_nov" class="form-control" placeholder="Monthly Water November" wire:model="monthly_water_nov">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_nov">November</label>
+                                <input type="number" id="monthly_water_nov" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_nov">
                                 @error('monthly_water_nov')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
-                                <label class="form-label" for="monthly_water_dec">Monthly Water December</label>
-                                <input type="number" id="monthly_water_dec" class="form-control" placeholder="Monthly Water December" wire:model="monthly_water_dec">
+                            <div class="mb-3 col-12 col-md-2">
+                                <label class="form-label" for="monthly_water_dec">December</label>
+                                <input type="number" id="monthly_water_dec" class="form-control" placeholder="Metric Tons" wire:model="monthly_water_dec">
                                 @error('monthly_water_dec')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <hr>
+
+                            <h5 class="mt-3">Waste Generation / Disposal</h5>
+                            <small class="mb-3">Waste generation and disposal for the reporting year</small>
+
+
+                            <div class="mb-3 col-12 col-md-12">
                                 <label class="form-label" for="waste_disposedinhouse">Waste Disposed Inhouse</label>
-                                <input type="text" id="waste_disposedinhouse" class="form-control" placeholder="Waste Disposed Inhouse" wire:model="waste_disposedinhouse">
+                                <select id="waste_disposedinhouse" class="form-control" wire:model="waste_disposedinhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('waste_disposedinhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-12">
                                 <label class="form-label" for="waste_disposedoutsourced">Waste Disposed Outsourced</label>
-                                <input type="text" id="waste_disposedoutsourced" class="form-control" placeholder="Waste Disposed Outsourced" wire:model="waste_disposedoutsourced">
+                                <select id="waste_disposedoutsourced" class="form-control" wire:model="waste_disposedoutsourced">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('waste_disposedoutsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3 col-12 col-md-6">
+                            <div class="mb-3 col-12 col-md-12">
                                 <label class="form-label" for="waste_disposalother">Waste Disposal Other</label>
-                                <input type="text" id="waste_disposalother" class="form-control" placeholder="Waste Disposal Other" wire:model="waste_disposalother">
+                                <select id="waste_disposalother" class="form-control" wire:model="waste_disposalother">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('waste_disposalother')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 

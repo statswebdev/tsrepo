@@ -1,0 +1,108 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Estagri extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'est_record_id',
+        'watermelon_inhouse',
+        'watermelon_grown',
+        'coconut_inhouse',
+        'coconut_grown',
+        'papaya_inhouse',
+        'papaya_grown',
+        'pumpkin_inhouse',
+        'pumpkin_grown',
+        'cucumber_inhouse',
+        'cucumber_grown',
+        'banana_inhouse',
+        'banana_grown',
+        'brinjal_inhouse',
+        'brinjal_grown',
+        'chillies_inhouse',
+        'chillies_grown',
+        'bottlegourd_inhouse',
+        'bottlegourd_grown',
+        'butternut_inhouse',
+        'butternut_grown',
+        'cabbage_inhouse',
+        'cabbage_grown',
+        'mango_inhouse',
+        'mango_grown',
+        'waxgourd_inhouse',
+        'waxgourd_grown',
+        'otheragrione_inhouse',
+        'otheragrione_grown',
+        'otheragritwo_inhouse',
+        'otheragritwo_grown',
+        'otheragrithree_inhouse',
+        'otheragrithree_grown',
+        'otheragrifour_inhouse',
+        'otheragrifour_grown',
+        'watermelon_farmers',
+        'watermelon_farmers_qty',
+        'watermelon_farmers_value',
+        'coconut_farmers',
+        'coconut_farmers_qty',
+        'coconut_farmers_value',
+        'papaya_farmers',
+        'papaya_farmers_qty',
+        'papaya_farmers_value',
+        'pumpkin_farmers',
+        'pumpkin_farmers_qty',
+        'pumpkin_farmers_value',
+        'cucumber_farmers',
+        'cucumber_farmers_qty',
+        'cucumber_farmers_value',
+        'banana_farmers',
+        'banana_farmers_qty',
+        'banana_farmers_value',
+        'brinjal_farmers',
+        'brinjal_farmers_qty',
+        'brinjal_farmers_value',
+        'chillies_farmers',
+        'chillies_farmers_qty',
+        'chillies_farmers_value',
+        'bottlegourd_farmers',
+        'bottlegourd_farmers_qty',
+        'bottlegourd_farmers_value',
+        'butternut_farms',
+        'butternut_farmers_qty',
+        'butternut_farmers_value',
+        'cabbage_farmers',
+        'cabbage_farmers_qty',
+        'cabbage_farmers_value',
+        'mango_farmers',
+        'mango_farmers_qty',
+        'mango_farmers_value',
+        'waxgourd_farmers',
+        'waxgourd_farmers_qty',
+        'waxgourd_farmers_value',
+        'otheragrione_farmers',
+        'otheragrione_farmers_qty',
+        'otheragrione_farmers_value',
+        'otheragritwo_farmers',
+        'otheragritwo_farmers_qty',
+        'otheragritwo_farmers_value',
+        'otheragrithree_farmers',
+        'otheragrithree_farmers_qty',
+        'otheragrithree_farmers_value',
+        'otheragrifour_farmers',
+        'otheragrifour_farmers_qty',
+        'otheragrifour_farmers_value',
+        'status',
+    ];
+
+    public function estRecord()
+    {
+        return $this->belongsTo(EstRecord::class, 'est_record_id');
+    }
+
+    
+}

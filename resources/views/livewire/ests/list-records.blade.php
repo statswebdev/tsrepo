@@ -62,6 +62,60 @@
                           <span>4. Production & Consumption </span>
                           <a href="{{ route('estprod', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
                       </span>
+                      <hr>
+                      <span class="d-flex justify-content-between align-items-center mb-3">
+                        <span>5. Agricultural Products </span>
+                        <a href="{{ route('estagri', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                    </span>
+
+                    <hr>
+                      <span class="d-flex justify-content-between align-items-center mb-3">
+                        <span>6. Fish Products </span>
+                        <a href="{{ route('estfish', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                    </span>
+
+                    <hr>
+                      <span class="d-flex justify-content-between align-items-center mb-3">
+                        <span>7. Electricity </span>
+                        <a href="{{ route('estelec', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                    </span>
+
+                    <hr>
+                    <span class="d-flex justify-content-between align-items-center mb-3">
+                      <span>8. Energy Capacity </span>
+                      <a href="{{ route('estfuel', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                  </span>
+
+                  <hr>
+                  <span class="d-flex justify-content-between align-items-center mb-3">
+                    <span>9. Fuel Consumption </span>
+                    <a href="{{ route('estfuelconsumption', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                </span>
+
+                <hr>
+                <span class="d-flex justify-content-between align-items-center mb-3">
+                  <span>10. Other Services </span>
+                  <a href="{{ route('estotherservice', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+              </span>
+
+              <hr>
+              <span class="d-flex justify-content-between align-items-center mb-3">
+                <span>11. Income </span>
+                <a href="{{ route('estincome', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+            </span>
+            <hr>
+            <span class="d-flex justify-content-between align-items-center mb-3">
+              <span>12. Expenditure </span>
+              <a href="{{ route('estexpenses', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+          </span>
+
+          <hr>
+          <span class="d-flex justify-content-between align-items-center mb-3">
+            <span>13. Stock & Inventory </span>
+            <a href="{{ route('eststock', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+        </span>
+                
+                    
                     
                     
                     

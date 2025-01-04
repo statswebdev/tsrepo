@@ -16,366 +16,386 @@
                             <!-- Form -->
                             <form wire:submit.prevent="submitRecord" class="row">
                                 
-                                
+                               
+
+                                <h5>1. Basic Salary Scale (in USD/month) - Year End (December) </h5>
+                                <small class="mb-3">Enter the number of employees</small>
+
+
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="hundred_maldivian">100 Maldivian</label>
-                                    <input type="number" id="hundred_maldivian" class="form-control" placeholder="100 Maldivian" wire:model="hundred_maldivian">
+                                    <input type="number" id="hundred_maldivian" class="form-control" placeholder="number of employees" wire:model="hundred_maldivian">
                                     @error('hundred_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="hundred_foreign">100 Foreign</label>
-                                    <input type="number" id="hundred_foreign" class="form-control" placeholder="100 Foreign" wire:model="hundred_foreign">
+                                    <input type="number" id="hundred_foreign" class="form-control" placeholder="number of employees" wire:model="hundred_foreign">
                                     @error('hundred_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="threehundred_maldivian">300 Maldivian</label>
-                                    <input type="number" id="threehundred_maldivian" class="form-control" placeholder="300 Maldivian" wire:model="threehundred_maldivian">
+                                    <input type="number" id="threehundred_maldivian" class="form-control" placeholder="number of employees" wire:model="threehundred_maldivian">
                                     @error('threehundred_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="threehundred_foreign">300 Foreign</label>
-                                    <input type="number" id="threehundred_foreign" class="form-control" placeholder="300 Foreign" wire:model="threehundred_foreign">
+                                    <input type="number" id="threehundred_foreign" class="form-control" placeholder="number of employees" wire:model="threehundred_foreign">
                                     @error('threehundred_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="fivehundred_maldivian">500 Maldivian</label>
-                                    <input type="number" id="fivehundred_maldivian" class="form-control" placeholder="500 Maldivian" wire:model="fivehundred_maldivian">
+                                    <input type="number" id="fivehundred_maldivian" class="form-control" placeholder="number of employees" wire:model="fivehundred_maldivian">
                                     @error('fivehundred_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="fivehundred_foreign">500 Foreign</label>
-                                    <input type="number" id="fivehundred_foreign" class="form-control" placeholder="500 Foreign" wire:model="fivehundred_foreign">
+                                    <input type="number" id="fivehundred_foreign" class="form-control" placeholder="number of employees" wire:model="fivehundred_foreign">
                                     @error('fivehundred_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="sevenhundred_maldivian">700 Maldivian</label>
-                                    <input type="number" id="sevenhundred_maldivian" class="form-control" placeholder="700 Maldivian" wire:model="sevenhundred_maldivian">
+                                    <input type="number" id="sevenhundred_maldivian" class="form-control" placeholder="number of employees" wire:model="sevenhundred_maldivian">
                                     @error('sevenhundred_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="sevenhundred_foreign">700 Foreign</label>
-                                    <input type="number" id="sevenhundred_foreign" class="form-control" placeholder="700 Foreign" wire:model="sevenhundred_foreign">
+                                    <input type="number" id="sevenhundred_foreign" class="form-control" placeholder="number of employees" wire:model="sevenhundred_foreign">
                                     @error('sevenhundred_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="ninehundred_maldivian">900 Maldivian</label>
-                                    <input type="number" id="ninehundred_maldivian" class="form-control" placeholder="900 Maldivian" wire:model="ninehundred_maldivian">
+                                    <input type="number" id="ninehundred_maldivian" class="form-control" placeholder="number of employees" wire:model="ninehundred_maldivian">
                                     @error('ninehundred_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="ninehundred_foreign">900 Foreign</label>
-                                    <input type="number" id="ninehundred_foreign" class="form-control" placeholder="900 Foreign" wire:model="ninehundred_foreign">
+                                    <input type="number" id="ninehundred_foreign" class="form-control" placeholder="number of employees" wire:model="ninehundred_foreign">
                                     @error('ninehundred_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="thausand_maldivian">1000 Maldivian</label>
-                                    <input type="number" id="thausand_maldivian" class="form-control" placeholder="1000 Maldivian" wire:model="thausand_maldivian">
+                                    <input type="number" id="thausand_maldivian" class="form-control" placeholder="number of employees" wire:model="thausand_maldivian">
                                     @error('thausand_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="thausand_foreign">1000 Foreign</label>
-                                    <input type="number" id="thausand_foreign" class="form-control" placeholder="1000 Foreign" wire:model="thausand_foreign">
+                                    <input type="number" id="thausand_foreign" class="form-control" placeholder="number of employees" wire:model="thausand_foreign">
                                     @error('thausand_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="threethausand_maldivian">3000 Maldivian</label>
-                                    <input type="number" id="threethausand_maldivian" class="form-control" placeholder="3000 Maldivian" wire:model="threethausand_maldivian">
+                                    <input type="number" id="threethausand_maldivian" class="form-control" placeholder="number of employees" wire:model="threethausand_maldivian">
                                     @error('threethausand_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="threethausand_foreign">3000 Foreign</label>
-                                    <input type="number" id="threethausand_foreign" class="form-control" placeholder="3000 Foreign" wire:model="threethausand_foreign">
+                                    <input type="number" id="threethausand_foreign" class="form-control" placeholder="number of employees" wire:model="threethausand_foreign">
                                     @error('threethausand_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="fivethausand_maldivian">5000 Maldivian</label>
-                                    <input type="number" id="fivethausand_maldivian" class="form-control" placeholder="5000 Maldivian" wire:model="fivethausand_maldivian">
+                                    <input type="number" id="fivethausand_maldivian" class="form-control" placeholder="number of employees" wire:model="fivethausand_maldivian">
                                     @error('fivethausand_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="fivethausand_foreign">5000 Foreign</label>
-                                    <input type="number" id="fivethausand_foreign" class="form-control" placeholder="5000 Foreign" wire:model="fivethausand_foreign">
+                                    <input type="number" id="fivethausand_foreign" class="form-control" placeholder="number of employees" wire:model="fivethausand_foreign">
                                     @error('fivethausand_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="seventhausand_maldivian">7000 Maldivian</label>
-                                    <input type="number" id="seventhausand_maldivian" class="form-control" placeholder="7000 Maldivian" wire:model="seventhausand_maldivian">
+                                    <input type="number" id="seventhausand_maldivian" class="form-control" placeholder="number of employees" wire:model="seventhausand_maldivian">
                                     @error('seventhausand_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="seventhausand_foreign">7000 Foreign</label>
-                                    <input type="number" id="seventhausand_foreign" class="form-control" placeholder="7000 Foreign" wire:model="seventhausand_foreign">
+                                    <input type="number" id="seventhausand_foreign" class="form-control" placeholder="number of employees" wire:model="seventhausand_foreign">
                                     @error('seventhausand_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="tenthausand_maldivian">10000 Maldivian</label>
-                                    <input type="number" id="tenthausand_maldivian" class="form-control" placeholder="10000 Maldivian" wire:model="tenthausand_maldivian">
+                                    <input type="number" id="tenthausand_maldivian" class="form-control" placeholder="number of employees" wire:model="tenthausand_maldivian">
                                     @error('tenthausand_maldivian')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="tenthausand_foreign">10000 Foreign</label>
-                                    <input type="number" id="tenthausand_foreign" class="form-control" placeholder="10000 Foreign" wire:model="tenthausand_foreign">
+                                    <input type="number" id="tenthausand_foreign" class="form-control" placeholder="number of employees" wire:model="tenthausand_foreign">
                                     @error('tenthausand_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <hr>
+                                <h5>2. Employment by duration of employment - Year End (december) </h5>
+                                <small class="mb-3">Enter the number of employees</small>
+
+
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_male_lessthanoneyear">Duration Maldivian Male Less Than One Year</label>
                                     <input type="number" id="duration_maldivian_male_lessthanoneyear" class="form-control" placeholder="Duration Maldivian Male Less Than One Year" wire:model="duration_maldivian_male_lessthanoneyear">
                                     @error('duration_maldivian_male_lessthanoneyear')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_female_lessthanoneyear">Duration Maldivian Female Less Than One Year</label>
                                     <input type="number" id="duration_maldivian_female_lessthanoneyear" class="form-control" placeholder="Duration Maldivian Female Less Than One Year" wire:model="duration_maldivian_female_lessthanoneyear">
                                     @error('duration_maldivian_female_lessthanoneyear')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_male_lessthanoneyear">Duration Foreign Male Less Than One Year</label>
                                     <input type="number" id="duration_foreign_male_lessthanoneyear" class="form-control" placeholder="Duration Foreign Male Less Than One Year" wire:model="duration_foreign_male_lessthanoneyear">
                                     @error('duration_foreign_male_lessthanoneyear')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_female_lessthanoneyear">Duration Foreign Female Less Than One Year</label>
                                     <input type="number" id="duration_foreign_female_lessthanoneyear" class="form-control" placeholder="Duration Foreign Female Less Than One Year" wire:model="duration_foreign_female_lessthanoneyear">
                                     @error('duration_foreign_female_lessthanoneyear')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_male_one_two_years">Duration Maldivian Male One to Two Years</label>
                                     <input type="number" id="duration_maldivian_male_one_two_years" class="form-control" placeholder="Duration Maldivian Male One to Two Years" wire:model="duration_maldivian_male_one_two_years">
                                     @error('duration_maldivian_male_one_two_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_female_one_two_years">Duration Maldivian Female One to Two Years</label>
                                     <input type="number" id="duration_maldivian_female_one_two_years" class="form-control" placeholder="Duration Maldivian Female One to Two Years" wire:model="duration_maldivian_female_one_two_years">
                                     @error('duration_maldivian_female_one_two_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_male_one_two_years">Duration Foreign Male One to Two Years</label>
                                     <input type="number" id="duration_foreign_male_one_two_years" class="form-control" placeholder="Duration Foreign Male One to Two Years" wire:model="duration_foreign_male_one_two_years">
                                     @error('duration_foreign_male_one_two_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_female_one_two_years">Duration Foreign Female One to Two Years</label>
                                     <input type="number" id="duration_foreign_female_one_two_years" class="form-control" placeholder="Duration Foreign Female One to Two Years" wire:model="duration_foreign_female_one_two_years">
                                     @error('duration_foreign_female_one_two_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_male_three_four_years">Duration Maldivian Male Three to Four Years</label>
                                     <input type="number" id="duration_maldivian_male_three_four_years" class="form-control" placeholder="Duration Maldivian Male Three to Four Years" wire:model="duration_maldivian_male_three_four_years">
                                     @error('duration_maldivian_male_three_four_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_female_three_four_years">Duration Maldivian Female Three to Four Years</label>
                                     <input type="number" id="duration_maldivian_female_three_four_years" class="form-control" placeholder="Duration Maldivian Female Three to Four Years" wire:model="duration_maldivian_female_three_four_years">
                                     @error('duration_maldivian_female_three_four_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_male_three_four_years">Duration Foreign Male Three to Four Years</label>
                                     <input type="number" id="duration_foreign_male_three_four_years" class="form-control" placeholder="Duration Foreign Male Three to Four Years" wire:model="duration_foreign_male_three_four_years">
                                     @error('duration_foreign_male_three_four_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_female_three_four_years">Duration Foreign Female Three to Four Years</label>
                                     <input type="number" id="duration_foreign_female_three_four_years" class="form-control" placeholder="Duration Foreign Female Three to Four Years" wire:model="duration_foreign_female_three_four_years">
                                     @error('duration_foreign_female_three_four_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_male_five_nine_years">Duration Maldivian Male Five to Nine Years</label>
                                     <input type="number" id="duration_maldivian_male_five_nine_years" class="form-control" placeholder="Duration Maldivian Male Five to Nine Years" wire:model="duration_maldivian_male_five_nine_years">
                                     @error('duration_maldivian_male_five_nine_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_female_five_nine_years">Duration Maldivian Female Five to Nine Years</label>
                                     <input type="number" id="duration_maldivian_female_five_nine_years" class="form-control" placeholder="Duration Maldivian Female Five to Nine Years" wire:model="duration_maldivian_female_five_nine_years">
                                     @error('duration_maldivian_female_five_nine_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_male_five_nine_years">Duration Foreign Male Five to Nine Years</label>
                                     <input type="number" id="duration_foreign_male_five_nine_years" class="form-control" placeholder="Duration Foreign Male Five to Nine Years" wire:model="duration_foreign_male_five_nine_years">
                                     @error('duration_foreign_male_five_nine_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_female_five_nine_years">Duration Foreign Female Five to Nine Years</label>
                                     <input type="number" id="duration_foreign_female_five_nine_years" class="form-control" placeholder="Duration Foreign Female Five to Nine Years" wire:model="duration_foreign_female_five_nine_years">
                                     @error('duration_foreign_female_five_nine_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_male_ten_years">Duration Maldivian Male Ten Years</label>
                                     <input type="number" id="duration_maldivian_male_ten_years" class="form-control" placeholder="Duration Maldivian Male Ten Years" wire:model="duration_maldivian_male_ten_years">
                                     @error('duration_maldivian_male_ten_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_maldivian_female_ten_years">Duration Maldivian Female Ten Years</label>
                                     <input type="number" id="duration_maldivian_female_ten_years" class="form-control" placeholder="Duration Maldivian Female Ten Years" wire:model="duration_maldivian_female_ten_years">
                                     @error('duration_maldivian_female_ten_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_male_ten_years">Duration Foreign Male Ten Years</label>
                                     <input type="number" id="duration_foreign_male_ten_years" class="form-control" placeholder="Duration Foreign Male Ten Years" wire:model="duration_foreign_male_ten_years">
                                     @error('duration_foreign_male_ten_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="duration_foreign_female_ten_years">Duration Foreign Female Ten Years</label>
                                     <input type="number" id="duration_foreign_female_ten_years" class="form-control" placeholder="Duration Foreign Female Ten Years" wire:model="duration_foreign_female_ten_years">
                                     @error('duration_foreign_female_ten_years')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                
-                                <div class="mb-3 col-12 col-md-6">
+                                <hr>
+                                <h5>3. Employment by age - Year End (december) </h5>
+                                <small class="mb-3">Enter the number of employees</small>
+
+
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_eighteen_mdv_male">Age 18 Maldivian Male</label>
                                     <input type="number" id="age_eighteen_mdv_male" class="form-control" placeholder="Age 18 Maldivian Male" wire:model="age_eighteen_mdv_male">
                                     @error('age_eighteen_mdv_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_eighteen_mdv_female">Age 18 Maldivian Female</label>
                                     <input type="number" id="age_eighteen_mdv_female" class="form-control" placeholder="Age 18 Maldivian Female" wire:model="age_eighteen_mdv_female">
                                     @error('age_eighteen_mdv_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_eighteen_foreign_male">Age 18 Foreign Male</label>
                                     <input type="number" id="age_eighteen_foreign_male" class="form-control" placeholder="Age 18 Foreign Male" wire:model="age_eighteen_foreign_male">
                                     @error('age_eighteen_foreign_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_eighteen_foreign_female">Age 18 Foreign Female</label>
                                     <input type="number" id="age_eighteen_foreign_female" class="form-control" placeholder="Age 18 Foreign Female" wire:model="age_eighteen_foreign_female">
                                     @error('age_eighteen_foreign_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_twenty_mdv_male">Age 20 Maldivian Male</label>
                                     <input type="number" id="age_twenty_mdv_male" class="form-control" placeholder="Age 20 Maldivian Male" wire:model="age_twenty_mdv_male">
                                     @error('age_twenty_mdv_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_twenty_mdv_female">Age 20 Maldivian Female</label>
                                     <input type="number" id="age_twenty_mdv_female" class="form-control" placeholder="Age 20 Maldivian Female" wire:model="age_twenty_mdv_female">
                                     @error('age_twenty_mdv_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_twenty_foreign_male">Age 20 Foreign Male</label>
                                     <input type="number" id="age_twenty_foreign_male" class="form-control" placeholder="Age 20 Foreign Male" wire:model="age_twenty_foreign_male">
                                     @error('age_twenty_foreign_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_twenty_foreign_female">Age 20 Foreign Female</label>
                                     <input type="number" id="age_twenty_foreign_female" class="form-control" placeholder="Age 20 Foreign Female" wire:model="age_twenty_foreign_female">
                                     @error('age_twenty_foreign_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_thirty_mdv_male">Age 30 Maldivian Male</label>
                                     <input type="number" id="age_thirty_mdv_male" class="form-control" placeholder="Age 30 Maldivian Male" wire:model="age_thirty_mdv_male">
                                     @error('age_thirty_mdv_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_thirty_mdv_female">Age 30 Maldivian Female</label>
                                     <input type="number" id="age_thirty_mdv_female" class="form-control" placeholder="Age 30 Maldivian Female" wire:model="age_thirty_mdv_female">
                                     @error('age_thirty_mdv_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_thirty_foreign_male">Age 30 Foreign Male</label>
                                     <input type="number" id="age_thirty_foreign_male" class="form-control" placeholder="Age 30 Foreign Male" wire:model="age_thirty_foreign_male">
                                     @error('age_thirty_foreign_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_thirty_foreign_female">Age 30 Foreign Female</label>
                                     <input type="number" id="age_thirty_foreign_female" class="form-control" placeholder="Age 30 Foreign Female" wire:model="age_thirty_foreign_female">
                                     @error('age_thirty_foreign_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_sixty_mdv_male">Age 60 Maldivian Male</label>
                                     <input type="number" id="age_sixty_mdv_male" class="form-control" placeholder="Age 60 Maldivian Male" wire:model="age_sixty_mdv_male">
                                     @error('age_sixty_mdv_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_sixty_mdv_female">Age 60 Maldivian Female</label>
                                     <input type="number" id="age_sixty_mdv_female" class="form-control" placeholder="Age 60 Maldivian Female" wire:model="age_sixty_mdv_female">
                                     @error('age_sixty_mdv_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_sixty_foreign_male">Age 60 Foreign Male</label>
                                     <input type="number" id="age_sixty_foreign_male" class="form-control" placeholder="Age 60 Foreign Male" wire:model="age_sixty_foreign_male">
                                     @error('age_sixty_foreign_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_sixty_foreign_female">Age 60 Foreign Female</label>
                                     <input type="number" id="age_sixty_foreign_female" class="form-control" placeholder="Age 60 Foreign Female" wire:model="age_sixty_foreign_female">
                                     @error('age_sixty_foreign_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_old_mdv_male">Age Old Maldivian Male</label>
                                     <input type="number" id="age_old_mdv_male" class="form-control" placeholder="Age Old Maldivian Male" wire:model="age_old_mdv_male">
                                     @error('age_old_mdv_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_old_mdv_female">Age Old Maldivian Female</label>
                                     <input type="number" id="age_old_mdv_female" class="form-control" placeholder="Age Old Maldivian Female" wire:model="age_old_mdv_female">
                                     @error('age_old_mdv_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_old_foreign_male">Age Old Foreign Male</label>
                                     <input type="number" id="age_old_foreign_male" class="form-control" placeholder="Age Old Foreign Male" wire:model="age_old_foreign_male">
                                     @error('age_old_foreign_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="age_old_foreign_female">Age Old Foreign Female</label>
                                     <input type="number" id="age_old_foreign_female" class="form-control" placeholder="Age Old Foreign Female" wire:model="age_old_foreign_female">
                                     @error('age_old_foreign_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
+
+
+                                <hr>
+                                <h5>4. Employment by Registered atoll of the employees - Year End (december) </h5>
+                                <small class="mb-3">Enter the number of employees</small>
+
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="capital_male">Capital Male</label>
@@ -629,181 +649,190 @@
                                     @error('seenu_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <hr>
+
+
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="retailshop_outsourced">Retail Shop Outsourced</label>
                                     <input type="checkbox" id="retailshop_outsourced" class="form-check-input" wire:model="retailshop_outsourced">
                                     @error('retailshop_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="retailshop_male">Retail Shop Male</label>
                                     <input type="number" id="retailshop_male" class="form-control" placeholder="Retail Shop Male" wire:model="retailshop_male">
                                     @error('retailshop_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="retailshop_female">Retail Shop Female</label>
                                     <input type="number" id="retailshop_female" class="form-control" placeholder="Retail Shop Female" wire:model="retailshop_female">
                                     @error('retailshop_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="divingcenter_outsourced">Diving Center Outsourced</label>
                                     <input type="checkbox" id="divingcenter_outsourced" class="form-check-input" wire:model="divingcenter_outsourced">
                                     @error('divingcenter_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="divingcenter_male">Diving Center Male</label>
                                     <input type="number" id="divingcenter_male" class="form-control" placeholder="Diving Center Male" wire:model="divingcenter_male">
                                     @error('divingcenter_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="divingcenter_female">Diving Center Female</label>
                                     <input type="number" id="divingcenter_female" class="form-control" placeholder="Diving Center Female" wire:model="divingcenter_female">
                                     @error('divingcenter_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="restaurant_outsourced">Restaurant Outsourced</label>
                                     <input type="checkbox" id="restaurant_outsourced" class="form-check-input" wire:model="restaurant_outsourced">
                                     @error('restaurant_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="restaurant_male">Restaurant Male</label>
                                     <input type="number" id="restaurant_male" class="form-control" placeholder="Restaurant Male" wire:model="restaurant_male">
                                     @error('restaurant_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="restaurant_female">Restaurant Female</label>
                                     <input type="number" id="restaurant_female" class="form-control" placeholder="Restaurant Female" wire:model="restaurant_female">
                                     @error('restaurant_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="spa_outsourced">Spa Outsourced</label>
                                     <input type="checkbox" id="spa_outsourced" class="form-check-input" wire:model="spa_outsourced">
                                     @error('spa_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="spa_male">Spa Male</label>
                                     <input type="number" id="spa_male" class="form-control" placeholder="Spa Male" wire:model="spa_male">
                                     @error('spa_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="spa_female">Spa Female</label>
                                     <input type="number" id="spa_female" class="form-control" placeholder="Spa Female" wire:model="spa_female">
                                     @error('spa_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="transport_outsourced">Transport Outsourced</label>
                                     <input type="checkbox" id="transport_outsourced" class="form-check-input" wire:model="transport_outsourced">
                                     @error('transport_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="transport_male">Transport Male</label>
                                     <input type="number" id="transport_male" class="form-control" placeholder="Transport Male" wire:model="transport_male">
                                     @error('transport_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="transport_female">Transport Female</label>
                                     <input type="number" id="transport_female" class="form-control" placeholder="Transport Female" wire:model="transport_female">
                                     @error('transport_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="construction_outsourced">Construction Outsourced</label>
                                     <input type="checkbox" id="construction_outsourced" class="form-check-input" wire:model="construction_outsourced">
                                     @error('construction_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="construction_male">Construction Male</label>
                                     <input type="number" id="construction_male" class="form-control" placeholder="Construction Male" wire:model="construction_male">
                                     @error('construction_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-4">
                                     <label class="form-label" for="construction_female">Construction Female</label>
                                     <input type="number" id="construction_female" class="form-control" placeholder="Construction Female" wire:model="construction_female">
                                     @error('construction_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="otherone_name">Other One Name</label>
-                                    <input type="text" id="otherone_name" class="form-control" placeholder="Other One Name" wire:model="otherone_name">
-                                    @error('otherone_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
+                                
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-2">
                                     <label class="form-label" for="otherone_outsourced">Other One Outsourced</label>
                                     <input type="checkbox" id="otherone_outsourced" class="form-check-input" wire:model="otherone_outsourced">
                                     @error('otherone_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
+                                    <label class="form-label" for="otherone_name">Other One Name</label>
+                                    <input type="text" id="otherone_name" class="form-control" placeholder="Other One Name" wire:model="otherone_name">
+                                    @error('otherone_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="otherone_male">Other One Male</label>
                                     <input type="number" id="otherone_male" class="form-control" placeholder="Other One Male" wire:model="otherone_male">
                                     @error('otherone_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="otherone_female">Other One Female</label>
                                     <input type="number" id="otherone_female" class="form-control" placeholder="Other One Female" wire:model="otherone_female">
                                     @error('otherone_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="othertwo_name">Other Two Name</label>
-                                    <input type="text" id="othertwo_name" class="form-control" placeholder="Other Two Name" wire:model="othertwo_name">
-                                    @error('othertwo_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
+                                
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-2">
                                     <label class="form-label" for="othertwo_outsourced">Other Two Outsourced</label>
                                     <input type="checkbox" id="othertwo_outsourced" class="form-check-input" wire:model="othertwo_outsourced">
                                     @error('othertwo_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
+                                    <label class="form-label" for="othertwo_name">Other Two Name</label>
+                                    <input type="text" id="othertwo_name" class="form-control" placeholder="Other Two Name" wire:model="othertwo_name">
+                                    @error('othertwo_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="othertwo_male">Other Two Male</label>
                                     <input type="number" id="othertwo_male" class="form-control" placeholder="Other Two Male" wire:model="othertwo_male">
                                     @error('othertwo_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="othertwo_female">Other Two Female</label>
                                     <input type="number" id="othertwo_female" class="form-control" placeholder="Other Two Female" wire:model="othertwo_female">
                                     @error('othertwo_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="otherthree_name">Other Three Name</label>
-                                    <input type="text" id="otherthree_name" class="form-control" placeholder="Other Three Name" wire:model="otherthree_name">
-                                    @error('otherthree_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
+                               
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-2">
                                     <label class="form-label" for="otherthree_outsourced">Other Three Outsourced</label>
                                     <input type="checkbox" id="otherthree_outsourced" class="form-check-input" wire:model="otherthree_outsourced">
                                     @error('otherthree_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
+                                    <label class="form-label" for="otherthree_name">Other Three Name</label>
+                                    <input type="text" id="otherthree_name" class="form-control" placeholder="Other Three Name" wire:model="otherthree_name">
+                                    @error('otherthree_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="otherthree_male">Other Three Male</label>
                                     <input type="number" id="otherthree_male" class="form-control" placeholder="Other Three Male" wire:model="otherthree_male">
                                     @error('otherthree_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <div class="mb-3 col-12 col-md-6">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="otherthree_female">Other Three Female</label>
                                     <input type="number" id="otherthree_female" class="form-control" placeholder="Other Three Female" wire:model="otherthree_female">
                                     @error('otherthree_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
