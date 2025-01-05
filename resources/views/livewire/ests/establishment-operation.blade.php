@@ -22,58 +22,19 @@
                                         @error('months_operated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div> --}}
 
-                                <div class="mb-4">
-                                    <label for="validationFormInformation" class="col-form-label form-label">1. Select the months in operation during the reporting year</label>
-                                    <br>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck1" class="form-check-input" value="January" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck1">January</label>
+                                    <div class="mb-4">
+                                        <label for="months_operated" class="form-label">1. Select the months in operation during the reporting year</label>
+                                        <br>
+                                        @foreach(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $index => $month)
+                                            <div class="js-form-message form-check form-check-inline">
+                                                <input type="checkbox" id="formInlineCheck{{ $index + 1 }}" class="form-check-input" value="{{ $month }}" wire:model="months_operated">
+                                                <label class="form-check-label" for="formInlineCheck{{ $index + 1 }}">{{ $month }}</label>
+                                            </div>
+                                            
+                                        @endforeach
+                                        @error('months_operated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck2" class="form-check-input" value="February" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck2">February</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck3" class="form-check-input" value="March" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck3">March</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck4" class="form-check-input" value="April" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck4">April</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck5" class="form-check-input" value="May" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck5">May</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck6" class="form-check-input" value="June" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck6">June</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck7" class="form-check-input" value="July" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck7">July</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck8" class="form-check-input" value="August" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck8">August</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck9" class="form-check-input" value="September" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck9">September</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck10" class="form-check-input" value="October" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck10">October</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck11" class="form-check-input" value="November" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck11">November</label>
-                                    </div>
-                                                                    <div class="js-form-message form-check form-check-inline">
-                                        <input type="checkbox" id="formInlineCheck12" class="form-check-input" value="December" wire:model="months_operated">
-                                        <label class="form-check-label" for="formInlineCheck12">December</label>
-                                    </div>
-                                        </div>
+                                    
                                         <hr>
 
                                 <div class="mb-3 col-12 col-md-6">

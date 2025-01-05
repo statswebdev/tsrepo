@@ -45,13 +45,13 @@ class EstablishmentProduction extends Component
     public $waste_disposalother;
     public $waste_monthly;
     public $plastic_waste;
-    public $plastic_waste_method;
+    public $plastic_waste_method = [];
     public $organic_waste;
-    public $organic_waste_method;
+    public $organic_waste_method = [];
     public $metal_waste;
-    public $metal_waste_method;
+    public $metal_waste_method = [];
     public $other_waste;
-    public $other_waste_method;
+    public $other_waste_method = [];
     public $status="completed";
 
     public function mount($estrecordid)
@@ -143,13 +143,13 @@ class EstablishmentProduction extends Component
             'waste_disposalother' => $this->waste_disposalother,
             'waste_monthly' => $this->waste_monthly,
             'plastic_waste' => $this->plastic_waste,
-            'plastic_waste_method' => $this->plastic_waste_method,
+            'plastic_waste_method' => json_encode($this->plastic_waste_method),
             'organic_waste' => $this->organic_waste,
-            'organic_waste_method' => $this->organic_waste_method,
+            'organic_waste_method' => json_encode($this->organic_waste_method),
             'metal_waste' => $this->metal_waste,
-            'metal_waste_method' => $this->metal_waste_method,
+            'metal_waste_method' => json_encode($this->metal_waste_method),
             'other_waste' => $this->other_waste,
-            'other_waste_method' => $this->other_waste_method,
+            'other_waste_method' => json_encode($this->other_waste_method),
             'status' => $this->status,
         ]);
 
