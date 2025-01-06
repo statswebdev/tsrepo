@@ -15,6 +15,31 @@
                             <div class="card-body">
                             <!-- Form -->
                             <form wire:submit.prevent="submitRecord" class="row">
+
+                                <h5>1. Fuel Consumption</h5>
+                        <small class="mb-5">Enter the fuel consumption in Liters</small>
+
+                        <div class="row  mb-2">
+                            <div class="col-sm-2"></div>
+                           
+
+                           
+                            
+                           
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3 text-center">Diesel</div>
+                        <div class="col-sm-3 text-center">
+                            <label>Lubricant</label> 
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <label>Value Purchased from Fisherman(December), in MVR</label> 
+                        </div>
+                       
+                        <div class="col-sm-3"></div>
+                </div>
                                 
                                 
                                 <div class="mb-3 col-12 col-md-6">

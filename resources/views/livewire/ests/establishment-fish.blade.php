@@ -207,67 +207,8 @@
                               
                               
                                 
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="yellowfin_purchased">Yellowfin Purchased</label>
-                                    <input type="text" id="yellowfin_purchased" class="form-control" placeholder="Yellowfin Purchased" wire:model="yellowfin_purchased">
-                                    @error('yellowfin_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="yellowfin_purchased_qty">Yellowfin Purchased Quantity</label>
-                                    <input type="number" id="yellowfin_purchased_qty" class="form-control" placeholder="Yellowfin Purchased Quantity" wire:model="yellowfin_purchased_qty">
-                                    @error('yellowfin_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="yellowfin_purchased_value">Yellowfin Purchased Value</label>
-                                    <input type="number" id="yellowfin_purchased_value" class="form-control" placeholder="Yellowfin Purchased Value" wire:model="yellowfin_purchased_value">
-                                    @error('yellowfin_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="reeffish_purchased">Reef Fish Purchased</label>
-                                    <input type="text" id="reeffish_purchased" class="form-control" placeholder="Reef Fish Purchased" wire:model="reeffish_purchased">
-                                    @error('reeffish_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="reeffish_purchased_qty">Reef Fish Purchased Quantity</label>
-                                    <input type="number" id="reeffish_purchased_qty" class="form-control" placeholder="Reef Fish Purchased Quantity" wire:model="reeffish_purchased_qty">
-                                    @error('reeffish_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="reeffish_purchased_value">Reef Fish Purchased Value</label>
-                                    <input type="number" id="reeffish_purchased_value" class="form-control" placeholder="Reef Fish Purchased Value" wire:model="reeffish_purchased_value">
-                                    @error('reeffish_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="seafood_purchased">Seafood Purchased</label>
-                                    <input type="text" id="seafood_purchased" class="form-control" placeholder="Seafood Purchased" wire:model="seafood_purchased">
-                                    @error('seafood_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="seafood_purchased_qty">Seafood Purchased Quantity</label>
-                                    <input type="number" id="seafood_purchased_qty" class="form-control" placeholder="Seafood Purchased Quantity" wire:model="seafood_purchased_qty">
-                                    @error('seafood_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="seafood_purchased_value">Seafood Purchased Value</label>
-                                    <input type="number" id="seafood_purchased_value" class="form-control" placeholder="Seafood Purchased Value" wire:model="seafood_purchased_value">
-                                    @error('seafood_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="otherfish_purchased">Other Fish Purchased</label>
-                                    <input type="text" id="otherfish_purchased" class="form-control" placeholder="Other Fish Purchased" wire:model="otherfish_purchased">
-                                    @error('otherfish_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="otherfish_purchased_qty">Other Fish Purchased Quantity</label>
-                                    <input type="number" id="otherfish_purchased_qty" class="form-control" placeholder="Other Fish Purchased Quantity" wire:model="otherfish_purchased_qty">
-                                    @error('otherfish_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="otherfish_purchased_value">Other Fish Purchased Value</label>
-                                    <input type="number" id="otherfish_purchased_value" class="form-control" placeholder="Other Fish Purchased Value" wire:model="otherfish_purchased_value">
-                                    @error('otherfish_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-12">
+                               
+                                <div class="mt-3 mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button>

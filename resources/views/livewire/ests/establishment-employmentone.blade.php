@@ -19,89 +19,225 @@
 
 
                                 <h5>1. Employment (Year End)</h5>
-                                <small class="mb-3">Enter the number of employees at the end of the year. Including Resident, Permanent & Commuting Employees / Casual workers</small>
+                                <small class="mb-3">Enter the count of employees at the end of the year. Including Resident, Permanent & Commuting Employees / Casual workers</small>
+
+
+                             
+        
+                                <div class="row  mb-2">
+                                    <div class="col-sm-2"></div>
+                                            
+                                   
+                            </div>
+        
+                            <div class="row mb-2">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-3 text-center">Male</div>
+                                <div class="col-sm-3 text-center">
+                                    <label>Female</label> 
+                                </div>
+
+                                <div class="col-sm-3"></div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">Maldivian</label>
+                            <div class="col-sm-3">
+                                <input type="number" id="maldivian_male" class="form-control" placeholder="number of employees" wire:model="maldivian_male">
+                                @error('maldivian_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="number" id="maldivian_female" class="form-control" placeholder="number of employees" wire:model="maldivian_female">
+                                @error('maldivian_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">Foreign</label>
+                            <div class="col-sm-3">
+                                <input type="number" id="foreign_male" class="form-control" placeholder="number of employees" wire:model="foreign_male">
+                                @error('foreign_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="number" id="foreign_female" class="form-control" placeholder="number of employees" wire:model="foreign_female">
+                                @error('foreign_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                        </div>
 
 
 
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="maldivian_male">Maldivian Male</label>
-                                    <input type="number" id="maldivian_male" class="form-control" placeholder="Maldivian Male" wire:model="maldivian_male">
-                                    @error('maldivian_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="maldivian_female">Maldivian Female</label>
-                                    <input type="number" id="maldivian_female" class="form-control" placeholder="Maldivian Female" wire:model="maldivian_female">
-                                    @error('maldivian_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="foreign_male">Foreign Male</label>
-                                    <input type="number" id="foreign_male" class="form-control" placeholder="Foreign Male" wire:model="foreign_male">
-                                    @error('foreign_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="foreign_female">Foreign Female</label>
-                                    <input type="number" id="foreign_female" class="form-control" placeholder="Foreign Female" wire:model="foreign_female">
-                                    @error('foreign_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <hr>
+                                
+                                <hr class="mt-3">
 
                                 <h5>2. Employment (Commuting/Casual - Year End) </h5>
-                                <small class="mb-3">Enter the number of commuting employees / casual workers</small>
+                                <small class="mb-3">Enter the count of commuting employees / casual workers</small>
+
+                                <div class="row  mb-2">
+                                    <div class="col-sm-2"></div>
+                                            
+                                   
+                            </div>
+        
+                            <div class="row mb-2">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-3 text-center">Male</div>
+                                <div class="col-sm-3 text-center">
+                                    <label>Female</label> 
+                                </div>
+
+                                <div class="col-sm-3"></div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">Maldivian</label>
+                            <div class="col-sm-3">
+                                <input type="number" id="maldivian_male_commuting" class="form-control" placeholder="number of employees" wire:model="maldivian_male_commuting">
+                                @error('maldivian_male_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="number" id="maldivian_female_commuting" class="form-control" placeholder="number of employees" wire:model="maldivian_female_commuting">
+                                @error('maldivian_female_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                        </div>
+                <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">Foreign</label>
+                            <div class="col-sm-3">
+                                <input type="number" id="foreign_male_commuting" class="form-control" placeholder="number of employees" wire:model="foreign_male_commuting">
+                                @error('foreign_male_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="number" id="foreign_female_commuting" class="form-control" placeholder="number of employees" wire:model="foreign_female_commuting">
+                                @error('foreign_female_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                        </div>
 
 
 
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="maldivian_male_commuting">Maldivian Male Commuting</label>
-                                    <input type="number" id="maldivian_male_commuting" class="form-control" placeholder="Maldivian Male Commuting" wire:model="maldivian_male_commuting">
-                                    @error('maldivian_male_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="maldivian_female_commuting">Maldivian Female Commuting</label>
-                                    <input type="number" id="maldivian_female_commuting" class="form-control" placeholder="Maldivian Female Commuting" wire:model="maldivian_female_commuting">
-                                    @error('maldivian_female_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="foreign_male_commuting">Foreign Male Commuting</label>
-                                    <input type="number" id="foreign_male_commuting" class="form-control" placeholder="Foreign Male Commuting" wire:model="foreign_male_commuting">
-                                    @error('foreign_male_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="foreign_female_commuting">Foreign Female Commuting</label>
-                                    <input type="number" id="foreign_female_commuting" class="form-control" placeholder="Foreign Female Commuting" wire:model="foreign_female_commuting">
-                                    @error('foreign_female_commuting')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
 
-                                <hr>
+                                
+
+                                <hr class="mt-3">
 
                                 <h5>3. Employment (Permanent Employees - Year End) </h5>
-                                <small class="mb-3">Enter the number of permanent employees</small>
+                                <small class="mb-3">Enter the count of permanent employees only</small>
 
 
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="maldivian_male_permanent">Maldivian Male Permanent</label>
-                                    <input type="number" id="maldivian_male_permanent" class="form-control" placeholder="Maldivian Male Permanent" wire:model="maldivian_male_permanent">
-                                    @error('maldivian_male_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="maldivian_female_permanent">Maldivian Female Permanent</label>
-                                    <input type="number" id="maldivian_female_permanent" class="form-control" placeholder="Maldivian Female Permanent" wire:model="maldivian_female_permanent">
-                                    @error('maldivian_female_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="foreign_male_permanent">Foreign Male Permanent</label>
-                                    <input type="number" id="foreign_male_permanent" class="form-control" placeholder="Foreign Male Permanent" wire:model="foreign_male_permanent">
-                                    @error('foreign_male_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="foreign_female_permanent">Foreign Female Permanent</label>
-                                    <input type="number" id="foreign_female_permanent" class="form-control" placeholder="Foreign Female Permanent" wire:model="foreign_female_permanent">
-                                    @error('foreign_female_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                <div class="row  mb-2">
+                                    <div class="col-sm-2"></div>
+                                            
+                                   
+                            </div>
+        
+                            <div class="row mb-2">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-3 text-center">Male</div>
+                                <div class="col-sm-3 text-center">
+                                    <label>Female</label> 
                                 </div>
 
-                                <hr>
+                                <div class="col-sm-3"></div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">Maldivian</label>
+                            <div class="col-sm-3">
+                                <input type="number" id="maldivian_male_permanent" class="form-control" placeholder="number of employees" wire:model="maldivian_male_permanent">
+                                @error('maldivian_male_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="number" id="maldivian_female_permanent" class="form-control" placeholder="number of employees" wire:model="maldivian_female_permanent">
+                                @error('maldivian_female_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                        </div>
+                <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">Foreign</label>
+                            <div class="col-sm-3">
+                                <input type="number" id="foreign_male_permanent" class="form-control" placeholder="number of employees" wire:model="foreign_male_permanent">
+                                @error('foreign_male_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="number" id="foreign_female_permanent" class="form-control" placeholder="number of employees" wire:model="foreign_female_permanent">
+                                @error('foreign_female_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                        </div>
+
+
+                                
+
+                                <hr class="mt-3">
 
                                 <h5>4. Employment by Type of Occupation (Year End) </h5>
-                                <small class="mb-3">Enter the number of employees</small>
+                                <small class="mb-3">Enter the count of employees by type of occupation</small>
+
+
+                                
+                                <div class="row  mb-2">
+                                    <div class="col-sm-2"></div>
+                                            
+                                   
+                            </div>
+        
+                            <div class="row mb-2">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-2 text-center">Maldivian Male</div>
+                                <div class="col-sm-2 text-center">
+                                    <label>Maldivian Female</label> 
+                                </div>
+                                <div class="col-sm-2 text-center">Foreign Male</div>
+                                <div class="col-sm-2 text-center">
+                                    <label>Foreign Female</label> 
+                                </div>
+
+
+                                <div class="col-sm-3"></div>
+                        </div>
+
+                        <div class="form-group row mb-4 ">
+                            <label class="form-label col-sm-4 text-end">Accommodation Services
+                            <br>
+                            <span class="text-muted small text-sm-start">Include all employees who works in the area of accomodation related services, including housekeeping, Concierge, Butler, Room cleaners, Janitors, and alike</span>    
+                            </label>         
+                                <div class="col-sm-2 js-form-message">
+                                    <input type="text" class="form-control twofivemv" placeholder="" maxlength="10" value="2" name="accomodationmaldivianmale" id="twofivemvone" required="">
+                                    <span class="invalid-feedback">Please enter the number of employees</span>
+                                    </div>
+                                <div class="col-sm-2 js-form-message">
+                                    <input type="text" class="form-control twofivefr" placeholder="" maxlength="10" value="2" name="accomodationmaldivianfemale" id="twofivefrone" required="">
+                                    <span class="invalid-feedback">Please enter the number of employees</span>
+                                </div>
+                            
+                        <div class="col-sm-2 js-form-message">
+                                    <input type="text" class="form-control twofivefr" placeholder="" maxlength="10" value="2" name="accomodationforeignmale" id="twofivefrone" required="">
+                                    <span class="invalid-feedback">Please enter the number of employees</span>
+                                </div><div class="col-sm-2 js-form-message">
+                                    <input type="text" class="form-control twofivefr" placeholder="" maxlength="10" value="2" name="accomodationforeignfemale" id="twofivefrone" required="">
+                                    <span class="invalid-feedback">Please enter the number of employees</span>
+                                </div></div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">Accomodation Services</label>
+                            
+                            <span class="text-muted small col-sm-2 text-sm-start">Include all employees who works in the area of accomodation related services, including housekeeping, Concierge, Butler, Room cleaners, Janitors, and alike</span>    
+                            <div class="col-sm-2">
+                                <input type="number" id="foreign_male_permanent" class="form-control" placeholder="number of employees" wire:model="foreign_male_permanent">
+                                @error('foreign_male_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="number" id="foreign_female_permanent" class="form-control" placeholder="number of employees" wire:model="foreign_female_permanent">
+                                @error('foreign_female_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="number" id="foreign_female_permanent" class="form-control" placeholder="number of employees" wire:model="foreign_female_permanent">
+                                @error('foreign_female_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="number" id="foreign_female_permanent" class="form-control" placeholder="number of employees" wire:model="foreign_female_permanent">
+                                @error('foreign_female_permanent')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                        </div>
+
+
+                        
 
 
                                 <div class="mb-3 col-12 col-md-3">

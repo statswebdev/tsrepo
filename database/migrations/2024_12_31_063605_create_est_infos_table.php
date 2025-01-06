@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('operator_name');
             $table->string('operator_register');
             $table->string('owner_one');
-            $table->string('owner_two');
+            $table->string('owner_two')->nullable();
             $table->string('operator_contact');
             $table->string('operator_email');
             $table->integer('government_share');

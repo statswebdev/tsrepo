@@ -45,7 +45,7 @@ class EstInformation extends Component
             'operator_name' => 'required|string',
             'operator_register' => 'required|string',
             'owner_one' => 'required|string',
-            'owner_two' => 'required|string',
+            'owner_two' => 'nullable|string',
             'operator_contact' => 'required|string',
             'operator_email' => 'required|email',
             'government_share' => 'required|integer',
