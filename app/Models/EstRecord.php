@@ -14,9 +14,14 @@ class EstRecord extends Model
         'collectionyear',
     ];
 
-    public function estInfos()
+    // public function estInfos()
+    // {
+    //     return $this->hasMany(EstInfo::class, 'est_record_id');
+    // }
+
+    public function estinfo()
     {
-        return $this->hasMany(EstInfo::class, 'est_record_id');
+        return $this->hasOne(EstInfo::class, 'est_record_id');
     }
 
 }

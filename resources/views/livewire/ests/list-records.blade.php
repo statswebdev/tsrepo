@@ -45,7 +45,25 @@
                         <div id="collapse{{ $estrecord->collectionyear }}" class="collapse" aria-labelledby="heading{{ $estrecord->collectionyear }}" data-bs-parent="#accordion{{ $estrecord->collectionyear }}">
                         <div class="py-3 fs-4">
                             <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>1. Establishment Information</span>
+                                {{-- @php
+                                        $estinfo = App\Models\EstInfo::where('est_record_id', $estrecord->id)
+                                                                    ->where('user_id', auth()->id())
+                                                                    ->first();
+                                @endphp --}}
+                                @if($estrecord->estinfo)
+                                    <span>1. Establishment Information
+                                        <span class="badge 
+                                            @if($estrecord->estinfo->status === 'incomplete') bg-warning
+                                            @elseif($estrecord->estinfo->status === 'submitted') bg-primary
+                                            @elseif($estrecord->estinfo->status === 'review') bg-danger
+                                            @elseif($estrecord->estinfo->status === 'completed') bg-success
+                                            @endif 
+                                            ms-2">{{ $estrecord->estinfo->status }}
+                                        </span>
+                                    </span>
+                                @else
+                                    <span>1. Establishment Information</span>
+                                @endif 
                                 <a href="{{ route('estinfo', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
                             </span>
                             <hr>

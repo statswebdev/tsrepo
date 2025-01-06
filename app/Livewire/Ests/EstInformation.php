@@ -26,7 +26,7 @@ class EstInformation extends Component
     public $taxpayer_number;
     public $establishment_regdate;
     public $bedcapacity;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {
