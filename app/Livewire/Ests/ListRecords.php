@@ -11,7 +11,11 @@ class ListRecords extends Component
 
     public function mount()
     {
-        $this->estrecords = EstRecord::all();
+        //$this->estrecords = EstRecord::all();
+
+        $this->estrecords = EstRecord::with(['estinfo' => function($query) {
+            $query->where('user_id', auth()->id());
+        }])->get();
     }
 
     public function render()
