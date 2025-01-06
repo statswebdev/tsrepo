@@ -62,4 +62,35 @@
             </div>    
         </div>
     </section>
+
+
+
+    <section class="pt-6">
+        <div class="container px-4 px-lg-0"> 
+            <div class="row">
+                <!-- row -->
+                <div class="col-md-12">
+                      <!-- Card -->
+                        <div class="card mb-4">
+                            <ul class="list-group list-group-flush">
+                                @foreach($listestrecords as $listestrecord)                                                                                  
+                                <li class="list-group-item disabled" aria-disabled="true">
+                                    <a href="#" class="d-flex justify-content-between align-items-center text-inherit">
+                                        <div class="text-truncate">
+                                            <span>{{ $listestrecord->recordname }}</span>
+                                        </div>
+                                        <div class="text-truncate">
+                                            <span>{{ $listestrecord->collectionyear }}</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 </div>

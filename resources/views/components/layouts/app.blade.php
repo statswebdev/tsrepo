@@ -17,6 +17,8 @@
         
         {{ $slot }}
 
+        <livewire:inc.footer />
+
         <script src="{{asset('js/popper.min.js')}}"></script>
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
         <script src="{{asset('js/theme.min.js')}}"></script>

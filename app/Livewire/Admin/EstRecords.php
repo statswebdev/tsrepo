@@ -9,6 +9,11 @@ class EstRecords extends Component
 {
     public $recordname;
     public $collectionyear;
+    public $listestrecords = [];
+
+    public function mount(){
+        $this->listestrecords = EstRecord::all();
+    }
 
     public function submitRecord()
     {
