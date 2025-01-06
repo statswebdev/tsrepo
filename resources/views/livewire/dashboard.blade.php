@@ -1,8 +1,9 @@
 <div>
+    @if (session()->has('success'))
     <div class="container">
         <div class="row align-items-center justify-content-center g-0 h-lg-100">
             <div class="col-lg-12 col-md-12 py-3">
-                @if (session()->has('success'))
+                
                     <div class="alert alert-success d-flex align-items-center mt-3" role="alert" id="alert-success">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-check-circle-fill me-2" viewBox="0 0 16 16">
@@ -12,10 +13,11 @@
                         </svg>
                         <div>{{session('success')}}</div>
                     </div>
-                    @endif
+                    
             </div>
         </div>
     </div>
+    @endif
 
         @if (Auth::user()->role === 'user')
             <livewire:ests.list-records />
@@ -23,6 +25,7 @@
 
         @if (Auth::user()->role === 'admin')
             <livewire:admin.est-records />
+            <livewire:admin.list-ests />
         @endif
 
 </div>
