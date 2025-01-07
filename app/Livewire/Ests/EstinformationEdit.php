@@ -44,26 +44,26 @@ class EstinformationEdit extends Component
             'bedcapacity' => 'required|integer',
     ];
 
-    public function mount(EstInfo $model)
+    public function mount(EstInfo $estrecordid)
     {
-        $this->user_id = $model->user_id;
-        $this->est_record_id = $model->est_record_id;
-        $this->info_provider = $model->info_provider;
-        $this->contact_number = $model->contact_number;
-        $this->type_organisation = $model->type_organisation;
-        $this->operator_name = $model->operator_name;
-        $this->operator_register = $model->operator_register;
-        $this->owner_one = $model->owner_one;
-        $this->owner_two = $model->owner_two;
-        $this->operator_contact = $model->operator_contact;
-        $this->operator_email = $model->operator_email;
-        $this->government_share = $model->government_share;
-        $this->maldivian_share = $model->maldivian_share;
-        $this->foreign_share = $model->foreign_share;
-        $this->taxpayer_number = $model->taxpayer_number;
-        $this->establishment_regdate = $model->establishment_regdate;
-        $this->bedcapacity = $model->bedcapacity;
-        $this->status = $model->status;
+        $this->user_id = $estrecordid->user_id;
+        $this->est_record_id = $estrecordid->est_record_id;
+        $this->info_provider = $estrecordid->info_provider;
+        $this->contact_number = $estrecordid->contact_number;
+        $this->type_organisation = $estrecordid->type_organisation;
+        $this->operator_name = $estrecordid->operator_name;
+        $this->operator_register = $estrecordid->operator_register;
+        $this->owner_one = $estrecordid->owner_one;
+        $this->owner_two = $estrecordid->owner_two;
+        $this->operator_contact = $estrecordid->operator_contact;
+        $this->operator_email = $estrecordid->operator_email;
+        $this->government_share = $estrecordid->government_share;
+        $this->maldivian_share = $estrecordid->maldivian_share;
+        $this->foreign_share = $estrecordid->foreign_share;
+        $this->taxpayer_number = $estrecordid->taxpayer_number;
+        $this->establishment_regdate = $estrecordid->establishment_regdate;
+        $this->bedcapacity = $estrecordid->bedcapacity;
+        $this->status = $estrecordid->status;
     }
 
     public function save()
@@ -108,7 +108,8 @@ class EstinformationEdit extends Component
         ]);
         
 
-        session()->flash('message', 'Record updated successfully.');
+        session()->flash('success', 'Information Updated');
+        return redirect()->route('dashboard');
     }
 
     public function render()
