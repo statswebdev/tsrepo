@@ -65,26 +65,31 @@
                                     <span>1. Establishment Information</span>
                                 @endif 
                                 <a href="{{ route('estinfo', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estinfo', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center">
                                 <span>2. Operations</span>
                                 <a href="{{ route('estopera', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estopera', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center mb-3">
                                 <span>3. Employment Information P1</span>
                                 <a href="{{ route('estempone', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estempone', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center mb-3">
                                 <span>3. Employment Information P2</span>
                                 <a href="{{ route('estemptwo', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estemptwo', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center mb-3">
                                 <span>4. Production & Consumption </span>
                                 <a href="{{ route('estprod', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estprod', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center mb-3">

@@ -12,7 +12,7 @@ class EstablishmentOperation extends Component
    
     public $user_id;
     public $est_record_id;
-    public $months_operated;
+    public $months_operated = [];
     public $rooms_yearend;
     public $beds_yearend;
     public $roomnights_sold;
@@ -42,7 +42,7 @@ class EstablishmentOperation extends Component
         EstOpera::create([ // Use the aliased model
             'user_id' => $this->user_id,
             'est_record_id' => $this->est_record_id->id,
-            'months_operated' => $this->months_operated,
+            'months_operated' => json_encode($this->months_operated),
             'rooms_yearend' => $this->rooms_yearend,
             'beds_yearend' => $this->beds_yearend,
             'roomnights_sold' => $this->roomnights_sold,

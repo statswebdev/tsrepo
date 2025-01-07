@@ -14,7 +14,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                             <!-- Form -->
-                            <form wire:submit.prevent="submitRecord" class="row">
+                            <form wire:submit.prevent="save" class="row">
 
 
 
@@ -482,7 +482,7 @@
                                 
                                 <div class="mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
-                                    Submit
+                                    Update
                                 </button>
                                 </div>
                             </form>

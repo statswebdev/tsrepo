@@ -46,7 +46,7 @@ class EstablishmentFuel extends Component
             'energy_storage' => 'required|string',
             'energy_storage_power' => 'required|integer',
             'energy_storage_kwh' => 'required|integer',
-            'energy_storage_other' => 'required|string',
+            'energy_storage_other' => 'nullable|string',
             'energy_storage_othertype' => 'nullable|string',
             'energy_storage_othercapacity' => 'nullable|integer',
             'solar_waterheating' => 'required|integer',
