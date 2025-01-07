@@ -107,6 +107,7 @@
                               <span class="d-flex justify-content-between align-items-center mb-3">
                                 <span>7. Electricity </span>
                                 <a href="{{ route('estelec', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estelec', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center mb-3">

@@ -10,6 +10,7 @@ use App\Livewire\Dashboard;
 use App\Livewire\Ests\EstablishmentAgricultural;
 use App\Livewire\Ests\EstablishmentAgriculturalEdit;
 use App\Livewire\Ests\EstablishmentElectricity;
+use App\Livewire\Ests\EstablishmentElectricityEdit;
 use App\Livewire\Ests\EstablishmentEmploymentone;
 use App\Livewire\Ests\EstablishmentEmploymentoneEdit;
 use App\Livewire\Ests\EstablishmentEmploymenttwo;
@@ -71,6 +72,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/ests/establishfish/{estrecordid}', EstablishmentFish::class)->name('estfish');
     Route::get('/ests/edit-establishfish/{estrecordid}', EstablishmentFishEdit::class)->name('edit-estfish');
     Route::get('/ests/establishelectricity/{estrecordid}', EstablishmentElectricity::class)->name('estelec');
+    Route::get('/ests/edit-establishelectricity/{estrecordid}', EstablishmentElectricityEdit::class)->name('edit-estelec');
     Route::get('/ests/establishfuel/{estrecordid}', EstablishmentFuel::class)->name('estfuel');
     Route::get('/ests/establishfuelconsumption/{estrecordid}', EstablishmentFuelconsumption::class)->name('estfuelconsumption');
     Route::get('/ests/establishotherservice/{estrecordid}', EstablishmentOtherservices::class)->name('estotherservice');
