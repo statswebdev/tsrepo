@@ -173,7 +173,7 @@
                                     </div>
                                 </div>
 
-                                <hr>
+                                <hr class="mt-5 mb-5">
 
                                 <h5>2. Electric Power Generation by sources (kWh)</h5>
                                 <small class="mb-5">Enter the values in kWh for the reporting year</small>
@@ -432,7 +432,7 @@
                         </div>
   
 
-                                <hr>
+                                <hr class="mt-5 mb-5">
 
                                 <h5>3. Electricity Demand</h5>
                                 <small class="mb-5">Electricity Demand for the reporting year (kW)</small>
@@ -588,10 +588,8 @@
                                 @error('demand_dec_min')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
+                        <hr class="mt-5 mb-5">
 
-
-
-                                
 
 
                                 <div class="mt-3 mb-3 col-12 col-md-12">

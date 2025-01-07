@@ -95,11 +95,13 @@
                             <span class="d-flex justify-content-between align-items-center mb-3">
                                 <span>5. Agricultural Products </span>
                                 <a href="{{ route('estagri', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estagri', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                               <span class="d-flex justify-content-between align-items-center mb-3">
                                 <span>6. Fish Products </span>
                                 <a href="{{ route('estfish', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estfish', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                               <span class="d-flex justify-content-between align-items-center mb-3">
@@ -113,7 +115,7 @@
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>9. Fuel Consumption </span>
+                                <span>9. Fuel Inventory </span>
                                 <a href="{{ route('estfuelconsumption', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
                             </span>
                             <hr>

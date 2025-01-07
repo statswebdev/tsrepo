@@ -310,7 +310,7 @@ class EstablishmentEmploymentoneEdit extends Component
             'bylevelother_maldivian_female' => $this->bylevelother_maldivian_female,
             'bylevelother_foreign_male' => $this->bylevelother_foreign_male,
             'bylevelother_foreign_female' => $this->bylevelother_foreign_female,
-            'status' => $this->status,
+            'status' => 'completed',
         ]);
         
         

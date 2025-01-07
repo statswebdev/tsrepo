@@ -233,7 +233,7 @@ class EstablishmentProductionEdit extends Component
             'metal_waste_method' => json_encode($this->metal_waste_method),
             'other_waste' => $this->other_waste,
             'other_waste_method' => json_encode($this->other_waste_method),
-            'status' => $this->status,
+            'status' => 'completed',
         ]);
        
         

@@ -14,7 +14,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                             <!-- Form -->
-                            <form wire:submit.prevent="submitRecord" class="row">
+                            <form wire:submit.prevent="save" class="row">
                                 
                                 <h5>1. Agricultural Products Inhouse Grown</h5>
                                 <small class="mb-5">Enter the quantity of agricultural products grown inhouse</small>
@@ -633,7 +633,7 @@
 
                                 <div class="mb-3 mt-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
-                                    Submit
+                                    Update
                                 </button>
                                 </div>
                             </form>

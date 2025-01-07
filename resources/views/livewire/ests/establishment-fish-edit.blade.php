@@ -14,7 +14,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                             <!-- Form -->
-                            <form wire:submit.prevent="submitRecord" class="row">
+                            <form wire:submit.prevent="save" class="row">
 
                                 <h5>1. Fish Products</h5>
                                 <small class="mb-5">Enter the quantity of Fish catch</small>
@@ -243,7 +243,7 @@
                                
                                 <div class="mt-3 mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
-                                    Submit
+                                    Update
                                 </button>
                                 </div>
                             </form>

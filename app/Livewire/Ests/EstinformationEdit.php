@@ -84,6 +84,7 @@ class EstinformationEdit extends Component
             'taxpayer_number' => 'required|string',
             'establishment_regdate' => 'required|date',
             'bedcapacity' => 'required|integer',
+            'status' => 'required|string',
         ]);
 
         EstInfo::where('id', $this->est_record_id)->update([
@@ -104,11 +105,11 @@ class EstinformationEdit extends Component
             'taxpayer_number' => $this->taxpayer_number,
             'establishment_regdate' => $this->establishment_regdate,
             'bedcapacity' => $this->bedcapacity,
-            'status' => $this->status,
+            'status' => 'completed',
         ]);
         
 
-        session()->flash('success', 'Information Updated');
+        session()->flash('success', 'Establishment Information Updated');
         return redirect()->route('dashboard');
     }
 

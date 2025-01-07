@@ -18,7 +18,7 @@ class EstablishmentOperation extends Component
     public $roomnights_sold;
     public $bednights_sold;
     public $roomrate_annual;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

@@ -28,7 +28,7 @@ return new class extends Migration
             $table->integer('maldivian_share');
             $table->integer('foreign_share');
             $table->string('taxpayer_number');
-            $table->dateTime('establishment_regdate');
+            $table->date('establishment_regdate');
             $table->integer('bedcapacity');
             $table->string('status');
             $table->timestamps();

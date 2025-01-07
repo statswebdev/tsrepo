@@ -58,7 +58,8 @@ class EstablishmentOperationEdit extends Component
             'roomnights_sold' => $this->roomnights_sold,
             'bednights_sold' => $this->bednights_sold,
             'roomrate_annual' => $this->roomrate_annual,
-            'status' => $this->status,
+            'status' => 'completed',
+
         ]);
         
 
