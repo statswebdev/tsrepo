@@ -15,108 +15,161 @@
                             <div class="card-body">
                             <!-- Form -->
                             <form wire:submit.prevent="submitRecord" class="row">
-                                
-                                
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_boarding">Income Boarding</label>
-                                    <input type="number" id="income_boarding" class="form-control" placeholder="Income Boarding" wire:model="income_boarding">
+
+                                <h5>1. Income</h5>
+                                <small class="mb-5">The total earnings (with breakdown) a company generates through its operations</small>
+
+                                <div class="row mb-2">
+                                    <div class="col-sm-6"></div>
+                                    <div class="col-sm-3 text-center"><label>Accounting Year</label></div> 
+                                    
+ 
+                            </div>
+
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Boarding and lodging services (excluding GST)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_boarding" class="form-control" placeholder="MVR" wire:model="income_boarding">
                                     @error('income_boarding')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_food">Income Food</label>
-                                    <input type="number" id="income_food" class="form-control" placeholder="Income Food" wire:model="income_food">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Food (Including mini bar)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_food" class="form-control" placeholder="MVR" wire:model="income_food">
                                     @error('income_food')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_beverage">Income Beverage</label>
-                                    <input type="number" id="income_beverage" class="form-control" placeholder="Income Beverage" wire:model="income_beverage">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Beverage (Including mini bar)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_beverage" class="form-control" placeholder="MVR" wire:model="income_beverage">
                                     @error('income_beverage')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_catering">Income Catering</label>
-                                    <input type="number" id="income_catering" class="form-control" placeholder="Income Catering" wire:model="income_catering">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Catering services</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_catering" class="form-control" placeholder="MVR" wire:model="income_catering">
                                     @error('income_catering')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_transport">Income Transport</label>
-                                    <input type="number" id="income_transport" class="form-control" placeholder="Income Transport" wire:model="income_transport">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Transfer of guests / Transportation</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_transport" class="form-control" placeholder="MVR" wire:model="income_transport">
                                     @error('income_transport')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_spa">Income Spa</label>
-                                    <input type="number" id="income_spa" class="form-control" placeholder="Income Spa" wire:model="income_spa">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Spa Income</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_spa" class="form-control" placeholder="MVR" wire:model="income_spa">
                                     @error('income_spa')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_laundry">Income Laundry</label>
-                                    <input type="number" id="income_laundry" class="form-control" placeholder="Income Laundry" wire:model="income_laundry">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Laundry service</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_laundry" class="form-control" placeholder="MVR" wire:model="income_laundry">
                                     @error('income_laundry')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_servicecharge">Income Service Charge</label>
-                                    <input type="number" id="income_servicecharge" class="form-control" placeholder="Income Service Charge" wire:model="income_servicecharge">
+                            </div>
+                            
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Service charge</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_servicecharge" class="form-control" placeholder="MVR" wire:model="income_servicecharge">
                                     @error('income_servicecharge')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_excursion">Income Excursion</label>
-                                    <input type="number" id="income_excursion" class="form-control" placeholder="Income Excursion" wire:model="income_excursion">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Excursion income (State the income If operated by the resort/safari, otherwise state only the margin)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_excursion" class="form-control" placeholder="MVR" wire:model="income_excursion">
                                     @error('income_excursion')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_watersports">Income Water Sports</label>
-                                    <input type="number" id="income_watersports" class="form-control" placeholder="Income Water Sports" wire:model="income_watersports">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Diving and water sports (If operated by the resort/safari)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_watersports" class="form-control" placeholder="MVR" wire:model="income_watersports">
                                     @error('income_watersports')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_watersports_third">Income Water Sports (Third Party)</label>
-                                    <input type="number" id="income_watersports_third" class="form-control" placeholder="Income Water Sports (Third Party)" wire:model="income_watersports_third">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Diving and water sports operated by third parties (excluding rent)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_watersports_third" class="form-control" placeholder="MVR" wire:model="income_watersports_third">
                                     @error('income_watersports_third')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_retailshop">Income Retail Shop</label>
-                                    <input type="number" id="income_retailshop" class="form-control" placeholder="Income Retail Shop" wire:model="income_retailshop">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end">Retail sales of shops (If operated by the resort)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_retailshop" class="form-control" placeholder="MVR" wire:model="income_retailshop">
                                     @error('income_retailshop')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_retailshop_third">Income Retail Shop (Third Party)</label>
-                                    <input type="number" id="income_retailshop_third" class="form-control" placeholder="Income Retail Shop (Third Party)" wire:model="income_retailshop_third">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_retailshop_third">Shop Income operated by third parties (excluding rent)</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_retailshop_third" class="form-control" placeholder="MVR" wire:model="income_retailshop_third">
                                     @error('income_retailshop_third')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_exchange">Income Exchange</label>
-                                    <input type="number" id="income_exchange" class="form-control" placeholder="Income Exchange" wire:model="income_exchange">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_exchange">Foreign exchange gain</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_exchange" class="form-control" placeholder="MVR" wire:model="income_exchange">
                                     @error('income_exchange')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_commission">Income Commission</label>
-                                    <input type="number" id="income_commission" class="form-control" placeholder="Income Commission" wire:model="income_commission">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_commission">Commissions</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_commission" class="form-control" placeholder="MVR" wire:model="income_commission">
                                     @error('income_commission')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_managementfee">Income Management Fee</label>
-                                    <input type="number" id="income_managementfee" class="form-control" placeholder="Income Management Fee" wire:model="income_managementfee">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_commission">Management fee</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_managementfee" class="form-control" placeholder="MVR" wire:model="income_managementfee">
                                     @error('income_managementfee')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_lease">Income Lease</label>
-                                    <input type="number" id="income_lease" class="form-control" placeholder="Income Lease" wire:model="income_lease">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_commission">Lease income</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_lease" class="form-control" placeholder="MVR" wire:model="income_lease">
                                     @error('income_lease')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_finance">Income Finance</label>
-                                    <input type="number" id="income_finance" class="form-control" placeholder="Income Finance" wire:model="income_finance">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_commission">Finance income</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_finance" class="form-control" placeholder="MVR" wire:model="income_finance">
                                     @error('income_finance')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_dividend">Income Dividend</label>
-                                    <input type="number" id="income_dividend" class="form-control" placeholder="Income Dividend" wire:model="income_dividend">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_commission">Dividend Income</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_dividend" class="form-control" placeholder="MVR" wire:model="income_dividend">
                                     @error('income_dividend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="income_other">Income Other</label>
-                                    <input type="number" id="income_other" class="form-control" placeholder="Income Other" wire:model="income_other">
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-6 text-end" for="income_commission">Other Income</label>
+                                <div class="col-sm-3">
+                                    <input type="number" id="income_other" class="form-control" placeholder="MVR" wire:model="income_other">
                                     @error('income_other')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
+                            </div>
+                            <hr class="mb-5 mt-5">
+
+
                                 <div class="mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
                                     Submit

@@ -40,45 +40,65 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Diesel</label>
                     <div class="col-sm-3">
-                        <input type="number" id="diesel_bought_qty" class="form-control" placeholder="Diesel Bought Quantity" wire:model="diesel_bought_qty">
+                        <input type="number" id="diesel_bought_qty" class="form-control" placeholder="Quantity" wire:model="diesel_bought_qty">
                                     @error('diesel_bought_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="diesel_bought_year" class="form-control" placeholder="Diesel Bought Year" wire:model="diesel_bought_year">
-                                    @error('diesel_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="diesel_bought_year" class="form-control" wire:model="diesel_bought_year">
+                            <option value="">Select</option>
+                            <option value="yes">Liter</option>
+                            <option value="yes">KG</option>
+                            <option value="no">MT</option>
+                        </select>
+                        @error('diesel_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Petrol</label>
                     <div class="col-sm-3">
-                        <input type="number" id="petrol_bought_qty" class="form-control" placeholder="Petrol Bought Quantity" wire:model="petrol_bought_qty">
+                        <input type="number" id="petrol_bought_qty" class="form-control" placeholder="Quantity" wire:model="petrol_bought_qty">
                                     @error('petrol_bought_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="petrol_bought_year" class="form-control" placeholder="Petrol Bought Year" wire:model="petrol_bought_year">
-                                    @error('petrol_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="petrol_bought_year" class="form-control" wire:model="petrol_bought_year">
+                            <option value="">Select</option>
+                            <option value="yes">Liter</option>
+                            <option value="yes">KG</option>
+                            <option value="no">MT</option>
+                        </select>
+                        @error('petrol_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">LPG</label>
                     <div class="col-sm-3">
-                        <input type="number" id="lpg_bought_qty" class="form-control" placeholder="LPG Bought Quantity" wire:model="lpg_bought_qty">
+                        <input type="number" id="lpg_bought_qty" class="form-control" placeholder="Quantity" wire:model="lpg_bought_qty">
                                     @error('lpg_bought_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="lpg_bought_year" class="form-control" placeholder="LPG Bought Year" wire:model="lpg_bought_year">
-                                    @error('lpg_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="lpg_bought_year" class="form-control" wire:model="lpg_bought_year">
+                            <option value="">Select</option>
+                            <option value="yes">Liter</option>
+                            <option value="yes">KG</option>
+                            <option value="no">MT</option>
+                        </select>
+                        @error('lpg_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
                 <div class="form-group row mb-2">
-                    <label class="col-form-label col-sm-2 text-end">Other</label>
+                    <label class="col-form-label col-sm-2 text-end">Others</label>
                     <div class="col-sm-3">
-                        <input type="number" id="other_bought_qty" class="form-control" placeholder="Other Bought Quantity" wire:model="other_bought_qty">
+                        <input type="number" id="other_bought_qty" class="form-control" placeholder="Quantity" wire:model="other_bought_qty">
                                     @error('other_bought_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="other_bought_year" class="form-control" placeholder="Other Bought Year" wire:model="other_bought_year">
-                                    @error('other_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="other_bought_year" class="form-control" wire:model="other_bought_year">
+                            <option value="">Select</option>
+                            <option value="yes">Liter</option>
+                            <option value="yes">KG</option>
+                            <option value="no">MT</option>
+                        </select>
+                        @error('other_bought_year')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
 
@@ -107,45 +127,60 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Diesel</label>
                     <div class="col-sm-3">
-                        <input type="text" id="diesel_inventory_unit" class="form-control" placeholder="Diesel Inventory Unit" wire:model="diesel_inventory_unit">
-                                    @error('diesel_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="diesel_inventory_unit" class="form-control" wire:model="diesel_inventory_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('diesel_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="diesel_inventory_yearfirst" class="form-control" placeholder="Diesel Inventory Year First" wire:model="diesel_inventory_yearfirst">
+                        <input type="number" id="diesel_inventory_yearfirst" class="form-control" placeholder="Qty Year First" wire:model="diesel_inventory_yearfirst">
                                     @error('diesel_inventory_yearfirst')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="diesel_inventory_yearend" class="form-control" placeholder="Diesel Inventory Year End" wire:model="diesel_inventory_yearend">
+                        <input type="number" id="diesel_inventory_yearend" class="form-control" placeholder="Qty Year End" wire:model="diesel_inventory_yearend">
                                     @error('diesel_inventory_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Petrol</label>
                     <div class="col-sm-3">
-                        <input type="text" id="petrol_inventory_unit" class="form-control" placeholder="Petrol Inventory Unit" wire:model="petrol_inventory_unit">
-                                    @error('petrol_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="petrol_inventory_unit" class="form-control" wire:model="petrol_inventory_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('petrol_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="petrol_inventory_yearfirst" class="form-control" placeholder="Petrol Inventory Year First" wire:model="petrol_inventory_yearfirst">
+                        <input type="number" id="petrol_inventory_yearfirst" class="form-control" placeholder="Qty Year First" wire:model="petrol_inventory_yearfirst">
                                     @error('petrol_inventory_yearfirst')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="petrol_inventory_yearend" class="form-control" placeholder="Petrol Inventory Year End" wire:model="petrol_inventory_yearend">
+                        <input type="number" id="petrol_inventory_yearend" class="form-control" placeholder="Qty Year End" wire:model="petrol_inventory_yearend">
                                     @error('petrol_inventory_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">LPG</label>
                     <div class="col-sm-3">
-                        <input type="text" id="lpg_inventory_unit" class="form-control" placeholder="LPG Inventory Unit" wire:model="lpg_inventory_unit">
-                                    @error('lpg_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="lpg_inventory_unit" class="form-control" wire:model="lpg_inventory_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('lpg_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="lpg_inventory_unit_yearfirst" class="form-control" placeholder="LPG Inventory Unit Year First" wire:model="lpg_inventory_unit_yearfirst">
+                        <input type="number" id="lpg_inventory_unit_yearfirst" class="form-control" placeholder="Qty Year First" wire:model="lpg_inventory_unit_yearfirst">
                                     @error('lpg_inventory_unit_yearfirst')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="lpg_inventory_unit_yearend" class="form-control" placeholder="LPG Inventory Unit Year End" wire:model="lpg_inventory_unit_yearend">
+                        <input type="number" id="lpg_inventory_unit_yearend" class="form-control" placeholder="Qty Year End" wire:model="lpg_inventory_unit_yearend">
                                     @error('lpg_inventory_unit_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -156,15 +191,20 @@
                                 @error('other_inventory_specify')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" id="other_inventory_unit" class="form-control" placeholder="Other Inventory Unit" wire:model="other_inventory_unit">
-                                    @error('other_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="other_inventory_unit" class="form-control" wire:model="other_inventory_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('other_inventory_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="other_inventory_unit_yearfirst" class="form-control" placeholder="Other Inventory Unit Year First" wire:model="other_inventory_unit_yearfirst">
+                        <input type="number" id="other_inventory_unit_yearfirst" class="form-control" placeholder="Qty Year First" wire:model="other_inventory_unit_yearfirst">
                                     @error('other_inventory_unit_yearfirst')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="other_inventory_unit_yearend" class="form-control" placeholder="Other Inventory Unit Year End" wire:model="other_inventory_unit_yearend">
+                        <input type="number" id="other_inventory_unit_yearend" class="form-control" placeholder="Qty Year End" wire:model="other_inventory_unit_yearend">
                                     @error('other_inventory_unit_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -195,19 +235,29 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Electricity Generation</label>
                     <div class="col-sm-2">
-                        <input type="text" id="diesel_electricity_unit" class="form-control" placeholder="Diesel Electricity Unit" wire:model="diesel_electricity_unit">
-                                    @error('diesel_electricity_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="diesel_electricity_unit" class="form-control" wire:model="diesel_electricity_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('diesel_electricity_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="diesel_electricity_qty" class="form-control" placeholder="Diesel Electricity Quantity" wire:model="diesel_electricity_qty">
+                        <input type="number" id="diesel_electricity_qty" class="form-control" placeholder="Quantity" wire:model="diesel_electricity_qty">
                                     @error('diesel_electricity_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="text" id="petrol_electricity_unit" class="form-control" placeholder="Petrol Electricity Unit" wire:model="petrol_electricity_unit">
-                                    @error('petrol_electricity_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="petrol_electricity_unit" class="form-control" wire:model="petrol_electricity_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('petrol_electricity_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="petrol_electricity_qty" class="form-control" placeholder="Petrol Electricity Quantity" wire:model="petrol_electricity_qty">
+                        <input type="number" id="petrol_electricity_qty" class="form-control" placeholder="Quantity" wire:model="petrol_electricity_qty">
                                     @error('petrol_electricity_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     
@@ -216,19 +266,29 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Desalination</label>
                     <div class="col-sm-2">
-                        <input type="text" id="diesel_desalination_unit" class="form-control" placeholder="Diesel Desalination Unit" wire:model="diesel_desalination_unit">
-                                    @error('diesel_desalination_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="diesel_desalination_unit" class="form-control" wire:model="diesel_desalination_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('diesel_desalination_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="diesel_desalination_qty" class="form-control" placeholder="Diesel Desalination Quantity" wire:model="diesel_desalination_qty">
+                        <input type="number" id="diesel_desalination_qty" class="form-control" placeholder="Quantity" wire:model="diesel_desalination_qty">
                                     @error('diesel_desalination_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="text" id="petrol_desalination_unit" class="form-control" placeholder="Petrol Desalination Unit" wire:model="petrol_desalination_unit">
-                                    @error('petrol_desalination_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="petrol_desalination_unit" class="form-control" wire:model="petrol_desalination_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('petrol_desalination_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="petrol_desalination_qty" class="form-control" placeholder="Petrol Desalination Quantity" wire:model="petrol_desalination_qty">
+                        <input type="number" id="petrol_desalination_qty" class="form-control" placeholder="Quantity" wire:model="petrol_desalination_qty">
                                     @error('petrol_desalination_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     
@@ -236,19 +296,29 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Transport Sea</label>
                     <div class="col-sm-2">
-                        <input type="text" id="diesel_transportsea_unit" class="form-control" placeholder="Diesel Transport Sea Unit" wire:model="diesel_transportsea_unit">
-                                    @error('diesel_transportsea_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="diesel_transportsea_unit" class="form-control" wire:model="diesel_transportsea_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('diesel_transportsea_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="diesel_transportsea_qty" class="form-control" placeholder="Diesel Transport Sea Quantity" wire:model="diesel_transportsea_qty">
+                        <input type="number" id="diesel_transportsea_qty" class="form-control" placeholder="Quantity" wire:model="diesel_transportsea_qty">
                                     @error('diesel_transportsea_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="text" id="petrol_transportsea_unit" class="form-control" placeholder="Petrol Transport Sea Unit" wire:model="petrol_transportsea_unit">
-                                    @error('petrol_transportsea_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="petrol_transportsea_unit" class="form-control" wire:model="petrol_transportsea_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('petrol_transportsea_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="petrol_transportsea_qty" class="form-control" placeholder="Petrol Transport Sea Quantity" wire:model="petrol_transportsea_qty">
+                        <input type="number" id="petrol_transportsea_qty" class="form-control" placeholder=" Quantity" wire:model="petrol_transportsea_qty">
                                     @error('petrol_transportsea_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     
@@ -256,19 +326,29 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Transport Land</label>
                     <div class="col-sm-2">
-                        <input type="text" id="diesel_transportland_unit" class="form-control" placeholder="Diesel Transport Land Unit" wire:model="diesel_transportland_unit">
-                                    @error('diesel_transportland_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="diesel_transportland_unit" class="form-control" wire:model="diesel_transportland_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('diesel_transportland_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="diesel_transportland_qty" class="form-control" placeholder="Diesel Transport Land Quantity" wire:model="diesel_transportland_qty">
+                        <input type="number" id="diesel_transportland_qty" class="form-control" placeholder="Quantity" wire:model="diesel_transportland_qty">
                                     @error('diesel_transportland_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="text" id="petrol_transportland_unit" class="form-control" placeholder="Petrol Transport Land Unit" wire:model="petrol_transportland_unit">
-                                    @error('petrol_transportland_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="petrol_transportland_unit" class="form-control" wire:model="petrol_transportland_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('petrol_transportland_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="petrol_transportland_qty" class="form-control" placeholder="Petrol Transport Land Quantity" wire:model="petrol_transportland_qty">
+                        <input type="number" id="petrol_transportland_qty" class="form-control" placeholder="Quantity" wire:model="petrol_transportland_qty">
                                     @error('petrol_transportland_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     
@@ -276,19 +356,29 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Cooking</label>
                     <div class="col-sm-2">
-                        <input type="text" id="diesel_cooking_unit" class="form-control" placeholder="Diesel Cooking Unit" wire:model="diesel_cooking_unit">
-                                    @error('diesel_cooking_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="diesel_cooking_unit" class="form-control" wire:model="diesel_cooking_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('diesel_cooking_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="diesel_cooking_qty" class="form-control" placeholder="Diesel Cooking Quantity" wire:model="diesel_cooking_qty">
+                        <input type="number" id="diesel_cooking_qty" class="form-control" placeholder="Quantity" wire:model="diesel_cooking_qty">
                                     @error('diesel_cooking_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="text" id="petrol_cooking_unit" class="form-control" placeholder="Petrol Cooking Unit" wire:model="petrol_cooking_unit">
-                                    @error('petrol_cooking_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="petrol_cooking_unit" class="form-control" wire:model="petrol_cooking_unit">
+                            <option value="">Select</option>
+                            <option value="Liter">Liter</option>
+                            <option value="KG">KG</option>
+                            <option value="MT">MT</option>
+                        </select>
+                        @error('petrol_cooking_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-2">
-                        <input type="number" id="petrol_cooking_qty" class="form-control" placeholder="Petrol Cooking Quantity" wire:model="petrol_cooking_qty">
+                        <input type="number" id="petrol_cooking_qty" class="form-control" placeholder="Quantity" wire:model="petrol_cooking_qty">
                                     @error('petrol_cooking_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     
@@ -313,11 +403,16 @@
                             
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" id="lpg_cooking_unit" class="form-control" placeholder="LPG Cooking Unit" wire:model="lpg_cooking_unit">
-                                    @error('lpg_cooking_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                    <select id="lpg_cooking_unit" class="form-control" wire:model="lpg_cooking_unit">
+                        <option value="">Select</option>
+                        <option value="Liter">Liter</option>
+                        <option value="KG">KG</option>
+                        <option value="MT">MT</option>
+                    </select>
+                    @error('lpg_cooking_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                 <div class="col-sm-2">
-                    <input type="number" id="lpg_cooking_qty" class="form-control" placeholder="LPG Cooking Quantity" wire:model="lpg_cooking_qty">
+                    <input type="number" id="lpg_cooking_qty" class="form-control" placeholder="qty" wire:model="lpg_cooking_qty">
                                     @error('lpg_cooking_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                
@@ -327,15 +422,20 @@
             <div class="form-group row mb-2">
                 <label class="col-form-label col-sm-2 text-end">Other (Diesel)</label>
                 <div class="col-sm-2">
-                    <input type="text" id="diesel_other_fuelconsumption" class="form-control" placeholder="Diesel Other Fuel Consumption" wire:model="diesel_other_fuelconsumption">
+                    <input type="text" id="diesel_other_fuelconsumption" class="form-control" placeholder="Specify Use" wire:model="diesel_other_fuelconsumption">
                                     @error('diesel_other_fuelconsumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" id="diesel_other_fuelconsumption_unit" class="form-control" placeholder="Diesel Other Fuel Consumption Unit" wire:model="diesel_other_fuelconsumption_unit">
-                                    @error('diesel_other_fuelconsumption_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                    <select id="diesel_other_fuelconsumption_unit" class="form-control" wire:model="diesel_other_fuelconsumption_unit">
+                        <option value="">Select</option>
+                        <option value="Liter">Liter</option>
+                        <option value="KG">KG</option>
+                        <option value="MT">MT</option>
+                    </select>
+                    @error('diesel_other_fuelconsumption_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                 <div class="col-sm-2">
-                    <input type="number" id="diesel_other_fuelconsumption_qty" class="form-control" placeholder="Diesel Other Fuel Consumption Quantity" wire:model="diesel_other_fuelconsumption_qty">
+                    <input type="number" id="diesel_other_fuelconsumption_qty" class="form-control" placeholder="qty" wire:model="diesel_other_fuelconsumption_qty">
                                     @error('diesel_other_fuelconsumption_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                
@@ -344,15 +444,20 @@
             <div class="form-group row mb-2">
                 <label class="col-form-label col-sm-2 text-end">Other (Petrol)</label>
                 <div class="col-sm-2">
-                    <input type="text" id="petrol_other_fuelconsumption" class="form-control" placeholder="Petrol Other Fuel Consumption" wire:model="petrol_other_fuelconsumption">
+                    <input type="text" id="petrol_other_fuelconsumption" class="form-control" placeholder="Specify Use" wire:model="petrol_other_fuelconsumption">
                                     @error('petrol_other_fuelconsumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" id="petrol_other_fuelconsumption_unit" class="form-control" placeholder="Petrol Other Fuel Consumption Unit" wire:model="petrol_other_fuelconsumption_unit">
-                                    @error('petrol_other_fuelconsumption_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                    <select id="petrol_other_fuelconsumption_unit" class="form-control" wire:model="petrol_other_fuelconsumption_unit">
+                        <option value="">Select</option>
+                        <option value="Liter">Liter</option>
+                        <option value="KG">KG</option>
+                        <option value="MT">MT</option>
+                    </select>
+                    @error('petrol_other_fuelconsumption_unit')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                 <div class="col-sm-2">
-                    <input type="number" id="petrol_other_fuelconsumption_qty" class="form-control" placeholder="Petrol Other Fuel Consumption Quantity" wire:model="petrol_other_fuelconsumption_qty">
+                    <input type="number" id="petrol_other_fuelconsumption_qty" class="form-control" placeholder="qty" wire:model="petrol_other_fuelconsumption_qty">
                                     @error('petrol_other_fuelconsumption_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                 </div>
                
