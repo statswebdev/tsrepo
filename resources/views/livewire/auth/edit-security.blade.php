@@ -1,0 +1,155 @@
+<div>
+
+    <section class="pt-6">
+        <div class="container"> 
+            <div class="row">
+                @if (session()->has('updated'))
+                    <div class="alert alert-success d-flex align-items-center" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-check-circle-fill me-2" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z">
+                            </path>
+                        </svg>
+                        <div>{{session('updated')}}</div>
+                    </div>
+                    @endif
+                <!-- row -->
+                <div class="col-md-6">
+                    <!-- heading -->
+                    <h1 class="display-4 fw-bold">Edit Security</h1>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+
+    <section class="pt-5 pb-5">
+        <div class="container">
+          <!-- User info -->
+          <div class="row align-items-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+              <!-- Bg -->
+              <div class="rounded-top" style="background: url(https://geeksui.codescandy.com/geeks/assets/images/background/profile-bg.jpg) no-repeat; background-size: cover; height: 100px"></div>
+              <div class="card px-4 pt-2 pb-4 shadow-sm rounded-top-0 rounded-bottom-0 rounded-bottom-md-2">
+                <div class="d-flex align-items-end justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2 position-relative d-flex justify-content-end align-items-end mt-n5">
+                      <img src="https://geeksui.codescandy.com/geeks/assets/images/svg/price-icon-2.svg" class="avatar-xl rounded-circle border border-4 border-white" alt="avatar">
+                    </div>
+                    <div class="lh-1">
+                      <h2 class="mb-0">
+                        {{ $user->estname }}    
+                      </h2>
+                      <p class="mb-0 d-block">{{ $user->esttype }}</p>
+                    </div>
+                  </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="row mt-0 mt-md-4">
+            <div class="col-lg-3 col-md-4 col-12">
+              <!-- Side navbar -->
+              <nav class="navbar navbar-expand-md shadow-sm mb-4 mb-lg-0 sidenav">
+                <!-- Menu -->
+                <a class="d-xl-none d-lg-none d-md-none text-inherit fw-bold" href="#">Menu</a>
+                <!-- Button -->
+                <button class="navbar-toggler d-md-none icon-shape icon-sm rounded bg-primary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#sidenav" aria-controls="sidenav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="fe fe-menu"></span>
+                </button>
+                <!-- Collapse navbar -->
+                <div class="collapse navbar-collapse" id="sidenav">
+                  <div class="navbar-nav flex-column">
+                    <span class="navbar-header">Account Settings</span>
+                    <!-- List -->
+                    <ul class="list-unstyled ms-n2 mb-0">
+                      <!-- Nav item -->
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ route('edit.profile') }}">
+                          <i class="fe fe-settings nav-icon"></i>
+                          Edit Profile
+                        </a>
+                      </li>
+                      <!-- Nav item -->
+                      <li class="nav-item active">
+                        <a class="nav-link" href="{{ route('edit.security') }}">
+                          <i class="fe fe-user nav-icon"></i>
+                          Security
+                        </a>
+                      </li>
+                      <!-- Nav item -->
+                      <li class="nav-item">
+                        <a class="nav-link" wire:click="logout" role="button">
+                          <i class="fe fe-power nav-icon"></i>
+                          Sign Out
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div class="col-lg-9 col-md-8 col-12">
+              <!-- Card -->
+              <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                    <h3 class="mb-0">Security</h3>
+                    <p class="mb-0">Edit your account settings and change your password here.</p>
+                </div>
+                <!-- Card body -->
+                <div class="card-body">
+                    <h4 class="mb-0">Email Address</h4>
+                    <p>
+                      Your current email address is
+                      <span class="text-success">{{ $user->email }}</span>
+                    </p>
+                    
+                    <hr class="my-5">
+                    <div>
+                      <h4 class="mb-0">Change Password</h4>
+                      <p>We will email you a confirmation when changing your password, so please expect that email after submitting.</p>
+                      <!-- Form -->
+                      <form wire:submit.prevent="updateSecurity">
+                        <div class="col-lg-6 col-md-12 col-12">
+                          <!-- Current password -->
+                          <div class="mb-3">
+                            <label class="form-label" for="securityCurrentPass">Current password</label>
+                            <input id="securityCurrentPass" type="password" name="securityCurrentPass" class="form-control" wire:model="current_pass">
+                            @error('current_pass')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                          </div>
+                          <!-- New password -->
+                          <div class="mb-3 password-field">
+                            <label class="form-label" for="securityNewPass">New password</label>
+                            <input id="securityNewPass" type="password" name="securityNewPass" class="form-control mb-2" wire:model="password">
+                            @error('password')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            <div class="row align-items-center g-0">
+                              <div class="col-6">
+                                <span data-bs-toggle="tooltip" data-placement="right" data-bs-original-title="Test it by typing a password in the field below. To reach full strength, use at least 6 characters, a capital letter and a digit, e.g. 'Test01'">
+                                  Password strength
+                                  <i class="fe fe-help-circle ms-1"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <!-- Confirm new password -->
+                            <label class="form-label" for="securityConfirmPass">Confirm New Password</label>
+                            <input id="securityConfirmPass" type="password" name="securityConfirmPass" class="form-control mb-2" wire:model="password_confirmation">
+                            @error('password_confirmation')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                          </div>
+                          <!-- Button -->
+                          <button type="submit" class="btn btn-primary">Update Password</button>
+                          <div class="col-6"></div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</div>

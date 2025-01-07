@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Auth\EditProfile;
+use App\Livewire\Auth\EditSecurity;
 use App\Livewire\Auth\ForgotPassword;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
@@ -50,6 +52,8 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/user/edit-profile', EditProfile::class)->name('edit.profile');
+    Route::get('/user/edit-security', EditSecurity::class)->name('edit.security');
     Route::get('/est/edit/{estid}', Dashboard::class)->name('est.edit');
     //Route::get('/est/estinformation', EstInformation::class)->name('estinfo');
     Route::get('/ests/estinformation/{estrecordid}', EstInformation::class)->name('estinfo');
