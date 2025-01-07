@@ -17,7 +17,7 @@
                             <form wire:submit.prevent="submitRecord" class="row">
                                 
 
-                                <h5>Electricity Generation & Consumption </h5>
+                                <h5>1.Electricity Generation & Consumption </h5>
                                 <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
                                
                                 
@@ -77,7 +77,7 @@
                             </div>
                             <hr>
 
-                            <h5>Integration of Renewal Energy </h5>
+                            <h5>2. Integration of Renewal Energy </h5>
                                 <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
                                
 
@@ -127,7 +127,7 @@
 
                             <hr>
 
-                            <h5>Water Production & Consumption</h5>
+                            <h5>3. Water Production & Consumption</h5>
                                 <small class="mb-3">Year End (december) - Metric Tons (Monthly Production)</small>
 
                             <div class="mb-3 col-12 col-md-6">
@@ -240,7 +240,7 @@
 
                             <hr>
 
-                            <h5 class="mt-3">Waste Generation / Disposal</h5>
+                            <h5 class="mt-3">4. Waste Generation / Disposal</h5>
                             <small class="mb-3">Waste generation and disposal for the reporting year</small>
 
 
@@ -405,6 +405,8 @@
                                 <input type="text" id="other_waste_method" class="form-control" placeholder="Other Waste Method" wire:model="other_waste_method">
                                 @error('other_waste_method')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div> --}}
+
+                            <hr class="mt-3">
 
 
 

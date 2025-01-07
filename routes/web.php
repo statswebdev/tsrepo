@@ -19,6 +19,7 @@ use App\Livewire\Ests\EstablishmentOtherservices;
 use App\Livewire\Ests\EstablishmentProduction;
 use App\Livewire\Ests\EstablishmentStock;
 use App\Livewire\Ests\EstInformation;
+use App\Livewire\Ests\EstinformationEdit;
 use App\Livewire\Ests\ShowForms;
 use Illuminate\Support\Facades\Route;
 
@@ -46,6 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/est/edit/{estid}', Dashboard::class)->name('est.edit');
     //Route::get('/est/estinformation', EstInformation::class)->name('estinfo');
     Route::get('/ests/estinformation/{estrecordid}', EstInformation::class)->name('estinfo');
+    Route::get('/ests/edit-estinformation/{estrecordid}', EstinformationEdit::class)->name('edit-estinfo');
     Route::get('/ests/establishmentoperation/{estrecordid}', EstablishmentOperation::class)->name('estopera');
     Route::get('/ests/establishmentemploymentone/{estrecordid}', EstablishmentEmploymentone::class)->name('estempone');
     Route::get('/ests/establishmentemploymenttwo/{estrecordid}', EstablishmentEmploymenttwo::class)->name('estemptwo');

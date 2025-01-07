@@ -41,12 +41,16 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Watermelon</label>
                                 <div class="col-sm-2">
-                                    <input type="text" id="watermelon_inhouse" class="form-control" placeholder="Watermelon Inhouse" wire:model="watermelon_inhouse">
+                                    <select id="watermelon_inhouse" class="form-control" wire:model="watermelon_inhouse">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('watermelon_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-2">
                                     
-                                    <input type="number" id="watermelon_grown" class="form-control" placeholder="Watermelon Grown" wire:model="watermelon_grown">
+                                    <input type="number" id="watermelon_grown" class="form-control" placeholder="KG" wire:model="watermelon_grown">
                                     @error('watermelon_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                
@@ -57,11 +61,15 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Coconut</label>
                             <div class="col-sm-2">
-                                <input type="text" id="coconut_inhouse" class="form-control" placeholder="Coconut Inhouse" wire:model="coconut_inhouse">
+                                <select id="coconut_inhouse" class="form-control" wire:model="coconut_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('coconut_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="coconut_grown" class="form-control" placeholder="Coconut Grown" wire:model="coconut_grown">
+                                <input type="number" id="coconut_grown" class="form-control" placeholder="KG" wire:model="coconut_grown">
                                 @error('coconut_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -70,33 +78,45 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Papaya</label>
                             <div class="col-sm-2">
-                                <input type="text" id="papaya_inhouse" class="form-control" placeholder="Papaya Inhouse" wire:model="papaya_inhouse">
+                                <select id="papaya_inhouse" class="form-control" wire:model="papaya_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('papaya_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="papaya_grown" class="form-control" placeholder="Papaya Grown" wire:model="papaya_grown">
+                                <input type="number" id="papaya_grown" class="form-control" placeholder="KG" wire:model="papaya_grown">
                                 @error('papaya_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Pumpkin</label>
                             <div class="col-sm-2">
-                                <input type="text" id="pumpkin_inhouse" class="form-control" placeholder="Pumpkin Inhouse" wire:model="pumpkin_inhouse">
+                                <select id="pumpkin_inhouse" class="form-control" wire:model="pumpkin_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('pumpkin_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="pumpkin_grown" class="form-control" placeholder="Pumpkin Grown" wire:model="pumpkin_grown">
+                                <input type="number" id="pumpkin_grown" class="form-control" placeholder="KG" wire:model="pumpkin_grown">
                                 @error('pumpkin_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Cucumber</label>
                             <div class="col-sm-2">
-                                <input type="text" id="cucumber_inhouse" class="form-control" placeholder="Cucumber Inhouse" wire:model="cucumber_inhouse">
+                                <select id="cucumber_inhouse" class="form-control" wire:model="cucumber_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('cucumber_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="cucumber_grown" class="form-control" placeholder="Cucumber Grown" wire:model="cucumber_grown">
+                                <input type="number" id="cucumber_grown" class="form-control" placeholder="KG" wire:model="cucumber_grown">
                                 @error('cucumber_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -104,22 +124,30 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Banana</label>
                             <div class="col-sm-2">
-                                <input type="text" id="banana_inhouse" class="form-control" placeholder="Banana Inhouse" wire:model="banana_inhouse">
+                                <select id="banana_inhouse" class="form-control" wire:model="banana_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('banana_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="banana_grown" class="form-control" placeholder="Banana Grown" wire:model="banana_grown">
+                                <input type="number" id="banana_grown" class="form-control" placeholder="KG" wire:model="banana_grown">
                                 @error('banana_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Brinjal</label>
                             <div class="col-sm-2">
-                                <input type="text" id="brinjal_inhouse" class="form-control" placeholder="Brinjal Inhouse" wire:model="brinjal_inhouse">
+                                <select id="brinjal_inhouse" class="form-control" wire:model="brinjal_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('brinjal_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="brinjal_grown" class="form-control" placeholder="Brinjal Grown" wire:model="brinjal_grown">
+                                <input type="number" id="brinjal_grown" class="form-control" placeholder="KG" wire:model="brinjal_grown">
                                 @error('brinjal_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -127,11 +155,15 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Chillies</label>
                             <div class="col-sm-2">
-                                <input type="text" id="chillies_inhouse" class="form-control" placeholder="Chillies Inhouse" wire:model="chillies_inhouse">
+                                <select id="chillies_inhouse" class="form-control" wire:model="chillies_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('chillies_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="chillies_grown" class="form-control" placeholder="Chillies Grown" wire:model="chillies_grown">
+                                <input type="number" id="chillies_grown" class="form-control" placeholder="KG" wire:model="chillies_grown">
                                 @error('chillies_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -139,44 +171,60 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Bottlegourd</label>
                             <div class="col-sm-2">
-                                <input type="text" id="bottlegourd_inhouse" class="form-control" placeholder="Bottlegourd Inhouse" wire:model="bottlegourd_inhouse">
+                                <select id="bottlegourd_inhouse" class="form-control" wire:model="bottlegourd_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('bottlegourd_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="bottlegourd_grown" class="form-control" placeholder="Bottlegourd Grown" wire:model="bottlegourd_grown">
+                                <input type="number" id="bottlegourd_grown" class="form-control" placeholder="KG" wire:model="bottlegourd_grown">
                                 @error('bottlegourd_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Butternut</label>
                             <div class="col-sm-2">
-                                <input type="text" id="butternut_inhouse" class="form-control" placeholder="Butternut Inhouse" wire:model="butternut_inhouse">
+                                <select id="butternut_inhouse" class="form-control" wire:model="butternut_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('butternut_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="butternut_grown" class="form-control" placeholder="Butternut Grown" wire:model="butternut_grown">
+                                <input type="number" id="butternut_grown" class="form-control" placeholder="KG" wire:model="butternut_grown">
                                 @error('butternut_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Cabbage</label>
                             <div class="col-sm-2">
-                                <input type="text" id="cabbage_inhouse" class="form-control" placeholder="Cabbage Inhouse" wire:model="cabbage_inhouse">
+                                <select id="cabbage_inhouse" class="form-control" wire:model="cabbage_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('cabbage_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="cabbage_grown" class="form-control" placeholder="Cabbage Grown" wire:model="cabbage_grown">
+                                <input type="number" id="cabbage_grown" class="form-control" placeholder="KG" wire:model="cabbage_grown">
                                 @error('cabbage_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Mango</label>
                             <div class="col-sm-2">
-                                <input type="text" id="mango_inhouse" class="form-control" placeholder="Mango Inhouse" wire:model="mango_inhouse">
+                                <select id="mango_inhouse" class="form-control" wire:model="mango_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('mango_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="mango_grown" class="form-control" placeholder="Mango Grown" wire:model="mango_grown">
+                                <input type="number" id="mango_grown" class="form-control" placeholder="KG" wire:model="mango_grown">
                                 @error('mango_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -184,11 +232,15 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Waxgourd</label>
                             <div class="col-sm-2">
-                                <input type="text" id="waxgourd_inhouse" class="form-control" placeholder="Waxgourd Inhouse" wire:model="waxgourd_inhouse">
+                                <select id="waxgourd_inhouse" class="form-control" wire:model="waxgourd_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('waxgourd_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="waxgourd_grown" class="form-control" placeholder="Waxgourd Grown" wire:model="waxgourd_grown">
+                                <input type="number" id="waxgourd_grown" class="form-control" placeholder="KG" wire:model="waxgourd_grown">
                                 @error('waxgourd_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -200,7 +252,7 @@
                                 @error('otheragrione_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="otheragrione_grown" class="form-control" placeholder="Other Grown" wire:model="otheragrione_grown">
+                                <input type="number" id="otheragrione_grown" class="form-control" placeholder="KG" wire:model="otheragrione_grown">
                                 @error('otheragrione_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -212,7 +264,7 @@
                                 @error('otheragritwo_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="otheragritwo_grown" class="form-control" placeholder="Other Grown" wire:model="otheragritwo_grown">
+                                <input type="number" id="otheragritwo_grown" class="form-control" placeholder="KG" wire:model="otheragritwo_grown">
                                 @error('otheragritwo_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -224,7 +276,7 @@
                                 @error('otheragrithree_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="otheragrithree_grown" class="form-control" placeholder="Other Grown" wire:model="otheragrithree_grown">
+                                <input type="number" id="otheragrithree_grown" class="form-control" placeholder="KG" wire:model="otheragrithree_grown">
                                 @error('otheragrithree_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -236,12 +288,12 @@
                                 @error('otheragrifour_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="otheragrifour_grown" class="form-control" placeholder="Other Grown" wire:model="otheragrifour_grown">
+                                <input type="number" id="otheragrifour_grown" class="form-control" placeholder="KG" wire:model="otheragrifour_grown">
                                 @error('otheragrifour_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
 
-                        <hr>
+                        <hr class="mt-3 mb-5">
                         
                         <h5>2. Agricultural Products Purchased From Farmers</h5>
                         <small class="mb-5">Enter the quantity of agricultural products purchased and their value</small>
@@ -273,7 +325,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Watermelon</label>
                     <div class="col-sm-3">
-                        <input type="text" id="watermelon_farmers" class="form-control" placeholder="watermelon" wire:model="watermelon_farmers">
+                        <select id="watermelon_farmers" class="form-control" wire:model="watermelon_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('watermelon_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -288,7 +344,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Coconut</label>
                     <div class="col-sm-3">
-                        <input type="text" id="coconut_farmers" class="form-control" placeholder="Coconut Farmers" wire:model="coconut_farmers">
+                        <select id="coconut_farmers" class="form-control" wire:model="coconut_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('coconut_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -303,7 +363,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Papaya</label>
                     <div class="col-sm-3">
-                        <input type="text" id="papaya_farmers" class="form-control" placeholder="Papaya Farmers" wire:model="papaya_farmers">
+                        <select id="papaya_farmers" class="form-control" wire:model="papaya_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('papaya_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -318,7 +382,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Pumpkin</label>
                     <div class="col-sm-3">
-                        <input type="text" id="pumpkin_farmers" class="form-control" placeholder="Pumpkin Farmers" wire:model="pumpkin_farmers">
+                        <select id="pumpkin_farmers" class="form-control" wire:model="pumpkin_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('pumpkin_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -333,7 +401,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Cucumber</label>
                     <div class="col-sm-3">
-                        <input type="text" id="cucumber_farmers" class="form-control" placeholder="Cucumber Farmers" wire:model="cucumber_farmers">
+                        <select id="cucumber_farmers" class="form-control" wire:model="cucumber_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('cucumber_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -348,7 +420,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Banana</label>
                     <div class="col-sm-3">
-                        <input type="text" id="banana_farmers" class="form-control" placeholder="Banana Farmers" wire:model="banana_farmers">
+                        <select id="banana_farmers" class="form-control" wire:model="banana_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('banana_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -363,7 +439,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Brinjal</label>
                     <div class="col-sm-3">
-                        <input type="text" id="brinjal_farmers" class="form-control" placeholder="Brinjal Farmers" wire:model="brinjal_farmers">
+                        <select id="brinjal_farmers" class="form-control" wire:model="brinjal_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('brinjal_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -378,7 +458,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Chillies</label>
                     <div class="col-sm-3">
-                        <input type="text" id="chillies_farmers" class="form-control" placeholder="Chillies Farmers" wire:model="chillies_farmers">
+                        <select id="chillies_farmers" class="form-control" wire:model="chillies_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('chillies_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -393,7 +477,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Bottlegourd</label>
                     <div class="col-sm-3">
-                        <input type="text" id="bottlegourd_farmers" class="form-control" placeholder="Bottlegourd Farmers" wire:model="bottlegourd_farmers">
+                        <select id="bottlegourd_farmers" class="form-control" wire:model="bottlegourd_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('bottlegourd_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -408,8 +496,12 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Butternut</label>
                     <div class="col-sm-3">
-                        <input type="text" id="butternut_farms" class="form-control" placeholder="Butternut Farmers" wire:model="butternut_farms">
-                        @error('butternut_farms')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        <select id="butternut_farmers" class="form-control" wire:model="butternut_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                        @error('butternut_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
                         <input type="number" id="butternut_farmers_qty" class="form-control" placeholder="KG" wire:model="butternut_farmers_qty">
@@ -423,7 +515,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Cabbage</label>
                     <div class="col-sm-3">
-                        <input type="text" id="cabbage_farmers" class="form-control" placeholder="Cabbage Farmers" wire:model="cabbage_farmers">
+                        <select id="cabbage_farmers" class="form-control" wire:model="cabbage_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('cabbage_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -438,7 +534,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Mango</label>
                     <div class="col-sm-3">
-                        <input type="text" id="mango_farmers" class="form-control" placeholder="Mango Farmers" wire:model="mango_farmers">
+                        <select id="mango_farmers" class="form-control" wire:model="mango_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('mango_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -453,7 +553,11 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Waxgourd</label>
                     <div class="col-sm-3">
-                        <input type="text" id="waxgourd_farmers" class="form-control" placeholder="Waxgourd Farmers" wire:model="waxgourd_farmers">
+                        <select id="waxgourd_farmers" class="form-control" wire:model="waxgourd_farmers">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('waxgourd_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
@@ -525,6 +629,7 @@
                         @error('otheragrifour_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
+                <hr class="mt-3 mb-5">
 
                                 <div class="mb-3 mt-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">

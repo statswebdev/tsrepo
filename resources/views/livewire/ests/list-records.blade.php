@@ -65,6 +65,7 @@
                                     <span>1. Establishment Information</span>
                                 @endif 
                                 <a href="{{ route('estinfo', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
+                                <a href="{{ route('edit-estinfo', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
                             </span>
                             <hr>
                             <span class="d-flex justify-content-between align-items-center">
