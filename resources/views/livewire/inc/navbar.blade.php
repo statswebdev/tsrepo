@@ -1,6 +1,6 @@
 <div>
     <nav class="navbar navbar-expand-lg">
-        <div class="container px-0">
+        <div class="container">
             <a class="navbar-brand" href="{{route('dashboard')}}"><img src="{{asset('images/mbslogo2023.svg')}}" alt="MBS" width="300px"></a>
             <!-- Mobile view nav wrap -->
             <div class="ms-auto d-flex align-items-center order-lg-3">
@@ -25,8 +25,8 @@
                       </div>
                       <div class="dropdown-divider"></div>
                       <ul class="list-unstyled mb-0">
-                        <li><a class="dropdown-item" href="/#"><i class="fe fe-user me-2"></i>Profile</a></li>
-                        <li><a class="dropdown-item" href="/#"><i class="fe fe-settings me-2"></i>Settings</a></li>
+                        <li><a class="dropdown-item" href="{{ route('edit.profile') }}"><i class="fe fe-user me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('edit.security') }}"><i class="fe fe-settings me-2"></i>Security</a></li>
                       </ul>
                       <div class="dropdown-divider"></div>
                       <ul class="list-unstyled mb-0">
