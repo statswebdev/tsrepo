@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="operator_register">5. What is the registration number of operator?</label>
-                                    <input type="number" id="operator_register" class="form-control" placeholder="Register Number" wire:model="operator_register">
+                                    <input type="text" id="operator_register" class="form-control" placeholder="Register Number" wire:model="operator_register">
                                     @error('operator_register')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <hr class="mt-5 mb-5">

@@ -12,12 +12,6 @@ class EstablishmentAgricultural extends Component
     
     public $user_id;
     public $est_record_id;
-    public $months_operated;
-    public $rooms_yearend;
-    public $beds_yearend;
-    public $roomnights_sold;
-    public $bednights_sold;
-    public $roomrate_annual;
     public $watermelon_inhouse;
     public $watermelon_grown;
     public $coconut_inhouse;

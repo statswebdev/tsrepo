@@ -77,7 +77,7 @@ class EstInformation extends Component
             'status' => $this->status,
         ]);
 
-        session()->flash('success', 'Est Information Submitted successfully');
+        session()->flash('success', 'Establishment Information Submitted successfully');
         return redirect()->route('dashboard');
     }
 
