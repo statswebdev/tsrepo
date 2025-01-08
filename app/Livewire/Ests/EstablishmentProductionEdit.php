@@ -50,7 +50,7 @@ class EstablishmentProductionEdit extends Component
     public $metal_waste_method = [];
     public $other_waste;
     public $other_waste_method = [];
-    public $status="Updated";
+    public $status="submitted";
 
     protected $rules = [
             'generated_inhouse' => 'required',
@@ -233,7 +233,7 @@ class EstablishmentProductionEdit extends Component
             'metal_waste_method' => json_encode($this->metal_waste_method),
             'other_waste' => $this->other_waste,
             'other_waste_method' => json_encode($this->other_waste_method),
-            'status' => 'completed',
+            'status' => 'submitted',
         ]);
        
         

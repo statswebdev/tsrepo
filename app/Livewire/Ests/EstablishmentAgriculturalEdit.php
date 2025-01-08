@@ -100,7 +100,7 @@ class EstablishmentAgriculturalEdit extends Component
     public $otheragrifour_farmers;
     public $otheragrifour_farmers_qty;
     public $otheragrifour_farmers_value;
-    public $status = "completed";
+    public $status = "submitted";
 
     protected $rules = [
             'watermelon_inhouse' => 'required',
@@ -279,7 +279,7 @@ class EstablishmentAgriculturalEdit extends Component
         $this->otheragrifour_farmers = $estrecordid->otheragrifour_farmers;
         $this->otheragrifour_farmers_qty = $estrecordid->otheragrifour_farmers_qty;
         $this->otheragrifour_farmers_value = $estrecordid->otheragrifour_farmers_value;
-        $this->status = $estrecordid->status;
+        
     }
 
     public function save()
@@ -461,7 +461,7 @@ class EstablishmentAgriculturalEdit extends Component
             'otheragrifour_farmers' => $this->otheragrifour_farmers,
             'otheragrifour_farmers_qty' => $this->otheragrifour_farmers_qty,
             'otheragrifour_farmers_value' => $this->otheragrifour_farmers_value,
-            'status' => $this->status,
+            'status' => 'submitted',
 
         ]);
         

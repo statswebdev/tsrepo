@@ -9,22 +9,31 @@ use App\Livewire\Auth\Register;
 use App\Livewire\Auth\ResetPassword;
 use App\Livewire\Dashboard;
 use App\Livewire\Ests\EstablishmentAgricultural;
+use App\Livewire\Ests\EstablishmentAgriculturalEdit;
 use App\Livewire\Ests\EstablishmentElectricity;
+use App\Livewire\Ests\EstablishmentElectricityEdit;
 use App\Livewire\Ests\EstablishmentEmploymentone;
 use App\Livewire\Ests\EstablishmentEmploymentoneEdit;
 use App\Livewire\Ests\EstablishmentEmploymenttwo;
 use App\Livewire\Ests\EstablishmentEmploymenttwoEdit;
 use App\Livewire\Ests\EstablishmentExpenses;
+use App\Livewire\Ests\EstablishmentExpensesEdit;
 use App\Livewire\Ests\EstablishmentFish;
+use App\Livewire\Ests\EstablishmentFishEdit;
 use App\Livewire\Ests\EstablishmentFuel;
 use App\Livewire\Ests\EstablishmentFuelconsumption;
+use App\Livewire\Ests\EstablishmentFuelconsumptionEdit;
+use App\Livewire\Ests\EstablishmentFuelEdit;
 use App\Livewire\Ests\EstablishmentIncome;
+use App\Livewire\Ests\EstablishmentIncomeEdit;
 use App\Livewire\Ests\EstablishmentOperation;
 use App\Livewire\Ests\EstablishmentOperationEdit;
 use App\Livewire\Ests\EstablishmentOtherservices;
+use App\Livewire\Ests\EstablishmentOtherservicesEdit;
 use App\Livewire\Ests\EstablishmentProduction;
 use App\Livewire\Ests\EstablishmentProductionEdit;
 use App\Livewire\Ests\EstablishmentStock;
+use App\Livewire\Ests\EstablishmentStockEdit;
 use App\Livewire\Ests\EstInformation;
 use App\Livewire\Ests\EstinformationEdit;
 use App\Livewire\Ests\ShowForms;
@@ -76,22 +85,31 @@ Route::middleware('auth')->group(function () {
     Route::get('/ests/edit-establishmentproduction/{estrecordid}', EstablishmentProductionEdit::class)->name('edit-estprod');
 
     Route::get('/ests/establishmentagricultural/{estrecordid}', EstablishmentAgricultural::class)->name('estagri');
+    Route::get('/ests/edit-establishmentagricultural/{estrecordid}', EstablishmentAgriculturalEdit::class)->name('edit-estagri');
 
     Route::get('/ests/establishfish/{estrecordid}', EstablishmentFish::class)->name('estfish');
+    Route::get('/ests/edit-establishfish/{estrecordid}', EstablishmentFishEdit::class)->name('edit-estfish');
 
     Route::get('/ests/establishelectricity/{estrecordid}', EstablishmentElectricity::class)->name('estelec');
+    Route::get('/ests/edit-establishelectricity/{estrecordid}', EstablishmentElectricityEdit::class)->name('edit-estelec');
 
     Route::get('/ests/establishfuel/{estrecordid}', EstablishmentFuel::class)->name('estfuel');
+    Route::get('/ests/edit-establishfuel/{estrecordid}', EstablishmentFuelEdit::class)->name('edit-estfuel');
 
     Route::get('/ests/establishfuelconsumption/{estrecordid}', EstablishmentFuelconsumption::class)->name('estfuelconsumption');
+    Route::get('/ests/edit-establishfuelconsumption/{estrecordid}', EstablishmentFuelconsumptionEdit::class)->name('edit-estfuelconsumption');
 
     Route::get('/ests/establishotherservice/{estrecordid}', EstablishmentOtherservices::class)->name('estotherservice');
+    Route::get('/ests/edit-establishotherservice/{estrecordid}', EstablishmentOtherservicesEdit::class)->name('edit-estotherservice');
 
     Route::get('/ests/establishincome/{estrecordid}', EstablishmentIncome::class)->name('estincome');
+    Route::get('/ests/edit-establishincome/{estrecordid}', EstablishmentIncomeEdit::class)->name('edit-estincome');
 
     Route::get('/ests/establishexpense/{estrecordid}', EstablishmentExpenses::class)->name('estexpenses');
+    Route::get('/ests/edit-establishexpense/{estrecordid}', EstablishmentExpensesEdit::class)->name('edit-estexpenses');
 
     Route::get('/ests/establishstock/{estrecordid}', EstablishmentStock::class)->name('eststock');
+    Route::get('/ests/edit-establishstock/{estrecordid}', EstablishmentStockEdit::class)->name('edit-eststock');
 
 
     

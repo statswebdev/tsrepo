@@ -39,7 +39,7 @@ class EstablishmentFuel extends Component
     {
         $this->validate([
             'generator_capacity_unit' => 'required|integer',
-            'generator_capacity_qty' => 'required|integer',
+            'generator_capacity_qty' => 'required',
             'solar_rooftop' => 'required|integer',
             'solar_groundmounted' => 'required|integer',
             'solar_floating' => 'required|integer',

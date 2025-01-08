@@ -4,6 +4,8 @@ namespace App\Livewire\Ests;
 
 use App\Models\EstOpera;
 use Livewire\Component;
+use App\Models\EstRecord;
+use Illuminate\Support\Facades\Auth;
 
 class EstablishmentOperationEdit extends Component
 {
@@ -15,7 +17,7 @@ class EstablishmentOperationEdit extends Component
     public $roomnights_sold;
     public $bednights_sold;
     public $roomrate_annual;
-    public $status = "Updated";
+    public $status = "submitted";
 
     protected $rules = [
             'months_operated' => 'required',
@@ -26,17 +28,23 @@ class EstablishmentOperationEdit extends Component
             'roomrate_annual' => 'required',
     ];
 
-    public function mount(EstOpera $estrecordid)
+    public function mount($estrecordid)
     {
-        $this->user_id = $estrecordid->user_id;
-        $this->est_record_id = $estrecordid->id;
-        $this->months_operated = json_decode($estrecordid->months_operated, true);
-        $this->rooms_yearend = $estrecordid->rooms_yearend;
-        $this->beds_yearend = $estrecordid->beds_yearend;
-        $this->roomnights_sold = $estrecordid->roomnights_sold;
-        $this->bednights_sold = $estrecordid->bednights_sold;
-        $this->roomrate_annual = $estrecordid->roomrate_annual;
-        $this->status = $estrecordid->status;
+        $this->user_id = Auth::id();
+
+        $est_record = EstRecord::with('estopera')->findOrFail($estrecordid);
+
+        if ($est_record->estopera) {
+            $this->months_operated = json_decode($est_record->estopera->months_operated, true);
+            $this->rooms_yearend = $est_record->estopera->rooms_yearend;
+            $this->beds_yearend = $est_record->estopera->beds_yearend;
+            $this->roomnights_sold = $est_record->estopera->roomnights_sold;
+            $this->bednights_sold = $est_record->estopera->bednights_sold;
+            $this->roomrate_annual = $est_record->estopera->roomrate_annual;
+            $this->status = $est_record->estopera->status;
+        }
+
+        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -48,19 +56,23 @@ class EstablishmentOperationEdit extends Component
             'roomnights_sold' => 'required',
             'bednights_sold' => 'required',
             'roomrate_annual' => 'required',
+            
         ]);
 
-        EstOpera::where('id', $this->est_record_id)->update([
-            'user_id' => $this->user_id,
-            'months_operated' => json_encode($this->months_operated),
-            'rooms_yearend' => $this->rooms_yearend,
-            'beds_yearend' => $this->beds_yearend,
-            'roomnights_sold' => $this->roomnights_sold,
-            'bednights_sold' => $this->bednights_sold,
-            'roomrate_annual' => $this->roomrate_annual,
-            'status' => 'completed',
+        $estRecord = EstRecord::with('estopera')->findOrFail($this->est_record_id);
 
-        ]);
+        if ($estRecord->estopera) {
+            // Update the fields in the related `estopera` model
+            $estRecord->estopera->update([
+                'months_operated' => json_encode($this->months_operated),
+                'rooms_yearend' => $this->rooms_yearend,
+                'beds_yearend' => $this->beds_yearend,
+                'roomnights_sold' => $this->roomnights_sold,
+                'bednights_sold' => $this->bednights_sold,
+                'roomrate_annual' => $this->roomrate_annual,
+                'status' => 'submitted',
+            ]);
+        }
         
 
         session()->flash('success', 'Operations Information Updated');
