@@ -61,7 +61,7 @@ class EstablishmentFuelconsumption extends Component
     public $petrol_other_fuelconsumption;
     public $petrol_other_fuelconsumption_unit;
     public $petrol_other_fuelconsumption_qty;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

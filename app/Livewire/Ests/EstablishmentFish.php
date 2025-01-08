@@ -37,7 +37,7 @@ class EstablishmentFish extends Component
     public $otherfish_purchased;
     public $otherfish_purchased_qty;
     public $otherfish_purchased_value;
-    public $status="Completed";
+    public $status="submitted";
 
     public function mount($estrecordid)
     {

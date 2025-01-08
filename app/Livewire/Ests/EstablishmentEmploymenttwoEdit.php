@@ -690,7 +690,7 @@ class EstablishmentEmploymenttwoEdit extends Component
             'otherthree_outsourced' => $this->otherthree_outsourced,
             'otherthree_male' => $this->otherthree_male,
             'otherthree_female' => $this->otherthree_female,
-            'status' => $this->status
+            'status' => 'completed',
         ]);
         
         

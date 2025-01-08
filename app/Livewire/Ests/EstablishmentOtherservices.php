@@ -41,7 +41,7 @@ class EstablishmentOtherservices extends Component
     public $three_accomodation_island;
     public $three_accomodation_local;
     public $three_accomodation_foreign;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

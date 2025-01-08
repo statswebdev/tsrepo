@@ -108,7 +108,7 @@ class EstablishmentElectricity extends Component
     public $demand_oct_min;
     public $demand_nov_min;
     public $demand_dec_min;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

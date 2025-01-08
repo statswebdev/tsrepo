@@ -103,7 +103,7 @@ class EstablishmentAgricultural extends Component
     public $otheragrifour_farmers;
     public $otheragrifour_farmers_qty;
     public $otheragrifour_farmers_value;
-    public $status = "completed";
+    public $status = "submitted";
 
 
     public function mount($estrecordid)

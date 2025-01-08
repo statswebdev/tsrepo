@@ -52,7 +52,7 @@ class EstablishmentProduction extends Component
     public $metal_waste_method = [];
     public $other_waste;
     public $other_waste_method = [];
-    public $status="completed";
+    public $status="submitted";
 
     public function mount($estrecordid)
     {

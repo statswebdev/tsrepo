@@ -38,18 +38,18 @@
                             <!-- Form -->
                             <form wire:submit.prevent="submitRecord" class="row">
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="info_provider">Information Provider Name</label>
+                                    <label class="form-label" for="info_provider">1. Information Provider Name</label>
                                     <input type="text" id="info_provider" class="form-control" placeholder="Name" wire:model="info_provider">
                                     @error('info_provider')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="contact_number">Information Providers Contact Number</label>
+                                    <label class="form-label" for="contact_number">2. Information Providers Contact Number</label>
                                     <input type="text" id="contact_number" class="form-control" placeholder="Number" wire:model="contact_number">
                                     @error('contact_number')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="type_organisation">Legal type of organisation</label>
+                                    <label class="form-label" for="type_organisation">3. Legal type of organisation</label>
                                     <select id="type_organisation" class="form-control" wire:model="type_organisation">
                                         <option value="">Select Type</option>
                                         <option value="Private Limited Company">Private Limited Company</option>
@@ -61,18 +61,18 @@
                                     @error('type_organisation')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="operator_name">What is the name of operator?</label>
+                                    <label class="form-label" for="operator_name">4. What is the name of operator?</label>
                                     <input type="text" id="operator_name" class="form-control" placeholder="Name" wire:model="operator_name">
                                     @error('operator_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="operator_register">What is the registration number of operator?</label>
+                                    <label class="form-label" for="operator_register">5. What is the registration number of operator?</label>
                                     <input type="text" id="operator_register" class="form-control" placeholder="Register Number" wire:model="operator_register">
                                     @error('operator_register')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <hr>
+                                <hr class="mt-5 mb-5">
                                 
-                                    <h5 class="mb-2">What are the name of the owners for this establishment?</h5>
+                                    <h5 class="mb-2">6. What are the name of the owners for this establishment?</h5>
                                     <small>list upto 2 owners, except for soletrade. If under a company, record owner of the establishment if different, otherwise the owner of the parent company</small>
                                  
                                 <div class="mt-3 mb-3 col-12 col-md-6">
@@ -86,8 +86,8 @@
                                     @error('owner_two')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <hr>
-                                <h5 class="mb-2">Operator Contact Information</h5>
+                                <hr class="mt-5 mb-5">
+                                <h5 class="mb-2">7. Operator Contact Information</h5>
                                 <small>Only for establishment under a company</small>
 
                                 <div class="mt-3 mb-3 col-12 col-md-6">
@@ -101,8 +101,8 @@
                                     @error('operator_email')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <hr>
-                                <h5 class="mb-2">Share of Ownership of operator (End of the year)</h5>
+                                <hr class="mt-5 mb-5">
+                                <h5 class="mb-2">8. Share of Ownership of operator (End of the year)</h5>
 
                                 <div class="mt-3 mb-3 col-12 col-md-4">
                                     <label class="form-label" for="government_share">Government Share (%)</label>
@@ -120,24 +120,25 @@
                                     @error('foreign_share')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
-                                <hr>
+                                <hr class="mt-5 mb-5">
 
 
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="taxpayer_number">Taxpayer Identification Number</label>
+                                    <label class="form-label" for="taxpayer_number">9. Taxpayer Identification Number</label>
                                     <input type="text" id="taxpayer_number" class="form-control" placeholder="TIN" wire:model="taxpayer_number">
                                     @error('taxpayer_number')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="establishment_regdate">Establishment Registration Date</label>
+                                    <label class="form-label" for="establishment_regdate">10. Establishment Registration Date</label>
                                     <input type="date" id="establishment_regdate" class="form-control" wire:model="establishment_regdate">
                                     @error('establishment_regdate')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="bedcapacity">Registered Bed Capacity (End of the year)</label>
+                                    <label class="form-label" for="bedcapacity">11. Registered Bed Capacity (End of the year)</label>
                                     <input type="number" id="bedcapacity" class="form-control" placeholder="Bed Capacity" wire:model="bedcapacity">
                                     @error('bedcapacity')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
+                                <hr class="mt-5 mb-5">
                                 <div class="mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
                                     Submit

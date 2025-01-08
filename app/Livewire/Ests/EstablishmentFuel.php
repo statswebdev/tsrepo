@@ -25,7 +25,7 @@ class EstablishmentFuel extends Component
     public $solar_waterheating;
     public $waste_heatrecovery;
     public $other_energy_capacity;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

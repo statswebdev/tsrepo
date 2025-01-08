@@ -293,7 +293,7 @@
                             </div>
                         </div>
 
-                        <hr class="mt-3 mb-5">
+                        <hr class="mt-5 mb-5">
                         
                         <h5>2. Agricultural Products Purchased From Farmers</h5>
                         <small class="mb-5">Enter the quantity of agricultural products purchased and their value</small>
@@ -629,7 +629,7 @@
                         @error('otheragrifour_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
-                <hr class="mt-3 mb-5">
+                <hr class="mt-5 mb-5">
 
                                 <div class="mb-3 mt-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">

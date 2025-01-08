@@ -40,7 +40,7 @@ class EstablishmentExpenses extends Component
     public $expense_admin;
     public $expense_management;
     public $expense_other;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

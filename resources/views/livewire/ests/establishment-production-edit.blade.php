@@ -75,7 +75,7 @@
                                 <input type="number" id="electricity_consumption" class="form-control" placeholder="kWh" wire:model="electricity_consumption">
                                 @error('electricity_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
-                            <hr>
+                            <hr class="mt-5 mb-5">
 
                             <h5>2. Integration of Renewal Energy </h5>
                                 <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
@@ -125,7 +125,7 @@
                                 @error('renewable_other_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <hr>
+                            <hr class="mt-5 mb-5">
 
                             <h5>3. Water Production & Consumption</h5>
                                 <small class="mb-3">Year End (december) - Metric Tons (Monthly Production)</small>
@@ -238,7 +238,7 @@
                                 @error('monthly_water_dec')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <hr>
+                            <hr class="mt-5 mb-5">
 
                             <h5 class="mt-3">4. Waste Generation / Disposal</h5>
                             <small class="mb-3">Waste generation and disposal for the reporting year</small>
@@ -406,7 +406,7 @@
                                 @error('other_waste_method')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div> --}}
 
-                            <hr class="mt-3">
+                            <hr class="mt-5 mb-5">
 
 
 

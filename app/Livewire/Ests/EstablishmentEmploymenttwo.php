@@ -144,7 +144,7 @@ class EstablishmentEmploymenttwo extends Component
     public $otherthree_outsourced;
     public $otherthree_male;
     public $otherthree_female;
-    public $status = 'Completed';
+    public $status = 'submitted';
 
     public function mount($estrecordid)
     {
