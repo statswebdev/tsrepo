@@ -71,7 +71,7 @@ class EstablishmentOtherservices extends Component
                 'otherservices' => 'required',
                 'otherservices_contract' => 'required',
                 'doctor_inhouse' => 'required',
-                'nearest_healthfacility' => 'required',
+                'nearest_healthfacility' => 'nullable',
                 'onestaff_accomodation' => 'nullable',
                 'onestaff_accomodation_island' => 'nullable',
                 'onestaff_accomodation_local' => 'nullable',

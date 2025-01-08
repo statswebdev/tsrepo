@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('otherservices');
             $table->string('otherservices_contract');
             $table->string('doctor_inhouse');
-            $table->string('nearest_healthfacility');
+            $table->string('nearest_healthfacility')->nullable();
             $table->string('onestaff_accomodation')->nullable();
             $table->string('onestaff_accomodation_island')->nullable();
             $table->string('onestaff_accomodation_local')->nullable();

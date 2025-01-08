@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="contact_number">2. Information Providers Contact Number</label>
-                                    <input type="text" id="contact_number" class="form-control" placeholder="Number" wire:model="contact_number">
+                                    <input type="number" id="contact_number" class="form-control" placeholder="Mobile Number" wire:model="contact_number">
                                     @error('contact_number')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="operator_register">5. What is the registration number of operator?</label>
-                                    <input type="text" id="operator_register" class="form-control" placeholder="Register Number" wire:model="operator_register">
+                                    <input type="number" id="operator_register" class="form-control" placeholder="Register Number" wire:model="operator_register">
                                     @error('operator_register')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <hr class="mt-5 mb-5">

@@ -117,12 +117,12 @@ class EstablishmentFuelconsumption extends Component
             'diesel_cooking_qty' => 'required|integer',
             'petrol_cooking_unit' => 'required|string',
             'petrol_cooking_qty' => 'required|integer',
-            'diesel_other_fuelconsumption' => 'required|string',
-            'diesel_other_fuelconsumption_unit' => 'required|string',
-            'diesel_other_fuelconsumption_qty' => 'required|integer',
-            'petrol_other_fuelconsumption' => 'required|string',
-            'petrol_other_fuelconsumption_unit' => 'required|string',
-            'petrol_other_fuelconsumption_qty' => 'required|integer',
+            'diesel_other_fuelconsumption' => 'nullable|string',
+            'diesel_other_fuelconsumption_unit' => 'nullable|string',
+            'diesel_other_fuelconsumption_qty' => 'nullable|integer',
+            'petrol_other_fuelconsumption' => 'nullable|string',
+            'petrol_other_fuelconsumption_unit' => 'nullable|string',
+            'petrol_other_fuelconsumption_qty' => 'nullable|integer',
         ]);
        
 

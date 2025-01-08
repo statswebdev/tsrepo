@@ -29,88 +29,156 @@
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">Music Bands</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="musicbands" class="form-control" placeholder="Music Bands" wire:model="musicbands">
+                                    <select id="musicbands" class="form-control" wire:model="musicbands">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('musicbands')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="musicbands_contract" class="form-control" placeholder="Music Bands Contract" wire:model="musicbands_contract">
+                                    <select id="musicbands_contract" class="form-control" wire:model="musicbands_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('musicbands_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">DJ</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="dj" class="form-control" placeholder="DJ" wire:model="dj">
+                                    <select id="dj" class="form-control" wire:model="dj">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('dj')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="dj_contract" class="form-control" placeholder="DJ Contract" wire:model="dj_contract">
+                                    <select id="dj_contract" class="form-control" wire:model="dj_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('dj_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">Photography</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="photography" class="form-control" placeholder="Photography" wire:model="photography">
+                                    <select id="photography" class="form-control" wire:model="photography">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('photography')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="photography_contract" class="form-control" placeholder="Photography Contract" wire:model="photography_contract">
+                                    <select id="photography_contract" class="form-control" wire:model="photography_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('photography_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">Casual Workers (Sweepers/Gardeners)</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="casualworker" class="form-control" placeholder="Casual Worker" wire:model="casualworker">
+                                    <select id="casualworker" class="form-control" wire:model="casualworker">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('casualworker')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="casualworker_contract" class="form-control" placeholder="Casual Worker Contract" wire:model="casualworker_contract">
+                                    <select id="casualworker_contract" class="form-control" wire:model="casualworker_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('casualworker_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">Fisherman</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="fisherman" class="form-control" placeholder="Fisherman" wire:model="fisherman">
+                                    <select id="fisherman" class="form-control" wire:model="fisherman">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('fisherman')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="fisherman_contract" class="form-control" placeholder="Fisherman Contract" wire:model="fisherman_contract">
+                                    <select id="fisherman_contract" class="form-control" wire:model="fisherman_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('fisherman_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">Farmers</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="farmers" class="form-control" placeholder="Farmers" wire:model="farmers">
+                                    <select id="farmers" class="form-control" wire:model="farmers">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="farmers_contract" class="form-control" placeholder="Farmers Contract" wire:model="farmers_contract">
+                                    <select id="farmers_contract" class="form-control" wire:model="farmers_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('farmers_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">Local Food</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="localfood" class="form-control" placeholder="Local Food" wire:model="localfood">
+                                    <select id="localfood" class="form-control" wire:model="localfood">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('localfood')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="localfood_contract" class="form-control" placeholder="Local Food Contract" wire:model="localfood_contract">
+                                    <select id="localfood_contract" class="form-control" wire:model="localfood_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('localfood_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-2 text-end">Other Services</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="otherservices" class="form-control" placeholder="Other Services" wire:model="otherservices">
+                                    <input type="text" id="otherservices" class="form-control" placeholder="Specify" wire:model="otherservices">
                                     @error('otherservices')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="otherservices_contract" class="form-control" placeholder="Other Services Contract" wire:model="otherservices_contract">
+                                    <select id="otherservices_contract" class="form-control" wire:model="otherservices_contract">
+                                        <option value="">Select</option>
+                                        <option value="written">Written</option>
+                                        <option value="verbal">Verbal</option>
+                                        <option value="no_contract">No Contract</option>
+                                    </select>
                                     @error('otherservices_contract')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
@@ -123,13 +191,17 @@
                                 
 
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="doctor_inhouse">Do you have a Inhouse Doctor and a Nurse</label>
-                                    <input type="text" id="doctor_inhouse" class="form-control" placeholder="Doctor In-house" wire:model="doctor_inhouse">
+                                    <label class="form-label" for="doctor_inhouse">Do you have an Inhouse Doctor and a Nurse</label>
+                                    <select id="doctor_inhouse" class="form-control" wire:model="doctor_inhouse">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('doctor_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="nearest_healthfacility">Nearest Health Facility Used Normally</label>
-                                    <input type="text" id="nearest_healthfacility" class="form-control" placeholder="Nearest Health Facility" wire:model="nearest_healthfacility">
+                                    <input type="text" id="nearest_healthfacility" class="form-control" placeholder="Name of the Health Facility" wire:model="nearest_healthfacility">
                                     @error('nearest_healthfacility')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
@@ -150,57 +222,69 @@
                             <div class="form-group row mb-2">
                                 
                                 <div class="col-sm-3">
-                                    <input type="text" id="onestaff_accomodation" class="form-control" placeholder="One Staff Accommodation" wire:model="onestaff_accomodation">
+                                    <select id="onestaff_accomodation" class="form-control" wire:model="onestaff_accomodation">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('onestaff_accomodation')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="onestaff_accomodation_island" class="form-control" placeholder="One Staff Accommodation Island" wire:model="onestaff_accomodation_island">
+                                    <input type="text" id="onestaff_accomodation_island" class="form-control" placeholder="Atoll/Island Name" wire:model="onestaff_accomodation_island" :disabled="$wire.onestaff_accomodation === 'no'">
                                     @error('onestaff_accomodation_island')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="onestaff_accomodation_local" class="form-control" placeholder="One Staff Accommodation Local" wire:model="onestaff_accomodation_local">
+                                    <input type="text" id="onestaff_accomodation_local" class="form-control" placeholder="number of employees" wire:model="onestaff_accomodation_local" :disabled="$wire.onestaff_accomodation === 'no'">
                                     @error('onestaff_accomodation_local')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="onestaff_accomodation_foreign" class="form-control" placeholder="One Staff Accommodation Foreign" wire:model="onestaff_accomodation_foreign">
+                                    <input type="text" id="onestaff_accomodation_foreign" class="form-control" placeholder="number of employees" wire:model="onestaff_accomodation_foreign" :disabled="$wire.onestaff_accomodation === 'no'">
                                     @error('onestaff_accomodation_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 
                                 <div class="col-sm-3">
-                                    <input type="text" id="twostaff_accomodation" class="form-control" placeholder="Two Staff Accommodation" wire:model="twostaff_accomodation">
+                                    <select id="twostaff_accomodation" class="form-control" wire:model="twostaff_accomodation">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('twostaff_accomodation')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="twostaff_accomodation_island" class="form-control" placeholder="Two Staff Accommodation Island" wire:model="twostaff_accomodation_island">
+                                    <input type="text" id="twostaff_accomodation_island" class="form-control" placeholder="Atoll/Island Name" wire:model="twostaff_accomodation_island" :disabled="$wire.twostaff_accomodation === 'no'">
                                     @error('twostaff_accomodation_island')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="twostaff_accomodation_local" class="form-control" placeholder="Two Staff Accommodation Local" wire:model="twostaff_accomodation_local">
+                                    <input type="text" id="twostaff_accomodation_local" class="form-control" placeholder="number of employees" wire:model="twostaff_accomodation_local" :disabled="$wire.twostaff_accomodation === 'no'">
                                     @error('twostaff_accomodation_local')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="twostaff_accomodation_foreign" class="form-control" placeholder="Two Staff Accommodation Foreign" wire:model="twostaff_accomodation_foreign">
+                                    <input type="text" id="twostaff_accomodation_foreign" class="form-control" placeholder="number of employees" wire:model="twostaff_accomodation_foreign" :disabled="$wire.twostaff_accomodation === 'no'">
                                     @error('twostaff_accomodation_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 
                                 <div class="col-sm-3">
-                                    <input type="text" id="three_accomodation" class="form-control" placeholder="Three Accommodation" wire:model="three_accomodation">
+                                    <select id="three_accomodation" class="form-control" wire:model="three_accomodation">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                     @error('three_accomodation')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="three_accomodation_island" class="form-control" placeholder="Three Accommodation Island" wire:model="three_accomodation_island">
+                                    <input type="text" id="three_accomodation_island" class="form-control" placeholder="Atoll/Island Name" wire:model="three_accomodation_island" :disabled="$wire.three_accomodation === 'no'">
                                     @error('three_accomodation_island')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="three_accomodation_local" class="form-control" placeholder="Three Accommodation Local" wire:model="three_accomodation_local">
+                                    <input type="text" id="three_accomodation_local" class="form-control" placeholder="number of employees" wire:model="three_accomodation_local" :disabled="$wire.three_accomodation === 'no'">
                                     @error('three_accomodation_local')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" id="three_accomodation_foreign" class="form-control" placeholder="Three Accommodation Foreign" wire:model="three_accomodation_foreign">
+                                    <input type="text" id="three_accomodation_foreign" class="form-control" placeholder="number of employees" wire:model="three_accomodation_foreign" :disabled="$wire.three_accomodation === 'no'">
                                     @error('three_accomodation_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
