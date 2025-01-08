@@ -3,10 +3,14 @@
 namespace App\Livewire\Ests;
 
 use App\Models\EstRecord;
+use App\Models\User;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class ListRecords extends Component
 {
+    public $est;
+    public $user;
     public $estrecords = [];
     public $estforms = [
         '1. Establishment Information' => 'estinfo', 
@@ -28,6 +32,9 @@ class ListRecords extends Component
     public function mount()
     {
         //$this->estrecords = EstRecord::all();
+        $this->est = Auth::id();
+
+        $this->user = Auth::user();
 
         $this->estrecords = EstRecord::with([
             'estinfo' => function($query) { $query->where('user_id', auth()->id()); },
