@@ -1,7 +1,7 @@
 <div>
 
     <section class="pt-6">
-        <div class="container px-4 px-lg-0"> 
+        <div class="container"> 
             <div class="row">
                 @if (session()->has('updated'))
                     <div class="alert alert-success d-flex align-items-center" role="alert">
@@ -24,7 +24,7 @@
     </section>
 
     <section class="pt-6">
-        <div class="container px-4 px-lg-0">
+        <div class="container">
             <div class="row">
 
                 @foreach($estrecords as $estrecord)
@@ -44,14 +44,10 @@
                         </div>
                         <div id="collapse{{ $estrecord->collectionyear }}" class="collapse" aria-labelledby="heading{{ $estrecord->collectionyear }}" data-bs-parent="#accordion{{ $estrecord->collectionyear }}">
                         <div class="py-3 fs-4">
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                {{-- @php
-                                        $estinfo = App\Models\EstInfo::where('est_record_id', $estrecord->id)
-                                                                    ->where('user_id', auth()->id())
-                                                                    ->first();
-                                @endphp --}}
-                                @if($estrecord->estinfo)
-                                    <span>1. Establishment Information
+                            @foreach($estforms as $title => $form)
+                                <span class="d-flex justify-content-between align-items-center mb-3">
+                                    @if($estrecord->{$form})
+                                    <span>{{ $title }}
                                         <span class="badge 
                                             @if($estrecord->estinfo->status === 'incomplete') bg-warning
                                             @elseif($estrecord->estinfo->status === 'submitted') bg-primary
@@ -62,83 +58,23 @@
                                         </span>
                                     </span>
                                 @else
-                                    <span>1. Establishment Information</span>
-                                @endif 
-                                <a href="{{ route('estinfo', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estinfo', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
+                                    <span>{{ $title }}</span>
+                                @endif
+                                <div class="ms-auto"> 
+                                    @if(!$estrecord->{$form})
+                                        <a href="{{ route($form, $estrecord->id) }}">
+                                            <span class="badge bg-info ms-2">Submit Form</span>
+                                        </a>
+                                    @endif
+                                    @if($estrecord->{$form} && $estrecord->{$form}->status === 'review')
+                                        <a href="{{ route('edit-'.$form, $estrecord->id) }}">
+                                            <span class="badge bg-secondary ms-2">Edit Form</span>
+                                        </a>
+                                    @endif
+                                </div>
                             </span>
                             <hr>
-                            <span class="d-flex justify-content-between align-items-center">
-                                <span>2. Operations</span>
-                                <a href="{{ route('estopera', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estopera', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>3. Employment Information P1</span>
-                                <a href="{{ route('estempone', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estempone', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>3. Employment Information P2</span>
-                                <a href="{{ route('estemptwo', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estemptwo', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>4. Production & Consumption </span>
-                                <a href="{{ route('estprod', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estprod', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>5. Agricultural Products </span>
-                                <a href="{{ route('estagri', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estagri', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
-                            </span>
-                            <hr>
-                              <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>6. Fish Products </span>
-                                <a href="{{ route('estfish', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estfish', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
-                            </span>
-                            <hr>
-                              <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>7. Electricity </span>
-                                <a href="{{ route('estelec', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                                <a href="{{ route('edit-estelec', $estrecord->id) }}"><span class="badge bg-primary ms-2">Edit Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>8. Energy Capacity </span>
-                                <a href="{{ route('estfuel', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>9. Fuel Inventory </span>
-                                <a href="{{ route('estfuelconsumption', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                            </span>
-                            <hr>
-                                <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>10. Other Services </span>
-                                <a href="{{ route('estotherservice', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>11. Income </span>
-                                <a href="{{ route('estincome', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-3">
-                                <span>12. Expenditure </span>
-                                <a href="{{ route('estexpenses', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                            </span>
-                            <hr>
-                            <span class="d-flex justify-content-between align-items-center mb-0">
-                                <span>13. Stock & Inventory </span>
-                                <a href="{{ route('eststock', $estrecord->id) }}"><span class="badge bg-primary ms-2">View Form</span></a>
-                            </span>
+                            @endforeach
                         </div>
                         </div>
                     </div>

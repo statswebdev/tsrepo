@@ -25,17 +25,18 @@ class EditSecurity extends Component
     }
 
     public function updateSecurity(){
+
         $this->validate();
 
-        $user = Auth::user();
+        //$user = Auth::user();
 
-        if (!Hash::check($this->current_pass, $user->password)) {
+        if (!Hash::check($this->current_pass, $this->user->password)) {
             $this->addError('current_pass', 'The provided password does not match your current password.');
             return;
         }
 
-        $user->password = Hash::make($this->password);
-        //$user->save();
+        $this->user->password = Hash::make($this->password);
+        $this->user->save();
 
         session()->flash('updated', 'Password updated successfully.');
         return redirect()->route('edit.security'); // Redirect to a desired route

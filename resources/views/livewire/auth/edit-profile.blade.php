@@ -105,17 +105,17 @@
                     <h4 class="mb-0">Personal Details</h4>
                     <p class="mb-4">Edit your email address.</p>
                     <!-- Form -->
-                    <form class="row gx-3 needs-validation" novalidate="">
+                    <form wire:submit.prevent="updateProfile" class="row gx-3">
                       <!-- First name -->
                       <div class="mb-3 col-12 col-md-6">
                         <label class="form-label" for="profileEstName">Establishment Name</label>
-                        <input type="text" id="profileEstName" name="profileEstName" class="form-control" placeholder="First Name">
+                        <input type="text" id="profileEstName" name="profileEstName" class="form-control" placeholder="{{ $user->estname }}" disabled>
                       </div>
                       <!-- Last name -->
                       <div class="mb-3 col-12 col-md-6">
                         <label class="form-label" for="profileEmail">Email Address</label>
-                        <input type="text" id="profileEmail" name="profileEmail" class="form-control" placeholder="">
-                        <div class="invalid-feedback">Please enter last name.</div>
+                        <input type="text" id="profileEmail" name="profileEmail" class="form-control" wire:model="email">
+                        @error('email')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                       </div>
                       <div class="col-12">
                         <!-- Button -->
