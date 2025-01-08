@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Ests;
 
-use App\Models\EstEmpone;
+
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use App\Models\EstEmpone;
 
 class EstablishmentEmploymentoneEdit extends Component
 {

@@ -26,7 +26,7 @@ use App\Livewire\Ests\EstablishmentFuelconsumptionEdit;
 use App\Livewire\Ests\EstablishmentFuelEdit;
 use App\Livewire\Ests\EstablishmentIncome;
 use App\Livewire\Ests\EstablishmentIncomeEdit;
-use App\Livewire\Ests\EstablishmentOperation;
+use App\Livewire\Ests\EstablishmentOperation; // Ensure this class exists in the specified namespace
 use App\Livewire\Ests\EstablishmentOperationEdit;
 use App\Livewire\Ests\EstablishmentOtherservices;
 use App\Livewire\Ests\EstablishmentOtherservicesEdit;
@@ -37,6 +37,7 @@ use App\Livewire\Ests\EstablishmentStockEdit;
 use App\Livewire\Ests\EstInformation;
 use App\Livewire\Ests\EstinformationEdit;
 use App\Livewire\Ests\ShowForms;
+use App\Livewire\ViewEsts\ViewEstEmpone;
 use App\Livewire\Viewests\ViewEstInfo;
 use App\Livewire\Viewests\ViewEstOpera;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/view/estrecords/{estid}', ViewEstRecords::class)->name('est.view');
     Route::get('/view/estinfo/{estrecordid}/{userid}', ViewEstInfo::class)->name('est.info.view');
     Route::get('/view/estopera/{estrecordid}/{userid}', ViewEstOpera::class)->name('est.opera.view');
+    Route::get('/view/estempone/{estrecordid}/{userid}', ViewEstEmpone::class)->name('est.empone.view');
     //Route::get('/est/estinformation', EstInformation::class)->name('estinfo');
     Route::get('/ests/estinformation/{estrecordid}', EstInformation::class)->name('estinfo');
     Route::get('/ests/edit-estinformation/{estrecordid}', EstinformationEdit::class)->name('edit-estinfo');
