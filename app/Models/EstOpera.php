@@ -23,7 +23,7 @@ class EstOpera extends Model
 
     public function estRecord()
     {
-        return $this->belongsTo(EstRecord::class, 'est_record_id');
+        return $this->belongsTo(EstRecord::class, 'est_record_id', 'id');
     }
 
    

@@ -55,7 +55,7 @@
             <div class="navbar-collapse collapse" id="navbar-default" style="">
                 <ul class="navbar-nav mt-3 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('dashboard')}}">Home <span class="visually-hidden">(current)</span></a>
+                        <a class="nav-link" href="{{route('dashboard')}}">Dashboard <span class="visually-hidden">(current)</span></a>
                     </li>
                 </ul>
             </div>

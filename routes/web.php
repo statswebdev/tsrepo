@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Admin\ViewEstRecords;
 use App\Livewire\Auth\EditProfile;
 use App\Livewire\Auth\EditSecurity;
 use App\Livewire\Auth\ForgotPassword;
@@ -27,6 +28,8 @@ use App\Livewire\Ests\EstablishmentStock;
 use App\Livewire\Ests\EstInformation;
 use App\Livewire\Ests\EstinformationEdit;
 use App\Livewire\Ests\ShowForms;
+use App\Livewire\Viewests\ViewEstInfo;
+use App\Livewire\Viewests\ViewEstOpera;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,25 +56,41 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/edit-profile', EditProfile::class)->name('edit.profile');
     Route::get('/user/edit-security', EditSecurity::class)->name('edit.security');
     Route::get('/est/edit/{estid}', Dashboard::class)->name('est.edit');
+    Route::get('/view/estrecords/{estid}', ViewEstRecords::class)->name('est.view');
+    Route::get('/view/estinfo/{estrecordid}/{userid}', ViewEstInfo::class)->name('est.info.view');
+    Route::get('/view/estopera/{estrecordid}/{userid}', ViewEstOpera::class)->name('est.opera.view');
     //Route::get('/est/estinformation', EstInformation::class)->name('estinfo');
     Route::get('/ests/estinformation/{estrecordid}', EstInformation::class)->name('estinfo');
     Route::get('/ests/edit-estinformation/{estrecordid}', EstinformationEdit::class)->name('edit-estinfo');
+
     Route::get('/ests/establishmentoperation/{estrecordid}', EstablishmentOperation::class)->name('estopera');
     Route::get('/ests/edit-establishmentoperation/{estrecordid}', EstablishmentOperationEdit::class)->name('edit-estopera');
+
     Route::get('/ests/establishmentemploymentone/{estrecordid}', EstablishmentEmploymentone::class)->name('estempone');
     Route::get('/ests/edit-establishmentemploymentone/{estrecordid}', EstablishmentEmploymentoneEdit::class)->name('edit-estempone');
+
     Route::get('/ests/establishmentemploymenttwo/{estrecordid}', EstablishmentEmploymenttwo::class)->name('estemptwo');
     Route::get('/ests/edit-establishmentemploymenttwo/{estrecordid}', EstablishmentEmploymenttwoEdit::class)->name('edit-estemptwo');
+
     Route::get('/ests/establishmentproduction/{estrecordid}', EstablishmentProduction::class)->name('estprod');
     Route::get('/ests/edit-establishmentproduction/{estrecordid}', EstablishmentProductionEdit::class)->name('edit-estprod');
+
     Route::get('/ests/establishmentagricultural/{estrecordid}', EstablishmentAgricultural::class)->name('estagri');
+
     Route::get('/ests/establishfish/{estrecordid}', EstablishmentFish::class)->name('estfish');
+
     Route::get('/ests/establishelectricity/{estrecordid}', EstablishmentElectricity::class)->name('estelec');
+
     Route::get('/ests/establishfuel/{estrecordid}', EstablishmentFuel::class)->name('estfuel');
+
     Route::get('/ests/establishfuelconsumption/{estrecordid}', EstablishmentFuelconsumption::class)->name('estfuelconsumption');
+
     Route::get('/ests/establishotherservice/{estrecordid}', EstablishmentOtherservices::class)->name('estotherservice');
+
     Route::get('/ests/establishincome/{estrecordid}', EstablishmentIncome::class)->name('estincome');
+
     Route::get('/ests/establishexpense/{estrecordid}', EstablishmentExpenses::class)->name('estexpenses');
+
     Route::get('/ests/establishstock/{estrecordid}', EstablishmentStock::class)->name('eststock');
 
 

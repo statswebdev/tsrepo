@@ -17,7 +17,7 @@
                 <!-- row -->
                 <div class="col-md-6">
                     <!-- heading -->
-                    <h1 class="display-4 fw-bold">Tourism Survey Records</h1>
+                    <h1 class="display-4 fw-bold">{{ $est->estname }} Survey Records</h1>
                 </div>
             </div>    
         </div>
@@ -61,15 +61,14 @@
                                     <span>{{ $title }}</span>
                                 @endif
                                 <div class="ms-auto"> 
-                                    @if(!$estrecord->{$form})
-                                        <a href="{{ route($form, $estrecord->id) }}">
-                                            <span class="badge bg-info ms-2">Submit Form</span>
+                                    @if($estrecord->{$form})
+                                        <a href="/view/{{$form}}/{{ $estrecord->id }}/{{ $est->id }}">
+                                            <span class="badge bg-primary ms-2">View Form</span>
                                         </a>
                                     @endif
-                                    @if($estrecord->{$form} && $estrecord->{$form}->status === 'review')
-                                        <a href="{{ route('edit-'.$form, $estrecord->id) }}">
-                                            <span class="badge bg-secondary ms-2">Edit Form</span>
-                                        </a>
+
+                                    @if(!$estrecord->{$form})
+                                        <span class="badge bg-light ms-2 text-primary">Form Not Submitted</span>
                                     @endif
                                 </div>
                             </span>
