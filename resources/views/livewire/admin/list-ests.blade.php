@@ -33,7 +33,7 @@
                             <div>
                                 <h3 class="mb-0">{{ $estlist->estname}}</h3>
                                 <span>{{ $estlist->esttype}}</span>
-                                <div class="mt-3"><a href="/#!"><button type="button" class="btn btn-primary mb-2">View</button></a></div>
+                                <div class="mt-3"><a href="/view/estrecords/{{ $estlist->id}}"><button type="button" class="btn btn-primary mb-2">View</button></a></div>
                             </div>
                             </div>
                         </div>

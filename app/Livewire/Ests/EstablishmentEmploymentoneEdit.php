@@ -65,7 +65,7 @@ class EstablishmentEmploymentoneEdit extends Component
     public $bylevelother_maldivian_female;
     public $bylevelother_foreign_male;
     public $bylevelother_foreign_female;
-    public $status = "Updated";
+    public $status = "completed";
 
     protected $rules = [
         'maldivian_male' => 'required|integer',

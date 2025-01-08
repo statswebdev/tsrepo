@@ -3,10 +3,14 @@
 namespace App\Livewire\Ests;
 
 use App\Models\EstInfo;
+use App\Models\EstRecord;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+
 
 class EstinformationEdit extends Component
 {
+    public $estrecords;
     public $user_id;
     public $est_record_id;
     public $info_provider;
@@ -44,26 +48,36 @@ class EstinformationEdit extends Component
             'bedcapacity' => 'required|integer',
     ];
 
-    public function mount(EstInfo $estrecordid)
+    public function mount($estrecordid)
     {
-        $this->user_id = $estrecordid->user_id;
-        $this->est_record_id = $estrecordid->est_record_id;
-        $this->info_provider = $estrecordid->info_provider;
-        $this->contact_number = $estrecordid->contact_number;
-        $this->type_organisation = $estrecordid->type_organisation;
-        $this->operator_name = $estrecordid->operator_name;
-        $this->operator_register = $estrecordid->operator_register;
-        $this->owner_one = $estrecordid->owner_one;
-        $this->owner_two = $estrecordid->owner_two;
-        $this->operator_contact = $estrecordid->operator_contact;
-        $this->operator_email = $estrecordid->operator_email;
-        $this->government_share = $estrecordid->government_share;
-        $this->maldivian_share = $estrecordid->maldivian_share;
-        $this->foreign_share = $estrecordid->foreign_share;
-        $this->taxpayer_number = $estrecordid->taxpayer_number;
-        $this->establishment_regdate = $estrecordid->establishment_regdate;
-        $this->bedcapacity = $estrecordid->bedcapacity;
-        $this->status = $estrecordid->status;
+        $this->user_id = Auth::user();
+
+        $est_record_id = EstRecord::with('estinfo')->findOrFail($estrecordid);
+
+        // $this->estrecords = EstRecord::with([
+        //     'estinfo' => function($query) { $query->where('est_record_id', $estrecordid); },
+        // ])->get();
+
+        //dd($this->est_record_id);
+
+        //$this->user_id = $estrecordid->user_id;
+        // $this->est_record_id = $estrecordid->est_record_id;
+        $this->info_provider = $est_record_id->estinfo->info_provider;
+        $this->contact_number = $est_record_id->estinfo->contact_number;
+        $this->type_organisation = $est_record_id->estinfo->type_organisation;
+        $this->operator_name = $est_record_id->estinfo->operator_name;
+        $this->operator_register = $est_record_id->estinfo->operator_register;
+        $this->owner_one = $est_record_id->estinfo->owner_one;
+        $this->owner_two = $est_record_id->estinfo->owner_two;
+        $this->operator_contact = $est_record_id->estinfo->operator_contact;
+        $this->operator_email = $est_record_id->estinfo->operator_email;
+        $this->government_share = $est_record_id->estinfo->government_share;
+        $this->maldivian_share = $est_record_id->estinfo->maldivian_share;
+        $this->foreign_share = $est_record_id->estinfo->foreign_share;
+        $this->taxpayer_number = $est_record_id->estinfo->taxpayer_number;
+        $this->establishment_regdate = $est_record_id->estinfo->establishment_regdate;
+        $this->bedcapacity = $est_record_id->estinfo->bedcapacity;
+        $this->status = $est_record_id->estinfo->status;
     }
 
     public function save()

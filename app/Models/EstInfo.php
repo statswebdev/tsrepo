@@ -30,8 +30,8 @@ class EstInfo extends Model
         'status',
     ];
 
-    public function estRecord()
+    public function estrecord()
     {
-        return $this->belongsTo(EstRecord::class, 'est_record_id');
+        return $this->belongsTo(EstRecord::class, 'est_record_id', 'id');
     }
 }
