@@ -119,6 +119,9 @@
                                     <input type="number" id="foreign_share" class="form-control" placeholder="% Share" wire:model="foreign_share">
                                     @error('foreign_share')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
+                                @if ($errors->has('total_share'))
+                                <div class="invalid-feedback d-flex">{{ $errors->first('total_share') }}</div>
+                                @endif
 
                                 <hr class="mt-5 mb-5">
 

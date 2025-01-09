@@ -97,6 +97,11 @@ class EstinformationEdit extends Component
             'status' => 'required|string',
         ]);
 
+        if (($this->government_share + $this->maldivian_share + $this->foreign_share) > 100) {
+            $this->addError('total_share', 'The total share value must not exceed 100 %.');
+            return;
+        }
+
         $estRecord = EstRecord::with('estinfo')->findOrFail($this->est_record_id);
 
         if ($estRecord->estinfo) {

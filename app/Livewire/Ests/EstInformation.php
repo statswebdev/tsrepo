@@ -35,7 +35,6 @@ class EstInformation extends Component
         
         //dd($est_record_id->id);
     }
-
     public function submitRecord()
     {
         $this->validate([
@@ -56,7 +55,13 @@ class EstInformation extends Component
             'bedcapacity' => 'required|integer',
         ]);
 
-        EstInfo::create([ // Use the aliased model
+        // Custom validation for the sum of shares
+        if (($this->government_share + $this->maldivian_share + $this->foreign_share) > 100) {
+            $this->addError('total_share', 'The total share value must not exceed 100 %.');
+            return;
+        }
+
+        EstInfo::create([
             'user_id' => $this->user_id,
             'est_record_id' => $this->est_record_id->id,
             'info_provider' => $this->info_provider,

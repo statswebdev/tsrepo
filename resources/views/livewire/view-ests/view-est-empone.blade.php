@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="border-bottom pt-0 pb-4"> 
-                               
+                                <!-- Pricing data -->
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
                                         <span class="fs-6">maldivian_male_commuting</span>

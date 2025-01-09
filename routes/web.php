@@ -24,6 +24,8 @@ use App\Livewire\Ests\EstablishmentFuel;
 use App\Livewire\Ests\EstablishmentFuelconsumption;
 use App\Livewire\Ests\EstablishmentFuelconsumptionEdit;
 use App\Livewire\Ests\EstablishmentFuelEdit;
+use App\Livewire\Ests\EstablishmentGuestEdit;
+use App\Livewire\Ests\EstablishmentGuestemployment;
 use App\Livewire\Ests\EstablishmentIncome;
 use App\Livewire\Ests\EstablishmentIncomeEdit;
 use App\Livewire\Ests\EstablishmentOperation; // Ensure this class exists in the specified namespace
@@ -39,6 +41,7 @@ use App\Livewire\Ests\EstinformationEdit;
 use App\Livewire\Ests\ShowForms;
 use App\Livewire\Viewests\ViewEstagri;
 use App\Livewire\Viewests\ViewEstelec;
+use App\Livewire\ViewEsts\ViewEstEmpguest;
 use App\Livewire\ViewEsts\ViewEstEmpone;
 use App\Livewire\Viewests\ViewEstEmppro;
 use App\Livewire\Viewests\ViewEstEmpprod;
@@ -83,6 +86,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/view/estopera/{estrecordid}/{userid}', ViewEstOpera::class)->name('est.opera.view');
     Route::get('/view/estempone/{estrecordid}/{userid}', ViewEstEmpone::class)->name('est.empone.view');
     Route::get('/view/estemptwo/{estrecordid}/{userid}', ViewEstEmptwo::class)->name('est.emptwo.view');
+    Route::get('/view/estguest/{estrecordid}/{userid}', ViewEstEmpguest::class)->name('est.estguest.view');
     Route::get('/view/estprod/{estrecordid}/{userid}', ViewEstEmpprod::class)->name('est.prod.view');
     Route::get('/view/estagri/{estrecordid}/{userid}', ViewEstagri::class)->name('est.agri.view');
     Route::get('/view/estfish/{estrecordid}/{userid}', ViewEstfish::class)->name('est.fish.view');
@@ -105,6 +109,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/ests/establishmentemploymenttwo/{estrecordid}', EstablishmentEmploymenttwo::class)->name('estemptwo');
     Route::get('/ests/edit-establishmentemploymenttwo/{estrecordid}', EstablishmentEmploymenttwoEdit::class)->name('edit-estemptwo');
+
+    Route::get('/ests/establishmentguest/{estrecordid}', EstablishmentGuestemployment::class)->name('estguest');
+    Route::get('/ests/edit-establishmentguest/{estrecordid}', EstablishmentGuestEdit::class)->name('edit-estguest');
 
     Route::get('/ests/establishmentproduction/{estrecordid}', EstablishmentProduction::class)->name('estprod');
     Route::get('/ests/edit-establishmentproduction/{estrecordid}', EstablishmentProductionEdit::class)->name('edit-estprod');

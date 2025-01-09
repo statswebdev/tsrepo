@@ -39,6 +39,12 @@ class EstRecord extends Model
         return $this->hasOne(EstEmptwo::class, 'est_record_id');
     }
 
+    public function estguest()
+    {
+        return $this->hasOne(Estguest::class, 'est_record_id');
+    }
+
+
     public function estprod()
     {
         return $this->hasOne(EstEmppro::class, 'est_record_id');
