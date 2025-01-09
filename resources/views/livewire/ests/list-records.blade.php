@@ -46,6 +46,11 @@
                         <div id="collapse{{ $estrecord->collectionyear }}" class="collapse" aria-labelledby="heading{{ $estrecord->collectionyear }}" data-bs-parent="#accordion{{ $estrecord->collectionyear }}">
                         <div class="py-3 fs-4">
                             @foreach($estforms as $title => $form)
+                            @if(!(
+                                in_array($user->esttype, ['safari', 'guesthouse']) && 
+                                in_array($title, ['3. Employment Information P1', '3. Employment Information P2', '5. Agricultural Products', '6. Fish Products'])
+                            ))
+                            @if(!($user->esttype === 'resort' && $title === '3. Employment Information'))
                                 <span class="d-flex justify-content-between align-items-center mb-3">
                                     @if($estrecord->{$form})
                                     <span>{{ $title }}
@@ -80,6 +85,8 @@
                                 </div>
                             </span>
                             <hr>
+                            @endif
+                            @endif
                             @endforeach
                         </div>
                         </div>
