@@ -32,7 +32,7 @@ class EstablishmentIncome extends Component
     public $income_finance;
     public $income_dividend;
     public $income_other;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

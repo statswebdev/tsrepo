@@ -43,44 +43,60 @@
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Skipjack Tuna</label>
                             <div class="col-sm-2">
-                                <input type="text" id="skipjacktuna_inhouse" class="form-control" placeholder="Skipjack Tuna" wire:model="skipjacktuna_inhouse">
+                                <select id="skipjacktuna_inhouse" class="form-control" wire:model="skipjacktuna_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('skipjacktuna_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="skipjacktuna_inhouse_qty" class="form-control" placeholder="KG" wire:model="skipjacktuna_inhouse_qty">
+                                <input type="number" id="skipjacktuna_inhouse_qty" class="form-control" placeholder="KG" wire:model="skipjacktuna_inhouse_qty" :disabled="$wire.skipjacktuna_inhouse == 'no'">
                                 @error('skipjacktuna_inhouse_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Yellowfin Tuna</label>
                             <div class="col-sm-2">
-                                <input type="text" id="yellowfin_inhouse" class="form-control" placeholder="Yellowfin Tuna" wire:model="yellowfin_inhouse">
+                                <select id="yellowfin_inhouse" class="form-control" wire:model="yellowfin_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('yellowfin_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="yellowfin_inhouse_qty" class="form-control" placeholder="KG" wire:model="yellowfin_inhouse_qty">
+                                <input type="number" id="yellowfin_inhouse_qty" class="form-control" placeholder="KG" wire:model="yellowfin_inhouse_qty" :disabled="$wire.yellowfin_inhouse == 'no'">
                                 @error('yellowfin_inhouse_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Reef Fish</label>
                             <div class="col-sm-2">
-                                <input type="text" id="reeffish_inhouse" class="form-control" placeholder="Reef Fish" wire:model="reeffish_inhouse">
+                                <select id="reeffish_inhouse" class="form-control" wire:model="reeffish_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('reeffish_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="reeffish_inhouse_qty" class="form-control" placeholder="KG" wire:model="reeffish_inhouse_qty">
+                                <input type="number" id="reeffish_inhouse_qty" class="form-control" placeholder="KG" wire:model="reeffish_inhouse_qty" :disabled="$wire.reeffish_inhouse == 'no'">
                                 @error('reeffish_inhouse_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Seafood</label>
                             <div class="col-sm-2">
-                                <input type="text" id="seafood_inhouse" class="form-control" placeholder="Seafood Inhouse" wire:model="seafood_inhouse">
+                                <select id="seafood_inhouse" class="form-control" wire:model="seafood_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                                 @error('seafood_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="seafood_inhouse_qty" class="form-control" placeholder="KG" wire:model="seafood_inhouse_qty">
+                                <input type="number" id="seafood_inhouse_qty" class="form-control" placeholder="KG" wire:model="seafood_inhouse_qty" :disabled="$wire.seafood_inhouse == 'no'">
                                 @error('seafood_inhouse_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -96,7 +112,7 @@
                             </div>
                         </div>
                         
-                        <hr>
+                        <hr class="mt-5 mb-5">
                         
                         <h5>2. Fish Purchased From Fisherman</h5>
                         <small class="mb-5">Enter the quantity of fish purchased and their value</small>
@@ -128,67 +144,83 @@
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Skipjack Purchased</label>
                     <div class="col-sm-3">
-                        <input type="text" id="skipjack_purchased" class="form-control" placeholder="Skipjack Purchased" wire:model="skipjack_purchased">
+                        <select id="skipjack_purchased" class="form-control" wire:model="skipjack_purchased">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                         @error('skipjack_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="skipjack_purchased_qty" class="form-control" placeholder="KG" wire:model="skipjack_purchased_qty">
+                        <input type="number" id="skipjack_purchased_qty" class="form-control" placeholder="KG" wire:model="skipjack_purchased_qty" :disabled="$wire.skipjack_purchased == 'no'">
                         @error('skipjack_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="skipjack_purchased_value" class="form-control" placeholder="MVR" wire:model="skipjack_purchased_value">
+                        <input type="number" id="skipjack_purchased_value" class="form-control" placeholder="MVR" wire:model="skipjack_purchased_value" :disabled="$wire.skipjack_purchased == 'no'">
                         @error('skipjack_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label col-sm-2 text-end">Yellowfin Purchased</label>
                                     <div class="col-sm-3">
-                                        <input type="text" id="yellowfin_purchased" class="form-control" placeholder="Yellowfin Purchased" wire:model="yellowfin_purchased">
+                                        <select id="yellowfin_purchased" class="form-control" wire:model="yellowfin_purchased">
+                                            <option value="">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
                                         @error('yellowfin_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="yellowfin_purchased_qty" class="form-control" placeholder="KG" wire:model="yellowfin_purchased_qty">
+                                        <input type="number" id="yellowfin_purchased_qty" class="form-control" placeholder="KG" wire:model="yellowfin_purchased_qty" :disabled="$wire.yellowfin_purchased == 'no'">
                                         @error('yellowfin_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="yellowfin_purchased_value" class="form-control" placeholder="MVR" wire:model="yellowfin_purchased_value">
+                                        <input type="number" id="yellowfin_purchased_value" class="form-control" placeholder="MVR" wire:model="yellowfin_purchased_value" :disabled="$wire.yellowfin_purchased == 'no'">
                                         @error('yellowfin_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label col-sm-2 text-end">Reef Fish Purchased</label>
                                     <div class="col-sm-3">
-                                        <input type="text" id="reeffish_purchased" class="form-control" placeholder="Reef Fish Purchased" wire:model="reeffish_purchased">
+                                        <select id="reeffish_purchased" class="form-control" wire:model="reeffish_purchased">
+                                            <option value="">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
                                         @error('reeffish_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="reeffish_purchased_qty" class="form-control" placeholder="KG" wire:model="reeffish_purchased_qty">
+                                        <input type="number" id="reeffish_purchased_qty" class="form-control" placeholder="KG" wire:model="reeffish_purchased_qty" :disabled="$wire.reeffish_purchased == 'no'">
                                         @error('reeffish_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="reeffish_purchased_value" class="form-control" placeholder="MVR" wire:model="reeffish_purchased_value">
+                                        <input type="number" id="reeffish_purchased_value" class="form-control" placeholder="MVR" wire:model="reeffish_purchased_value" :disabled="$wire.reeffish_purchased == 'no'">
                                         @error('reeffish_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label col-sm-2 text-end">Seafood Purchased</label>
                                     <div class="col-sm-3">
-                                        <input type="text" id="seafood_purchased" class="form-control" placeholder="Seafood Purchased" wire:model="seafood_purchased">
+                                        <select id="seafood_purchased" class="form-control" wire:model="seafood_purchased">
+                                            <option value="">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
                                         @error('seafood_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="seafood_purchased_qty" class="form-control" placeholder="KG" wire:model="seafood_purchased_qty">
+                                        <input type="number" id="seafood_purchased_qty" class="form-control" placeholder="KG" wire:model="seafood_purchased_qty" :disabled="$wire.seafood_purchased == 'no'">
                                         @error('seafood_purchased_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="seafood_purchased_value" class="form-control" placeholder="MVR" wire:model="seafood_purchased_value">
+                                        <input type="number" id="seafood_purchased_value" class="form-control" placeholder="MVR" wire:model="seafood_purchased_value" :disabled="$wire.seafood_purchased == 'no'">
                                         @error('seafood_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label col-sm-2 text-end">Other Fish Purchased</label>
                                     <div class="col-sm-3">
-                                        <input type="text" id="otherfish_purchased" class="form-control" placeholder="Other Fish Purchased" wire:model="otherfish_purchased">
+                                        <input type="text" id="otherfish_purchased" class="form-control" placeholder="Specify" wire:model="otherfish_purchased">
                                         @error('otherfish_purchased')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
@@ -200,6 +232,7 @@
                                         @error('otherfish_purchased_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
+                                <hr class="mt-5 mb-5">
                                 
                                 
                          

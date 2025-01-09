@@ -52,7 +52,7 @@ class EstablishmentProduction extends Component
     public $metal_waste_method = [];
     public $other_waste;
     public $other_waste_method = [];
-    public $status="completed";
+    public $status="submitted";
 
     public function mount($estrecordid)
     {
@@ -64,22 +64,22 @@ class EstablishmentProduction extends Component
     {
         $this->validate([
             'generated_inhouse' => 'required',
-            'electricity_generated' => 'required',
+            'electricity_generated' => 'nullable',
             'electricity_outsourced' => 'required',
-            'outsourced_generated' => 'required',
+            'outsourced_generated' => 'nullable',
             'electricity_othersources' => 'required',
-            'othersources_generated' => 'required',
+            'othersources_generated' => 'nullable',
             'electricity_consumption' => 'required',
             'solargrid_energy' => 'required',
-            'solargrid_production' => 'required',
-            'solargrid_consumption' => 'required',
+            'solargrid_production' => 'nullable',
+            'solargrid_consumption' => 'nullable',
             'renewable_other' => 'required',
-            'renewable_other_production' => 'required',
-            'renewable_other_consumption' => 'required',
+            'renewable_other_production' => 'nullable',
+            'renewable_other_consumption' => 'nullable',
             'waterinhouse_production' => 'required',
-            'waterinhouse_monthly' => 'required',
+            'waterinhouse_monthly' => 'nullable',
             'water_outsourced' => 'required',
-            'water_outsourced_monthly' => 'required',
+            'water_outsourced_monthly' => 'nullable',
             'monthly_water_jan' => 'required',
             'monthly_water_feb' => 'required',
             'monthly_water_mar' => 'required',

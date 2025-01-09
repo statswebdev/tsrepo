@@ -41,7 +41,7 @@ class EstablishmentOtherservices extends Component
     public $three_accomodation_island;
     public $three_accomodation_local;
     public $three_accomodation_foreign;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {
@@ -71,19 +71,19 @@ class EstablishmentOtherservices extends Component
                 'otherservices' => 'required',
                 'otherservices_contract' => 'required',
                 'doctor_inhouse' => 'required',
-                'nearest_healthfacility' => 'required',
-                'onestaff_accomodation' => 'required',
-                'onestaff_accomodation_island' => 'required',
-                'onestaff_accomodation_local' => 'required',
-                'onestaff_accomodation_foreign' => 'required',
-                'twostaff_accomodation' => 'required',
-                'twostaff_accomodation_island' => 'required',
-                'twostaff_accomodation_local' => 'required',
-                'twostaff_accomodation_foreign' => 'required',
-                'three_accomodation' => 'required',
-                'three_accomodation_island' => 'required',
-                'three_accomodation_local' => 'required',
-                'three_accomodation_foreign' => 'required',
+                'nearest_healthfacility' => 'nullable',
+                'onestaff_accomodation' => 'nullable',
+                'onestaff_accomodation_island' => 'nullable',
+                'onestaff_accomodation_local' => 'nullable',
+                'onestaff_accomodation_foreign' => 'nullable',
+                'twostaff_accomodation' => 'nullable',
+                'twostaff_accomodation_island' => 'nullable',
+                'twostaff_accomodation_local' => 'nullable',
+                'twostaff_accomodation_foreign' => 'nullable',
+                'three_accomodation' => 'nullable',
+                'three_accomodation_island' => 'nullable',
+                'three_accomodation_local' => 'nullable',
+                'three_accomodation_foreign' => 'nullable',
         ]);
 
         Estotherser::create([ // Use the aliased model

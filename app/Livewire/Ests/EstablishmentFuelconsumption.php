@@ -61,7 +61,7 @@ class EstablishmentFuelconsumption extends Component
     public $petrol_other_fuelconsumption;
     public $petrol_other_fuelconsumption_unit;
     public $petrol_other_fuelconsumption_qty;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {
@@ -75,13 +75,13 @@ class EstablishmentFuelconsumption extends Component
     {
         $this->validate([
             'diesel_bought_qty' => 'required|integer',
-            'diesel_bought_year' => 'required|integer',
+            'diesel_bought_year' => 'required|string',
             'petrol_bought_qty' => 'required|integer',
-            'petrol_bought_year' => 'required|integer',
+            'petrol_bought_year' => 'required|string',
             'lpg_bought_qty' => 'required|integer',
-            'lpg_bought_year' => 'required|integer',
-            'other_bought_qty' => 'required|integer',
-            'other_bought_year' => 'required|integer',
+            'lpg_bought_year' => 'required|string',
+            'other_bought_qty' => 'nullable|integer',
+            'other_bought_year' => 'nullable|string',
             'diesel_inventory_unit' => 'required|string',
             'diesel_inventory_yearfirst' => 'required|integer',
             'diesel_inventory_yearend' => 'required|integer',
@@ -91,10 +91,10 @@ class EstablishmentFuelconsumption extends Component
             'lpg_inventory_unit' => 'required|string',
             'lpg_inventory_unit_yearfirst' => 'required|integer',
             'lpg_inventory_unit_yearend' => 'required|integer',
-            'other_inventory_specify' => 'required|string',
-            'other_inventory_unit' => 'required|string',
-            'other_inventory_unit_yearfirst' => 'required|integer',
-            'other_inventory_unit_yearend' => 'required|integer',
+            'other_inventory_specify' => 'nullable|string',
+            'other_inventory_unit' => 'nullable|string',
+            'other_inventory_unit_yearfirst' => 'nullable|integer',
+            'other_inventory_unit_yearend' => 'nullable|integer',
             'diesel_electricity_unit' => 'required|string',
             'diesel_electricity_qty' => 'required|integer',
             'petrol_electricity_unit' => 'required|string',
@@ -117,12 +117,12 @@ class EstablishmentFuelconsumption extends Component
             'diesel_cooking_qty' => 'required|integer',
             'petrol_cooking_unit' => 'required|string',
             'petrol_cooking_qty' => 'required|integer',
-            'diesel_other_fuelconsumption' => 'required|string',
-            'diesel_other_fuelconsumption_unit' => 'required|string',
-            'diesel_other_fuelconsumption_qty' => 'required|integer',
-            'petrol_other_fuelconsumption' => 'required|string',
-            'petrol_other_fuelconsumption_unit' => 'required|string',
-            'petrol_other_fuelconsumption_qty' => 'required|integer',
+            'diesel_other_fuelconsumption' => 'nullable|string',
+            'diesel_other_fuelconsumption_unit' => 'nullable|string',
+            'diesel_other_fuelconsumption_qty' => 'nullable|integer',
+            'petrol_other_fuelconsumption' => 'nullable|string',
+            'petrol_other_fuelconsumption_unit' => 'nullable|string',
+            'petrol_other_fuelconsumption_qty' => 'nullable|integer',
         ]);
        
 

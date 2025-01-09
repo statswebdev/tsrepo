@@ -2,8 +2,10 @@
 
 namespace App\Livewire\Ests;
 
-use App\Models\EstEmpone;
+
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use App\Models\EstEmpone;
 
 class EstablishmentEmploymentoneEdit extends Component
 {
@@ -65,7 +67,7 @@ class EstablishmentEmploymentoneEdit extends Component
     public $bylevelother_maldivian_female;
     public $bylevelother_foreign_male;
     public $bylevelother_foreign_female;
-    public $status = "Updated";
+    public $status = "submitted";
 
     protected $rules = [
         'maldivian_male' => 'required|integer',
@@ -127,67 +129,70 @@ class EstablishmentEmploymentoneEdit extends Component
         
     ];
 
-    public function mount(EstEmpone $estrecordid)
+    public function mount($estrecordid)
     {
-        $this->user_id = $estrecordid->user_id;
-        $this->est_record_id = $estrecordid->id;
-        $this->maldivian_male = $estrecordid->maldivian_male;
-        $this->maldivian_female = $estrecordid->maldivian_female;
-        $this->foreign_male = $estrecordid->foreign_male;
-        $this->foreign_female = $estrecordid->foreign_female;
-        $this->maldivian_male_commuting = $estrecordid->maldivian_male_commuting;
-        $this->maldivian_female_commuting = $estrecordid->maldivian_female_commuting;
-        $this->foreign_male_commuting = $estrecordid->foreign_male_commuting;
-        $this->foreign_female_commuting = $estrecordid->foreign_female_commuting;
-        $this->maldivian_male_permanent = $estrecordid->maldivian_male_permanent;
-        $this->maldivian_female_permanent = $estrecordid->maldivian_female_permanent;
-        $this->foreign_male_permanent = $estrecordid->foreign_male_permanent;
-        $this->foreign_female_permanent = $estrecordid->foreign_female_permanent;
-        $this->accomo_maldivian_male = $estrecordid->accomo_maldivian_male;
-        $this->accomo_maldivian_female = $estrecordid->accomo_maldivian_female;
-        $this->accomo_foreign_male = $estrecordid->accomo_foreign_male;
-        $this->accomo_foreign_female = $estrecordid->accomo_foreign_female;
-        $this->food_maldivian_male = $estrecordid->food_maldivian_male;
-        $this->food_maldivian_female = $estrecordid->food_maldivian_female;
-        $this->food_foreign_male = $estrecordid->food_foreign_male;
-        $this->food_foreign_female = $estrecordid->food_foreign_female;
-        $this->transport_maldivian_male = $estrecordid->transport_maldivian_male;
-        $this->transport_maldivian_female = $estrecordid->transport_maldivian_female;
-        $this->transport_foreign_male = $estrecordid->transport_foreign_male;
-        $this->transport_foreign_female = $estrecordid->transport_foreign_female;
-        $this->sports_maldivian_male = $estrecordid->sports_maldivian_male;
-        $this->sports_maldivian_female = $estrecordid->sports_maldivian_female;
-        $this->sports_foreign_male = $estrecordid->sports_foreign_male;
-        $this->sports_foreign_female = $estrecordid->sports_foreign_female;
-        $this->admin_maldivian_male = $estrecordid->admin_maldivian_male;
-        $this->admin_maldivian_female = $estrecordid->admin_maldivian_female;
-        $this->admin_foreign_male = $estrecordid->admin_foreign_male;
-        $this->admin_foreign_female = $estrecordid->admin_foreign_female;
-        $this->other_maldivian_male = $estrecordid->other_maldivian_male;
-        $this->other_maldivian_female = $estrecordid->other_maldivian_female;
-        $this->other_foreign_male = $estrecordid->other_foreign_male;
-        $this->other_foreign_female = $estrecordid->other_foreign_female;
-        $this->manager_maldivian_male = $estrecordid->manager_maldivian_male;
-        $this->manager_maldivian_female = $estrecordid->manager_maldivian_female;
-        $this->manager_foreign_male = $estrecordid->manager_foreign_male;
-        $this->manager_foreign_female = $estrecordid->manager_foreign_female;
-        $this->professional_maldivian_male = $estrecordid->professional_maldivian_male;
-        $this->professional_maldivian_female = $estrecordid->professional_maldivian_female;
-        $this->professional_foreign_male = $estrecordid->professional_foreign_male;
-        $this->professional_foreign_female = $estrecordid->professional_foreign_female;
-        $this->service_maldivian_male = $estrecordid->service_maldivian_male;
-        $this->service_maldivian_female = $estrecordid->service_maldivian_female;
-        $this->service_foreign_male = $estrecordid->service_foreign_male;
-        $this->service_foreign_female = $estrecordid->service_foreign_female;
-        $this->elementary_maldivian_male = $estrecordid->elementary_maldivian_male;
-        $this->elementary_maldivian_female = $estrecordid->elementary_maldivian_female;
-        $this->elementary_foreign_male = $estrecordid->elementary_foreign_male;
-        $this->elementary_foreign_female = $estrecordid->elementary_foreign_female;
-        $this->bylevelother_maldivian_male = $estrecordid->bylevelother_maldivian_male;
-        $this->bylevelother_maldivian_female = $estrecordid->bylevelother_maldivian_female;
-        $this->bylevelother_foreign_male = $estrecordid->bylevelother_foreign_male;
-        $this->bylevelother_foreign_female = $estrecordid->bylevelother_foreign_female;
-        $this->status = $estrecordid->status;
+        $this->user_id = Auth::id();
+
+        $est_record = EstEmpone::findOrFail($estrecordid);
+
+        $this->est_record_id = $est_record->id;
+        $this->maldivian_male = $est_record->maldivian_male;
+        $this->maldivian_female = $est_record->maldivian_female;
+        $this->foreign_male = $est_record->foreign_male;
+        $this->foreign_female = $est_record->foreign_female;
+        $this->maldivian_male_commuting = $est_record->maldivian_male_commuting;
+        $this->maldivian_female_commuting = $est_record->maldivian_female_commuting;
+        $this->foreign_male_commuting = $est_record->foreign_male_commuting;
+        $this->foreign_female_commuting = $est_record->foreign_female_commuting;
+        $this->maldivian_male_permanent = $est_record->maldivian_male_permanent;
+        $this->maldivian_female_permanent = $est_record->maldivian_female_permanent;
+        $this->foreign_male_permanent = $est_record->foreign_male_permanent;
+        $this->foreign_female_permanent = $est_record->foreign_female_permanent;
+        $this->accomo_maldivian_male = $est_record->accomo_maldivian_male;
+        $this->accomo_maldivian_female = $est_record->accomo_maldivian_female;
+        $this->accomo_foreign_male = $est_record->accomo_foreign_male;
+        $this->accomo_foreign_female = $est_record->accomo_foreign_female;
+        $this->food_maldivian_male = $est_record->food_maldivian_male;
+        $this->food_maldivian_female = $est_record->food_maldivian_female;
+        $this->food_foreign_male = $est_record->food_foreign_male;
+        $this->food_foreign_female = $est_record->food_foreign_female;
+        $this->transport_maldivian_male = $est_record->transport_maldivian_male;
+        $this->transport_maldivian_female = $est_record->transport_maldivian_female;
+        $this->transport_foreign_male = $est_record->transport_foreign_male;
+        $this->transport_foreign_female = $est_record->transport_foreign_female;
+        $this->sports_maldivian_male = $est_record->sports_maldivian_male;
+        $this->sports_maldivian_female = $est_record->sports_maldivian_female;
+        $this->sports_foreign_male = $est_record->sports_foreign_male;
+        $this->sports_foreign_female = $est_record->sports_foreign_female;
+        $this->admin_maldivian_male = $est_record->admin_maldivian_male;
+        $this->admin_maldivian_female = $est_record->admin_maldivian_female;
+        $this->admin_foreign_male = $est_record->admin_foreign_male;
+        $this->admin_foreign_female = $est_record->admin_foreign_female;
+        $this->other_maldivian_male = $est_record->other_maldivian_male;
+        $this->other_maldivian_female = $est_record->other_maldivian_female;
+        $this->other_foreign_male = $est_record->other_foreign_male;
+        $this->other_foreign_female = $est_record->other_foreign_female;
+        $this->manager_maldivian_male = $est_record->manager_maldivian_male;
+        $this->manager_maldivian_female = $est_record->manager_maldivian_female;
+        $this->manager_foreign_male = $est_record->manager_foreign_male;
+        $this->manager_foreign_female = $est_record->manager_foreign_female;
+        $this->professional_maldivian_male = $est_record->professional_maldivian_male;
+        $this->professional_maldivian_female = $est_record->professional_maldivian_female;
+        $this->professional_foreign_male = $est_record->professional_foreign_male;
+        $this->professional_foreign_female = $est_record->professional_foreign_female;
+        $this->service_maldivian_male = $est_record->service_maldivian_male;
+        $this->service_maldivian_female = $est_record->service_maldivian_female;
+        $this->service_foreign_male = $est_record->service_foreign_male;
+        $this->service_foreign_female = $est_record->service_foreign_female;
+        $this->elementary_maldivian_male = $est_record->elementary_maldivian_male;
+        $this->elementary_maldivian_female = $est_record->elementary_maldivian_female;
+        $this->elementary_foreign_male = $est_record->elementary_foreign_male;
+        $this->elementary_foreign_female = $est_record->elementary_foreign_female;
+        $this->bylevelother_maldivian_male = $est_record->bylevelother_maldivian_male;
+        $this->bylevelother_maldivian_female = $est_record->bylevelother_maldivian_female;
+        $this->bylevelother_foreign_male = $est_record->bylevelother_foreign_male;
+        $this->bylevelother_foreign_female = $est_record->bylevelother_foreign_female;
+        $this->status = $est_record->status;
     }
 
     public function save()
@@ -251,9 +256,9 @@ class EstablishmentEmploymentoneEdit extends Component
         'bylevelother_foreign_female' => 'required|integer',
         ]);
 
-        EstEmpone::where('id', $this->est_record_id)->update([
-            'user_id' => $this->user_id,
-            'est_record_id' => $this->est_record_id,
+        $estRecord = EstEmpone::findOrFail($this->est_record_id);
+
+        $estRecord->update([
             'maldivian_male' => $this->maldivian_male,
             'maldivian_female' => $this->maldivian_female,
             'foreign_male' => $this->foreign_male,
@@ -310,7 +315,7 @@ class EstablishmentEmploymentoneEdit extends Component
             'bylevelother_maldivian_female' => $this->bylevelother_maldivian_female,
             'bylevelother_foreign_male' => $this->bylevelother_foreign_male,
             'bylevelother_foreign_female' => $this->bylevelother_foreign_female,
-            'status' => $this->status,
+            'status' => 'submitted',
         ]);
         
         

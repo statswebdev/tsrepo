@@ -42,7 +42,7 @@ class EstablishmentStock extends Component
     public $stock_other_four_value_yearend;
     public $profit_loss;
     public $remarks;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

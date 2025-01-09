@@ -149,7 +149,7 @@
                             </div>
                         </div>
 
-                                <hr class="mt-3 mb-4">
+                        <hr class="mt-5 mb-5">
                                 <h5>2. Employment by duration of employment - Year End (december) </h5>
                                 <small class="mb-3">Enter the number of employees</small>
 
@@ -258,7 +258,7 @@
                             </div>
     
   
-                                <hr class="mt-3 mb-4">
+                            <hr class="mt-5 mb-5">
                                 <h5>3. Employment by age - Year End (december) </h5>
                                 <small class="mb-3">Enter the number of employees</small>
 
@@ -366,7 +366,7 @@
                                 </div>
 
 
-                                <hr class="mt-3 mb-4">
+                                <hr class="mt-5 mb-5">
                                 <h5>4. Employment by Registered atoll of the employees - Year End (december) </h5>
                                 <small class="mb-3">Enter the number of employees</small>
 
@@ -610,7 +610,7 @@
 
 
 
-                                <hr class="mt-3 mb-4">
+                                <hr class="mt-5 mb-5">
                                 <h5>5. Are any of the facilities within the establishment outsourced? </h5>
                                 <small class="mb-3">Please indicate number of employees at the end of reporting year (December)</small>
 
@@ -818,7 +818,7 @@
                                     </div>
                                 </div>
 
-                                <hr class="mt-3 mb-4">
+                                <hr class="mt-5 mb-5">
 
                                 <div class="mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">

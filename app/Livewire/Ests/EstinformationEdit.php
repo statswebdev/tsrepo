@@ -50,34 +50,30 @@ class EstinformationEdit extends Component
 
     public function mount($estrecordid)
     {
-        $this->user_id = Auth::user();
+        $this->user_id = Auth::id();
 
-        $est_record_id = EstRecord::with('estinfo')->findOrFail($estrecordid);
+        $est_record = EstRecord::with('estinfo')->findOrFail($estrecordid);
 
-        // $this->estrecords = EstRecord::with([
-        //     'estinfo' => function($query) { $query->where('est_record_id', $estrecordid); },
-        // ])->get();
+        if ($est_record->estinfo) {
+            $this->info_provider = $est_record->estinfo->info_provider;
+            $this->contact_number = $est_record->estinfo->contact_number;
+            $this->type_organisation = $est_record->estinfo->type_organisation;
+            $this->operator_name = $est_record->estinfo->operator_name;
+            $this->operator_register = $est_record->estinfo->operator_register;
+            $this->owner_one = $est_record->estinfo->owner_one;
+            $this->owner_two = $est_record->estinfo->owner_two;
+            $this->operator_contact = $est_record->estinfo->operator_contact;
+            $this->operator_email = $est_record->estinfo->operator_email;
+            $this->government_share = $est_record->estinfo->government_share;
+            $this->maldivian_share = $est_record->estinfo->maldivian_share;
+            $this->foreign_share = $est_record->estinfo->foreign_share;
+            $this->taxpayer_number = $est_record->estinfo->taxpayer_number;
+            $this->establishment_regdate = $est_record->estinfo->establishment_regdate;
+            $this->bedcapacity = $est_record->estinfo->bedcapacity;
+            $this->status = $est_record->estinfo->status;
+        }
 
-        //dd($this->est_record_id);
-
-        //$this->user_id = $estrecordid->user_id;
-        // $this->est_record_id = $estrecordid->est_record_id;
-        $this->info_provider = $est_record_id->estinfo->info_provider;
-        $this->contact_number = $est_record_id->estinfo->contact_number;
-        $this->type_organisation = $est_record_id->estinfo->type_organisation;
-        $this->operator_name = $est_record_id->estinfo->operator_name;
-        $this->operator_register = $est_record_id->estinfo->operator_register;
-        $this->owner_one = $est_record_id->estinfo->owner_one;
-        $this->owner_two = $est_record_id->estinfo->owner_two;
-        $this->operator_contact = $est_record_id->estinfo->operator_contact;
-        $this->operator_email = $est_record_id->estinfo->operator_email;
-        $this->government_share = $est_record_id->estinfo->government_share;
-        $this->maldivian_share = $est_record_id->estinfo->maldivian_share;
-        $this->foreign_share = $est_record_id->estinfo->foreign_share;
-        $this->taxpayer_number = $est_record_id->estinfo->taxpayer_number;
-        $this->establishment_regdate = $est_record_id->estinfo->establishment_regdate;
-        $this->bedcapacity = $est_record_id->estinfo->bedcapacity;
-        $this->status = $est_record_id->estinfo->status;
+        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -98,11 +94,14 @@ class EstinformationEdit extends Component
             'taxpayer_number' => 'required|string',
             'establishment_regdate' => 'required|date',
             'bedcapacity' => 'required|integer',
+            'status' => 'required|string',
         ]);
 
-        EstInfo::where('id', $this->est_record_id)->update([
-            'user_id' => $this->user_id,
-            'est_record_id' => $this->est_record_id,
+        $estRecord = EstRecord::with('estinfo')->findOrFail($this->est_record_id);
+
+        if ($estRecord->estinfo) {
+            // Update the fields in the related `estinfo` model
+            $estRecord->estinfo->update([
             'info_provider' => $this->info_provider,
             'contact_number' => $this->contact_number,
             'type_organisation' => $this->type_organisation,
@@ -119,10 +118,12 @@ class EstinformationEdit extends Component
             'establishment_regdate' => $this->establishment_regdate,
             'bedcapacity' => $this->bedcapacity,
             'status' => $this->status,
-        ]);
+            ]);
+        }
+        
         
 
-        session()->flash('success', 'Information Updated');
+        session()->flash('success', 'Establishment Information Updated');
         return redirect()->route('dashboard');
     }
 

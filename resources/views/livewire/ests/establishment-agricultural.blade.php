@@ -48,9 +48,8 @@
                                     </select>
                                     @error('watermelon_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
-                                <div class="col-sm-2">
-                                    
-                                    <input type="number" id="watermelon_grown" class="form-control" placeholder="KG" wire:model="watermelon_grown">
+                                <div class="col-sm-2"> 
+                                    <input type="number" id="watermelon_grown" class="form-control" placeholder="KG" wire:model="watermelon_grown" :disabled="$wire.watermelon_inhouse === 'no'">
                                     @error('watermelon_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                
@@ -69,7 +68,7 @@
                                 @error('coconut_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="coconut_grown" class="form-control" placeholder="KG" wire:model="coconut_grown">
+                                <input type="number" id="coconut_grown" class="form-control" placeholder="KG" wire:model="coconut_grown" :disabled="$wire.coconut_inhouse === 'no'">
                                 @error('coconut_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -86,7 +85,7 @@
                                 @error('papaya_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="papaya_grown" class="form-control" placeholder="KG" wire:model="papaya_grown">
+                                <input type="number" id="papaya_grown" class="form-control" placeholder="KG" wire:model="papaya_grown" :disabled="$wire.papaya_inhouse === 'no'">
                                 @error('papaya_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -101,7 +100,7 @@
                                 @error('pumpkin_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="pumpkin_grown" class="form-control" placeholder="KG" wire:model="pumpkin_grown">
+                                <input type="number" id="pumpkin_grown" class="form-control" placeholder="KG" wire:model="pumpkin_grown" :disabled="$wire.pumpkin_inhouse === 'no'">
                                 @error('pumpkin_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -116,7 +115,7 @@
                                 @error('cucumber_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="cucumber_grown" class="form-control" placeholder="KG" wire:model="cucumber_grown">
+                                <input type="number" id="cucumber_grown" class="form-control" placeholder="KG" wire:model="cucumber_grown" :disabled="$wire.cucumber_inhouse === 'no'">
                                 @error('cucumber_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -132,7 +131,7 @@
                                 @error('banana_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="banana_grown" class="form-control" placeholder="KG" wire:model="banana_grown">
+                                <input type="number" id="banana_grown" class="form-control" placeholder="KG" wire:model="banana_grown" :disabled="$wire.banana_inhouse === 'no'">
                                 @error('banana_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -147,7 +146,7 @@
                                 @error('brinjal_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="brinjal_grown" class="form-control" placeholder="KG" wire:model="brinjal_grown">
+                                <input type="number" id="brinjal_grown" class="form-control" placeholder="KG" wire:model="brinjal_grown" :disabled="$wire.brinjal_inhouse === 'no'">
                                 @error('brinjal_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -163,7 +162,7 @@
                                 @error('chillies_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="chillies_grown" class="form-control" placeholder="KG" wire:model="chillies_grown">
+                                <input type="number" id="chillies_grown" class="form-control" placeholder="KG" wire:model="chillies_grown" :disabled="$wire.chillies_inhouse === 'no'">
                                 @error('chillies_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -179,7 +178,7 @@
                                 @error('bottlegourd_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="bottlegourd_grown" class="form-control" placeholder="KG" wire:model="bottlegourd_grown">
+                                <input type="number" id="bottlegourd_grown" class="form-control" placeholder="KG" wire:model="bottlegourd_grown" :disabled="$wire.bottlegourd_inhouse === 'no'">
                                 @error('bottlegourd_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -194,7 +193,7 @@
                                 @error('butternut_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="butternut_grown" class="form-control" placeholder="KG" wire:model="butternut_grown">
+                                <input type="number" id="butternut_grown" class="form-control" placeholder="KG" wire:model="butternut_grown" :disabled="$wire.butternut_inhouse === 'no'">
                                 @error('butternut_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -209,7 +208,7 @@
                                 @error('cabbage_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="cabbage_grown" class="form-control" placeholder="KG" wire:model="cabbage_grown">
+                                <input type="number" id="cabbage_grown" class="form-control" placeholder="KG" wire:model="cabbage_grown" :disabled="$wire.cabbage_inhouse === 'no'">
                                 @error('cabbage_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -224,7 +223,7 @@
                                 @error('mango_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="mango_grown" class="form-control" placeholder="KG" wire:model="mango_grown">
+                                <input type="number" id="mango_grown" class="form-control" placeholder="KG" wire:model="mango_grown" :disabled="$wire.mango_inhouse === 'no'">
                                 @error('mango_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -240,7 +239,7 @@
                                 @error('waxgourd_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                             <div class="col-sm-2">
-                                <input type="number" id="waxgourd_grown" class="form-control" placeholder="KG" wire:model="waxgourd_grown">
+                                <input type="number" id="waxgourd_grown" class="form-control" placeholder="KG" wire:model="waxgourd_grown" :disabled="$wire.waxgourd_inhouse === 'no'">
                                 @error('waxgourd_grown')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
                         </div>
@@ -293,7 +292,7 @@
                             </div>
                         </div>
 
-                        <hr class="mt-3 mb-5">
+                        <hr class="mt-5 mb-5">
                         
                         <h5>2. Agricultural Products Purchased From Farmers</h5>
                         <small class="mb-5">Enter the quantity of agricultural products purchased and their value</small>
@@ -333,11 +332,11 @@
                         @error('watermelon_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="watermelon_farmers_qty" class="form-control" placeholder="KG" wire:model="watermelon_farmers_qty">
+                        <input type="number" id="watermelon_farmers_qty" class="form-control" placeholder="KG" wire:model="watermelon_farmers_qty" :disabled="$wire.watermelon_farmers === 'no'">
                         @error('watermelon_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="watermelon_farmers_value" class="form-control" placeholder="MVR" wire:model="watermelon_farmers_value">
+                        <input type="number" id="watermelon_farmers_value" class="form-control" placeholder="MVR" wire:model="watermelon_farmers_value" :disabled="$wire.watermelon_farmers === 'no'">
                         @error('watermelon_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -352,11 +351,11 @@
                         @error('coconut_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="coconut_farmers_qty" class="form-control" placeholder="KG" wire:model="coconut_farmers_qty">
+                        <input type="number" id="coconut_farmers_qty" class="form-control" placeholder="KG" wire:model="coconut_farmers_qty" :disabled="$wire.coconut_farmers === 'no'">
                         @error('coconut_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="coconut_farmers_value" class="form-control" placeholder="MVR" wire:model="coconut_farmers_value">
+                        <input type="number" id="coconut_farmers_value" class="form-control" placeholder="MVR" wire:model="coconut_farmers_value" :disabled="$wire.coconut_farmers === 'no'">
                         @error('coconut_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -371,11 +370,11 @@
                         @error('papaya_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="papaya_farmers_qty" class="form-control" placeholder="KG" wire:model="papaya_farmers_qty">
+                        <input type="number" id="papaya_farmers_qty" class="form-control" placeholder="KG" wire:model="papaya_farmers_qty" :disabled="$wire.papaya_farmers === 'no'">
                         @error('papaya_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="papaya_farmers_value" class="form-control" placeholder="MVR" wire:model="papaya_farmers_value">
+                        <input type="number" id="papaya_farmers_value" class="form-control" placeholder="MVR" wire:model="papaya_farmers_value" :disabled="$wire.papaya_farmers === 'no'">
                         @error('papaya_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -390,11 +389,11 @@
                         @error('pumpkin_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="pumpkin_farmers_qty" class="form-control" placeholder="KG" wire:model="pumpkin_farmers_qty">
+                        <input type="number" id="pumpkin_farmers_qty" class="form-control" placeholder="KG" wire:model="pumpkin_farmers_qty" :disabled="$wire.pumpkin_farmers === 'no'">
                         @error('pumpkin_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="pumpkin_farmers_value" class="form-control" placeholder="MVR" wire:model="pumpkin_farmers_value">
+                        <input type="number" id="pumpkin_farmers_value" class="form-control" placeholder="MVR" wire:model="pumpkin_farmers_value" :disabled="$wire.pumpkin_farmers === 'no'">
                         @error('pumpkin_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -409,11 +408,11 @@
                         @error('cucumber_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="cucumber_farmers_qty" class="form-control" placeholder="KG" wire:model="cucumber_farmers_qty">
+                        <input type="number" id="cucumber_farmers_qty" class="form-control" placeholder="KG" wire:model="cucumber_farmers_qty" :disabled="$wire.cucumber_farmers === 'no'">
                         @error('cucumber_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="cucumber_farmers_value" class="form-control" placeholder="MVR" wire:model="cucumber_farmers_value">
+                        <input type="number" id="cucumber_farmers_value" class="form-control" placeholder="MVR" wire:model="cucumber_farmers_value" :disabled="$wire.cucumber_farmers === 'no'">
                         @error('cucumber_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -428,11 +427,11 @@
                         @error('banana_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="banana_farmers_qty" class="form-control" placeholder="KG" wire:model="banana_farmers_qty">
+                        <input type="number" id="banana_farmers_qty" class="form-control" placeholder="KG" wire:model="banana_farmers_qty" :disabled="$wire.banana_farmers === 'no'">
                         @error('banana_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="banana_farmers_value" class="form-control" placeholder="MVR" wire:model="banana_farmers_value">
+                        <input type="number" id="banana_farmers_value" class="form-control" placeholder="MVR" wire:model="banana_farmers_value" :disabled="$wire.banana_farmers === 'no'">
                         @error('banana_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -447,11 +446,11 @@
                         @error('brinjal_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="brinjal_farmers_qty" class="form-control" placeholder="KG" wire:model="brinjal_farmers_qty">
+                        <input type="number" id="brinjal_farmers_qty" class="form-control" placeholder="KG" wire:model="brinjal_farmers_qty" :disabled="$wire.brinjal_farmers === 'no'">
                         @error('brinjal_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="brinjal_farmers_value" class="form-control" placeholder="MVR" wire:model="brinjal_farmers_value">
+                        <input type="number" id="brinjal_farmers_value" class="form-control" placeholder="MVR" wire:model="brinjal_farmers_value" :disabled="$wire.brinjal_farmers === 'no'">
                         @error('brinjal_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -466,11 +465,11 @@
                         @error('chillies_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="chillies_farmers_qty" class="form-control" placeholder="KG" wire:model="chillies_farmers_qty">
+                        <input type="number" id="chillies_farmers_qty" class="form-control" placeholder="KG" wire:model="chillies_farmers_qty" :disabled="$wire.chillies_farmers === 'no'">
                         @error('chillies_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="chillies_farmers_value" class="form-control" placeholder="MVR" wire:model="chillies_farmers_value">
+                        <input type="number" id="chillies_farmers_value" class="form-control" placeholder="MVR" wire:model="chillies_farmers_value" :disabled="$wire.chillies_farmers === 'no'">
                         @error('chillies_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -485,30 +484,30 @@
                         @error('bottlegourd_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="bottlegourd_farmers_qty" class="form-control" placeholder="KG" wire:model="bottlegourd_farmers_qty">
+                        <input type="number" id="bottlegourd_farmers_qty" class="form-control" placeholder="KG" wire:model="bottlegourd_farmers_qty" :disabled="$wire.bottlegourd_farmers === 'no'">
                         @error('bottlegourd_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="bottlegourd_farmers_value" class="form-control" placeholder="MVR" wire:model="bottlegourd_farmers_value">
+                        <input type="number" id="bottlegourd_farmers_value" class="form-control" placeholder="MVR" wire:model="bottlegourd_farmers_value" :disabled="$wire.bottlegourd_farmers === 'no'">
                         @error('bottlegourd_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
                 <div class="form-group row mb-2">
                     <label class="col-form-label col-sm-2 text-end">Butternut</label>
                     <div class="col-sm-3">
-                        <select id="butternut_farmers" class="form-control" wire:model="butternut_farmers">
+                        <select id="butternut_farms" class="form-control" wire:model="butternut_farms">
                             <option value="">Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
-                        @error('butternut_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                        @error('butternut_farms')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="butternut_farmers_qty" class="form-control" placeholder="KG" wire:model="butternut_farmers_qty">
+                        <input type="number" id="butternut_farmers_qty" class="form-control" placeholder="KG" wire:model="butternut_farmers_qty" :disabled="$wire.butternut_farms === 'no'">
                         @error('butternut_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="butternut_farmers_value" class="form-control" placeholder="MVR" wire:model="butternut_farmers_value">
+                        <input type="number" id="butternut_farmers_value" class="form-control" placeholder="MVR" wire:model="butternut_farmers_value" :disabled="$wire.butternut_farms === 'no'">
                         @error('butternut_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -523,11 +522,11 @@
                         @error('cabbage_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="cabbage_farmers_qty" class="form-control" placeholder="KG" wire:model="cabbage_farmers_qty">
+                        <input type="number" id="cabbage_farmers_qty" class="form-control" placeholder="KG" wire:model="cabbage_farmers_qty" :disabled="$wire.cabbage_farmers === 'no'">
                         @error('cabbage_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="cabbage_farmers_value" class="form-control" placeholder="MVR" wire:model="cabbage_farmers_value">
+                        <input type="number" id="cabbage_farmers_value" class="form-control" placeholder="MVR" wire:model="cabbage_farmers_value" :disabled="$wire.cabbage_farmers === 'no'">
                         @error('cabbage_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -542,11 +541,11 @@
                         @error('mango_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="mango_farmers_qty" class="form-control" placeholder="KG" wire:model="mango_farmers_qty">
+                        <input type="number" id="mango_farmers_qty" class="form-control" placeholder="KG" wire:model="mango_farmers_qty" :disabled="$wire.mango_farmers === 'no'">
                         @error('mango_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="mango_farmers_value" class="form-control" placeholder="MVR" wire:model="mango_farmers_value">
+                        <input type="number" id="mango_farmers_value" class="form-control" placeholder="MVR" wire:model="mango_farmers_value" :disabled="$wire.mango_farmers === 'no'">
                         @error('mango_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -561,11 +560,11 @@
                         @error('waxgourd_farmers')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="waxgourd_farmers_qty" class="form-control" placeholder="KG" wire:model="waxgourd_farmers_qty">
+                        <input type="number" id="waxgourd_farmers_qty" class="form-control" placeholder="KG" wire:model="waxgourd_farmers_qty" :disabled="$wire.waxgourd_farmers === 'no'">
                         @error('waxgourd_farmers_qty')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                     <div class="col-sm-3">
-                        <input type="number" id="waxgourd_farmers_value" class="form-control" placeholder="MVR" wire:model="waxgourd_farmers_value">
+                        <input type="number" id="waxgourd_farmers_value" class="form-control" placeholder="MVR" wire:model="waxgourd_farmers_value" :disabled="$wire.waxgourd_farmers === 'no'">
                         @error('waxgourd_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
@@ -629,7 +628,7 @@
                         @error('otheragrifour_farmers_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                     </div>
                 </div>
-                <hr class="mt-3 mb-5">
+                <hr class="mt-5 mb-5">
 
                                 <div class="mb-3 mt-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">

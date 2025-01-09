@@ -67,7 +67,7 @@
 
 
                                 
-                                <hr class="mt-3">
+                        <hr class="mt-5 mb-5">
 
                                 <h5>2. Employment (Commuting/Casual - Year End) </h5>
                                 <small class="mb-3">Enter the count of commuting employees / casual workers  (december)</small>
@@ -116,7 +116,7 @@
 
                                 
 
-                                <hr class="mt-3">
+                        <hr class="mt-5 mb-5">
 
                                 <h5>3. Employment (Permanent Employees - Year End) </h5>
                                 <small class="mb-3">Enter the count of permanent employees only  (december)</small>
@@ -164,7 +164,7 @@
 
                                 
 
-                                <hr class="mt-3">
+                        <hr class="mt-5 mb-5">
 
                                 <h5>4. Employment by Type of Occupation (Year End) </h5>
                                 <small class="mb-3">Enter the count of employees by type of occupation  (december)</small>
@@ -331,7 +331,7 @@
                                                     </div>
                                                 </div>
 
-                                                <hr class="mt-3">
+                                                <hr class="mt-5 mb-5">
     
 
                                 <h5>5. Employment by Level (Year End) </h5>
@@ -467,19 +467,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <hr class="mt-3">
+                                                    <hr class="mt-5 mb-5">
                                     
 
-
-
-
-
-                               
-                                
-                                
-                                
-                             
-                                
                                 <div class="mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
                                     Update

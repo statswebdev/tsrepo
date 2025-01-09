@@ -25,7 +25,7 @@
                                     <div class="mb-4">
                                         <label for="months_operated" class="form-label">1. Select the months in operation during the reporting year</label>
                                         <br>
-                                        @foreach(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $index => $month)
+                                        @foreach(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Not Operated'] as $index => $month)
                                             <div class="js-form-message form-check form-check-inline">
                                                 <input type="checkbox" id="formInlineCheck{{ $index + 1 }}" class="form-check-input" value="{{ $month }}" wire:model="months_operated">
                                                 <label class="form-check-label" for="formInlineCheck{{ $index + 1 }}">{{ $month }}</label>
@@ -35,7 +35,7 @@
                                         @error('months_operated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     
-                                        <hr>
+                                        <hr class="mt-5 mb-5">
 
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="rooms_yearend">2. How many rooms in total did the establishment have at the end of year?</label>
@@ -62,6 +62,7 @@
                                     <input type="number" id="roomrate_annual" class="form-control" placeholder="Room Rate per Night (MVR)" wire:model="roomrate_annual">
                                     @error('roomrate_annual')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
+                                <hr class="mt-5 mb-5">
                                 <div class="mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">
                                     Update

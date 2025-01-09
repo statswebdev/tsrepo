@@ -33,7 +33,7 @@
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="electricity_generated">Electricity Generated</label>
-                                <input type="number" id="electricity_generated" class="form-control" placeholder="kWh" wire:model="electricity_generated">
+                                <input type="number" id="electricity_generated" class="form-control" placeholder="kWh" wire:model="electricity_generated"  :disabled="$wire.generated_inhouse === 'no'">
                                 @error('electricity_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
@@ -49,7 +49,7 @@
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="outsourced_generated">Outsourced Generated</label>
-                                <input type="number" id="outsourced_generated" class="form-control" placeholder="kWh" wire:model="outsourced_generated">
+                                <input type="number" id="outsourced_generated" class="form-control" placeholder="kWh" wire:model="outsourced_generated" :disabled="$wire.electricity_outsourced === 'no'">
                                 @error('outsourced_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
@@ -65,7 +65,7 @@
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="othersources_generated">Other Sources Generated</label>
-                                <input type="number" id="othersources_generated" class="form-control" placeholder="kWh" wire:model="othersources_generated">
+                                <input type="number" id="othersources_generated" class="form-control" placeholder="kWh" wire:model="othersources_generated" :disabled="$wire.electricity_othersources === 'no'">
                                 @error('othersources_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
@@ -75,7 +75,7 @@
                                 <input type="number" id="electricity_consumption" class="form-control" placeholder="kWh" wire:model="electricity_consumption">
                                 @error('electricity_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
-                            <hr>
+                            <hr class="mt-5 mb-5">
 
                             <h5>2. Integration of Renewal Energy </h5>
                                 <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
@@ -93,13 +93,13 @@
 
                             <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="solargrid_production">Solar Grid Production</label>
-                                <input type="number" id="solargrid_production" class="form-control" placeholder="kWh" wire:model="solargrid_production">
+                                <input type="number" id="solargrid_production" class="form-control" placeholder="kWh" wire:model="solargrid_production" :disabled="$wire.solargrid_energy === 'no'">
                                 @error('solargrid_production')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="solargrid_consumption">Solar Grid Consumption</label>
-                                <input type="number" id="solargrid_consumption" class="form-control" placeholder="kWh" wire:model="solargrid_consumption">
+                                <input type="number" id="solargrid_consumption" class="form-control" placeholder="kWh" wire:model="solargrid_consumption" :disabled="$wire.solargrid_energy === 'no'">
                                 @error('solargrid_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
@@ -115,17 +115,17 @@
 
                             <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="renewable_other_production">Renewable Other Production</label>
-                                <input type="number" id="renewable_other_production" class="form-control" placeholder="kWh" wire:model="renewable_other_production">
+                                <input type="number" id="renewable_other_production" class="form-control" placeholder="kWh" wire:model="renewable_other_production" :disabled="$wire.renewable_other === 'no'">
                                 @error('renewable_other_production')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 col-12 col-md-4">
                                 <label class="form-label" for="renewable_other_consumption">Renewable Other Consumption</label>
-                                <input type="number" id="renewable_other_consumption" class="form-control" placeholder="kWh" wire:model="renewable_other_consumption">
+                                <input type="number" id="renewable_other_consumption" class="form-control" placeholder="kWh" wire:model="renewable_other_consumption" :disabled="$wire.renewable_other === 'no'">
                                 @error('renewable_other_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <hr>
+                            <hr class="mt-5 mb-5">
 
                             <h5>3. Water Production & Consumption</h5>
                                 <small class="mb-3">Year End (december) - Metric Tons (Monthly Production)</small>
@@ -142,7 +142,7 @@
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="waterinhouse_monthly">Water Inhouse Monthly</label>
-                                <input type="number" id="waterinhouse_monthly" class="form-control" placeholder="Metric Tons" wire:model="waterinhouse_monthly">
+                                <input type="number" id="waterinhouse_monthly" class="form-control" placeholder="Metric Tons" wire:model="waterinhouse_monthly" :disabled="$wire.waterinhouse_production === 'no'">
                                 @error('waterinhouse_monthly')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
@@ -158,7 +158,7 @@
 
                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="water_outsourced_monthly">Water Outsourced Monthly</label>
-                                <input type="number" id="water_outsourced_monthly" class="form-control" placeholder="Metric Tons" wire:model="water_outsourced_monthly">
+                                <input type="number" id="water_outsourced_monthly" class="form-control" placeholder="Metric Tons" wire:model="water_outsourced_monthly" :disabled="$wire.water_outsourced === 'no'">
                                 @error('water_outsourced_monthly')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
@@ -238,7 +238,7 @@
                                 @error('monthly_water_dec')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <hr>
+                            <hr class="mt-5 mb-5">
 
                             <h5 class="mt-3">4. Waste Generation / Disposal</h5>
                             <small class="mb-3">Waste generation and disposal for the reporting year</small>
@@ -406,7 +406,7 @@
                                 @error('other_waste_method')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div> --}}
 
-                            <hr class="mt-3">
+                            <hr class="mt-5 mb-5">
 
 
 

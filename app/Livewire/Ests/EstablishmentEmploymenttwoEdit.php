@@ -141,7 +141,7 @@ class EstablishmentEmploymenttwoEdit extends Component
     public $otherthree_outsourced;
     public $otherthree_male;
     public $otherthree_female;
-    public $status = 'Updated';
+    public $status = 'submitted';
 
     protected $rules = [
             'hundred_maldivian' => 'required|integer',
@@ -415,7 +415,7 @@ class EstablishmentEmploymenttwoEdit extends Component
         $this->otherthree_outsourced = $estrecordid->otherthree_outsourced;
         $this->otherthree_male = $estrecordid->otherthree_male;
         $this->otherthree_female = $estrecordid->otherthree_female;
-        $this->status = $estrecordid->status;
+        
     }
 
     public function save()
@@ -690,7 +690,7 @@ class EstablishmentEmploymenttwoEdit extends Component
             'otherthree_outsourced' => $this->otherthree_outsourced,
             'otherthree_male' => $this->otherthree_male,
             'otherthree_female' => $this->otherthree_female,
-            'status' => $this->status
+            'status' => 'submitted',
         ]);
         
         

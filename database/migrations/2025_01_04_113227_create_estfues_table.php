@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('est_record_id')->constrained('est_records')->onDelete('cascade');
             $table->integer('generator_capacity_unit');
-            $table->integer('generator_capacity_qty');
+            $table->string('generator_capacity_qty');
             $table->integer('solar_rooftop');
             $table->integer('solar_groundmounted');
             $table->integer('solar_floating');

@@ -69,7 +69,7 @@ class EstablishmentEmploymentone extends Component
     public $bylevelother_maldivian_female;
     public $bylevelother_foreign_male;
     public $bylevelother_foreign_female;
-    public $status = "completed";
+    public $status = "submitted";
 
     public function mount($estrecordid)
     {

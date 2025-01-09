@@ -39,18 +39,18 @@ class EstInformation extends Component
     public function submitRecord()
     {
         $this->validate([
-            'info_provider' => 'required|string',
-            'contact_number' => 'required|string',
+            'info_provider' => 'required|string|min:5',
+            'contact_number' => 'required|integer|regex:/^[97][0-9]{6}$/',
             'type_organisation' => 'required|string',
             'operator_name' => 'required|string',
             'operator_register' => 'required|string',
             'owner_one' => 'required|string',
             'owner_two' => 'nullable|string',
-            'operator_contact' => 'required|string',
+            'operator_contact' => 'required|integer|regex:/^[34697][0-9]{6}$/',
             'operator_email' => 'required|email',
-            'government_share' => 'required|integer',
-            'maldivian_share' => 'required|integer',
-            'foreign_share' => 'required|integer',
+            'government_share' => 'required|integer|max:100',
+            'maldivian_share' => 'required|integer|max:100',
+            'foreign_share' => 'required|integer|max:100',
             'taxpayer_number' => 'required|string',
             'establishment_regdate' => 'required|date',
             'bedcapacity' => 'required|integer',
@@ -77,7 +77,7 @@ class EstInformation extends Component
             'status' => $this->status,
         ]);
 
-        session()->flash('success', 'Est Information Submitted successfully');
+        session()->flash('success', 'Establishment Information Submitted successfully');
         return redirect()->route('dashboard');
     }
 

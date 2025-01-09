@@ -12,12 +12,6 @@ class EstablishmentAgricultural extends Component
     
     public $user_id;
     public $est_record_id;
-    public $months_operated;
-    public $rooms_yearend;
-    public $beds_yearend;
-    public $roomnights_sold;
-    public $bednights_sold;
-    public $roomrate_annual;
     public $watermelon_inhouse;
     public $watermelon_grown;
     public $coconut_inhouse;
@@ -103,7 +97,7 @@ class EstablishmentAgricultural extends Component
     public $otheragrifour_farmers;
     public $otheragrifour_farmers_qty;
     public $otheragrifour_farmers_value;
-    public $status = "completed";
+    public $status = "submitted";
 
 
     public function mount($estrecordid)
@@ -143,13 +137,13 @@ class EstablishmentAgricultural extends Component
             'mango_grown' => 'nullable|integer',
             'waxgourd_inhouse' => 'required',
             'waxgourd_grown' => 'nullable|integer',
-            'otheragrione_inhouse' => 'required',
+            'otheragrione_inhouse' => 'nullable',
             'otheragrione_grown' => 'nullable|integer',
-            'otheragritwo_inhouse' => 'required',
+            'otheragritwo_inhouse' => 'nullable',
             'otheragritwo_grown' => 'nullable|integer',
-            'otheragrithree_inhouse' => 'required',
+            'otheragrithree_inhouse' => 'nullable',
             'otheragrithree_grown' => 'nullable|integer',
-            'otheragrifour_inhouse' => 'required',
+            'otheragrifour_inhouse' => 'nullable',
             'otheragrifour_grown' => 'nullable|integer',
             'watermelon_farmers' => 'required',
             'watermelon_farmers_qty' => 'nullable|integer',
@@ -190,16 +184,16 @@ class EstablishmentAgricultural extends Component
             'waxgourd_farmers' => 'required',
             'waxgourd_farmers_qty' => 'nullable|integer',
             'waxgourd_farmers_value' => 'nullable|integer',
-            'otheragrione_farmers' => 'required',
+            'otheragrione_farmers' => 'nullable',
             'otheragrione_farmers_qty' => 'nullable|integer',
             'otheragrione_farmers_value' => 'nullable|integer',
-            'otheragritwo_farmers' => 'required',
+            'otheragritwo_farmers' => 'nullable',
             'otheragritwo_farmers_qty' => 'nullable|integer',
             'otheragritwo_farmers_value' => 'nullable|integer',
-            'otheragrithree_farmers' => 'required',
+            'otheragrithree_farmers' => 'nullable',
             'otheragrithree_farmers_qty' => 'nullable|integer',
             'otheragrithree_farmers_value' => 'nullable|integer',
-            'otheragrifour_farmers' => 'required',
+            'otheragrifour_farmers' => 'nullable',
             'otheragrifour_farmers_qty' => 'nullable|integer',
             'otheragrifour_farmers_value' => 'nullable|integer',
         ]);
