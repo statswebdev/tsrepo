@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('energy_storage');
             $table->integer('energy_storage_power');
             $table->integer('energy_storage_kwh');
-            $table->string('energy_storage_other');
+            $table->string('energy_storage_other')->nullable();
             $table->string('energy_storage_othertype')->nullable();
             $table->integer('energy_storage_othercapacity')->nullable();
             $table->integer('solar_waterheating');
