@@ -67,7 +67,7 @@
                                             <span class="badge bg-info ms-2">Submit Form</span>
                                         </a>
                                     @endif
-                                    @if($estrecord->{$form} && $estrecord->{$form}->status === 'completed')
+                                    @if($estrecord->{$form})
                                         <a href="/view/{{$form}}/{{ $estrecord->id }}/{{ $user->id }}">
                                         <span class="badge bg-primary ms-2">View Form</span>
                                         </a>
