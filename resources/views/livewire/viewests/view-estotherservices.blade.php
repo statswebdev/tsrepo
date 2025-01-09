@@ -256,6 +256,37 @@
 
                         </div>
                     </div>
+                    @if(Auth::user()->role === 'admin')
+                    <div class="col-lg-12 col-md-12 col-12 mt-4">
+                        <!-- Card -->
+                        <div class="card">
+                          <!-- Card header -->
+                          <div class="card-header">
+                            <h3 class="mb-0">Update Status</h3>
+                            <p class="mb-0">Select a status if you wish to change</p>
+                          </div>
+                          <!-- Card body -->
+                          <div class="card-body">
+                              <!-- Form -->
+                              <form wire:submit.prevent="updateStatus">
+                                <div class="mb-3 col-12 col-md-6">
+                                  <label class="form-label" for="selectStatus">Select Status</label>
+                                  <select class="form-select" aria-label="selectStatus" wire:model="status">
+                                    <option selected>Select Status</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="review">Review</option>
+                                  </select>
+                                  @error('status')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                </div>
+                                <div class="col-12">
+                                  <!-- Button -->
+                                  <button class="btn btn-primary" type="submit">Update Status</button>
+                                </div>
+                              </form>
+                          </div>
+                        </div>
+                      </div>
+                      @endif
                     </div>
                 </div>
         </div>

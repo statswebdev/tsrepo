@@ -29,6 +29,7 @@
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="generator_capacity_qty">Unit</label>
                                     <select id="generator_capacity_qty" class="form-control" wire:model="generator_capacity_qty">
+                                        <option selected>Select</option>
                                         <option value="kW">kW</option>
                                         <option value="MW">MW</option>
                                     </select>
