@@ -10,7 +10,7 @@
                         <div class="mb-3 mb-lg-0">
                             <h3 class="mb-0">
                                 @if($query)
-                                    {{ $query->estname }} - Establishment Information - {{ $query->collectionyear }}
+                                    {{ $query->estname }} - Operations Information - {{ $query->collectionyear }}
                                 @endif 
                             </h3>
                         </div>
