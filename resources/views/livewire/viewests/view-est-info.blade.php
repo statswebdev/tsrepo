@@ -19,7 +19,7 @@
 
     <section class="pt-6">
         <div class="container">
-            <div class="row mt-0 mt-md-4">      
+            <div class="row">      
                 <div class="col-lg-12 col-md-12 col-12">
                     <!-- Card -->
                     <div class="card border-0">
@@ -135,7 +135,7 @@
                         </div>
                     </div>
 
-
+                    @if(Auth::user()->role === 'admin')
                     <div class="col-lg-12 col-md-12 col-12 mt-4">
                         <!-- Card -->
                         <div class="card">
@@ -165,9 +165,7 @@
                           </div>
                         </div>
                       </div>
-
-
-
+                      @endif
                 </div>
             </div>
         </div>

@@ -18,6 +18,7 @@
                 <div class="col-md-6">
                     <!-- heading -->
                     <h1 class="display-4 fw-bold">Tourism Survey Records</h1>
+                    <h5 class="mb-0 text-primary display-5">{{ $user->estname }}</h5>
                 </div>
             </div>    
         </div>
@@ -64,6 +65,11 @@
                                     @if(!$estrecord->{$form})
                                         <a href="{{ route($form, $estrecord->id) }}">
                                             <span class="badge bg-info ms-2">Submit Form</span>
+                                        </a>
+                                    @endif
+                                    @if($estrecord->{$form})
+                                        <a href="/view/{{$form}}/{{ $estrecord->id }}/{{ $user->id }}">
+                                        <span class="badge bg-primary ms-2">View Form</span>
                                         </a>
                                     @endif
                                     @if($estrecord->{$form} && $estrecord->{$form}->status === 'review')
