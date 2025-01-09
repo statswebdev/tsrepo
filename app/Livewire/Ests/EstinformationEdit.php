@@ -79,22 +79,21 @@ class EstinformationEdit extends Component
     public function save()
     {
         $this->validate([
-            'info_provider' => 'required|string',
-            'contact_number' => 'required|string',
+            'info_provider' => 'required|string|min:5',
+            'contact_number' => 'required|integer|regex:/^[97][0-9]{6}$/',
             'type_organisation' => 'required|string',
             'operator_name' => 'required|string',
             'operator_register' => 'required|string',
-            'owner_one' => 'required|string',
-            'owner_two' => 'nullable|string',
-            'operator_contact' => 'required|string',
+            'owner_one' => 'required|string|min:5',
+            'owner_two' => 'nullable|string|min:5',
+            'operator_contact' => 'required|integer|regex:/^[34697][0-9]{6}$/',
             'operator_email' => 'required|email',
-            'government_share' => 'required|integer',
-            'maldivian_share' => 'required|integer',
-            'foreign_share' => 'required|integer',
+            'government_share' => 'required|integer|max:100',
+            'maldivian_share' => 'required|integer|max:100',
+            'foreign_share' => 'required|integer|max:100',
             'taxpayer_number' => 'required|string',
             'establishment_regdate' => 'required|date',
-            'bedcapacity' => 'required|integer',
-            'status' => 'required|string',
+            'bedcapacity' => 'required|integer|max:1500',
         ]);
 
         if (($this->government_share + $this->maldivian_share + $this->foreign_share) > 100) {
@@ -122,7 +121,7 @@ class EstinformationEdit extends Component
             'taxpayer_number' => $this->taxpayer_number,
             'establishment_regdate' => $this->establishment_regdate,
             'bedcapacity' => $this->bedcapacity,
-            'status' => $this->status,
+            'status' => 'submitted',
             ]);
         }
         

@@ -198,7 +198,7 @@ class EstablishmentEmploymentoneEdit extends Component
     public function save()
     {
         $this->validate([
-            'maldivian_male' => 'required|integer',
+        'maldivian_male' => 'required|integer',
         'maldivian_female' => 'required|integer',
         'foreign_male' => 'required|integer',
         'foreign_female' => 'required|integer',

@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Page Title' }}</title>
+        <title>{{ $title ?? 'Tourism Statistics Survey' }}</title>
+       
 
         <link rel="stylesheet" href="{{asset('css/feather.css')}}">
         <link rel="stylesheet" href="{{asset('css/theme.min.css')}}">

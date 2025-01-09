@@ -17,7 +17,7 @@
                 <!-- row -->
                 <div class="col-md-6">
                     <!-- heading -->
-                    <h1 class="display-4 fw-bold">Tourism Survey Records</h1>
+                    <h1 class="display-4 fw-bold">Tourism Statistics Survey</h1>
                     <h5 class="mb-0 text-primary display-5">{{ $user->estname }}</h5>
                 </div>
             </div>    

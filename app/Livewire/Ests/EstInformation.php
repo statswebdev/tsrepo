@@ -43,8 +43,8 @@ class EstInformation extends Component
             'type_organisation' => 'required|string',
             'operator_name' => 'required|string',
             'operator_register' => 'required|string',
-            'owner_one' => 'required|string',
-            'owner_two' => 'nullable|string',
+            'owner_one' => 'required|string|min:5',
+            'owner_two' => 'nullable|string|min:5',
             'operator_contact' => 'required|integer|regex:/^[34697][0-9]{6}$/',
             'operator_email' => 'required|email',
             'government_share' => 'required|integer|max:100',
@@ -52,7 +52,7 @@ class EstInformation extends Component
             'foreign_share' => 'required|integer|max:100',
             'taxpayer_number' => 'required|string',
             'establishment_regdate' => 'required|date',
-            'bedcapacity' => 'required|integer',
+            'bedcapacity' => 'required|integer|max:1500',
         ]);
 
         // Custom validation for the sum of shares

@@ -51,7 +51,7 @@ class EstablishmentOperation extends Component
             'status' => $this->status,
         ]);
 
-        session()->flash('success', 'Est Operation Submitted successfully');
+        session()->flash('success', 'Operations Information Submitted successfully');
         return redirect()->route('dashboard');
     }
 

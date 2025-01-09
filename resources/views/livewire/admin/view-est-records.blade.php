@@ -17,7 +17,7 @@
                 <!-- row -->
                 <div class="col-md-6">
                     <!-- heading -->
-                    <h1 class="display-4 fw-bold">{{ $est->estname }} Survey Records</h1>
+                    <h1 class="display-4 fw-bold">{{ $est->estname }}</h1>
                 </div>
             </div>    
         </div>
