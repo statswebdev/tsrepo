@@ -291,7 +291,7 @@ class EstablishmentFuelconsumptionEdit extends Component
         }
         
 
-        session()->flash('success', 'Operations Information Updated');
+        session()->flash('success', 'Fuel Consumption Updated');
         return redirect()->route('dashboard');
     }
 

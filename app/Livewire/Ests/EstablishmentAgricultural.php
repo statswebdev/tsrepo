@@ -289,7 +289,7 @@ class EstablishmentAgricultural extends Component
             'status' => $this->status,
         ]);
 
-        session()->flash('success', 'Agricultural Products Information Submitted successfully');
+        session()->flash('success', 'Agricultural Products Submitted successfully');
         return redirect()->route('dashboard');
     }
 

@@ -655,11 +655,11 @@
                                         @error('retailshop_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="retailshop_male" class="form-control" placeholder="Male" wire:model="retailshop_male">
+                                        <input type="number" id="retailshop_male" class="form-control" placeholder="Male" wire:model="retailshop_male" :disabled="$wire.retailshop_outsourced === 'no'">
                                     @error('retailshop_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="retailshop_female" class="form-control" placeholder="Female" wire:model="retailshop_female">
+                                        <input type="number" id="retailshop_female" class="form-control" placeholder="Female" wire:model="retailshop_female" :disabled="$wire.retailshop_outsourced === 'no'">
                                     @error('retailshop_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -674,11 +674,11 @@
                                         @error('divingcenter_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="divingcenter_male" class="form-control" placeholder="Male" wire:model="divingcenter_male">
+                                        <input type="number" id="divingcenter_male" class="form-control" placeholder="Male" wire:model="divingcenter_male" :disabled="$wire.divingcenter_outsourced === 'no'">
                                     @error('divingcenter_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="divingcenter_female" class="form-control" placeholder="Female" wire:model="divingcenter_female">
+                                        <input type="number" id="divingcenter_female" class="form-control" placeholder="Female" wire:model="divingcenter_female" :disabled="$wire.divingcenter_outsourced === 'no'">
                                     @error('divingcenter_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -693,11 +693,11 @@
                                         @error('restaurant_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="restaurant_male" class="form-control" placeholder=" Male" wire:model="restaurant_male">
+                                        <input type="number" id="restaurant_male" class="form-control" placeholder=" Male" wire:model="restaurant_male" :disabled="$wire.restaurant_outsourced === 'no'">
                                         @error('restaurant_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="restaurant_female" class="form-control" placeholder=" Female" wire:model="restaurant_female">
+                                        <input type="number" id="restaurant_female" class="form-control" placeholder=" Female" wire:model="restaurant_female" :disabled="$wire.restaurant_outsourced === 'no'">
                                         @error('restaurant_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -712,11 +712,11 @@
                                         @error('spa_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="spa_male" class="form-control" placeholder=" Male" wire:model="spa_male">
+                                        <input type="number" id="spa_male" class="form-control" placeholder=" Male" wire:model="spa_male" :disabled="$wire.spa_outsourced === 'no'">
                                         @error('spa_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="spa_female" class="form-control" placeholder=" Female" wire:model="spa_female">
+                                        <input type="number" id="spa_female" class="form-control" placeholder=" Female" wire:model="spa_female" :disabled="$wire.spa_outsourced === 'no'">
                                         @error('spa_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -731,11 +731,11 @@
                                         @error('transport_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="transport_male" class="form-control" placeholder=" Male" wire:model="transport_male">
+                                        <input type="number" id="transport_male" class="form-control" placeholder=" Male" wire:model="transport_male" :disabled="$wire.transport_outsourced === 'no'">
                                         @error('transport_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="transport_female" class="form-control" placeholder=" Female" wire:model="transport_female">
+                                        <input type="number" id="transport_female" class="form-control" placeholder=" Female" wire:model="transport_female" :disabled="$wire.transport_outsourced === 'no'">
                                         @error('transport_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -750,11 +750,11 @@
                                         @error('construction_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="construction_male" class="form-control" placeholder=" Male" wire:model="construction_male">
+                                        <input type="number" id="construction_male" class="form-control" placeholder=" Male" wire:model="construction_male" :disabled="$wire.construction_outsourced === 'no'">
                                     @error('construction_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="number" id="construction_female" class="form-control" placeholder=" Female" wire:model="construction_female">
+                                        <input type="number" id="construction_female" class="form-control" placeholder=" Female" wire:model="construction_female" :disabled="$wire.construction_outsourced === 'no'">
                                     @error('construction_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -781,15 +781,15 @@
                                         @error('otherone_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" id="otherone_name" class="form-control" placeholder="Name" wire:model="otherone_name">
+                                        <input type="text" id="otherone_name" class="form-control" placeholder="Name" wire:model="otherone_name" :disabled="$wire.otherone_outsourced === 'no'">
                                         @error('otherone_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="number" id="otherone_male" class="form-control" placeholder=" Male" wire:model="otherone_male">
+                                        <input type="number" id="otherone_male" class="form-control" placeholder=" Male" wire:model="otherone_male" :disabled="$wire.otherone_outsourced === 'no'">
                                     @error('otherone_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="number" id="otherone_female" class="form-control" placeholder="Female" wire:model="otherone_female">
+                                        <input type="number" id="otherone_female" class="form-control" placeholder="Female" wire:model="otherone_female" :disabled="$wire.otherone_outsourced === 'no'">
                                     @error('otherone_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -804,15 +804,15 @@
                                         @error('othertwo_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" id="othertwo_name" class="form-control" placeholder="Name" wire:model="othertwo_name">
+                                        <input type="text" id="othertwo_name" class="form-control" placeholder="Name" wire:model="othertwo_name" :disabled="$wire.othertwo_outsourced === 'no'">
                                     @error('othertwo_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="number" id="othertwo_male" class="form-control" placeholder="Male" wire:model="othertwo_male">
+                                        <input type="number" id="othertwo_male" class="form-control" placeholder="Male" wire:model="othertwo_male" :disabled="$wire.othertwo_outsourced === 'no'">
                                     @error('othertwo_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="number" id="othertwo_female" class="form-control" placeholder="Female" wire:model="othertwo_female">
+                                        <input type="number" id="othertwo_female" class="form-control" placeholder="Female" wire:model="othertwo_female" :disabled="$wire.othertwo_outsourced === 'no'">
                                     @error('othertwo_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>
@@ -827,15 +827,15 @@
                                         @error('otherthree_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" id="otherthree_name" class="form-control" placeholder="Name" wire:model="otherthree_name">
+                                        <input type="text" id="otherthree_name" class="form-control" placeholder="Name" wire:model="otherthree_name" :disabled="$wire.otherthree_outsourced === 'no'">
                                     @error('otherthree_name')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="number" id="otherthree_male" class="form-control" placeholder="Male" wire:model="otherthree_male">
+                                        <input type="number" id="otherthree_male" class="form-control" placeholder="Male" wire:model="otherthree_male" :disabled="$wire.otherthree_outsourced === 'no'">
                                     @error('otherthree_male')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="number" id="otherthree_female" class="form-control" placeholder="Female" wire:model="otherthree_female">
+                                        <input type="number" id="otherthree_female" class="form-control" placeholder="Female" wire:model="otherthree_female" :disabled="$wire.otherthree_outsourced === 'no'">
                                     @error('otherthree_female')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div>
                                 </div>

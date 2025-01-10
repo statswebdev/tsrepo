@@ -460,7 +460,7 @@ class EstablishmentAgriculturalEdit extends Component
         ]);
         
 
-        session()->flash('success', 'Agricultural Information Updated');
+        session()->flash('success', 'Agricultural Products Updated');
         return redirect()->route('dashboard');
     }
 

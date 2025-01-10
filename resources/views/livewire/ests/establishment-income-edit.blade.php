@@ -39,7 +39,7 @@
                             <form wire:submit.prevent="save" class="row">
 
                                 <h5>1. Income</h5>
-                                <small class="mb-5">The total earnings (with breakdown) a company generates through its operations</small>
+                                <small class="mb-5">Please state the earnings for the reporting, accounting year</small>
 
                                 <div class="row mb-2">
                                     <div class="col-sm-6"></div>
