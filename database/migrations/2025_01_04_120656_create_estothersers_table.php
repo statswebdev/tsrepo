@@ -29,8 +29,8 @@ return new class extends Migration
             $table->string('farmers_contract');
             $table->string('localfood');
             $table->string('localfood_contract');
-            $table->string('otherservices');
-            $table->string('otherservices_contract');
+            $table->string('otherservices')->nullable();
+            $table->string('otherservices_contract')->nullable();
             $table->string('doctor_inhouse');
             $table->string('nearest_healthfacility')->nullable();
             $table->string('onestaff_accomodation')->nullable();
