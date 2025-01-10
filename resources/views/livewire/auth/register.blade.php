@@ -42,7 +42,7 @@
                                 <select class="form-select" aria-label="esttype" wire:model="esttype">
                                     <option selected>Select a type</option>
                                     <option value="resort">Resort</option>
-                                    <option value="guesthouse">Guest House</option>
+                                    <option value="guesthouse">Guest House / Hotel</option>
                                     <option value="safari">Safari</option>
                                 </select>
                                 @error('esttype')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
