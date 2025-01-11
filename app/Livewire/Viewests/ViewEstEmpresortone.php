@@ -6,8 +6,8 @@ use Livewire\Component;
 use App\Models\EstEmpone;
 use App\Models\EstRecord;
 
-class ViewEstEmpone extends Component
-{   
+class ViewEstEmpresortone extends Component
+{
     public $estid;
     public $estrecord;
     public $query;
@@ -45,7 +45,6 @@ class ViewEstEmpone extends Component
         ]); 
         
     }
-
     public function render()
     {
         $this->query = EstEmpone::join('users', 'est_empones.user_id', '=', 'users.id')
@@ -54,7 +53,7 @@ class ViewEstEmpone extends Component
         ->where('user_id', $this->query->user_id)
         ->select('est_empones.*', 'users.estname', 'users.email', 'est_records.collectionyear')  // Specify the columns you want
         ->first();
-        return view('livewire.viewests.view-est-empone', [
+        return view('livewire.viewests.view-est-empresortone', [
             'query' => $this->query,
         ]);
     }
