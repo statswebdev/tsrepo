@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Livewire\ViewEsts;
+namespace App\Livewire\Viewests;
 
-use App\Models\Estguest;
 use Livewire\Component;
+use App\Models\Estguest;
 use App\Models\EstRecord;
 
 class ViewEstEmpguest extends Component
@@ -54,7 +54,8 @@ class ViewEstEmpguest extends Component
         ->where('user_id', $this->query->user_id)
         ->select('estguests.*', 'users.estname', 'users.email', 'est_records.collectionyear')  // Specify the columns you want
         ->first();
-        return view('livewire.view-ests.view-est-empguest', [
+   
+        return view('livewire.viewests.view-est-empguest', [
             'query' => $this->query,
         ]);
     }
