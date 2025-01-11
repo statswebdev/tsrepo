@@ -143,6 +143,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/ests/establishstock/{estrecordid}', EstablishmentStock::class)->name('eststock');
     Route::get('/ests/edit-establishstock/{estrecordid}', EstablishmentStockEdit::class)->name('edit-eststock');
 
-
-    
+   
 });
+
+
