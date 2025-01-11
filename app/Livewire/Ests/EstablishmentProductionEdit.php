@@ -4,6 +4,7 @@ namespace App\Livewire\Ests;
 
 use App\Models\EstEmppro;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class EstablishmentProductionEdit extends Component
 {
@@ -96,53 +97,58 @@ class EstablishmentProductionEdit extends Component
             'other_waste_method' => 'required|string', 
     ];
 
-    public function mount(EstEmppro $estrecordid)
+    public function mount()
     {
-        $this->user_id = $estrecordid->user_id;
-        $this->est_record_id = $estrecordid->id;
-        $this->generated_inhouse = $estrecordid->generated_inhouse;
-        $this->electricity_generated = $estrecordid->electricity_generated;
-        $this->electricity_outsourced = $estrecordid->electricity_outsourced;
-        $this->outsourced_generated = $estrecordid->outsourced_generated;
-        $this->electricity_othersources = $estrecordid->electricity_othersources;
-        $this->othersources_generated = $estrecordid->othersources_generated;
-        $this->electricity_consumption = $estrecordid->electricity_consumption;
-        $this->solargrid_energy = $estrecordid->solargrid_energy;
-        $this->solargrid_production = $estrecordid->solargrid_production;
-        $this->solargrid_consumption = $estrecordid->solargrid_consumption;
-        $this->renewable_other = $estrecordid->renewable_other;
-        $this->renewable_other_production = $estrecordid->renewable_other_production;
-        $this->renewable_other_consumption = $estrecordid->renewable_other_consumption;
-        $this->waterinhouse_production = $estrecordid->waterinhouse_production;
-        $this->waterinhouse_monthly = $estrecordid->waterinhouse_monthly;
-        $this->water_outsourced = $estrecordid->water_outsourced;
-        $this->water_outsourced_monthly = $estrecordid->water_outsourced_monthly;
-        $this->monthly_water_jan = $estrecordid->monthly_water_jan;
-        $this->monthly_water_feb = $estrecordid->monthly_water_feb;
-        $this->monthly_water_mar = $estrecordid->monthly_water_mar;
-        $this->monthly_water_apr = $estrecordid->monthly_water_apr;
-        $this->monthly_water_may = $estrecordid->monthly_water_may;
-        $this->monthly_water_jun = $estrecordid->monthly_water_jun;
-        $this->monthly_water_july = $estrecordid->monthly_water_july;
-        $this->monthly_water_aug = $estrecordid->monthly_water_aug;
-        $this->monthly_water_sep = $estrecordid->monthly_water_sep;
-        $this->monthly_water_oct = $estrecordid->monthly_water_oct;
-        $this->monthly_water_nov = $estrecordid->monthly_water_nov;
-        $this->monthly_water_dec = $estrecordid->monthly_water_dec;
-        $this->waste_disposedinhouse = $estrecordid->waste_disposedinhouse;
-        $this->waste_disposedoutsourced = $estrecordid->waste_disposedoutsourced;
-        $this->waste_disposalother = $estrecordid->waste_disposalother;
-        $this->waste_monthly = $estrecordid->waste_monthly;
-        $this->plastic_waste = $estrecordid->plastic_waste;
-        $this->plastic_waste_method = json_decode($estrecordid->plastic_waste_method, true);
-        $this->organic_waste = $estrecordid->organic_waste;
-        $this->organic_waste_method = json_decode($estrecordid->organic_waste_method, true);
-        $this->metal_waste = $estrecordid->metal_waste;
-        $this->metal_waste_method = json_decode($estrecordid->metal_waste_method, true);
-        $this->other_waste = $estrecordid->other_waste;
-        $this->other_waste_method = json_decode($estrecordid->other_waste_method, true);
-        $this->status = $estrecordid->status;
+        // Get the authenticated user's ID
+        $this->user_id = Auth::id();
+
+        // Retrieve the record from the estopera table for the authenticated user
+        $production = EstEmppro::where('user_id', $this->user_id)->first();
+    if ($production) {
+        $this->est_record_id = $production->id;
+        $this->generated_inhouse = $production->generated_inhouse;
+        $this->electricity_generated = $production->electricity_generated;
+        $this->electricity_outsourced = $production->electricity_outsourced;
+        $this->outsourced_generated = $production->outsourced_generated;
+        $this->electricity_othersources = $production->electricity_othersources;
+        $this->othersources_generated = $production->othersources_generated;
+        $this->electricity_consumption = $production->electricity_consumption;
+        $this->solargrid_energy = $production->solargrid_energy;
+        $this->solargrid_production = $production->solargrid_production;
+        $this->solargrid_consumption = $production->solargrid_consumption;
+        $this->renewable_other = $production->renewable_other;
+        $this->renewable_other_production = $production->renewable_other_production;
+        $this->renewable_other_consumption = $production->renewable_other_consumption;
+        $this->waterinhouse_production = $production->waterinhouse_production;
+        $this->waterinhouse_monthly = $production->waterinhouse_monthly;
+        $this->water_outsourced = $production->water_outsourced;
+        $this->water_outsourced_monthly = $production->water_outsourced_monthly;
+        $this->monthly_water_jan = $production->monthly_water_jan;
+        $this->monthly_water_feb = $production->monthly_water_feb;
+        $this->monthly_water_mar = $production->monthly_water_mar;
+        $this->monthly_water_apr = $production->monthly_water_apr;
+        $this->monthly_water_may = $production->monthly_water_may;
+        $this->monthly_water_jun = $production->monthly_water_jun;
+        $this->monthly_water_july = $production->monthly_water_july;
+        $this->monthly_water_aug = $production->monthly_water_aug;
+        $this->monthly_water_sep = $production->monthly_water_sep;
+        $this->monthly_water_oct = $production->monthly_water_oct;
+        $this->monthly_water_nov = $production->monthly_water_nov;
+        $this->monthly_water_dec = $production->monthly_water_dec;
+        $this->waste_disposedinhouse = $production->waste_disposedinhouse;
+        $this->waste_disposedoutsourced = $production->waste_disposedoutsourced;
+        $this->waste_disposalother = $production->waste_disposalother;
+        $this->waste_monthly = $production->waste_monthly;
+        $this->plastic_waste = $production->plastic_waste;
+        $this->plastic_waste_method = json_decode($production->plastic_waste_method, true);
+        $this->organic_waste = $production->organic_waste;
+        $this->organic_waste_method = json_decode($production->organic_waste_method, true);
+        $this->metal_waste = $production->metal_waste;
+        $this->metal_waste_method = json_decode($production->metal_waste_method, true);
+        $this->other_waste = $production->other_waste;
+        $this->other_waste_method = json_decode($production->other_waste_method, true);
     }
+}
 
     public function save()
     {
@@ -190,8 +196,11 @@ class EstablishmentProductionEdit extends Component
             'other_waste_method' => 'required',
         ]);
 
-        EstEmppro::where('id', $this->est_record_id)->update([
-            'user_id' => $this->user_id,
+        $production = EstEmppro::where('user_id', $this->user_id)->first();
+
+        if ($production) {
+            // Update the fields in the estopera record
+            $production->update([
             'generated_inhouse' => $this->generated_inhouse,
             'electricity_generated' => $this->electricity_generated !== null ? (int) $this->electricity_generated : null,
             'electricity_outsourced' => $this->electricity_outsourced,
@@ -233,10 +242,10 @@ class EstablishmentProductionEdit extends Component
             'metal_waste_method' => json_encode($this->metal_waste_method),
             'other_waste' => $this->other_waste,
             'other_waste_method' => json_encode($this->other_waste_method),
-            'status' => 'submitted',
+            'status' => $this->status,
         ]);
        
-        
+    }
 
         session()->flash('success', 'Production & Consumptions Updated');
         return redirect()->route('dashboard');

@@ -4,13 +4,11 @@ namespace App\Livewire\Ests;
 
 use App\Models\EstOpera;
 use Livewire\Component;
-use App\Models\EstRecord;
 use Illuminate\Support\Facades\Auth;
 
 class EstablishmentOperationEdit extends Component
 {
     public $user_id;
-    public $est_record_id;
     public $months_operated = [];
     public $rooms_yearend;
     public $beds_yearend;
@@ -20,31 +18,30 @@ class EstablishmentOperationEdit extends Component
     public $status = "submitted";
 
     protected $rules = [
-            'months_operated' => 'required',
-            'rooms_yearend' => 'required',
-            'beds_yearend' => 'required',
-            'roomnights_sold' => 'required',
-            'bednights_sold' => 'required',
-            'roomrate_annual' => 'required',
+        'months_operated' => 'required',
+        'rooms_yearend' => 'required',
+        'beds_yearend' => 'required',
+        'roomnights_sold' => 'required',
+        'bednights_sold' => 'required',
+        'roomrate_annual' => 'required',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
+        // Get the authenticated user's ID
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estopera')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $est_opera = EstOpera::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estopera) {
-            $this->months_operated = json_decode($est_record->estopera->months_operated, true);
-            $this->rooms_yearend = $est_record->estopera->rooms_yearend;
-            $this->beds_yearend = $est_record->estopera->beds_yearend;
-            $this->roomnights_sold = $est_record->estopera->roomnights_sold;
-            $this->bednights_sold = $est_record->estopera->bednights_sold;
-            $this->roomrate_annual = $est_record->estopera->roomrate_annual;
-            $this->status = $est_record->estopera->status;
+        if ($est_opera) {
+            $this->months_operated = json_decode($est_opera->months_operated, true) ?? [];
+            $this->rooms_yearend = $est_opera->rooms_yearend;
+            $this->beds_yearend = $est_opera->beds_yearend;
+            $this->roomnights_sold = $est_opera->roomnights_sold;
+            $this->bednights_sold = $est_opera->bednights_sold;
+            $this->roomrate_annual = $est_opera->roomrate_annual;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -56,24 +53,23 @@ class EstablishmentOperationEdit extends Component
             'roomnights_sold' => 'required',
             'bednights_sold' => 'required',
             'roomrate_annual' => 'required',
-            
         ]);
 
-        $estRecord = EstRecord::with('estopera')->findOrFail($this->est_record_id);
+        // Retrieve the estopera record for the authenticated user
+        $est_opera = EstOpera::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estopera) {
-            // Update the fields in the related `estopera` model
-            $estRecord->estopera->update([
+        if ($est_opera) {
+            // Update the fields in the estopera record
+            $est_opera->update([
                 'months_operated' => json_encode($this->months_operated),
                 'rooms_yearend' => $this->rooms_yearend,
                 'beds_yearend' => $this->beds_yearend,
                 'roomnights_sold' => $this->roomnights_sold,
                 'bednights_sold' => $this->bednights_sold,
                 'roomrate_annual' => $this->roomrate_annual,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
         }
-        
 
         session()->flash('success', 'Operations Information Updated');
         return redirect()->route('dashboard');

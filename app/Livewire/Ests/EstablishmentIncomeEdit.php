@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Ests;
 
+use App\Models\Estinc;
 use App\Models\EstRecord;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
@@ -56,37 +57,36 @@ class EstablishmentIncomeEdit extends Component
             'income_other' => 'required|numeric',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estincome')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $estincome = Estinc::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estincome) {
-            $this->income_boarding = $est_record->estincome->income_boarding;
-            $this->income_food = $est_record->estincome->income_food;
-            $this->income_beverage = $est_record->estincome->income_beverage;
-            $this->income_catering = $est_record->estincome->income_catering;
-            $this->income_transport = $est_record->estincome->income_transport;
-            $this->income_spa = $est_record->estincome->income_spa;
-            $this->income_laundry = $est_record->estincome->income_laundry;
-            $this->income_servicecharge = $est_record->estincome->income_servicecharge;
-            $this->income_excursion = $est_record->estincome->income_excursion;
-            $this->income_watersports = $est_record->estincome->income_watersports;
-            $this->income_watersports_third = $est_record->estincome->income_watersports_third;
-            $this->income_retailshop = $est_record->estincome->income_retailshop;
-            $this->income_retailshop_third = $est_record->estincome->income_retailshop_third;
-            $this->income_exchange = $est_record->estincome->income_exchange;
-            $this->income_commission = $est_record->estincome->income_commission;
-            $this->income_managementfee = $est_record->estincome->income_managementfee;
-            $this->income_lease = $est_record->estincome->income_lease;
-            $this->income_finance = $est_record->estincome->income_finance;
-            $this->income_dividend = $est_record->estincome->income_dividend;
-            $this->income_other = $est_record->estincome->income_other;
-            $this->status = $est_record->estincome->status;
+
+        if ($estincome) {
+            $this->income_boarding = $estincome->income_boarding;
+            $this->income_food = $estincome->income_food;
+            $this->income_beverage = $estincome->income_beverage;
+            $this->income_catering = $estincome->income_catering;
+            $this->income_transport = $estincome->income_transport;
+            $this->income_spa = $estincome->income_spa;
+            $this->income_laundry = $estincome->income_laundry;
+            $this->income_servicecharge = $estincome->income_servicecharge;
+            $this->income_excursion = $estincome->income_excursion;
+            $this->income_watersports = $estincome->income_watersports;
+            $this->income_watersports_third = $estincome->income_watersports_third;
+            $this->income_retailshop = $estincome->income_retailshop;
+            $this->income_retailshop_third = $estincome->income_retailshop_third;
+            $this->income_exchange = $estincome->income_exchange;
+            $this->income_commission = $estincome->income_commission;
+            $this->income_managementfee = $estincome->income_managementfee;
+            $this->income_lease = $estincome->income_lease;
+            $this->income_finance = $estincome->income_finance;
+            $this->income_dividend = $estincome->income_dividend;
+            $this->income_other = $estincome->income_other;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -115,11 +115,11 @@ class EstablishmentIncomeEdit extends Component
             
         ]);
 
-        $estRecord = EstRecord::with('estincome')->findOrFail($this->est_record_id);
+        $estincome = Estinc::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estincome) {
-            // Update the fields in the related `estincome` model
-            $estRecord->estincome->update([
+        if ($estincome) {
+            // Update the fields in the estopera record
+            $estincome->update([
                 'income_boarding' => $this->income_boarding,
                 'income_food' => $this->income_food,
                 'income_beverage' => $this->income_beverage,
@@ -140,7 +140,7 @@ class EstablishmentIncomeEdit extends Component
                 'income_finance' => $this->income_finance,
                 'income_dividend' => $this->income_dividend,
                 'income_other' => $this->income_other,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
            
         }

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Ests;
 
+use App\Models\Estfue;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\EstRecord;
@@ -43,30 +44,29 @@ class EstablishmentFuelEdit extends Component
             'other_energy_capacity' => 'nullable|integer',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estfuel')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $estfuel = Estfue::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estfuel) {
-            $this->generator_capacity_unit = $est_record->estfuel->generator_capacity_unit;
-            $this->generator_capacity_qty = $est_record->estfuel->generator_capacity_qty;
-            $this->solar_rooftop = $est_record->estfuel->solar_rooftop;
-            $this->solar_groundmounted = $est_record->estfuel->solar_groundmounted;
-            $this->solar_floating = $est_record->estfuel->solar_floating;
-            $this->energy_storage = $est_record->estfuel->energy_storage;
-            $this->energy_storage_power = $est_record->estfuel->energy_storage_power;
-            $this->energy_storage_kwh = $est_record->estfuel->energy_storage_kwh;
-            $this->energy_storage_other = $est_record->estfuel->energy_storage_other;
-            $this->energy_storage_othertype = $est_record->estfuel->energy_storage_othertype;
-            $this->energy_storage_othercapacity = $est_record->estfuel->energy_storage_othercapacity;
-            $this->solar_waterheating = $est_record->estfuel->solar_waterheating;
-            $this->waste_heatrecovery = $est_record->estfuel->waste_heatrecovery;
-            $this->other_energy_capacity = $est_record->estfuel->other_energy_capacity;
+        if ($estfuel) {
+            $this->generator_capacity_unit = $estfuel->generator_capacity_unit;
+            $this->generator_capacity_qty = $estfuel->generator_capacity_qty;
+            $this->solar_rooftop = $estfuel->solar_rooftop;
+            $this->solar_groundmounted = $estfuel->solar_groundmounted;
+            $this->solar_floating = $estfuel->solar_floating;
+            $this->energy_storage = $estfuel->energy_storage;
+            $this->energy_storage_power = $estfuel->energy_storage_power;
+            $this->energy_storage_kwh = $estfuel->energy_storage_kwh;
+            $this->energy_storage_other = $estfuel->energy_storage_other;
+            $this->energy_storage_othertype = $estfuel->energy_storage_othertype;
+            $this->energy_storage_othercapacity = $estfuel->energy_storage_othercapacity;
+            $this->solar_waterheating = $estfuel->solar_waterheating;
+            $this->waste_heatrecovery = $estfuel->waste_heatrecovery;
+            $this->other_energy_capacity = $estfuel->other_energy_capacity;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -89,11 +89,11 @@ class EstablishmentFuelEdit extends Component
             
         ]);
 
-        $estRecord = EstRecord::with('estfuel')->findOrFail($this->est_record_id);
+        $estfuel = Estfue::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estfuel) {
-            // Update the fields in the related `estfuel` model
-            $estRecord->estfuel->update([
+        if ($estfuel) {
+            // Update the fields in the estopera record
+            $estfuel->update([
                 'generator_capacity_unit' => $this->generator_capacity_unit,
                 'generator_capacity_qty' => $this->generator_capacity_qty,
                 'solar_rooftop' => $this->solar_rooftop,
@@ -108,7 +108,7 @@ class EstablishmentFuelEdit extends Component
                 'solar_waterheating' => $this->solar_waterheating,
                 'waste_heatrecovery' => $this->waste_heatrecovery,
                 'other_energy_capacity' => $this->other_energy_capacity,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
             
         }

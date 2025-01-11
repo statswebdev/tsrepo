@@ -57,6 +57,7 @@
                                         <option value="Establishment under a Company">Establishment under a Company</option>
                                         <option value="Cooperative Societies">Cooperative Societies</option>
                                         <option value="Foreign Company (100% Owned)">Foreign Company (100% Owned)</option>
+                                        <option value="Sole Proprietorship">Sole Proprietorship</option>
                                     </select>
                                     @error('type_organisation')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
@@ -88,7 +89,7 @@
 
                                 <hr class="mt-5 mb-5">
                                 <h5 class="mb-2">7. Operator Contact Information</h5>
-                                <small>Only for establishment under a company</small>
+                                <small>If more than one take of the main operator</small>
 
                                 <div class="mt-3 mb-3 col-12 col-md-6">
                                     <label class="form-label" for="operator_contact">Contact Number of the Operator</label>

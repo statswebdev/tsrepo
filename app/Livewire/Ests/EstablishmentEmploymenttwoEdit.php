@@ -4,6 +4,7 @@ namespace App\Livewire\Ests;
 
 use App\Models\EstEmptwo;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class EstablishmentEmploymenttwoEdit extends Component
 {
@@ -279,143 +280,149 @@ class EstablishmentEmploymenttwoEdit extends Component
             
     ];
 
-    public function mount(EstEmptwo $estrecordid)
+    public function mount()
     {
-        $this->user_id = $estrecordid->user_id;
-        $this->est_record_id = $estrecordid->id;
-        $this->hundred_maldivian = $estrecordid->hundred_maldivian;
-        $this->hundred_foreign = $estrecordid->hundred_foreign;
-        $this->threehundred_maldivian = $estrecordid->threehundred_maldivian;
-        $this->threehundred_foreign = $estrecordid->threehundred_foreign;
-        $this->fivehundred_maldivian = $estrecordid->fivehundred_maldivian;
-        $this->fivehundred_foreign = $estrecordid->fivehundred_foreign;
-        $this->sevenhundred_maldivian = $estrecordid->sevenhundred_maldivian;
-        $this->sevenhundred_foreign = $estrecordid->sevenhundred_foreign;
-        $this->ninehundred_maldivian = $estrecordid->ninehundred_maldivian;
-        $this->ninehundred_foreign = $estrecordid->ninehundred_foreign;
-        $this->thausand_maldivian = $estrecordid->thausand_maldivian;
-        $this->thausand_foreign = $estrecordid->thausand_foreign;
-        $this->threethausand_maldivian = $estrecordid->threethausand_maldivian;
-        $this->threethausand_foreign = $estrecordid->threethausand_foreign;
-        $this->fivethausand_maldivian = $estrecordid->fivethausand_maldivian;
-        $this->fivethausand_foreign = $estrecordid->fivethausand_foreign;
-        $this->seventhausand_maldivian = $estrecordid->seventhausand_maldivian;
-        $this->seventhausand_foreign = $estrecordid->seventhausand_foreign;
-        $this->tenthausand_maldivian = $estrecordid->tenthausand_maldivian;
-        $this->tenthausand_foreign = $estrecordid->tenthausand_foreign;
-        $this->duration_maldivian_male_lessthanoneyear = $estrecordid->duration_maldivian_male_lessthanoneyear;
-        $this->duration_maldivian_female_lessthanoneyear = $estrecordid->duration_maldivian_female_lessthanoneyear;
-        $this->duration_foreign_male_lessthanoneyear = $estrecordid->duration_foreign_male_lessthanoneyear;
-        $this->duration_foreign_female_lessthanoneyear = $estrecordid->duration_foreign_female_lessthanoneyear;
-        $this->duration_maldivian_male_one_two_years = $estrecordid->duration_maldivian_male_one_two_years;
-        $this->duration_maldivian_female_one_two_years = $estrecordid->duration_maldivian_female_one_two_years;
-        $this->duration_foreign_male_one_two_years = $estrecordid->duration_foreign_male_one_two_years;
-        $this->duration_foreign_female_one_two_years = $estrecordid->duration_foreign_female_one_two_years;
-        $this->duration_maldivian_male_three_four_years = $estrecordid->duration_maldivian_male_three_four_years;
-        $this->duration_maldivian_female_three_four_years = $estrecordid->duration_maldivian_female_three_four_years;
-        $this->duration_foreign_male_three_four_years = $estrecordid->duration_foreign_male_three_four_years;
-        $this->duration_foreign_female_three_four_years = $estrecordid->duration_foreign_female_three_four_years;
-        $this->duration_maldivian_male_five_nine_years = $estrecordid->duration_maldivian_male_five_nine_years;
-        $this->duration_maldivian_female_five_nine_years = $estrecordid->duration_maldivian_female_five_nine_years;
-        $this->duration_foreign_male_five_nine_years = $estrecordid->duration_foreign_male_five_nine_years;
-        $this->duration_foreign_female_five_nine_years = $estrecordid->duration_foreign_female_five_nine_years;
-        $this->duration_maldivian_male_ten_years = $estrecordid->duration_maldivian_male_ten_years;
-        $this->duration_maldivian_female_ten_years = $estrecordid->duration_maldivian_female_ten_years;
-        $this->duration_foreign_male_ten_years = $estrecordid->duration_foreign_male_ten_years;
-        $this->duration_foreign_female_ten_years = $estrecordid->duration_foreign_female_ten_years;
-        $this->age_eighteen_mdv_male = $estrecordid->age_eighteen_mdv_male;
-        $this->age_eighteen_mdv_female = $estrecordid->age_eighteen_mdv_female;
-        $this->age_eighteen_foreign_male = $estrecordid->age_eighteen_foreign_male;
-        $this->age_eighteen_foreign_female = $estrecordid->age_eighteen_foreign_female;
-        $this->age_twenty_mdv_male = $estrecordid->age_twenty_mdv_male;
-        $this->age_twenty_mdv_female = $estrecordid->age_twenty_mdv_female;
-        $this->age_twenty_foreign_male = $estrecordid->age_twenty_foreign_male;
-        $this->age_twenty_foreign_female = $estrecordid->age_twenty_foreign_female;
-        $this->age_thirty_mdv_male = $estrecordid->age_thirty_mdv_male;
-        $this->age_thirty_mdv_female = $estrecordid->age_thirty_mdv_female;
-        $this->age_thirty_foreign_male = $estrecordid->age_thirty_foreign_male;
-        $this->age_thirty_foreign_female = $estrecordid->age_thirty_foreign_female;
-        $this->age_sixty_mdv_male = $estrecordid->age_sixty_mdv_male;
-        $this->age_sixty_mdv_female = $estrecordid->age_sixty_mdv_female;
-        $this->age_sixty_foreign_male = $estrecordid->age_sixty_foreign_male;
-        $this->age_sixty_foreign_female = $estrecordid->age_sixty_foreign_female;
-        $this->age_old_mdv_male = $estrecordid->age_old_mdv_male;
-        $this->age_old_mdv_female = $estrecordid->age_old_mdv_female;
-        $this->age_old_foreign_male = $estrecordid->age_old_foreign_male;
-        $this->age_old_foreign_female = $estrecordid->age_old_foreign_female;
-        $this->capital_male = $estrecordid->capital_male;
-        $this->capital_female = $estrecordid->capital_female;
-        $this->ha_male = $estrecordid->ha_male;
-        $this->ha_female = $estrecordid->ha_female;
-        $this->hdh_male = $estrecordid->hdh_male;
-        $this->hdh_female = $estrecordid->hdh_female;
-        $this->shaviyani_male = $estrecordid->shaviyani_male;
-        $this->shaviyani_female = $estrecordid->shaviyani_female;
-        $this->noonu_male = $estrecordid->noonu_male;
-        $this->noonu_female = $estrecordid->noonu_female;
-        $this->raa_male = $estrecordid->raa_male;
-        $this->raa_female = $estrecordid->raa_female;
-        $this->baa_male = $estrecordid->baa_male;
-        $this->baa_female = $estrecordid->baa_female;
-        $this->lhaviyani_male = $estrecordid->lhaviyani_male;
-        $this->lhaviyani_female = $estrecordid->lhaviyani_female;
-        $this->kaafu_male = $estrecordid->kaafu_male;
-        $this->kaafu_female = $estrecordid->kaafu_female;
-        $this->alifalif_male = $estrecordid->alifalif_male;
-        $this->alifalif_female = $estrecordid->alifalif_female;
-        $this->alifdhaal_male = $estrecordid->alifdhaal_male;
-        $this->alifdhaal_female = $estrecordid->alifdhaal_female;
-        $this->vaav_male = $estrecordid->vaav_male;
-        $this->vaav_female = $estrecordid->vaav_female;
-        $this->meem_male = $estrecordid->meem_male;
-        $this->meem_female = $estrecordid->meem_female;
-        $this->faaf_male = $estrecordid->faaf_male;
-        $this->faaf_female = $estrecordid->faaf_female;
-        $this->dhaal_male = $estrecordid->dhaal_male;
-        $this->dhaal_female = $estrecordid->dhaal_female;
-        $this->thaa_male = $estrecordid->thaa_male;
-        $this->thaa_female = $estrecordid->thaa_female;
-        $this->laam_male = $estrecordid->laam_male;
-        $this->laam_female = $estrecordid->laam_female;
-        $this->ga_male = $estrecordid->ga_male;
-        $this->ga_female = $estrecordid->ga_female;
-        $this->gdh_male = $estrecordid->gdh_male;
-        $this->gdh_female = $estrecordid->gdh_female;
-        $this->gn_male = $estrecordid->gn_male;
-        $this->gn_female = $estrecordid->gn_female;
-        $this->seenu_male = $estrecordid->seenu_male;
-        $this->seenu_female = $estrecordid->seenu_female;
-        $this->retailshop_outsourced = $estrecordid->retailshop_outsourced;
-        $this->retailshop_male = $estrecordid->retailshop_male;
-        $this->retailshop_female = $estrecordid->retailshop_female;
-        $this->divingcenter_outsourced = $estrecordid->divingcenter_outsourced;
-        $this->divingcenter_male = $estrecordid->divingcenter_male;
-        $this->divingcenter_female = $estrecordid->divingcenter_female;
-        $this->restaurant_outsourced = $estrecordid->restaurant_outsourced;
-        $this->restaurant_male = $estrecordid->restaurant_male;
-        $this->restaurant_female = $estrecordid->restaurant_female;
-        $this->spa_outsourced = $estrecordid->spa_outsourced;
-        $this->spa_male = $estrecordid->spa_male;
-        $this->spa_female = $estrecordid->spa_female;
-        $this->transport_outsourced = $estrecordid->transport_outsourced;
-        $this->transport_male = $estrecordid->transport_male;
-        $this->transport_female = $estrecordid->transport_female;
-        $this->construction_outsourced = $estrecordid->construction_outsourced;
-        $this->construction_male = $estrecordid->construction_male;
-        $this->construction_female = $estrecordid->construction_female;
-        $this->otherone_name = $estrecordid->otherone_name;
-        $this->otherone_outsourced = $estrecordid->otherone_outsourced;
-        $this->otherone_male = $estrecordid->otherone_male;
-        $this->otherone_female = $estrecordid->otherone_female;
-        $this->othertwo_name = $estrecordid->othertwo_name;
-        $this->othertwo_outsourced = $estrecordid->othertwo_outsourced;
-        $this->othertwo_male = $estrecordid->othertwo_male;
-        $this->othertwo_female = $estrecordid->othertwo_female;
-        $this->otherthree_name = $estrecordid->otherthree_name;
-        $this->otherthree_outsourced = $estrecordid->otherthree_outsourced;
-        $this->otherthree_male = $estrecordid->otherthree_male;
-        $this->otherthree_female = $estrecordid->otherthree_female;
-        
+         // Get the authenticated user's ID
+         $this->user_id = Auth::id();
+
+         // Retrieve the record from the estopera table for the authenticated user
+         $estemptwo = EstEmptwo::where('user_id', $this->user_id)->first();
+
+    if ($estemptwo) {
+        $this->est_record_id = $estemptwo->id;
+        $this->hundred_maldivian = $estemptwo->hundred_maldivian;
+        $this->hundred_foreign = $estemptwo->hundred_foreign;
+        $this->threehundred_maldivian = $estemptwo->threehundred_maldivian;
+        $this->threehundred_foreign = $estemptwo->threehundred_foreign;
+        $this->fivehundred_maldivian = $estemptwo->fivehundred_maldivian;
+        $this->fivehundred_foreign = $estemptwo->fivehundred_foreign;
+        $this->sevenhundred_maldivian = $estemptwo->sevenhundred_maldivian;
+        $this->sevenhundred_foreign = $estemptwo->sevenhundred_foreign;
+        $this->ninehundred_maldivian = $estemptwo->ninehundred_maldivian;
+        $this->ninehundred_foreign = $estemptwo->ninehundred_foreign;
+        $this->thausand_maldivian = $estemptwo->thausand_maldivian;
+        $this->thausand_foreign = $estemptwo->thausand_foreign;
+        $this->threethausand_maldivian = $estemptwo->threethausand_maldivian;
+        $this->threethausand_foreign = $estemptwo->threethausand_foreign;
+        $this->fivethausand_maldivian = $estemptwo->fivethausand_maldivian;
+        $this->fivethausand_foreign = $estemptwo->fivethausand_foreign;
+        $this->seventhausand_maldivian = $estemptwo->seventhausand_maldivian;
+        $this->seventhausand_foreign = $estemptwo->seventhausand_foreign;
+        $this->tenthausand_maldivian = $estemptwo->tenthausand_maldivian;
+        $this->tenthausand_foreign = $estemptwo->tenthausand_foreign;
+        $this->duration_maldivian_male_lessthanoneyear = $estemptwo->duration_maldivian_male_lessthanoneyear;
+        $this->duration_maldivian_female_lessthanoneyear = $estemptwo->duration_maldivian_female_lessthanoneyear;
+        $this->duration_foreign_male_lessthanoneyear = $estemptwo->duration_foreign_male_lessthanoneyear;
+        $this->duration_foreign_female_lessthanoneyear = $estemptwo->duration_foreign_female_lessthanoneyear;
+        $this->duration_maldivian_male_one_two_years = $estemptwo->duration_maldivian_male_one_two_years;
+        $this->duration_maldivian_female_one_two_years = $estemptwo->duration_maldivian_female_one_two_years;
+        $this->duration_foreign_male_one_two_years = $estemptwo->duration_foreign_male_one_two_years;
+        $this->duration_foreign_female_one_two_years = $estemptwo->duration_foreign_female_one_two_years;
+        $this->duration_maldivian_male_three_four_years = $estemptwo->duration_maldivian_male_three_four_years;
+        $this->duration_maldivian_female_three_four_years = $estemptwo->duration_maldivian_female_three_four_years;
+        $this->duration_foreign_male_three_four_years = $estemptwo->duration_foreign_male_three_four_years;
+        $this->duration_foreign_female_three_four_years = $estemptwo->duration_foreign_female_three_four_years;
+        $this->duration_maldivian_male_five_nine_years = $estemptwo->duration_maldivian_male_five_nine_years;
+        $this->duration_maldivian_female_five_nine_years = $estemptwo->duration_maldivian_female_five_nine_years;
+        $this->duration_foreign_male_five_nine_years = $estemptwo->duration_foreign_male_five_nine_years;
+        $this->duration_foreign_female_five_nine_years = $estemptwo->duration_foreign_female_five_nine_years;
+        $this->duration_maldivian_male_ten_years = $estemptwo->duration_maldivian_male_ten_years;
+        $this->duration_maldivian_female_ten_years = $estemptwo->duration_maldivian_female_ten_years;
+        $this->duration_foreign_male_ten_years = $estemptwo->duration_foreign_male_ten_years;
+        $this->duration_foreign_female_ten_years = $estemptwo->duration_foreign_female_ten_years;
+        $this->age_eighteen_mdv_male = $estemptwo->age_eighteen_mdv_male;
+        $this->age_eighteen_mdv_female = $estemptwo->age_eighteen_mdv_female;
+        $this->age_eighteen_foreign_male = $estemptwo->age_eighteen_foreign_male;
+        $this->age_eighteen_foreign_female = $estemptwo->age_eighteen_foreign_female;
+        $this->age_twenty_mdv_male = $estemptwo->age_twenty_mdv_male;
+        $this->age_twenty_mdv_female = $estemptwo->age_twenty_mdv_female;
+        $this->age_twenty_foreign_male = $estemptwo->age_twenty_foreign_male;
+        $this->age_twenty_foreign_female = $estemptwo->age_twenty_foreign_female;
+        $this->age_thirty_mdv_male = $estemptwo->age_thirty_mdv_male;
+        $this->age_thirty_mdv_female = $estemptwo->age_thirty_mdv_female;
+        $this->age_thirty_foreign_male = $estemptwo->age_thirty_foreign_male;
+        $this->age_thirty_foreign_female = $estemptwo->age_thirty_foreign_female;
+        $this->age_sixty_mdv_male = $estemptwo->age_sixty_mdv_male;
+        $this->age_sixty_mdv_female = $estemptwo->age_sixty_mdv_female;
+        $this->age_sixty_foreign_male = $estemptwo->age_sixty_foreign_male;
+        $this->age_sixty_foreign_female = $estemptwo->age_sixty_foreign_female;
+        $this->age_old_mdv_male = $estemptwo->age_old_mdv_male;
+        $this->age_old_mdv_female = $estemptwo->age_old_mdv_female;
+        $this->age_old_foreign_male = $estemptwo->age_old_foreign_male;
+        $this->age_old_foreign_female = $estemptwo->age_old_foreign_female;
+        $this->capital_male = $estemptwo->capital_male;
+        $this->capital_female = $estemptwo->capital_female;
+        $this->ha_male = $estemptwo->ha_male;
+        $this->ha_female = $estemptwo->ha_female;
+        $this->hdh_male = $estemptwo->hdh_male;
+        $this->hdh_female = $estemptwo->hdh_female;
+        $this->shaviyani_male = $estemptwo->shaviyani_male;
+        $this->shaviyani_female = $estemptwo->shaviyani_female;
+        $this->noonu_male = $estemptwo->noonu_male;
+        $this->noonu_female = $estemptwo->noonu_female;
+        $this->raa_male = $estemptwo->raa_male;
+        $this->raa_female = $estemptwo->raa_female;
+        $this->baa_male = $estemptwo->baa_male;
+        $this->baa_female = $estemptwo->baa_female;
+        $this->lhaviyani_male = $estemptwo->lhaviyani_male;
+        $this->lhaviyani_female = $estemptwo->lhaviyani_female;
+        $this->kaafu_male = $estemptwo->kaafu_male;
+        $this->kaafu_female = $estemptwo->kaafu_female;
+        $this->alifalif_male = $estemptwo->alifalif_male;
+        $this->alifalif_female = $estemptwo->alifalif_female;
+        $this->alifdhaal_male = $estemptwo->alifdhaal_male;
+        $this->alifdhaal_female = $estemptwo->alifdhaal_female;
+        $this->vaav_male = $estemptwo->vaav_male;
+        $this->vaav_female = $estemptwo->vaav_female;
+        $this->meem_male = $estemptwo->meem_male;
+        $this->meem_female = $estemptwo->meem_female;
+        $this->faaf_male = $estemptwo->faaf_male;
+        $this->faaf_female = $estemptwo->faaf_female;
+        $this->dhaal_male = $estemptwo->dhaal_male;
+        $this->dhaal_female = $estemptwo->dhaal_female;
+        $this->thaa_male = $estemptwo->thaa_male;
+        $this->thaa_female = $estemptwo->thaa_female;
+        $this->laam_male = $estemptwo->laam_male;
+        $this->laam_female = $estemptwo->laam_female;
+        $this->ga_male = $estemptwo->ga_male;
+        $this->ga_female = $estemptwo->ga_female;
+        $this->gdh_male = $estemptwo->gdh_male;
+        $this->gdh_female = $estemptwo->gdh_female;
+        $this->gn_male = $estemptwo->gn_male;
+        $this->gn_female = $estemptwo->gn_female;
+        $this->seenu_male = $estemptwo->seenu_male;
+        $this->seenu_female = $estemptwo->seenu_female;
+        $this->retailshop_outsourced = $estemptwo->retailshop_outsourced;
+        $this->retailshop_male = $estemptwo->retailshop_male;
+        $this->retailshop_female = $estemptwo->retailshop_female;
+        $this->divingcenter_outsourced = $estemptwo->divingcenter_outsourced;
+        $this->divingcenter_male = $estemptwo->divingcenter_male;
+        $this->divingcenter_female = $estemptwo->divingcenter_female;
+        $this->restaurant_outsourced = $estemptwo->restaurant_outsourced;
+        $this->restaurant_male = $estemptwo->restaurant_male;
+        $this->restaurant_female = $estemptwo->restaurant_female;
+        $this->spa_outsourced = $estemptwo->spa_outsourced;
+        $this->spa_male = $estemptwo->spa_male;
+        $this->spa_female = $estemptwo->spa_female;
+        $this->transport_outsourced = $estemptwo->transport_outsourced;
+        $this->transport_male = $estemptwo->transport_male;
+        $this->transport_female = $estemptwo->transport_female;
+        $this->construction_outsourced = $estemptwo->construction_outsourced;
+        $this->construction_male = $estemptwo->construction_male;
+        $this->construction_female = $estemptwo->construction_female;
+        $this->otherone_name = $estemptwo->otherone_name;
+        $this->otherone_outsourced = $estemptwo->otherone_outsourced;
+        $this->otherone_male = $estemptwo->otherone_male;
+        $this->otherone_female = $estemptwo->otherone_female;
+        $this->othertwo_name = $estemptwo->othertwo_name;
+        $this->othertwo_outsourced = $estemptwo->othertwo_outsourced;
+        $this->othertwo_male = $estemptwo->othertwo_male;
+        $this->othertwo_female = $estemptwo->othertwo_female;
+        $this->otherthree_name = $estemptwo->otherthree_name;
+        $this->otherthree_outsourced = $estemptwo->otherthree_outsourced;
+        $this->otherthree_male = $estemptwo->otherthree_male;
+        $this->otherthree_female = $estemptwo->otherthree_female;
+         }
     }
 
     public function save()
@@ -555,8 +562,13 @@ class EstablishmentEmploymenttwoEdit extends Component
             'otherthree_female' => 'nullable|integer|max:3000',  
         ]);
 
-        EstEmptwo::where('id', $this->est_record_id)->update([
-            'user_id' => $this->user_id,
+         // Retrieve the estopera record for the authenticated user
+         $estemptwo = EstEmptwo::where('user_id', $this->user_id)->first();
+
+
+         if ($estemptwo) {
+            // Update the fields in the estopera record
+            $estemptwo->update([
             'hundred_maldivian' => $this->hundred_maldivian,
             'hundred_foreign' => $this->hundred_foreign,
             'threehundred_maldivian' => $this->threehundred_maldivian,
@@ -689,10 +701,10 @@ class EstablishmentEmploymenttwoEdit extends Component
             'otherthree_outsourced' => $this->otherthree_outsourced,
             'otherthree_male' => $this->otherthree_male,
             'otherthree_female' => $this->otherthree_female,
-            'status' => 'submitted',
+            'status' => $this->status,
         ]);
         
-        
+    }
 
         session()->flash('success', 'Employment Part 2 Updated');
         return redirect()->route('dashboard');

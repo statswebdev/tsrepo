@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Ests;
 
+use App\Models\Estexp;
 use Livewire\Component;
 use App\Models\EstRecord;
 use Illuminate\Support\Facades\Auth;
@@ -60,39 +61,38 @@ class EstablishmentExpensesEdit extends Component
             'expense_other' => 'required|numeric',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
+        // Get the authenticated user's ID
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estexpenses')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $estexp = Estexp::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estexpenses) {
-            $this->expense_salary = $est_record->estexpenses->expense_salary;
-            $this->expense_allowance = $est_record->estexpenses->expense_allowance;
-            $this->expense_inkind = $est_record->estexpenses->expense_inkind;
-            $this->expense_salary_foreign = $est_record->estexpenses->expense_salary_foreign;
-            $this->expense_allowance_foreign = $est_record->estexpenses->expense_allowance_foreign;
-            $this->expense_inkind_foreign = $est_record->estexpenses->expense_inkind_foreign;
-            $this->expense_food = $est_record->estexpenses->expense_food;
-            $this->expense_laundry = $est_record->estexpenses->expense_laundry;
-            $this->expense_transport = $est_record->estexpenses->expense_transport;
-            $this->expense_water = $est_record->estexpenses->expense_water;
-            $this->expense_electricity = $est_record->estexpenses->expense_electricity;
-            $this->expense_fuel = $est_record->estexpenses->expense_fuel;
-            $this->expense_tele = $est_record->estexpenses->expense_tele;
-            $this->expense_fines = $est_record->estexpenses->expense_fines;
-            $this->expense_costofgoodssold = $est_record->estexpenses->expense_costofgoodssold;
-            $this->expense_lease = $est_record->estexpenses->expense_lease;
-            $this->expense_depreciation = $est_record->estexpenses->expense_depreciation;
-            $this->expense_financialcost = $est_record->estexpenses->expense_financialcost;
-            $this->expense_marketing = $est_record->estexpenses->expense_marketing;
-            $this->expense_admin = $est_record->estexpenses->expense_admin;
-            $this->expense_management = $est_record->estexpenses->expense_management;
-            $this->expense_other = $est_record->estexpenses->expense_other;
-            $this->status = $est_record->estexpenses->status;
+        if ($estexp) {
+            $this->expense_salary = $estexp->expense_salary;
+            $this->expense_allowance = $estexp->expense_allowance;
+            $this->expense_inkind = $estexp->expense_inkind;
+            $this->expense_salary_foreign = $estexp->expense_salary_foreign;
+            $this->expense_allowance_foreign = $estexp->expense_allowance_foreign;
+            $this->expense_inkind_foreign = $estexp->expense_inkind_foreign;
+            $this->expense_food = $estexp->expense_food;
+            $this->expense_laundry = $estexp->expense_laundry;
+            $this->expense_transport = $estexp->expense_transport;
+            $this->expense_water = $estexp->expense_water;
+            $this->expense_electricity = $estexp->expense_electricity;
+            $this->expense_fuel = $estexp->expense_fuel;
+            $this->expense_tele = $estexp->expense_tele;
+            $this->expense_fines = $estexp->expense_fines;
+            $this->expense_costofgoodssold = $estexp->expense_costofgoodssold;
+            $this->expense_lease = $estexp->expense_lease;
+            $this->expense_depreciation = $estexp->expense_depreciation;
+            $this->expense_financialcost = $estexp->expense_financialcost;
+            $this->expense_marketing = $estexp->expense_marketing;
+            $this->expense_admin = $estexp->expense_admin;
+            $this->expense_management = $estexp->expense_management;
+            $this->expense_other = $estexp->expense_other;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -123,11 +123,11 @@ class EstablishmentExpensesEdit extends Component
             
         ]);
 
-        $estRecord = EstRecord::with('estexpenses')->findOrFail($this->est_record_id);
+        $estexp = Estexp::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estexpenses) {
-            // Update the fields in the related `estexpenses` model
-            $estRecord->estexpenses->update([
+        if ($estexp) {
+            // Update the fields in the estopera record
+            $estexp->update([
                 'expense_salary' => $this->expense_salary,
                 'expense_allowance' => $this->expense_allowance,
                 'expense_inkind' => $this->expense_inkind,
@@ -150,7 +150,7 @@ class EstablishmentExpensesEdit extends Component
                 'expense_admin' => $this->expense_admin,
                 'expense_management' => $this->expense_management,
                 'expense_other' => $this->expense_other,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
             
         }

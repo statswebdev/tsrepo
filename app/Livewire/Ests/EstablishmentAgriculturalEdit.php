@@ -4,6 +4,7 @@ namespace App\Livewire\Ests;
 
 use App\Models\Estagri;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class EstablishmentAgriculturalEdit extends Component
 {
@@ -184,96 +185,101 @@ class EstablishmentAgriculturalEdit extends Component
             'otheragrifour_farmers_value' => 'nullable|integer',
     ];
 
-    public function mount(Estagri $estrecordid)
+    public function mount()
     {
-        $this->user_id = $estrecordid->user_id;
-        $this->est_record_id = $estrecordid->id;
-        $this->watermelon_inhouse = $estrecordid->watermelon_inhouse;
-        $this->watermelon_grown = $estrecordid->watermelon_grown;
-        $this->coconut_inhouse = $estrecordid->coconut_inhouse;
-        $this->coconut_grown = $estrecordid->coconut_grown;
-        $this->papaya_inhouse = $estrecordid->papaya_inhouse;
-        $this->papaya_grown = $estrecordid->papaya_grown;
-        $this->pumpkin_inhouse = $estrecordid->pumpkin_inhouse;
-        $this->pumpkin_grown = $estrecordid->pumpkin_grown;
-        $this->cucumber_inhouse = $estrecordid->cucumber_inhouse;
-        $this->cucumber_grown = $estrecordid->cucumber_grown;
-        $this->banana_inhouse = $estrecordid->banana_inhouse;
-        $this->banana_grown = $estrecordid->banana_grown;
-        $this->brinjal_inhouse = $estrecordid->brinjal_inhouse;
-        $this->brinjal_grown = $estrecordid->brinjal_grown;
-        $this->chillies_inhouse = $estrecordid->chillies_inhouse;
-        $this->chillies_grown = $estrecordid->chillies_grown;
-        $this->bottlegourd_inhouse = $estrecordid->bottlegourd_inhouse;
-        $this->bottlegourd_grown = $estrecordid->bottlegourd_grown;
-        $this->butternut_inhouse = $estrecordid->butternut_inhouse;
-        $this->butternut_grown = $estrecordid->butternut_grown;
-        $this->cabbage_inhouse = $estrecordid->cabbage_inhouse;
-        $this->cabbage_grown = $estrecordid->cabbage_grown;
-        $this->mango_inhouse = $estrecordid->mango_inhouse;
-        $this->mango_grown = $estrecordid->mango_grown;
-        $this->waxgourd_inhouse = $estrecordid->waxgourd_inhouse;
-        $this->waxgourd_grown = $estrecordid->waxgourd_grown;
-        $this->otheragrione_inhouse = $estrecordid->otheragrione_inhouse;
-        $this->otheragrione_grown = $estrecordid->otheragrione_grown;
-        $this->otheragritwo_inhouse = $estrecordid->otheragritwo_inhouse;
-        $this->otheragritwo_grown = $estrecordid->otheragritwo_grown;
-        $this->otheragrithree_inhouse = $estrecordid->otheragrithree_inhouse;
-        $this->otheragrithree_grown = $estrecordid->otheragrithree_grown;
-        $this->otheragrifour_inhouse = $estrecordid->otheragrifour_inhouse;
-        $this->otheragrifour_grown = $estrecordid->otheragrifour_grown;
-        $this->watermelon_farmers = $estrecordid->watermelon_farmers;
-        $this->watermelon_farmers_qty = $estrecordid->watermelon_farmers_qty;
-        $this->watermelon_farmers_value = $estrecordid->watermelon_farmers_value;
-        $this->coconut_farmers = $estrecordid->coconut_farmers;
-        $this->coconut_farmers_qty = $estrecordid->coconut_farmers_qty;
-        $this->coconut_farmers_value = $estrecordid->coconut_farmers_value;
-        $this->papaya_farmers = $estrecordid->papaya_farmers;
-        $this->papaya_farmers_qty = $estrecordid->papaya_farmers_qty;
-        $this->papaya_farmers_value = $estrecordid->papaya_farmers_value;
-        $this->pumpkin_farmers = $estrecordid->pumpkin_farmers;
-        $this->pumpkin_farmers_qty = $estrecordid->pumpkin_farmers_qty;
-        $this->pumpkin_farmers_value = $estrecordid->pumpkin_farmers_value;
-        $this->cucumber_farmers = $estrecordid->cucumber_farmers;
-        $this->cucumber_farmers_qty = $estrecordid->cucumber_farmers_qty;
-        $this->cucumber_farmers_value = $estrecordid->cucumber_farmers_value;
-        $this->banana_farmers = $estrecordid->banana_farmers;
-        $this->banana_farmers_qty = $estrecordid->banana_farmers_qty;
-        $this->banana_farmers_value = $estrecordid->banana_farmers_value;
-        $this->brinjal_farmers = $estrecordid->brinjal_farmers;
-        $this->brinjal_farmers_qty = $estrecordid->brinjal_farmers_qty;
-        $this->brinjal_farmers_value = $estrecordid->brinjal_farmers_value;
-        $this->chillies_farmers = $estrecordid->chillies_farmers;
-        $this->chillies_farmers_qty = $estrecordid->chillies_farmers_qty;
-        $this->chillies_farmers_value = $estrecordid->chillies_farmers_value;
-        $this->bottlegourd_farmers = $estrecordid->bottlegourd_farmers;
-        $this->bottlegourd_farmers_qty = $estrecordid->bottlegourd_farmers_qty;
-        $this->bottlegourd_farmers_value = $estrecordid->bottlegourd_farmers_value;
-        $this->butternut_farms = $estrecordid->butternut_farms;
-        $this->butternut_farmers_qty = $estrecordid->butternut_farmers_qty;
-        $this->butternut_farmers_value = $estrecordid->butternut_farmers_value;
-        $this->cabbage_farmers = $estrecordid->cabbage_farmers;
-        $this->cabbage_farmers_qty = $estrecordid->cabbage_farmers_qty;
-        $this->cabbage_farmers_value = $estrecordid->cabbage_farmers_value;
-        $this->mango_farmers = $estrecordid->mango_farmers;
-        $this->mango_farmers_qty = $estrecordid->mango_farmers_qty;
-        $this->mango_farmers_value = $estrecordid->mango_farmers_value;
-        $this->waxgourd_farmers = $estrecordid->waxgourd_farmers;
-        $this->waxgourd_farmers_qty = $estrecordid->waxgourd_farmers_qty;
-        $this->waxgourd_farmers_value = $estrecordid->waxgourd_farmers_value;
-        $this->otheragrione_farmers = $estrecordid->otheragrione_farmers;
-        $this->otheragrione_farmers_qty = $estrecordid->otheragrione_farmers_qty;
-        $this->otheragrione_farmers_value = $estrecordid->otheragrione_farmers_value;
-        $this->otheragritwo_farmers = $estrecordid->otheragritwo_farmers;
-        $this->otheragritwo_farmers_qty = $estrecordid->otheragritwo_farmers_qty;
-        $this->otheragritwo_farmers_value = $estrecordid->otheragritwo_farmers_value;
-        $this->otheragrithree_farmers = $estrecordid->otheragrithree_farmers;
-        $this->otheragrithree_farmers_qty = $estrecordid->otheragrithree_farmers_qty;
-        $this->otheragrithree_farmers_value = $estrecordid->otheragrithree_farmers_value;
-        $this->otheragrifour_farmers = $estrecordid->otheragrifour_farmers;
-        $this->otheragrifour_farmers_qty = $estrecordid->otheragrifour_farmers_qty;
-        $this->otheragrifour_farmers_value = $estrecordid->otheragrifour_farmers_value;
-        
+        // Get the authenticated user's ID
+        $this->user_id = Auth::id();
+
+        // Retrieve the record from the estopera table for the authenticated user
+        $agri = Estagri::where('user_id', $this->user_id)->first();
+
+        if ($agri) {
+            $this->watermelon_inhouse = $agri->watermelon_inhouse;
+            $this->watermelon_grown = $agri->watermelon_grown;
+            $this->coconut_inhouse = $agri->coconut_inhouse;
+            $this->coconut_grown = $agri->coconut_grown;
+            $this->papaya_inhouse = $agri->papaya_inhouse;
+            $this->papaya_grown = $agri->papaya_grown;
+            $this->pumpkin_inhouse = $agri->pumpkin_inhouse;
+            $this->pumpkin_grown = $agri->pumpkin_grown;
+            $this->cucumber_inhouse = $agri->cucumber_inhouse;
+            $this->cucumber_grown = $agri->cucumber_grown;
+            $this->banana_inhouse = $agri->banana_inhouse;
+            $this->banana_grown = $agri->banana_grown;
+            $this->brinjal_inhouse = $agri->brinjal_inhouse;
+            $this->brinjal_grown = $agri->brinjal_grown;
+            $this->chillies_inhouse = $agri->chillies_inhouse;
+            $this->chillies_grown = $agri->chillies_grown;
+            $this->bottlegourd_inhouse = $agri->bottlegourd_inhouse;
+            $this->bottlegourd_grown = $agri->bottlegourd_grown;
+            $this->butternut_inhouse = $agri->butternut_inhouse;
+            $this->butternut_grown = $agri->butternut_grown;
+            $this->cabbage_inhouse = $agri->cabbage_inhouse;
+            $this->cabbage_grown = $agri->cabbage_grown;
+            $this->mango_inhouse = $agri->mango_inhouse;
+            $this->mango_grown = $agri->mango_grown;
+            $this->waxgourd_inhouse = $agri->waxgourd_inhouse;
+            $this->waxgourd_grown = $agri->waxgourd_grown;
+            $this->otheragrione_inhouse = $agri->otheragrione_inhouse;
+            $this->otheragrione_grown = $agri->otheragrione_grown;
+            $this->otheragritwo_inhouse = $agri->otheragritwo_inhouse;
+            $this->otheragritwo_grown = $agri->otheragritwo_grown;
+            $this->otheragrithree_inhouse = $agri->otheragrithree_inhouse;
+            $this->otheragrithree_grown = $agri->otheragrithree_grown;
+            $this->otheragrifour_inhouse = $agri->otheragrifour_inhouse;
+            $this->otheragrifour_grown = $agri->otheragrifour_grown;
+            $this->watermelon_farmers = $agri->watermelon_farmers;
+            $this->watermelon_farmers_qty = $agri->watermelon_farmers_qty;
+            $this->watermelon_farmers_value = $agri->watermelon_farmers_value;
+            $this->coconut_farmers = $agri->coconut_farmers;
+            $this->coconut_farmers_qty = $agri->coconut_farmers_qty;
+            $this->coconut_farmers_value = $agri->coconut_farmers_value;
+            $this->papaya_farmers = $agri->papaya_farmers;
+            $this->papaya_farmers_qty = $agri->papaya_farmers_qty;
+            $this->papaya_farmers_value = $agri->papaya_farmers_value;
+            $this->pumpkin_farmers = $agri->pumpkin_farmers;
+            $this->pumpkin_farmers_qty = $agri->pumpkin_farmers_qty;
+            $this->pumpkin_farmers_value = $agri->pumpkin_farmers_value;
+            $this->cucumber_farmers = $agri->cucumber_farmers;
+            $this->cucumber_farmers_qty = $agri->cucumber_farmers_qty;
+            $this->cucumber_farmers_value = $agri->cucumber_farmers_value;
+            $this->banana_farmers = $agri->banana_farmers;
+            $this->banana_farmers_qty = $agri->banana_farmers_qty;
+            $this->banana_farmers_value = $agri->banana_farmers_value;
+            $this->brinjal_farmers = $agri->brinjal_farmers;
+            $this->brinjal_farmers_qty = $agri->brinjal_farmers_qty;
+            $this->brinjal_farmers_value = $agri->brinjal_farmers_value;
+            $this->chillies_farmers = $agri->chillies_farmers;
+            $this->chillies_farmers_qty = $agri->chillies_farmers_qty;
+            $this->chillies_farmers_value = $agri->chillies_farmers_value;
+            $this->bottlegourd_farmers = $agri->bottlegourd_farmers;
+            $this->bottlegourd_farmers_qty = $agri->bottlegourd_farmers_qty;
+            $this->bottlegourd_farmers_value = $agri->bottlegourd_farmers_value;
+            $this->butternut_farms = $agri->butternut_farms;
+            $this->butternut_farmers_qty = $agri->butternut_farmers_qty;
+            $this->butternut_farmers_value = $agri->butternut_farmers_value;
+            $this->cabbage_farmers = $agri->cabbage_farmers;
+            $this->cabbage_farmers_qty = $agri->cabbage_farmers_qty;
+            $this->cabbage_farmers_value = $agri->cabbage_farmers_value;
+            $this->mango_farmers = $agri->mango_farmers;
+            $this->mango_farmers_qty = $agri->mango_farmers_qty;
+            $this->mango_farmers_value = $agri->mango_farmers_value;
+            $this->waxgourd_farmers = $agri->waxgourd_farmers;
+            $this->waxgourd_farmers_qty = $agri->waxgourd_farmers_qty;
+            $this->waxgourd_farmers_value = $agri->waxgourd_farmers_value;
+            $this->otheragrione_farmers = $agri->otheragrione_farmers;
+            $this->otheragrione_farmers_qty = $agri->otheragrione_farmers_qty;
+            $this->otheragrione_farmers_value = $agri->otheragrione_farmers_value;
+            $this->otheragritwo_farmers = $agri->otheragritwo_farmers;
+            $this->otheragritwo_farmers_qty = $agri->otheragritwo_farmers_qty;
+            $this->otheragritwo_farmers_value = $agri->otheragritwo_farmers_value;
+            $this->otheragrithree_farmers = $agri->otheragrithree_farmers;
+            $this->otheragrithree_farmers_qty = $agri->otheragrithree_farmers_qty;
+            $this->otheragrithree_farmers_value = $agri->otheragrithree_farmers_value;
+            $this->otheragrifour_farmers = $agri->otheragrifour_farmers;
+            $this->otheragrifour_farmers_qty = $agri->otheragrifour_farmers_qty;
+            $this->otheragrifour_farmers_value = $agri->otheragrifour_farmers_value;
+        }
     }
 
     public function save()
@@ -365,11 +371,13 @@ class EstablishmentAgriculturalEdit extends Component
             'otheragrifour_farmers_qty' => 'nullable|integer',
             'otheragrifour_farmers_value' => 'nullable|integer',
         ]);
+
+        $agri = Estagri::where('user_id', $this->user_id)->first();
        
 
-        Estagri::where('id', $this->est_record_id)->update([
-            'user_id' => $this->user_id,
-            'est_record_id' => $this->est_record_id,
+        if ($agri) {
+            // Update the fields in the estopera record
+            $agri->update([
             'watermelon_inhouse' => $this->watermelon_inhouse,
             'watermelon_grown' => $this->watermelon_grown,
             'coconut_inhouse' => $this->coconut_inhouse,
@@ -458,7 +466,7 @@ class EstablishmentAgriculturalEdit extends Component
             'status' => 'submitted',
 
         ]);
-        
+    }
 
         session()->flash('success', 'Agricultural Products Updated');
         return redirect()->route('dashboard');

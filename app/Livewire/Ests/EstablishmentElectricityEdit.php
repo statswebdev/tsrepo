@@ -107,7 +107,7 @@ class EstablishmentElectricityEdit extends Component
     public $demand_oct_min;
     public $demand_nov_min;
     public $demand_dec_min;
-    public $status = "completed";
+    public $status = "submitted";
 
     protected $rules = [
             'consume_jan_diesel' => 'required',
@@ -210,108 +210,109 @@ class EstablishmentElectricityEdit extends Component
 
     public function mount($estrecordid)
     {
+        // Get the authenticated user's ID
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estelec')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $estelec = Estelec::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estelec) {
-            $this->consume_jan_diesel = $est_record->estelec->consume_jan_diesel;
-            $this->consume_feb_diesel = $est_record->estelec->consume_feb_diesel;
-            $this->consume_mar_diesel = $est_record->estelec->consume_mar_diesel;
-            $this->consume_apr_diesel = $est_record->estelec->consume_apr_diesel;
-            $this->consume_may_diesel = $est_record->estelec->consume_may_diesel;
-            $this->consume_jun_diesel = $est_record->estelec->consume_jun_diesel;
-            $this->consume_jul_diesel = $est_record->estelec->consume_jul_diesel;
-            $this->consume_aug_diesel = $est_record->estelec->consume_aug_diesel;
-            $this->consume_sep_diesel = $est_record->estelec->consume_sep_diesel;
-            $this->consume_oct_diesel = $est_record->estelec->consume_oct_diesel;
-            $this->consume_nov_diesel = $est_record->estelec->consume_nov_diesel;
-            $this->consume_dec_diesel = $est_record->estelec->consume_dec_diesel;
-            $this->consume_jan_lub = $est_record->estelec->consume_jan_lub;
-            $this->consume_feb_lub = $est_record->estelec->consume_feb_lub;
-            $this->consume_mar_lub = $est_record->estelec->consume_mar_lub;
-            $this->consume_apr_lub = $est_record->estelec->consume_apr_lub;
-            $this->consume_may_lub = $est_record->estelec->consume_may_lub;
-            $this->consume_jun_lub = $est_record->estelec->consume_jun_lub;
-            $this->consume_jul_lub = $est_record->estelec->consume_jul_lub;
-            $this->consume_aug_lub = $est_record->estelec->consume_aug_lub;
-            $this->consume_sep_lub = $est_record->estelec->consume_sep_lub;
-            $this->consume_oct_lub = $est_record->estelec->consume_oct_lub;
-            $this->consume_nov_lub = $est_record->estelec->consume_nov_lub;
-            $this->consume_dec_lub = $est_record->estelec->consume_dec_lub;
-            $this->generate_jan_diesel = $est_record->estelec->generate_jan_diesel;
-            $this->generate_feb_diesel = $est_record->estelec->generate_feb_diesel;
-            $this->generate_mar_diesel = $est_record->estelec->generate_mar_diesel;
-            $this->generate_apr_diesel = $est_record->estelec->generate_apr_diesel;
-            $this->generate_may_diesel = $est_record->estelec->generate_may_diesel;
-            $this->generate_jun_diesel = $est_record->estelec->generate_jun_diesel;
-            $this->generate_jul_diesel = $est_record->estelec->generate_jul_diesel;
-            $this->generate_aug_diesel = $est_record->estelec->generate_aug_diesel;
-            $this->generate_sep_diesel = $est_record->estelec->generate_sep_diesel;
-            $this->generate_oct_diesel = $est_record->estelec->generate_oct_diesel;
-            $this->generate_nov_diesel = $est_record->estelec->generate_nov_diesel;
-            $this->generate_dec_diesel = $est_record->estelec->generate_dec_diesel;
-            $this->generate_jan_solar = $est_record->estelec->generate_jan_solar;
-            $this->generate_feb_solar = $est_record->estelec->generate_feb_solar;
-            $this->generate_mar_solar = $est_record->estelec->generate_mar_solar;
-            $this->generate_apr_solar = $est_record->estelec->generate_apr_solar;
-            $this->generate_may_solar = $est_record->estelec->generate_may_solar;
-            $this->generate_jun_solar = $est_record->estelec->generate_jun_solar;
-            $this->generate_jul_solar = $est_record->estelec->generate_jul_solar;
-            $this->generate_aug_solar = $est_record->estelec->generate_aug_solar;
-            $this->generate_sep_solar = $est_record->estelec->generate_sep_solar;
-            $this->generate_oct_solar = $est_record->estelec->generate_oct_solar;
-            $this->generate_nov_solar = $est_record->estelec->generate_nov_solar;
-            $this->generate_dec_solar = $est_record->estelec->generate_dec_solar;
-            $this->generate_jan_renewable = $est_record->estelec->generate_jan_renewable;
-            $this->generate_feb_renewable = $est_record->estelec->generate_feb_renewable;
-            $this->generate_mar_renewable = $est_record->estelec->generate_mar_renewable;
-            $this->generate_apr_renewable = $est_record->estelec->generate_apr_renewable;
-            $this->generate_may_renewable = $est_record->estelec->generate_may_renewable;
-            $this->generate_jun_renewable = $est_record->estelec->generate_jun_renewable;
-            $this->generate_jul_renewable = $est_record->estelec->generate_jul_renewable;
-            $this->generate_aug_renewable = $est_record->estelec->generate_aug_renewable;
-            $this->generate_sep_renewable = $est_record->estelec->generate_sep_renewable;
-            $this->generate_oct_renewable = $est_record->estelec->generate_oct_renewable;
-            $this->generate_nov_renewable = $est_record->estelec->generate_nov_renewable;
-            $this->generate_dec_renewable = $est_record->estelec->generate_dec_renewable;
-            $this->generate_jan_total = $est_record->estelec->generate_jan_total;
-            $this->generate_feb_total = $est_record->estelec->generate_feb_total;
-            $this->generate_mar_total = $est_record->estelec->generate_mar_total;
-            $this->generate_apr_total = $est_record->estelec->generate_apr_total;
-            $this->generate_may_total = $est_record->estelec->generate_may_total;
-            $this->generate_jun_total = $est_record->estelec->generate_jun_total;
-            $this->generate_jul_total = $est_record->estelec->generate_jul_total;
-            $this->generate_aug_total = $est_record->estelec->generate_aug_total;
-            $this->generate_sep_total = $est_record->estelec->generate_sep_total;
-            $this->generate_oct_total = $est_record->estelec->generate_oct_total;
-            $this->generate_nov_total = $est_record->estelec->generate_nov_total;
-            $this->generate_dec_total = $est_record->estelec->generate_dec_total;
-            $this->demand_jan_max = $est_record->estelec->demand_jan_max;
-            $this->demand_feb_max = $est_record->estelec->demand_feb_max;
-            $this->demand_mar_max = $est_record->estelec->demand_mar_max;
-            $this->demand_apr_max = $est_record->estelec->demand_apr_max;
-            $this->demand_may_max = $est_record->estelec->demand_may_max;
-            $this->demand_jun_max = $est_record->estelec->demand_jun_max;
-            $this->demand_jul_max = $est_record->estelec->demand_jul_max;
-            $this->demand_aug_max = $est_record->estelec->demand_aug_max;
-            $this->demand_sep_max = $est_record->estelec->demand_sep_max;
-            $this->demand_oct_max = $est_record->estelec->demand_oct_max;
-            $this->demand_nov_max = $est_record->estelec->demand_nov_max;
-            $this->demand_dec_max = $est_record->estelec->demand_dec_max;
-            $this->demand_jan_min = $est_record->estelec->demand_jan_min;
-            $this->demand_feb_min = $est_record->estelec->demand_feb_min;
-            $this->demand_mar_min = $est_record->estelec->demand_mar_min;
-            $this->demand_apr_min = $est_record->estelec->demand_apr_min;
-            $this->demand_may_min = $est_record->estelec->demand_may_min;
-            $this->demand_jun_min = $est_record->estelec->demand_jun_min;
-            $this->demand_jul_min = $est_record->estelec->demand_jul_min;
-            $this->demand_aug_min = $est_record->estelec->demand_aug_min;
-            $this->demand_sep_min = $est_record->estelec->demand_sep_min;
-            $this->demand_oct_min = $est_record->estelec->demand_oct_min;
-            $this->demand_nov_min = $est_record->estelec->demand_nov_min;
-            $this->demand_dec_min = $est_record->estelec->demand_dec_min;
-            $this->status = $est_record->estelec->status;
+        if ($estelec) {
+            $this->consume_jan_diesel = $estelec->consume_jan_diesel;
+            $this->consume_feb_diesel = $estelec->consume_feb_diesel;
+            $this->consume_mar_diesel = $estelec->consume_mar_diesel;
+            $this->consume_apr_diesel = $estelec->consume_apr_diesel;
+            $this->consume_may_diesel = $estelec->consume_may_diesel;
+            $this->consume_jun_diesel = $estelec->consume_jun_diesel;
+            $this->consume_jul_diesel = $estelec->consume_jul_diesel;
+            $this->consume_aug_diesel = $estelec->consume_aug_diesel;
+            $this->consume_sep_diesel = $estelec->consume_sep_diesel;
+            $this->consume_oct_diesel = $estelec->consume_oct_diesel;
+            $this->consume_nov_diesel = $estelec->consume_nov_diesel;
+            $this->consume_dec_diesel = $estelec->consume_dec_diesel;
+            $this->consume_jan_lub = $estelec->consume_jan_lub;
+            $this->consume_feb_lub = $estelec->consume_feb_lub;
+            $this->consume_mar_lub = $estelec->consume_mar_lub;
+            $this->consume_apr_lub = $estelec->consume_apr_lub;
+            $this->consume_may_lub = $estelec->consume_may_lub;
+            $this->consume_jun_lub = $estelec->consume_jun_lub;
+            $this->consume_jul_lub = $estelec->consume_jul_lub;
+            $this->consume_aug_lub = $estelec->consume_aug_lub;
+            $this->consume_sep_lub = $estelec->consume_sep_lub;
+            $this->consume_oct_lub = $estelec->consume_oct_lub;
+            $this->consume_nov_lub = $estelec->consume_nov_lub;
+            $this->consume_dec_lub = $estelec->consume_dec_lub;
+            $this->generate_jan_diesel = $estelec->generate_jan_diesel;
+            $this->generate_feb_diesel = $estelec->generate_feb_diesel;
+            $this->generate_mar_diesel = $estelec->generate_mar_diesel;
+            $this->generate_apr_diesel = $estelec->generate_apr_diesel;
+            $this->generate_may_diesel = $estelec->generate_may_diesel;
+            $this->generate_jun_diesel = $estelec->generate_jun_diesel;
+            $this->generate_jul_diesel = $estelec->generate_jul_diesel;
+            $this->generate_aug_diesel = $estelec->generate_aug_diesel;
+            $this->generate_sep_diesel = $estelec->generate_sep_diesel;
+            $this->generate_oct_diesel = $estelec->generate_oct_diesel;
+            $this->generate_nov_diesel = $estelec->generate_nov_diesel;
+            $this->generate_dec_diesel = $estelec->generate_dec_diesel;
+            $this->generate_jan_solar = $estelec->generate_jan_solar;
+            $this->generate_feb_solar = $estelec->generate_feb_solar;
+            $this->generate_mar_solar = $estelec->generate_mar_solar;
+            $this->generate_apr_solar = $estelec->generate_apr_solar;
+            $this->generate_may_solar = $estelec->generate_may_solar;
+            $this->generate_jun_solar = $estelec->generate_jun_solar;
+            $this->generate_jul_solar = $estelec->generate_jul_solar;
+            $this->generate_aug_solar = $estelec->generate_aug_solar;
+            $this->generate_sep_solar = $estelec->generate_sep_solar;
+            $this->generate_oct_solar = $estelec->generate_oct_solar;
+            $this->generate_nov_solar = $estelec->generate_nov_solar;
+            $this->generate_dec_solar = $estelec->generate_dec_solar;
+            $this->generate_jan_renewable = $estelec->generate_jan_renewable;
+            $this->generate_feb_renewable = $estelec->generate_feb_renewable;
+            $this->generate_mar_renewable = $estelec->generate_mar_renewable;
+            $this->generate_apr_renewable = $estelec->generate_apr_renewable;
+            $this->generate_may_renewable = $estelec->generate_may_renewable;
+            $this->generate_jun_renewable = $estelec->generate_jun_renewable;
+            $this->generate_jul_renewable = $estelec->generate_jul_renewable;
+            $this->generate_aug_renewable = $estelec->generate_aug_renewable;
+            $this->generate_sep_renewable = $estelec->generate_sep_renewable;
+            $this->generate_oct_renewable = $estelec->generate_oct_renewable;
+            $this->generate_nov_renewable = $estelec->generate_nov_renewable;
+            $this->generate_dec_renewable = $estelec->generate_dec_renewable;
+            $this->generate_jan_total = $estelec->generate_jan_total;
+            $this->generate_feb_total = $estelec->generate_feb_total;
+            $this->generate_mar_total = $estelec->generate_mar_total;
+            $this->generate_apr_total = $estelec->generate_apr_total;
+            $this->generate_may_total = $estelec->generate_may_total;
+            $this->generate_jun_total = $estelec->generate_jun_total;
+            $this->generate_jul_total = $estelec->generate_jul_total;
+            $this->generate_aug_total = $estelec->generate_aug_total;
+            $this->generate_sep_total = $estelec->generate_sep_total;
+            $this->generate_oct_total = $estelec->generate_oct_total;
+            $this->generate_nov_total = $estelec->generate_nov_total;
+            $this->generate_dec_total = $estelec->generate_dec_total;
+            $this->demand_jan_max = $estelec->demand_jan_max;
+            $this->demand_feb_max = $estelec->demand_feb_max;
+            $this->demand_mar_max = $estelec->demand_mar_max;
+            $this->demand_apr_max = $estelec->demand_apr_max;
+            $this->demand_may_max = $estelec->demand_may_max;
+            $this->demand_jun_max = $estelec->demand_jun_max;
+            $this->demand_jul_max = $estelec->demand_jul_max;
+            $this->demand_aug_max = $estelec->demand_aug_max;
+            $this->demand_sep_max = $estelec->demand_sep_max;
+            $this->demand_oct_max = $estelec->demand_oct_max;
+            $this->demand_nov_max = $estelec->demand_nov_max;
+            $this->demand_dec_max = $estelec->demand_dec_max;
+            $this->demand_jan_min = $estelec->demand_jan_min;
+            $this->demand_feb_min = $estelec->demand_feb_min;
+            $this->demand_mar_min = $estelec->demand_mar_min;
+            $this->demand_apr_min = $estelec->demand_apr_min;
+            $this->demand_may_min = $estelec->demand_may_min;
+            $this->demand_jun_min = $estelec->demand_jun_min;
+            $this->demand_jul_min = $estelec->demand_jul_min;
+            $this->demand_aug_min = $estelec->demand_aug_min;
+            $this->demand_sep_min = $estelec->demand_sep_min;
+            $this->demand_oct_min = $estelec->demand_oct_min;
+            $this->demand_nov_min = $estelec->demand_nov_min;
+            $this->demand_dec_min = $estelec->demand_dec_min;
         }
 
         $this->est_record_id = $estrecordid;
@@ -418,11 +419,12 @@ class EstablishmentElectricityEdit extends Component
                 'demand_dec_min' => 'required',
         ]);
 
-        $estRecord = EstRecord::with('estelec')->findOrFail($this->est_record_id);
+        // Retrieve the estopera record for the authenticated user
+        $estelec = Estelec::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estelec) {
+        if ($estelec) {
             // Update the fields in the related `estelec` model
-            $estRecord->estelec->update([
+            $estelec->update([
                 'consume_jan_diesel' => $this->consume_jan_diesel,
                 'consume_feb_diesel' => $this->consume_feb_diesel,
                 'consume_mar_diesel' => $this->consume_mar_diesel,
@@ -519,7 +521,7 @@ class EstablishmentElectricityEdit extends Component
                 'demand_oct_min' => $this->demand_oct_min,
                 'demand_nov_min' => $this->demand_nov_min,
                 'demand_dec_min' => $this->demand_dec_min,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
             
         }

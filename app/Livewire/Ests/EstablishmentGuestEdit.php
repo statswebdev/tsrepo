@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Ests;
 
+use App\Models\Estguest;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\EstRecord;
@@ -113,64 +114,63 @@ class EstablishmentGuestEdit extends Component
             'age_old_foreign_female' => 'required|numeric',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estguest')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $estguest = Estguest::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estguest) {
-            $this->maldivian_male = $est_record->estguest->maldivian_male;
-            $this->maldivian_female = $est_record->estguest->maldivian_female;
-            $this->foreign_male = $est_record->estguest->foreign_male;
-            $this->foreign_female = $est_record->estguest->foreign_female;
-            $this->maldivian_male_permanent = $est_record->estguest->maldivian_male_permanent;
-            $this->maldivian_female_permanent = $est_record->estguest->maldivian_female_permanent;
-            $this->foreign_male_permanent = $est_record->estguest->foreign_male_permanent;
-            $this->foreign_female_permanent = $est_record->estguest->foreign_female_permanent;
-            $this->hundred_maldivian = $est_record->estguest->hundred_maldivian;
-            $this->hundred_foreign = $est_record->estguest->hundred_foreign;
-            $this->threehundred_maldivian = $est_record->estguest->threehundred_maldivian;
-            $this->threehundred_foreign = $est_record->estguest->threehundred_foreign;
-            $this->fivehundred_maldivian = $est_record->estguest->fivehundred_maldivian;
-            $this->fivehundred_foreign = $est_record->estguest->fivehundred_foreign;
-            $this->sevenhundred_maldivian = $est_record->estguest->sevenhundred_maldivian;
-            $this->sevenhundred_foreign = $est_record->estguest->sevenhundred_foreign;
-            $this->ninehundred_maldivian = $est_record->estguest->ninehundred_maldivian;
-            $this->ninehundred_foreign = $est_record->estguest->ninehundred_foreign;
-            $this->thausand_maldivian = $est_record->estguest->thausand_maldivian;
-            $this->thausand_foreign = $est_record->estguest->thausand_foreign;
-            $this->threethausand_maldivian = $est_record->estguest->threethausand_maldivian;
-            $this->threethausand_foreign = $est_record->estguest->threethausand_foreign;
-            $this->fivethausand_maldivian = $est_record->estguest->fivethausand_maldivian;
-            $this->fivethausand_foreign = $est_record->estguest->fivethausand_foreign;
-            $this->seventhausand_maldivian = $est_record->estguest->seventhausand_maldivian;
-            $this->seventhausand_foreign = $est_record->estguest->seventhausand_foreign;
-            $this->tenthausand_maldivian = $est_record->estguest->tenthausand_maldivian;
-            $this->tenthausand_foreign = $est_record->estguest->tenthausand_foreign;
-            $this->age_eighteen_mdv_male = $est_record->estguest->age_eighteen_mdv_male;
-            $this->age_eighteen_mdv_female = $est_record->estguest->age_eighteen_mdv_female;
-            $this->age_eighteen_foreign_male = $est_record->estguest->age_eighteen_foreign_male;
-            $this->age_eighteen_foreign_female = $est_record->estguest->age_eighteen_foreign_female;
-            $this->age_twenty_mdv_male = $est_record->estguest->age_twenty_mdv_male;
-            $this->age_twenty_mdv_female = $est_record->estguest->age_twenty_mdv_female;
-            $this->age_twenty_foreign_male = $est_record->estguest->age_twenty_foreign_male;
-            $this->age_twenty_foreign_female = $est_record->estguest->age_twenty_foreign_female;
-            $this->age_thirty_mdv_male = $est_record->estguest->age_thirty_mdv_male;
-            $this->age_thirty_mdv_female = $est_record->estguest->age_thirty_mdv_female;
-            $this->age_thirty_foreign_male = $est_record->estguest->age_thirty_foreign_male;
-            $this->age_thirty_foreign_female = $est_record->estguest->age_thirty_foreign_female;
-            $this->age_sixty_mdv_male = $est_record->estguest->age_sixty_mdv_male;
-            $this->age_sixty_mdv_female = $est_record->estguest->age_sixty_mdv_female;
-            $this->age_sixty_foreign_male = $est_record->estguest->age_sixty_foreign_male;
-            $this->age_sixty_foreign_female = $est_record->estguest->age_sixty_foreign_female;
-            $this->age_old_mdv_male = $est_record->estguest->age_old_mdv_male;
-            $this->age_old_mdv_female = $est_record->estguest->age_old_mdv_female;
-            $this->age_old_foreign_male = $est_record->estguest->age_old_foreign_male;
-            $this->age_old_foreign_female = $est_record->estguest->age_old_foreign_female;
+        if ($estguest) {
+            $this->maldivian_male = $estguest->maldivian_male;
+            $this->maldivian_female = $estguest->maldivian_female;
+            $this->foreign_male = $estguest->foreign_male;
+            $this->foreign_female = $estguest->foreign_female;
+            $this->maldivian_male_permanent = $estguest->maldivian_male_permanent;
+            $this->maldivian_female_permanent = $estguest->maldivian_female_permanent;
+            $this->foreign_male_permanent = $estguest->foreign_male_permanent;
+            $this->foreign_female_permanent = $estguest->foreign_female_permanent;
+            $this->hundred_maldivian = $estguest->hundred_maldivian;
+            $this->hundred_foreign = $estguest->hundred_foreign;
+            $this->threehundred_maldivian = $estguest->threehundred_maldivian;
+            $this->threehundred_foreign = $estguest->threehundred_foreign;
+            $this->fivehundred_maldivian = $estguest->fivehundred_maldivian;
+            $this->fivehundred_foreign = $estguest->fivehundred_foreign;
+            $this->sevenhundred_maldivian = $estguest->sevenhundred_maldivian;
+            $this->sevenhundred_foreign = $estguest->sevenhundred_foreign;
+            $this->ninehundred_maldivian = $estguest->ninehundred_maldivian;
+            $this->ninehundred_foreign = $estguest->ninehundred_foreign;
+            $this->thausand_maldivian = $estguest->thausand_maldivian;
+            $this->thausand_foreign = $estguest->thausand_foreign;
+            $this->threethausand_maldivian = $estguest->threethausand_maldivian;
+            $this->threethausand_foreign = $estguest->threethausand_foreign;
+            $this->fivethausand_maldivian = $estguest->fivethausand_maldivian;
+            $this->fivethausand_foreign = $estguest->fivethausand_foreign;
+            $this->seventhausand_maldivian = $estguest->seventhausand_maldivian;
+            $this->seventhausand_foreign = $estguest->seventhausand_foreign;
+            $this->tenthausand_maldivian = $estguest->tenthausand_maldivian;
+            $this->tenthausand_foreign = $estguest->tenthausand_foreign;
+            $this->age_eighteen_mdv_male = $estguest->age_eighteen_mdv_male;
+            $this->age_eighteen_mdv_female = $estguest->age_eighteen_mdv_female;
+            $this->age_eighteen_foreign_male = $estguest->age_eighteen_foreign_male;
+            $this->age_eighteen_foreign_female = $estguest->age_eighteen_foreign_female;
+            $this->age_twenty_mdv_male = $estguest->age_twenty_mdv_male;
+            $this->age_twenty_mdv_female = $estguest->age_twenty_mdv_female;
+            $this->age_twenty_foreign_male = $estguest->age_twenty_foreign_male;
+            $this->age_twenty_foreign_female = $estguest->age_twenty_foreign_female;
+            $this->age_thirty_mdv_male = $estguest->age_thirty_mdv_male;
+            $this->age_thirty_mdv_female = $estguest->age_thirty_mdv_female;
+            $this->age_thirty_foreign_male = $estguest->age_thirty_foreign_male;
+            $this->age_thirty_foreign_female = $estguest->age_thirty_foreign_female;
+            $this->age_sixty_mdv_male = $estguest->age_sixty_mdv_male;
+            $this->age_sixty_mdv_female = $estguest->age_sixty_mdv_female;
+            $this->age_sixty_foreign_male = $estguest->age_sixty_foreign_male;
+            $this->age_sixty_foreign_female = $estguest->age_sixty_foreign_female;
+            $this->age_old_mdv_male = $estguest->age_old_mdv_male;
+            $this->age_old_mdv_female = $estguest->age_old_mdv_female;
+            $this->age_old_foreign_male = $estguest->age_old_foreign_male;
+            $this->age_old_foreign_female = $estguest->age_old_foreign_female;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -227,11 +227,11 @@ class EstablishmentGuestEdit extends Component
             
         ]);
 
-        $estRecord = EstRecord::with('estguest')->findOrFail($this->est_record_id);
+        $estguest = Estguest::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estguest) {
-            // Update the fields in the related `estincome` model
-            $estRecord->estguest->update([
+        if ($estguest) {
+            // Update the fields in the estopera record
+            $estguest->update([
                 'maldivian_male' => $this->maldivian_male,
                 'maldivian_female' => $this->maldivian_female,
                 'foreign_male' => $this->foreign_male,
@@ -280,7 +280,7 @@ class EstablishmentGuestEdit extends Component
                 'age_old_mdv_female' => $this->age_old_mdv_female,
                 'age_old_foreign_male' => $this->age_old_foreign_male,
                 'age_old_foreign_female' => $this->age_old_foreign_female,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
            
         }

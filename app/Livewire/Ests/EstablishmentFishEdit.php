@@ -66,41 +66,40 @@ class EstablishmentFishEdit extends Component
         'otherfish_purchased_value' => 'nullable|integer',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estfish')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $fish = Estfish::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estopera) {
-            $this->skipjacktuna_inhouse = $est_record->estfish->skipjacktuna_inhouse;
-            $this->skipjacktuna_inhouse_qty = $est_record->estfish->skipjacktuna_inhouse_qty;
-            $this->yellowfin_inhouse = $est_record->estfish->yellowfin_inhouse;
-            $this->yellowfin_inhouse_qty = $est_record->estfish->yellowfin_inhouse_qty;
-            $this->reeffish_inhouse = $est_record->estfish->reeffish_inhouse;
-            $this->reeffish_inhouse_qty = $est_record->estfish->reeffish_inhouse_qty;
-            $this->seafood_inhouse = $est_record->estfish->seafood_inhouse;
-            $this->seafood_inhouse_qty = $est_record->estfish->seafood_inhouse_qty;
-            $this->otherfish_inhouse = $est_record->estfish->otherfish_inhouse;
-            $this->otherfish_inhouse_qty = $est_record->estfish->otherfish_inhouse_qty;
-            $this->skipjack_purchased = $est_record->estfish->skipjack_purchased;
-            $this->skipjack_purchased_qty = $est_record->estfish->skipjack_purchased_qty;
-            $this->skipjack_purchased_value = $est_record->estfish->skipjack_purchased_value;
-            $this->yellowfin_purchased = $est_record->estfish->yellowfin_purchased;
-            $this->yellowfin_purchased_qty = $est_record->estfish->yellowfin_purchased_qty;
-            $this->yellowfin_purchased_value = $est_record->estfish->yellowfin_purchased_value;
-            $this->reeffish_purchased = $est_record->estfish->reeffish_purchased;
-            $this->reeffish_purchased_qty = $est_record->estfish->reeffish_purchased_qty;
-            $this->reeffish_purchased_value = $est_record->estfish->reeffish_purchased_value;
-            $this->seafood_purchased = $est_record->estfish->seafood_purchased;
-            $this->seafood_purchased_qty = $est_record->estfish->seafood_purchased_qty;
-            $this->seafood_purchased_value = $est_record->estfish->seafood_purchased_value;
-            $this->otherfish_purchased = $est_record->estfish->otherfish_purchased;
-            $this->otherfish_purchased_qty = $est_record->estfish->otherfish_purchased_qty;
-            $this->otherfish_purchased_value = $est_record->estfish->otherfish_purchased_value;
+        if ($fish) {
+            $this->skipjacktuna_inhouse = $fish->skipjacktuna_inhouse;
+            $this->skipjacktuna_inhouse_qty = $fish->skipjacktuna_inhouse_qty;
+            $this->yellowfin_inhouse = $fish->yellowfin_inhouse;
+            $this->yellowfin_inhouse_qty = $fish->yellowfin_inhouse_qty;
+            $this->reeffish_inhouse = $fish->reeffish_inhouse;
+            $this->reeffish_inhouse_qty = $fish->reeffish_inhouse_qty;
+            $this->seafood_inhouse = $fish->seafood_inhouse;
+            $this->seafood_inhouse_qty = $fish->seafood_inhouse_qty;
+            $this->otherfish_inhouse = $fish->otherfish_inhouse;
+            $this->otherfish_inhouse_qty = $fish->otherfish_inhouse_qty;
+            $this->skipjack_purchased = $fish->skipjack_purchased;
+            $this->skipjack_purchased_qty = $fish->skipjack_purchased_qty;
+            $this->skipjack_purchased_value = $fish->skipjack_purchased_value;
+            $this->yellowfin_purchased = $fish->yellowfin_purchased;
+            $this->yellowfin_purchased_qty = $fish->yellowfin_purchased_qty;
+            $this->yellowfin_purchased_value = $fish->yellowfin_purchased_value;
+            $this->reeffish_purchased = $fish->reeffish_purchased;
+            $this->reeffish_purchased_qty = $fish->reeffish_purchased_qty;
+            $this->reeffish_purchased_value = $fish->reeffish_purchased_value;
+            $this->seafood_purchased = $fish->seafood_purchased;
+            $this->seafood_purchased_qty = $fish->seafood_purchased_qty;
+            $this->seafood_purchased_value = $fish->seafood_purchased_value;
+            $this->otherfish_purchased = $fish->otherfish_purchased;
+            $this->otherfish_purchased_qty = $fish->otherfish_purchased_qty;
+            $this->otherfish_purchased_value = $fish->otherfish_purchased_value;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -133,11 +132,11 @@ class EstablishmentFishEdit extends Component
         'otherfish_purchased_value' => 'nullable|integer',
         ]);
 
-        $estRecord = EstRecord::with('estfish')->findOrFail($this->est_record_id);
+        $fish = Estfish::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estfish) {
-            // Update the fields in the related `estfish` model
-            $estRecord->estfish->update([
+        if ($fish) {
+            // Update the fields in the estopera record
+            $fish->update([
                 'skipjacktuna_inhouse' => $this->skipjacktuna_inhouse,
                 'skipjacktuna_inhouse_qty' => $this->skipjacktuna_inhouse_qty,
                 'yellowfin_inhouse' => $this->yellowfin_inhouse,
@@ -163,7 +162,7 @@ class EstablishmentFishEdit extends Component
                 'otherfish_purchased' => $this->otherfish_purchased,
                 'otherfish_purchased_qty' => $this->otherfish_purchased_qty,
                 'otherfish_purchased_value' => $this->otherfish_purchased_value,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
         }
         

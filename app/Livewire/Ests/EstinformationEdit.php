@@ -28,7 +28,7 @@ class EstinformationEdit extends Component
     public $taxpayer_number;
     public $establishment_regdate;
     public $bedcapacity;
-    public $status = "updated";
+    public $status = "submitted";
 
     protected $rules = [
         'info_provider' => 'required|string',
@@ -52,28 +52,27 @@ class EstinformationEdit extends Component
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estinfo')->findOrFail($estrecordid);
+        // Retrieve the record from the info table for the authenticated user
+        $est_info = EstInfo::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estinfo) {
-            $this->info_provider = $est_record->estinfo->info_provider;
-            $this->contact_number = $est_record->estinfo->contact_number;
-            $this->type_organisation = $est_record->estinfo->type_organisation;
-            $this->operator_name = $est_record->estinfo->operator_name;
-            $this->operator_register = $est_record->estinfo->operator_register;
-            $this->owner_one = $est_record->estinfo->owner_one;
-            $this->owner_two = $est_record->estinfo->owner_two;
-            $this->operator_contact = $est_record->estinfo->operator_contact;
-            $this->operator_email = $est_record->estinfo->operator_email;
-            $this->government_share = $est_record->estinfo->government_share;
-            $this->maldivian_share = $est_record->estinfo->maldivian_share;
-            $this->foreign_share = $est_record->estinfo->foreign_share;
-            $this->taxpayer_number = $est_record->estinfo->taxpayer_number;
-            $this->establishment_regdate = $est_record->estinfo->establishment_regdate;
-            $this->bedcapacity = $est_record->estinfo->bedcapacity;
-            $this->status = $est_record->estinfo->status;
+        if ($est_info) {
+            $this->info_provider = $est_info->info_provider;
+            $this->contact_number = $est_info->contact_number;
+            $this->type_organisation = $est_info->type_organisation;
+            $this->operator_name = $est_info->operator_name;
+            $this->operator_register = $est_info->operator_register;
+            $this->owner_one = $est_info->owner_one;
+            $this->owner_two = $est_info->owner_two;
+            $this->operator_contact = $est_info->operator_contact;
+            $this->operator_email = $est_info->operator_email;
+            $this->government_share = $est_info->government_share;
+            $this->maldivian_share = $est_info->maldivian_share;
+            $this->foreign_share = $est_info->foreign_share;
+            $this->taxpayer_number = $est_info->taxpayer_number;
+            $this->establishment_regdate = $est_info->establishment_regdate;
+            $this->bedcapacity = $est_info->bedcapacity;
         }
-
-        $this->est_record_id = $estrecordid;
+        
     }
 
     public function save()
@@ -101,11 +100,14 @@ class EstinformationEdit extends Component
             return;
         }
 
-        $estRecord = EstRecord::with('estinfo')->findOrFail($this->est_record_id);
+        //$estRecord = EstRecord::with('estinfo')->findOrFail($this->est_record_id);
+        $est_info = EstInfo::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estinfo) {
-            // Update the fields in the related `estinfo` model
-            $estRecord->estinfo->update([
+       
+
+        if ($est_info) {
+            // Update the fields in the estopera record
+            $est_info->update([
             'info_provider' => $this->info_provider,
             'contact_number' => $this->contact_number,
             'type_organisation' => $this->type_organisation,
@@ -121,7 +123,7 @@ class EstinformationEdit extends Component
             'taxpayer_number' => $this->taxpayer_number,
             'establishment_regdate' => $this->establishment_regdate,
             'bedcapacity' => $this->bedcapacity,
-            'status' => 'submitted',
+            'status' => $this->status,
             ]);
         }
         

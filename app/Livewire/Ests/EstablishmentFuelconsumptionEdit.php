@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Ests;
 
+use App\Models\Estfuelconsum;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\EstRecord;
@@ -114,66 +115,66 @@ class EstablishmentFuelconsumptionEdit extends Component
             'petrol_other_fuelconsumption_qty' => 'nullable|integer',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estfuelconsumption')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $estfuelconsumption = Estfuelconsum::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estfuelconsumption) {
-            $this->diesel_bought_qty = $est_record->estfuelconsumption->diesel_bought_qty;
-            $this->diesel_bought_year = $est_record->estfuelconsumption->diesel_bought_year;
-            $this->petrol_bought_qty = $est_record->estfuelconsumption->petrol_bought_qty;
-            $this->petrol_bought_year = $est_record->estfuelconsumption->petrol_bought_year;
-            $this->lpg_bought_qty = $est_record->estfuelconsumption->lpg_bought_qty;
-            $this->lpg_bought_year = $est_record->estfuelconsumption->lpg_bought_year;
-            $this->other_bought_qty = $est_record->estfuelconsumption->other_bought_qty;
-            $this->other_bought_year = $est_record->estfuelconsumption->other_bought_year;
-            $this->diesel_inventory_unit = $est_record->estfuelconsumption->diesel_inventory_unit;
-            $this->diesel_inventory_yearfirst = $est_record->estfuelconsumption->diesel_inventory_yearfirst;
-            $this->diesel_inventory_yearend = $est_record->estfuelconsumption->diesel_inventory_yearend;
-            $this->petrol_inventory_unit = $est_record->estfuelconsumption->petrol_inventory_unit;
-            $this->petrol_inventory_yearfirst = $est_record->estfuelconsumption->petrol_inventory_yearfirst;
-            $this->petrol_inventory_yearend = $est_record->estfuelconsumption->petrol_inventory_yearend;
-            $this->lpg_inventory_unit = $est_record->estfuelconsumption->lpg_inventory_unit;
-            $this->lpg_inventory_unit_yearfirst = $est_record->estfuelconsumption->lpg_inventory_unit_yearfirst;
-            $this->lpg_inventory_unit_yearend = $est_record->estfuelconsumption->lpg_inventory_unit_yearend;
-            $this->other_inventory_specify = $est_record->estfuelconsumption->other_inventory_specify;
-            $this->other_inventory_unit = $est_record->estfuelconsumption->other_inventory_unit;
-            $this->other_inventory_unit_yearfirst = $est_record->estfuelconsumption->other_inventory_unit_yearfirst;
-            $this->other_inventory_unit_yearend = $est_record->estfuelconsumption->other_inventory_unit_yearend;
-            $this->diesel_electricity_unit = $est_record->estfuelconsumption->diesel_electricity_unit;
-            $this->diesel_electricity_qty = $est_record->estfuelconsumption->diesel_electricity_qty;
-            $this->petrol_electricity_unit = $est_record->estfuelconsumption->petrol_electricity_unit;
-            $this->petrol_electricity_qty = $est_record->estfuelconsumption->petrol_electricity_qty;
-            $this->diesel_desalination_unit = $est_record->estfuelconsumption->diesel_desalination_unit;
-            $this->diesel_desalination_qty = $est_record->estfuelconsumption->diesel_desalination_qty;
-            $this->petrol_desalination_unit = $est_record->estfuelconsumption->petrol_desalination_unit;
-            $this->petrol_desalination_qty = $est_record->estfuelconsumption->petrol_desalination_qty;
-            $this->diesel_transportsea_unit = $est_record->estfuelconsumption->diesel_transportsea_unit;
-            $this->diesel_transportsea_qty = $est_record->estfuelconsumption->diesel_transportsea_qty;
-            $this->petrol_transportsea_unit = $est_record->estfuelconsumption->petrol_transportsea_unit;
-            $this->petrol_transportsea_qty = $est_record->estfuelconsumption->petrol_transportsea_qty;
-            $this->diesel_transportland_unit = $est_record->estfuelconsumption->diesel_transportland_unit;
-            $this->diesel_transportland_qty = $est_record->estfuelconsumption->diesel_transportland_qty;
-            $this->petrol_transportland_unit = $est_record->estfuelconsumption->petrol_transportland_unit;
-            $this->petrol_transportland_qty = $est_record->estfuelconsumption->petrol_transportland_qty;
-            $this->lpg_cooking_unit = $est_record->estfuelconsumption->lpg_cooking_unit;
-            $this->lpg_cooking_qty = $est_record->estfuelconsumption->lpg_cooking_qty;
-            $this->diesel_cooking_unit = $est_record->estfuelconsumption->diesel_cooking_unit;
-            $this->diesel_cooking_qty = $est_record->estfuelconsumption->diesel_cooking_qty;
-            $this->petrol_cooking_unit = $est_record->estfuelconsumption->petrol_cooking_unit;
-            $this->petrol_cooking_qty = $est_record->estfuelconsumption->petrol_cooking_qty;
-            $this->diesel_other_fuelconsumption = $est_record->estfuelconsumption->diesel_other_fuelconsumption;
-            $this->diesel_other_fuelconsumption_unit = $est_record->estfuelconsumption->diesel_other_fuelconsumption_unit;
-            $this->diesel_other_fuelconsumption_qty = $est_record->estfuelconsumption->diesel_other_fuelconsumption_qty;
-            $this->petrol_other_fuelconsumption = $est_record->estfuelconsumption->petrol_other_fuelconsumption;
-            $this->petrol_other_fuelconsumption_unit = $est_record->estfuelconsumption->petrol_other_fuelconsumption_unit;
-            $this->petrol_other_fuelconsumption_qty = $est_record->estfuelconsumption->petrol_other_fuelconsumption_qty;
-            $this->status = $est_record->estfuelconsumption->status;
+
+        if ($estfuelconsumption) {
+            $this->est_record_id = $estfuelconsumption->est_record_id;
+            $this->diesel_bought_qty = $estfuelconsumption->diesel_bought_qty;
+            $this->diesel_bought_year = $estfuelconsumption->diesel_bought_year;
+            $this->petrol_bought_qty = $estfuelconsumption->petrol_bought_qty;
+            $this->petrol_bought_year = $estfuelconsumption->petrol_bought_year;
+            $this->lpg_bought_qty = $estfuelconsumption->lpg_bought_qty;
+            $this->lpg_bought_year = $estfuelconsumption->lpg_bought_year;
+            $this->other_bought_qty = $estfuelconsumption->other_bought_qty;
+            $this->other_bought_year = $estfuelconsumption->other_bought_year;
+            $this->diesel_inventory_unit = $estfuelconsumption->diesel_inventory_unit;
+            $this->diesel_inventory_yearfirst = $estfuelconsumption->diesel_inventory_yearfirst;
+            $this->diesel_inventory_yearend = $estfuelconsumption->diesel_inventory_yearend;
+            $this->petrol_inventory_unit = $estfuelconsumption->petrol_inventory_unit;
+            $this->petrol_inventory_yearfirst = $estfuelconsumption->petrol_inventory_yearfirst;
+            $this->petrol_inventory_yearend = $estfuelconsumption->petrol_inventory_yearend;
+            $this->lpg_inventory_unit = $estfuelconsumption->lpg_inventory_unit;
+            $this->lpg_inventory_unit_yearfirst = $estfuelconsumption->lpg_inventory_unit_yearfirst;
+            $this->lpg_inventory_unit_yearend = $estfuelconsumption->lpg_inventory_unit_yearend;
+            $this->other_inventory_specify = $estfuelconsumption->other_inventory_specify;
+            $this->other_inventory_unit = $estfuelconsumption->other_inventory_unit;
+            $this->other_inventory_unit_yearfirst = $estfuelconsumption->other_inventory_unit_yearfirst;
+            $this->other_inventory_unit_yearend = $estfuelconsumption->other_inventory_unit_yearend;
+            $this->diesel_electricity_unit = $estfuelconsumption->diesel_electricity_unit;
+            $this->diesel_electricity_qty = $estfuelconsumption->diesel_electricity_qty;
+            $this->petrol_electricity_unit = $estfuelconsumption->petrol_electricity_unit;
+            $this->petrol_electricity_qty = $estfuelconsumption->petrol_electricity_qty;
+            $this->diesel_desalination_unit = $estfuelconsumption->diesel_desalination_unit;
+            $this->diesel_desalination_qty = $estfuelconsumption->diesel_desalination_qty;
+            $this->petrol_desalination_unit = $estfuelconsumption->petrol_desalination_unit;
+            $this->petrol_desalination_qty = $estfuelconsumption->petrol_desalination_qty;
+            $this->diesel_transportsea_unit = $estfuelconsumption->diesel_transportsea_unit;
+            $this->diesel_transportsea_qty = $estfuelconsumption->diesel_transportsea_qty;
+            $this->petrol_transportsea_unit = $estfuelconsumption->petrol_transportsea_unit;
+            $this->petrol_transportsea_qty = $estfuelconsumption->petrol_transportsea_qty;
+            $this->diesel_transportland_unit = $estfuelconsumption->diesel_transportland_unit;
+            $this->diesel_transportland_qty = $estfuelconsumption->diesel_transportland_qty;
+            $this->petrol_transportland_unit = $estfuelconsumption->petrol_transportland_unit;
+            $this->petrol_transportland_qty = $estfuelconsumption->petrol_transportland_qty;
+            $this->lpg_cooking_unit = $estfuelconsumption->lpg_cooking_unit;
+            $this->lpg_cooking_qty = $estfuelconsumption->lpg_cooking_qty;
+            $this->diesel_cooking_unit = $estfuelconsumption->diesel_cooking_unit;
+            $this->diesel_cooking_qty = $estfuelconsumption->diesel_cooking_qty;
+            $this->petrol_cooking_unit = $estfuelconsumption->petrol_cooking_unit;
+            $this->petrol_cooking_qty = $estfuelconsumption->petrol_cooking_qty;
+            $this->diesel_other_fuelconsumption = $estfuelconsumption->diesel_other_fuelconsumption;
+            $this->diesel_other_fuelconsumption_unit = $estfuelconsumption->diesel_other_fuelconsumption_unit;
+            $this->diesel_other_fuelconsumption_qty = $estfuelconsumption->diesel_other_fuelconsumption_qty;
+            $this->petrol_other_fuelconsumption = $estfuelconsumption->petrol_other_fuelconsumption;
+            $this->petrol_other_fuelconsumption_unit = $estfuelconsumption->petrol_other_fuelconsumption_unit;
+            $this->petrol_other_fuelconsumption_qty = $estfuelconsumption->petrol_other_fuelconsumption_qty;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -231,11 +232,11 @@ class EstablishmentFuelconsumptionEdit extends Component
             
         ]);
 
-        $estRecord = EstRecord::with('estfuelconsumption')->findOrFail($this->est_record_id);
+        $estfuelconsumption = Estfuelconsum::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estfuelconsumption) {
-            // Update the fields in the related `estfuelconsumption` model
-            $estRecord->estfuelconsumption->update([
+        if ($estfuelconsumption) {
+            // Update the fields in the estopera record
+            $estfuelconsumption->update([
                 'diesel_bought_qty' => $this->diesel_bought_qty,
                 'diesel_bought_year' => $this->diesel_bought_year,
                 'petrol_bought_qty' => $this->petrol_bought_qty,
@@ -285,7 +286,7 @@ class EstablishmentFuelconsumptionEdit extends Component
                 'petrol_other_fuelconsumption' => $this->petrol_other_fuelconsumption,
                 'petrol_other_fuelconsumption_unit' => $this->petrol_other_fuelconsumption_unit,
                 'petrol_other_fuelconsumption_qty' => $this->petrol_other_fuelconsumption_qty,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
            
         }

@@ -3,6 +3,7 @@
 namespace App\Livewire\Ests;
 
 use App\Models\EstRecord;
+use App\Models\Eststk;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -76,47 +77,45 @@ class EstablishmentStockEdit extends Component
             'remarks' => 'nullable|string'
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('eststock')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $eststock = Eststk::where('user_id', $this->user_id)->first();
 
-        if ($est_record->eststock) {
-            $this->stock_fuel = $est_record->eststock->stock_fuel;
-            $this->stock_fuel_yearend = $est_record->eststock->stock_fuel_yearend;
-            $this->stock_tradedgoods = $est_record->eststock->stock_tradedgoods;
-            $this->stock_tradedgoods_yearend = $est_record->eststock->stock_tradedgoods_yearend;
-            $this->stock_food = $est_record->eststock->stock_food;
-            $this->stock_food_yearend = $est_record->eststock->stock_food_yearend;
-            $this->stock_chemicals = $est_record->eststock->stock_chemicals;
-            $this->stock_chemicals_yearend = $est_record->eststock->stock_chemicals_yearend;
-            $this->stock_packing = $est_record->eststock->stock_packing;
-            $this->stock_packing_yearend = $est_record->eststock->stock_packing_yearend;
-            $this->stock_spare = $est_record->eststock->stock_spare;
-            $this->stock_spare_yearend = $est_record->eststock->stock_spare_yearend;
-            $this->stock_textile = $est_record->eststock->stock_textile;
-            $this->stock_textile_yearend = $est_record->eststock->stock_textile_yearend;
-            $this->stock_stationary = $est_record->eststock->stock_stationary;
-            $this->stock_stationary_yearend = $est_record->eststock->stock_stationary_yearend;
-            $this->stock_other_one = $est_record->eststock->stock_other_one;
-            $this->stock_other_one_value = $est_record->eststock->stock_other_one_value;
-            $this->stock_other_one_value_yearend = $est_record->eststock->stock_other_one_value_yearend;
-            $this->stock_other_two = $est_record->eststock->stock_other_two;
-            $this->stock_other_two_value = $est_record->eststock->stock_other_two_value;
-            $this->stock_other_two_value_yearend = $est_record->eststock->stock_other_two_value_yearend;
-            $this->stock_other_three = $est_record->eststock->stock_other_three;
-            $this->stock_other_three_value = $est_record->eststock->stock_other_three_value;
-            $this->stock_other_three_value_yearend = $est_record->eststock->stock_other_three_value_yearend;
-            $this->stock_other_four = $est_record->eststock->stock_other_four;
-            $this->stock_other_four_value = $est_record->eststock->stock_other_four_value;
-            $this->stock_other_four_value_yearend = $est_record->eststock->stock_other_four_value_yearend;
-            $this->profit_loss = $est_record->eststock->profit_loss;
-            $this->remarks = $est_record->eststock->remarks;
-            $this->status = $est_record->eststock->status;
+        if ($eststock) {
+            $this->stock_fuel = $eststock->stock_fuel;
+            $this->stock_fuel_yearend = $eststock->stock_fuel_yearend;
+            $this->stock_tradedgoods = $eststock->stock_tradedgoods;
+            $this->stock_tradedgoods_yearend = $eststock->stock_tradedgoods_yearend;
+            $this->stock_food = $eststock->stock_food;
+            $this->stock_food_yearend = $eststock->stock_food_yearend;
+            $this->stock_chemicals = $eststock->stock_chemicals;
+            $this->stock_chemicals_yearend = $eststock->stock_chemicals_yearend;
+            $this->stock_packing = $eststock->stock_packing;
+            $this->stock_packing_yearend = $eststock->stock_packing_yearend;
+            $this->stock_spare = $eststock->stock_spare;
+            $this->stock_spare_yearend = $eststock->stock_spare_yearend;
+            $this->stock_textile = $eststock->stock_textile;
+            $this->stock_textile_yearend = $eststock->stock_textile_yearend;
+            $this->stock_stationary = $eststock->stock_stationary;
+            $this->stock_stationary_yearend = $eststock->stock_stationary_yearend;
+            $this->stock_other_one = $eststock->stock_other_one;
+            $this->stock_other_one_value = $eststock->stock_other_one_value;
+            $this->stock_other_one_value_yearend = $eststock->stock_other_one_value_yearend;
+            $this->stock_other_two = $eststock->stock_other_two;
+            $this->stock_other_two_value = $eststock->stock_other_two_value;
+            $this->stock_other_two_value_yearend = $eststock->stock_other_two_value_yearend;
+            $this->stock_other_three = $eststock->stock_other_three;
+            $this->stock_other_three_value = $eststock->stock_other_three_value;
+            $this->stock_other_three_value_yearend = $eststock->stock_other_three_value_yearend;
+            $this->stock_other_four = $eststock->stock_other_four;
+            $this->stock_other_four_value = $eststock->stock_other_four_value;
+            $this->stock_other_four_value_yearend = $eststock->stock_other_four_value_yearend;
+            $this->profit_loss = $eststock->profit_loss;
+            $this->remarks = $eststock->remarks;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -155,11 +154,12 @@ class EstablishmentStockEdit extends Component
             
         ]);
 
-        $estRecord = EstRecord::with('eststock')->findOrFail($this->est_record_id);
+        $eststock = Eststk::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->eststock) {
-            // Update the fields in the related `eststock` model
-            $estRecord->eststock->update([
+
+        if ($eststock) {
+            // Update the fields in the estopera record
+            $eststock->update([
                 'stock_fuel' => $this->stock_fuel,
                 'stock_fuel_yearend' => $this->stock_fuel_yearend,
                 'stock_tradedgoods' => $this->stock_tradedgoods,
@@ -190,7 +190,7 @@ class EstablishmentStockEdit extends Component
                 'stock_other_four_value_yearend' => $this->stock_other_four_value_yearend,
                 'profit_loss' => $this->profit_loss,
                 'remarks' => $this->remarks,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
             
         }

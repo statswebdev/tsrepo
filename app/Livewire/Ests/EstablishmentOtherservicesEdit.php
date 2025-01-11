@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Ests;
 
+use App\Models\Estotherser;
 use Livewire\Component;
 use App\Models\EstRecord;
 use Illuminate\Support\Facades\Auth;
@@ -75,47 +76,46 @@ class EstablishmentOtherservicesEdit extends Component
                 'three_accomodation_foreign' => 'nullable',
     ];
 
-    public function mount($estrecordid)
+    public function mount()
     {
         $this->user_id = Auth::id();
 
-        $est_record = EstRecord::with('estotherservice')->findOrFail($estrecordid);
+        // Retrieve the record from the estopera table for the authenticated user
+        $estotherservice = Estotherser::where('user_id', $this->user_id)->first();
 
-        if ($est_record->estotherservice) {
-            $this->musicbands = $est_record->estotherservice->musicbands;
-            $this->musicbands_contract = $est_record->estotherservice->musicbands_contract;
-            $this->dj = $est_record->estotherservice->dj;
-            $this->dj_contract = $est_record->estotherservice->dj_contract;
-            $this->photography = $est_record->estotherservice->photography;
-            $this->photography_contract = $est_record->estotherservice->photography_contract;
-            $this->casualworker = $est_record->estotherservice->casualworker;
-            $this->casualworker_contract = $est_record->estotherservice->casualworker_contract;
-            $this->fisherman = $est_record->estotherservice->fisherman;
-            $this->fisherman_contract = $est_record->estotherservice->fisherman_contract;
-            $this->farmers = $est_record->estotherservice->farmers;
-            $this->farmers_contract = $est_record->estotherservice->farmers_contract;
-            $this->localfood = $est_record->estotherservice->localfood;
-            $this->localfood_contract = $est_record->estotherservice->localfood_contract;
-            $this->otherservices = $est_record->estotherservice->otherservices;
-            $this->otherservices_contract = $est_record->estotherservice->otherservices_contract;
-            $this->doctor_inhouse = $est_record->estotherservice->doctor_inhouse;
-            $this->nearest_healthfacility = $est_record->estotherservice->nearest_healthfacility;
-            $this->onestaff_accomodation = $est_record->estotherservice->onestaff_accomodation;
-            $this->onestaff_accomodation_island = $est_record->estotherservice->onestaff_accomodation_island;
-            $this->onestaff_accomodation_local = $est_record->estotherservice->onestaff_accomodation_local;
-            $this->onestaff_accomodation_foreign = $est_record->estotherservice->onestaff_accomodation_foreign;
-            $this->twostaff_accomodation = $est_record->estotherservice->twostaff_accomodation;
-            $this->twostaff_accomodation_island = $est_record->estotherservice->twostaff_accomodation_island;
-            $this->twostaff_accomodation_local = $est_record->estotherservice->twostaff_accomodation_local;
-            $this->twostaff_accomodation_foreign = $est_record->estotherservice->twostaff_accomodation_foreign;
-            $this->three_accomodation = $est_record->estotherservice->three_accomodation;
-            $this->three_accomodation_island = $est_record->estotherservice->three_accomodation_island;
-            $this->three_accomodation_local = $est_record->estotherservice->three_accomodation_local;
-            $this->three_accomodation_foreign = $est_record->estotherservice->three_accomodation_foreign;
-            $this->status = $est_record->estotherservice->status;
+
+        if ($estotherservice) {
+            $this->musicbands = $estotherservice->musicbands;
+            $this->musicbands_contract = $estotherservice->musicbands_contract;
+            $this->dj = $estotherservice->dj;
+            $this->dj_contract = $estotherservice->dj_contract;
+            $this->photography = $estotherservice->photography;
+            $this->photography_contract = $estotherservice->photography_contract;
+            $this->casualworker = $estotherservice->casualworker;
+            $this->casualworker_contract = $estotherservice->casualworker_contract;
+            $this->fisherman = $estotherservice->fisherman;
+            $this->fisherman_contract = $estotherservice->fisherman_contract;
+            $this->farmers = $estotherservice->farmers;
+            $this->farmers_contract = $estotherservice->farmers_contract;
+            $this->localfood = $estotherservice->localfood;
+            $this->localfood_contract = $estotherservice->localfood_contract;
+            $this->otherservices = $estotherservice->otherservices;
+            $this->otherservices_contract = $estotherservice->otherservices_contract;
+            $this->doctor_inhouse = $estotherservice->doctor_inhouse;
+            $this->nearest_healthfacility = $estotherservice->nearest_healthfacility;
+            $this->onestaff_accomodation = $estotherservice->onestaff_accomodation;
+            $this->onestaff_accomodation_island = $estotherservice->onestaff_accomodation_island;
+            $this->onestaff_accomodation_local = $estotherservice->onestaff_accomodation_local;
+            $this->onestaff_accomodation_foreign = $estotherservice->onestaff_accomodation_foreign;
+            $this->twostaff_accomodation = $estotherservice->twostaff_accomodation;
+            $this->twostaff_accomodation_island = $estotherservice->twostaff_accomodation_island;
+            $this->twostaff_accomodation_local = $estotherservice->twostaff_accomodation_local;
+            $this->twostaff_accomodation_foreign = $estotherservice->twostaff_accomodation_foreign;
+            $this->three_accomodation = $estotherservice->three_accomodation;
+            $this->three_accomodation_island = $estotherservice->three_accomodation_island;
+            $this->three_accomodation_local = $estotherservice->three_accomodation_local;
+            $this->three_accomodation_foreign = $estotherservice->three_accomodation_foreign;
         }
-
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -154,11 +154,11 @@ class EstablishmentOtherservicesEdit extends Component
             
         ]);
 
-        $estRecord = EstRecord::with('estotherservice')->findOrFail($this->est_record_id);
+        $estotherservice = Estotherser::where('user_id', $this->user_id)->first();
 
-        if ($estRecord->estotherservice) {
-            // Update the fields in the related `estopera` model
-            $estRecord->estotherservice->update([
+        if ($estotherservice) {
+            // Update the fields in the estopera record
+            $estotherservice->update([
                 'musicbands' => $this->musicbands,
                 'musicbands_contract' => $this->musicbands_contract,
                 'dj' => $this->dj,
@@ -189,7 +189,7 @@ class EstablishmentOtherservicesEdit extends Component
                 'three_accomodation_island' => $this->three_accomodation_island,
                 'three_accomodation_local' => $this->three_accomodation_local,
                 'three_accomodation_foreign' => $this->three_accomodation_foreign,
-                'status' => 'submitted',
+                'status' => $this->status,
             ]);
             
         }
