@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\Estguest;
 use App\Models\EstRecord;
 
-class ViewEstEmpguest extends Component
+class ViewEstEmpguestone extends Component
 {
     public $estid;
     public $estrecord;
@@ -45,7 +45,6 @@ class ViewEstEmpguest extends Component
         ]); 
         
     }
-
     public function render()
     {
         $this->query = Estguest::join('users', 'estguests.user_id', '=', 'users.id')
@@ -54,8 +53,7 @@ class ViewEstEmpguest extends Component
         ->where('user_id', $this->query->user_id)
         ->select('estguests.*', 'users.estname', 'users.email', 'est_records.collectionyear')  // Specify the columns you want
         ->first();
-   
-        return view('livewire.viewests.view-est-empguest', [
+        return view('livewire.viewests.view-est-empguestone', [
             'query' => $this->query,
         ]);
     }

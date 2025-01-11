@@ -42,6 +42,7 @@ use App\Livewire\Ests\ShowForms;
 use App\Livewire\Viewests\ViewEstagri;
 use App\Livewire\Viewests\ViewEstelec;
 use App\Livewire\ViewEsts\ViewEstEmpguest;
+use App\Livewire\Viewests\ViewEstEmpguestone;
 use App\Livewire\ViewEsts\ViewEstEmpone;
 use App\Livewire\Viewests\ViewEstEmppro;
 use App\Livewire\Viewests\ViewEstEmpprod;
@@ -88,7 +89,8 @@ Route::middleware('auth')->group(function () {
     //Route::get('/view/estempone/{estrecordid}/{userid}', ViewEstEmpone::class)->name('est.empone.view');
     Route::get('/view/estempone/{estrecordid}/{userid}', ViewEstEmpresortone::class)->name('est.empone.view');
     Route::get('/view/estemptwo/{estrecordid}/{userid}', ViewEstEmptwo::class)->name('est.emptwo.view');
-    Route::get('/view/estguest/{estrecordid}/{userid}', ViewEstEmpguest::class)->name('est.estguest.view');
+    //Route::get('/view/estguest/{estrecordid}/{userid}', ViewEstEmpguest::class)->name('est.estguest.view');
+    Route::get('/view/estguest/{estrecordid}/{userid}', ViewEstEmpguestone::class)->name('est.estguest.view');
     Route::get('/view/estprod/{estrecordid}/{userid}', ViewEstEmpprod::class)->name('est.prod.view');
     Route::get('/view/estagri/{estrecordid}/{userid}', ViewEstagri::class)->name('est.agri.view');
     Route::get('/view/estfish/{estrecordid}/{userid}', ViewEstfish::class)->name('est.fish.view');
