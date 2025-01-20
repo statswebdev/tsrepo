@@ -43,11 +43,11 @@
                                         <input type="number" id="months_operated" class="form-control" placeholder="Months Operated" wire:model="months_operated">
                                         @error('months_operated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                     </div> --}}
-
-                                    <div class="mb-4">
+                                    <div class="mb-4 col-12 col-md-11">
+                                    
                                         <label for="months_operated" class="form-label">1. Select the months in operation during the reporting year</label>
                                         <br>
-                                        @foreach(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Not Operated'] as $index => $month)
+                                        @foreach(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Not Operated','All the Months'] as $index => $month)
                                             <div class="js-form-message form-check form-check-inline">
                                                 <input type="checkbox" id="formInlineCheck{{ $index + 1 }}" class="form-check-input" value="{{ $month }}" wire:model="months_operated">
                                                 <label class="form-check-label" for="formInlineCheck{{ $index + 1 }}">{{ $month }}</label>
@@ -55,6 +55,7 @@
                                             
                                         @endforeach
                                         @error('months_operated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    
                                     </div>
                                     
                                     <hr class="mt-5 mb-5">

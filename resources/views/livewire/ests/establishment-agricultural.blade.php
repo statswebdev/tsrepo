@@ -334,7 +334,7 @@
                         <div class="col-sm-2"></div>
                         <div class="col-sm-3 text-center">Yes / No</div>
                         <div class="col-sm-3 text-center">
-                            <label>If Yes, Quantity Grown in KG</label> 
+                            <label>If Yes, Quantity Purchased in KG</label> 
                         </div>
                         <div class="col-sm-3 text-center">
                             <label>Value Purchased from Farmers(December), in MVR</label> 

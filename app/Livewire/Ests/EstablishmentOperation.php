@@ -20,6 +20,8 @@ class EstablishmentOperation extends Component
     public $roomrate_annual;
     public $status = "submitted";
 
+    
+
     public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
