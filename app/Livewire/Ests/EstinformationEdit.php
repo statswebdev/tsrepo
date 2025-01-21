@@ -94,7 +94,11 @@ class EstinformationEdit extends Component
             'government_share' => 'required|integer|max:100',
             'maldivian_share' => 'required|integer|max:100',
             'foreign_share' => 'required|integer|max:100',
-            'taxpayer_number' => 'required|string',
+            'taxpayer_number' => [
+                'required',
+                'string',
+                'regex:/^\d{7}GST\d{3}$/',
+            ],
             'establishment_regdate' => 'required|date',
             'bedcapacity' => 'required|integer|max:1500',
         ]);

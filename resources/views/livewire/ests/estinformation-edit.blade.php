@@ -132,6 +132,7 @@
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="taxpayer_number">9. Taxpayer Identification Number</label>
                                     <input type="text" id="taxpayer_number" class="form-control" placeholder="TIN" wire:model="taxpayer_number">
+                                    <small class="col-md-6" >Please use the TIN Format 1234567GST123 </small>
                                     @error('taxpayer_number')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
