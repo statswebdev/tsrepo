@@ -82,7 +82,11 @@ class EstinformationEdit extends Component
             'contact_number' => 'required|integer|regex:/^[97][0-9]{6}$/',
             'type_organisation' => 'required|string',
             'operator_name' => 'required|string',
-            'operator_register' => 'required|string',
+            'operator_register' => [
+                                    'required',
+                                    'string',
+                                    'regex:/^(SP|C)-\d{4}\/\d{4}$/',
+                                    ],
             'owner_one' => 'required|string|min:5',
             'owner_two' => 'nullable|string|min:5',
             'operator_contact' => 'required|integer|regex:/^[34697][0-9]{6}$/',

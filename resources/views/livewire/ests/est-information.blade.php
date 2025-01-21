@@ -95,7 +95,7 @@
 
                                 <div class="mt-3 mb-3 col-12 col-md-6">
                                     <label class="form-label" for="operator_contact">Contact Number of the Operator</label>
-                                    <input type="text" id="operator_contact" class="form-control" placeholder="Phone Number" wire:model="operator_contact">
+                                    <input type="number" id="operator_contact" class="form-control" placeholder="Phone Number" wire:model="operator_contact">
                                     @error('operator_contact')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mt-3 mb-3 col-12 col-md-6">
