@@ -20,6 +20,109 @@
                         <div class="card-body">
                             <div class="border-bottom pt-0 pb-4"> 
                                 <!-- Pricing data -->
+                                <!-- Pricing data -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Generated Inhouse</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->generated_inhouse }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Electricity Generated</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->electricity_generated }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Electricity Outsourced</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->electricity_outsourced }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Outsourced Generated</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->outsourced_generated }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-bottom pt-4 pb-4"> 
+                                <!-- Additional data -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Electricity Other Sources</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->electricity_othersources }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Other Sources Generated</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->othersources_generated }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Electricity Consumption</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->electricity_consumption }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Solar Grid Energy</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->solargrid_energy }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-bottom pt-4 pb-4"> 
+                                <!-- Renewable energy data -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Solar Grid Production</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->solargrid_production }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Solar Grid Consumption</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->solargrid_consumption }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Renewable Other</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->renewable_other }}
+                                        </h6>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                        <span class="fs-6">Renewable Other Production</span>
+                                        <h6 class="mb-0">
+                                            {{ $query->renewable_other_production }}
+                                        </h6>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="border-bottom pt-4 pb-4">
+                              
+                              <div class="row">
+                              <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                <span class="fs-6">Renewable Other Consumption</span>
+                                <h6 class="mb-0">
+                                    {{ $query->renewable_other_consumption }}
+                                </h6>
+                            </div>
+                              </div>
+                            </div>
+
+                              <div class="border-bottom pt-4 pb-4">
+
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
                                         <span class="fs-6">Diesel Consumed in January</span>

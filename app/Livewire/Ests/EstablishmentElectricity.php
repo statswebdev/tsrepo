@@ -12,6 +12,19 @@ class EstablishmentElectricity extends Component
 
     public $user_id;
     public $est_record_id;
+    public $generated_inhouse;
+    public $electricity_generated;
+    public $electricity_outsourced;
+    public $outsourced_generated;
+    public $electricity_othersources;
+    public $othersources_generated;
+    public $electricity_consumption;
+    public $solargrid_energy;
+    public $solargrid_production;
+    public $solargrid_consumption;
+    public $renewable_other;
+    public $renewable_other_production;
+    public $renewable_other_consumption;
     public $consume_jan_diesel;
     public $consume_feb_diesel;
     public $consume_mar_diesel;
@@ -121,6 +134,19 @@ class EstablishmentElectricity extends Component
     public function submitRecord()
     {
         $this->validate([
+                'generated_inhouse' => 'required|string',
+                'electricity_generated' => 'nullable|integer',
+                'electricity_outsourced' => 'required|string',
+                'outsourced_generated' => 'nullable|integer',
+                'electricity_othersources' => 'required|string',
+                'othersources_generated' => 'nullable|integer',
+                'electricity_consumption' => 'required|integer',
+                'solargrid_energy' => 'required|string',
+                'solargrid_production' => 'nullable|integer',
+                'solargrid_consumption' => 'nullable|integer',
+                'renewable_other' => 'required|string',
+                'renewable_other_production' => 'nullable|integer',
+                'renewable_other_consumption' => 'nullable|integer',
                 'consume_jan_diesel' => 'required',
                 'consume_feb_diesel' => 'required',
                 'consume_mar_diesel' => 'required',
@@ -222,6 +248,19 @@ class EstablishmentElectricity extends Component
         Estelec::create([ // Use the aliased model
             'user_id' => $this->user_id,
             'est_record_id' => $this->est_record_id->id,
+            'generated_inhouse' => $this->generated_inhouse,
+            'electricity_generated' => $this->electricity_generated,
+            'electricity_outsourced' => $this->electricity_outsourced,
+            'outsourced_generated' => $this->outsourced_generated,
+            'electricity_othersources' => $this->electricity_othersources,
+            'othersources_generated' => $this->othersources_generated,
+            'electricity_consumption' => $this->electricity_consumption,
+            'solargrid_energy' => $this->solargrid_energy,
+            'solargrid_production' => $this->solargrid_production,
+            'solargrid_consumption' => $this->solargrid_consumption,
+            'renewable_other' => $this->renewable_other,
+            'renewable_other_production' => $this->renewable_other_production,
+            'renewable_other_consumption' => $this->renewable_other_consumption,
             'consume_jan_diesel' => $this->consume_jan_diesel,
             'consume_feb_diesel' => $this->consume_feb_diesel,
             'consume_mar_diesel' => $this->consume_mar_diesel,

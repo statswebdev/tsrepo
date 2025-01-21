@@ -38,7 +38,119 @@
                             <!-- Form -->
                             <form wire:submit.prevent="submitRecord" class="row">
 
-                                <h5>1. Fuel Consumption</h5>
+
+                                <h5>1.Electricity Generation & Consumption </h5>
+                                <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
+                               
+                                
+                             <div class="mb-3 col-12 col-md-6">
+                                <label class="form-label" for="generated_inhouse">Generated Inhouse</label>
+                                <select id="generated_inhouse" class="form-control" wire:model="generated_inhouse">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                                @error('generated_inhouse')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-6">
+                                <label class="form-label" for="electricity_generated">Electricity Generated</label>
+                                <input type="number" id="electricity_generated" class="form-control" placeholder="kWh" wire:model="electricity_generated"  :disabled="$wire.generated_inhouse === 'no'">
+                                @error('electricity_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-6">
+                                <label class="form-label" for="electricity_outsourced">Electricity Outsourced</label>
+                                <select id="electricity_outsourced" class="form-control" wire:model="electricity_outsourced">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                                @error('electricity_outsourced')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-6">
+                                <label class="form-label" for="outsourced_generated">Outsourced Generated</label>
+                                <input type="number" id="outsourced_generated" class="form-control" placeholder="kWh" wire:model="outsourced_generated" :disabled="$wire.electricity_outsourced === 'no'">
+                                @error('outsourced_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-6">
+                                <label class="form-label" for="electricity_othersources">Electricity Other Sources</label>
+                                <select id="electricity_othersources" class="form-control" wire:model="electricity_othersources">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                                @error('electricity_othersources')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-6">
+                                <label class="form-label" for="othersources_generated">Other Sources Generated</label>
+                                <input type="number" id="othersources_generated" class="form-control" placeholder="kWh" wire:model="othersources_generated" :disabled="$wire.electricity_othersources === 'no'">
+                                @error('othersources_generated')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+
+                            <div class="mb-3 col-12 col-md-12">
+                                <label class="form-label" for="electricity_consumption">Monthly electricity consumption year end (december)</label>
+                                <input type="number" id="electricity_consumption" class="form-control" placeholder="kWh" wire:model="electricity_consumption">
+                                @error('electricity_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <hr class="mt-5 mb-5">
+
+                            <h5>2. Integration of Renewal Energy </h5>
+                                <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
+                               
+
+                            <div class="mb-3 col-12 col-md-4">
+                                <label class="form-label" for="solargrid_energy">Solar Grid Energy</label>
+                                <select id="solargrid_energy" class="form-control" wire:model="solargrid_energy">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                                @error('solargrid_energy')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-4">
+                                <label class="form-label" for="solargrid_production">Solar Grid Production</label>
+                                <input type="number" id="solargrid_production" class="form-control" placeholder="kWh" wire:model="solargrid_production" :disabled="$wire.solargrid_energy === 'no'">
+                                @error('solargrid_production')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-4">
+                                <label class="form-label" for="solargrid_consumption">Solar Grid Consumption</label>
+                                <input type="number" id="solargrid_consumption" class="form-control" placeholder="kWh" wire:model="solargrid_consumption" :disabled="$wire.solargrid_energy === 'no'">
+                                @error('solargrid_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-4">
+                                <label class="form-label" for="renewable_other">Renewable Other</label>
+                                <select id="renewable_other" class="form-control" wire:model="renewable_other">
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                                @error('renewable_other')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-4">
+                                <label class="form-label" for="renewable_other_production">Renewable Other Production</label>
+                                <input type="number" id="renewable_other_production" class="form-control" placeholder="kWh" wire:model="renewable_other_production" :disabled="$wire.renewable_other === 'no'">
+                                @error('renewable_other_production')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="mb-3 col-12 col-md-4">
+                                <label class="form-label" for="renewable_other_consumption">Renewable Other Consumption</label>
+                                <input type="number" id="renewable_other_consumption" class="form-control" placeholder="kWh" wire:model="renewable_other_consumption" :disabled="$wire.renewable_other === 'no'">
+                                @error('renewable_other_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <hr class="mt-5 mb-5">
+
+
+                                <h5>3. Fuel Consumption</h5>
                                 <small class="mb-5">Enter the fuel consumption in Liters</small>
         
                                 <div class="row  mb-2">
@@ -197,7 +309,7 @@
 
                                 <hr class="mt-5 mb-5">
 
-                                <h5>2. Electric Power Generation by sources (kWh)</h5>
+                                <h5>4. Electric Power Generation by sources (kWh)</h5>
                                 <small class="mb-5">Enter the values in kWh for the reporting year</small>
         
                                 <div class="row  mb-2">
@@ -456,7 +568,7 @@
 
                                 <hr class="mt-5 mb-5">
 
-                                <h5>3. Electricity Demand</h5>
+                                <h5>5. Electricity Demand</h5>
                                 <small class="mb-5">Electricity Demand for the reporting year (kW)</small>
         
                                 <div class="row  mb-2">

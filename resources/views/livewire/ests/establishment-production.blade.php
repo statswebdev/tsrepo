@@ -16,7 +16,7 @@
                 <!-- row -->
                 <div class="col-md-6">
                     <!-- heading -->
-                    <h1 class="display-4 fw-bold">Production & Consumption</h1>
+                    <h1 class="display-4 fw-bold">Water & Waste</h1>
                 </div>
             </div>    
         </div>
@@ -38,12 +38,12 @@
                             <!-- Form -->
                             <form wire:submit.prevent="submitRecord" class="row">
                                 
-
+{{--
                                 <h5>1.Electricity Generation & Consumption </h5>
                                 <small class="mb-3">Year End (december) - kWh (Monthly Production)</small>
                                
                                 
-                            <div class="mb-3 col-12 col-md-6">
+                             <div class="mb-3 col-12 col-md-6">
                                 <label class="form-label" for="generated_inhouse">Generated Inhouse</label>
                                 <select id="generated_inhouse" class="form-control" wire:model="generated_inhouse">
                                     <option value="">Select</option>
@@ -147,9 +147,9 @@
                                 @error('renewable_other_consumption')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
 
-                            <hr class="mt-5 mb-5">
+                            <hr class="mt-5 mb-5"> --}}
 
-                            <h5>3. Water Production & Consumption</h5>
+                            <h5>1. Water Production & Consumption</h5>
                                 <small class="mb-3">Year End (december) - Metric Tons (Monthly Production)</small>
 
                             <div class="mb-3 col-12 col-md-6">
@@ -262,7 +262,7 @@
 
                             <hr class="mt-5 mb-5">
 
-                            <h5 class="mt-3">4. Waste Generation / Disposal</h5>
+                            <h5 class="mt-3">2. Waste Generation / Disposal</h5>
                             <small class="mb-3">Waste generation and disposal for the reporting year</small>
 
 

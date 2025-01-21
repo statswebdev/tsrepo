@@ -68,7 +68,9 @@
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="operator_register">5. What is the registration number of operator?</label>
+                                    
                                     <input type="text" id="operator_register" class="form-control" placeholder="Register Number" wire:model="operator_register">
+                                    <small class="col-md-6" >Please use the format for Sole Proprietorship SP-1234/2025 or for a Company C-1234/2025 </small>
                                     @error('operator_register')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <hr class="mt-5 mb-5">

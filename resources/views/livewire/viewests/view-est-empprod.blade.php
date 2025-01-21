@@ -20,7 +20,7 @@
                         <div class="card-body">
                             <div class="border-bottom pt-0 pb-4"> 
                                 <!-- Pricing data -->
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
                                         <span class="fs-6">Generated Inhouse</span>
                                         <h6 class="mb-0">
@@ -105,15 +105,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="border-bottom pt-4 pb-4"> 
+                            <div class="border-bottom pt-4 pb-4">  --}}
+
+
                                 <!-- Water and renewable energy consumption data -->
                                 <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
+                                    {{-- <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
                                         <span class="fs-6">Renewable Other Consumption</span>
                                         <h6 class="mb-0">
                                             {{ $query->renewable_other_consumption }}
                                         </h6>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
                                         <span class="fs-6">Water Inhouse Production</span>
                                         <h6 class="mb-0">

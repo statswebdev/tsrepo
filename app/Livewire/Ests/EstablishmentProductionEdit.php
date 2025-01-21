@@ -10,19 +10,19 @@ class EstablishmentProductionEdit extends Component
 {
     public $user_id;
     public $est_record_id;
-    public $generated_inhouse;
-    public $electricity_generated;
-    public $electricity_outsourced;
-    public $outsourced_generated;
-    public $electricity_othersources;
-    public $othersources_generated;
-    public $electricity_consumption;
-    public $solargrid_energy;
-    public $solargrid_production;
-    public $solargrid_consumption;
-    public $renewable_other;
-    public $renewable_other_production;
-    public $renewable_other_consumption;
+    // public $generated_inhouse;
+    // public $electricity_generated;
+    // public $electricity_outsourced;
+    // public $outsourced_generated;
+    // public $electricity_othersources;
+    // public $othersources_generated;
+    // public $electricity_consumption;
+    // public $solargrid_energy;
+    // public $solargrid_production;
+    // public $solargrid_consumption;
+    // public $renewable_other;
+    // public $renewable_other_production;
+    // public $renewable_other_consumption;
     public $waterinhouse_production;
     public $waterinhouse_monthly;
     public $water_outsourced;
@@ -54,19 +54,19 @@ class EstablishmentProductionEdit extends Component
     public $status="submitted";
 
     protected $rules = [
-            'generated_inhouse' => 'required|string',
-            'electricity_generated' => 'nullable|integer',
-            'electricity_outsourced' => 'required|string',
-            'outsourced_generated' => 'nullable|integer',
-            'electricity_othersources' => 'required|string',
-            'othersources_generated' => 'nullable|integer',
-            'electricity_consumption' => 'required|integer',
-            'solargrid_energy' => 'required|string',
-            'solargrid_production' => 'nullable|integer',
-            'solargrid_consumption' => 'nullable|integer',
-            'renewable_other' => 'required|string',
-            'renewable_other_production' => 'nullable|integer',
-            'renewable_other_consumption' => 'nullable|integer',
+            // 'generated_inhouse' => 'required|string',
+            // 'electricity_generated' => 'nullable|integer',
+            // 'electricity_outsourced' => 'required|string',
+            // 'outsourced_generated' => 'nullable|integer',
+            // 'electricity_othersources' => 'required|string',
+            // 'othersources_generated' => 'nullable|integer',
+            // 'electricity_consumption' => 'required|integer',
+            // 'solargrid_energy' => 'required|string',
+            // 'solargrid_production' => 'nullable|integer',
+            // 'solargrid_consumption' => 'nullable|integer',
+            // 'renewable_other' => 'required|string',
+            // 'renewable_other_production' => 'nullable|integer',
+            // 'renewable_other_consumption' => 'nullable|integer',
             'waterinhouse_production' => 'required|string',
             'waterinhouse_monthly' => 'nullable|integer',
             'water_outsourced' => 'required|string',
@@ -106,19 +106,19 @@ class EstablishmentProductionEdit extends Component
         $production = EstEmppro::where('user_id', $this->user_id)->first();
     if ($production) {
         $this->est_record_id = $production->id;
-        $this->generated_inhouse = $production->generated_inhouse;
-        $this->electricity_generated = $production->electricity_generated;
-        $this->electricity_outsourced = $production->electricity_outsourced;
-        $this->outsourced_generated = $production->outsourced_generated;
-        $this->electricity_othersources = $production->electricity_othersources;
-        $this->othersources_generated = $production->othersources_generated;
-        $this->electricity_consumption = $production->electricity_consumption;
-        $this->solargrid_energy = $production->solargrid_energy;
-        $this->solargrid_production = $production->solargrid_production;
-        $this->solargrid_consumption = $production->solargrid_consumption;
-        $this->renewable_other = $production->renewable_other;
-        $this->renewable_other_production = $production->renewable_other_production;
-        $this->renewable_other_consumption = $production->renewable_other_consumption;
+        // $this->generated_inhouse = $production->generated_inhouse;
+        // $this->electricity_generated = $production->electricity_generated;
+        // $this->electricity_outsourced = $production->electricity_outsourced;
+        // $this->outsourced_generated = $production->outsourced_generated;
+        // $this->electricity_othersources = $production->electricity_othersources;
+        // $this->othersources_generated = $production->othersources_generated;
+        // $this->electricity_consumption = $production->electricity_consumption;
+        // $this->solargrid_energy = $production->solargrid_energy;
+        // $this->solargrid_production = $production->solargrid_production;
+        // $this->solargrid_consumption = $production->solargrid_consumption;
+        // $this->renewable_other = $production->renewable_other;
+        // $this->renewable_other_production = $production->renewable_other_production;
+        // $this->renewable_other_consumption = $production->renewable_other_consumption;
         $this->waterinhouse_production = $production->waterinhouse_production;
         $this->waterinhouse_monthly = $production->waterinhouse_monthly;
         $this->water_outsourced = $production->water_outsourced;
@@ -153,19 +153,19 @@ class EstablishmentProductionEdit extends Component
     public function save()
     {
         $this->validate([
-            'generated_inhouse' => 'required|string',
-            'electricity_generated' => 'nullable|integer',
-            'electricity_outsourced' => 'required|string',
-            'outsourced_generated' => 'nullable|integer',
-            'electricity_othersources' => 'required|string',
-            'othersources_generated' => 'nullable|integer',
-            'electricity_consumption' => 'required|integer',
-            'solargrid_energy' => 'required|string',
-            'solargrid_production' => 'nullable|integer',
-            'solargrid_consumption' => 'nullable|integer',
-            'renewable_other' => 'required|string',
-            'renewable_other_production' => 'nullable|integer',
-            'renewable_other_consumption' => 'nullable|integer',
+            // 'generated_inhouse' => 'required|string',
+            // 'electricity_generated' => 'nullable|integer',
+            // 'electricity_outsourced' => 'required|string',
+            // 'outsourced_generated' => 'nullable|integer',
+            // 'electricity_othersources' => 'required|string',
+            // 'othersources_generated' => 'nullable|integer',
+            // 'electricity_consumption' => 'required|integer',
+            // 'solargrid_energy' => 'required|string',
+            // 'solargrid_production' => 'nullable|integer',
+            // 'solargrid_consumption' => 'nullable|integer',
+            // 'renewable_other' => 'required|string',
+            // 'renewable_other_production' => 'nullable|integer',
+            // 'renewable_other_consumption' => 'nullable|integer',
             'waterinhouse_production' => 'required|string',
             'waterinhouse_monthly' => 'nullable|integer',
             'water_outsourced' => 'required|string',
@@ -201,19 +201,19 @@ class EstablishmentProductionEdit extends Component
         if ($production) {
             // Update the fields in the estopera record
             $production->update([
-            'generated_inhouse' => $this->generated_inhouse,
-            'electricity_generated' => $this->electricity_generated !== null ? (int) $this->electricity_generated : null,
-            'electricity_outsourced' => $this->electricity_outsourced,
-            'outsourced_generated' => $this->outsourced_generated !== null ? (int) $this->outsourced_generated : null,
-            'electricity_othersources' => $this->electricity_othersources,
-            'othersources_generated' => $this->othersources_generated !== null ? (int) $this->othersources_generated : null,
-            'electricity_consumption' => $this->electricity_consumption,
-            'solargrid_energy' => $this->solargrid_energy,
-            'solargrid_production' => $this->solargrid_production !== null ? (int) $this->solargrid_production : null,
-            'solargrid_consumption' => $this->solargrid_consumption !== null ? (int) $this->solargrid_consumption : null,
-            'renewable_other' => $this->renewable_other,
-            'renewable_other_production' => $this->renewable_other_production !== null ? (int) $this->renewable_other_production : null,
-            'renewable_other_consumption' => $this->renewable_other_consumption !== null ? (int) $this->renewable_other_consumption : null,
+            // 'generated_inhouse' => $this->generated_inhouse,
+            // 'electricity_generated' => $this->electricity_generated !== null ? (int) $this->electricity_generated : null,
+            // 'electricity_outsourced' => $this->electricity_outsourced,
+            // 'outsourced_generated' => $this->outsourced_generated !== null ? (int) $this->outsourced_generated : null,
+            // 'electricity_othersources' => $this->electricity_othersources,
+            // 'othersources_generated' => $this->othersources_generated !== null ? (int) $this->othersources_generated : null,
+            // 'electricity_consumption' => $this->electricity_consumption,
+            // 'solargrid_energy' => $this->solargrid_energy,
+            // 'solargrid_production' => $this->solargrid_production !== null ? (int) $this->solargrid_production : null,
+            // 'solargrid_consumption' => $this->solargrid_consumption !== null ? (int) $this->solargrid_consumption : null,
+            // 'renewable_other' => $this->renewable_other,
+            // 'renewable_other_production' => $this->renewable_other_production !== null ? (int) $this->renewable_other_production : null,
+            // 'renewable_other_consumption' => $this->renewable_other_consumption !== null ? (int) $this->renewable_other_consumption : null,
             'waterinhouse_production' => $this->waterinhouse_production,
             'waterinhouse_monthly' => $this->waterinhouse_monthly,
             'water_outsourced' => $this->water_outsourced,
