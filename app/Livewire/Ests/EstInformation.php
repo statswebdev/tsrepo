@@ -57,7 +57,7 @@ class EstInformation extends Component
             'taxpayer_number' => [
                 'required',
                 'string',
-                'regex:/^\d{7}GST\d{3}$/',
+                'regex:/^\d{7}(GST|GRT)\d{3}$/',
             ],
             'establishment_regdate' => 'required|date',
             'bedcapacity' => 'required|integer|max:1500',

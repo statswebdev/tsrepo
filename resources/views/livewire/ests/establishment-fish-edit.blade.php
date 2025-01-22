@@ -16,7 +16,7 @@
                 <!-- row -->
                 <div class="col-md-6">
                     <!-- heading -->
-                    <h1 class="display-4 fw-bold">Fish Products</h1>
+                    <h1 class="display-4 fw-bold">Fish Production & Consumption</h1>
                 </div>
             </div>    
         </div>

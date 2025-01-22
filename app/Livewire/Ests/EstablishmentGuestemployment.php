@@ -74,55 +74,84 @@ class EstablishmentGuestemployment extends Component
     public function submitRecord()
     {
         $this->validate([
-            'maldivian_male' => 'required|numeric',
-            'maldivian_female' => 'required|numeric',
-            'foreign_male' => 'required|numeric',
-            'foreign_female' => 'required|numeric',
-            'maldivian_male_permanent' => 'required|numeric',
-            'maldivian_female_permanent' => 'required|numeric',
-            'foreign_male_permanent' => 'required|numeric',
-            'foreign_female_permanent' => 'required|numeric',
-            'hundred_maldivian' => 'required|numeric',
-            'hundred_foreign' => 'required|numeric',
-            'threehundred_maldivian' => 'required|numeric',
-            'threehundred_foreign' => 'required|numeric',
-            'fivehundred_maldivian' => 'required|numeric',
-            'fivehundred_foreign' => 'required|numeric',
-            'sevenhundred_maldivian' => 'required|numeric',
-            'sevenhundred_foreign' => 'required|numeric',
-            'ninehundred_maldivian' => 'required|numeric',
-            'ninehundred_foreign' => 'required|numeric',
-            'thausand_maldivian' => 'required|numeric',
-            'thausand_foreign' => 'required|numeric',
-            'threethausand_maldivian' => 'required|numeric',
-            'threethausand_foreign' => 'required|numeric',
-            'fivethausand_maldivian' => 'required|numeric',
-            'fivethausand_foreign' => 'required|numeric',
-            'seventhausand_maldivian' => 'required|numeric',
-            'seventhausand_foreign' => 'required|numeric',
-            'tenthausand_maldivian' => 'required|numeric',
-            'tenthausand_foreign' => 'required|numeric',
-            'age_eighteen_mdv_male' => 'required|numeric',
-            'age_eighteen_mdv_female' => 'required|numeric',
-            'age_eighteen_foreign_male' => 'required|numeric',
-            'age_eighteen_foreign_female' => 'required|numeric',
-            'age_twenty_mdv_male' => 'required|numeric',
-            'age_twenty_mdv_female' => 'required|numeric',
-            'age_twenty_foreign_male' => 'required|numeric',
-            'age_twenty_foreign_female' => 'required|numeric',
-            'age_thirty_mdv_male' => 'required|numeric',
-            'age_thirty_mdv_female' => 'required|numeric',
-            'age_thirty_foreign_male' => 'required|numeric',
-            'age_thirty_foreign_female' => 'required|numeric',
-            'age_sixty_mdv_male' => 'required|numeric',
-            'age_sixty_mdv_female' => 'required|numeric',
-            'age_sixty_foreign_male' => 'required|numeric',
-            'age_sixty_foreign_female' => 'required|numeric',
-            'age_old_mdv_male' => 'required|numeric',
-            'age_old_mdv_female' => 'required|numeric',
-            'age_old_foreign_male' => 'required|numeric',
-            'age_old_foreign_female' => 'required|numeric',
+            'maldivian_male' => 'required|numeric|max:3000',
+            'maldivian_female' => 'required|numeric|max:3000',
+            'foreign_male' => 'required|numeric|max:3000',
+            'foreign_female' => 'required|numeric|max:3000',
+            'maldivian_male_permanent' => 'required|numeric|max:3000',
+            'maldivian_female_permanent' => 'required|numeric|max:3000',
+            'foreign_male_permanent' => 'required|numeric|max:3000',
+            'foreign_female_permanent' => 'required|numeric|max:3000',
+            'hundred_maldivian' => 'required|numeric|max:3000',
+            'hundred_foreign' => 'required|numeric|max:3000',
+            'threehundred_maldivian' => 'required|numeric|max:3000',
+            'threehundred_foreign' => 'required|numeric|max:3000',
+            'fivehundred_maldivian' => 'required|numeric|max:3000',
+            'fivehundred_foreign' => 'required|numeric|max:3000',
+            'sevenhundred_maldivian' => 'required|numeric|max:3000',
+            'sevenhundred_foreign' => 'required|numeric|max:3000',
+            'ninehundred_maldivian' => 'required|numeric|max:3000',
+            'ninehundred_foreign' => 'required|numeric|max:3000',
+            'thausand_maldivian' => 'required|numeric|max:3000',
+            'thausand_foreign' => 'required|numeric|max:3000',
+            'threethausand_maldivian' => 'required|numeric|max:3000',
+            'threethausand_foreign' => 'required|numeric|max:3000',
+            'fivethausand_maldivian' => 'required|numeric|max:3000',
+            'fivethausand_foreign' => 'required|numeric|max:3000',
+            'seventhausand_maldivian' => 'required|numeric|max:3000',
+            'seventhausand_foreign' => 'required|numeric|max:3000',
+            'tenthausand_maldivian' => 'required|numeric|max:3000',
+            'tenthausand_foreign' => 'required|numeric|max:3000',
+            'age_eighteen_mdv_male' => 'required|numeric|max:3000',
+            'age_eighteen_mdv_female' => 'required|numeric|max:3000',
+            'age_eighteen_foreign_male' => 'required|numeric|max:3000',
+            'age_eighteen_foreign_female' => 'required|numeric|max:3000',
+            'age_twenty_mdv_male' => 'required|numeric|max:3000',
+            'age_twenty_mdv_female' => 'required|numeric|max:3000',
+            'age_twenty_foreign_male' => 'required|numeric|max:3000',
+            'age_twenty_foreign_female' => 'required|numeric|max:3000',
+            'age_thirty_mdv_male' => 'required|numeric|max:3000',
+            'age_thirty_mdv_female' => 'required|numeric|max:3000',
+            'age_thirty_foreign_male' => 'required|numeric|max:3000',
+            'age_thirty_foreign_female' => 'required|numeric|max:3000',
+            'age_sixty_mdv_male' => 'required|numeric|max:3000',
+            'age_sixty_mdv_female' => 'required|numeric|max:3000',
+            'age_sixty_foreign_male' => 'required|numeric|max:3000',
+            'age_sixty_foreign_female' => 'required|numeric|max:3000',
+            'age_old_mdv_male' => 'required|numeric|max:3000',
+            'age_old_mdv_female' => 'required|numeric|max:3000',
+            'age_old_foreign_male' => 'required|numeric|max:3000',
+            'age_old_foreign_female' => 'required|numeric|max:3000',
         ]);
+    
+
+        if ($this->maldivian_male_commuting > $this->maldivian_male) {
+            $this->addError('maldivian_male_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->maldivian_female_commuting > $this->maldivian_female) {
+            $this->addError('maldivian_female_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->foreign_male_commuting > $this->foreign_male) {
+            $this->addError('foreign_male_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->foreign_female_commuting > $this->foreign_female) {
+            $this->addError('foreign_female_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->maldivian_male_permanent > $this->maldivian_male) {
+            $this->addError('maldivian_male_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->maldivian_female_permanent > $this->maldivian_female) {
+            $this->addError('maldivian_female_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->foreign_male_permanent > $this->foreign_male) {
+            $this->addError('foreign_male_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->foreign_female_permanent > $this->foreign_female) {
+            $this->addError('foreign_female_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->getErrorBag()->isNotEmpty()) {
+            return;
+        }
         
 
         Estguest::create([ // Use the aliased model

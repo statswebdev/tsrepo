@@ -202,14 +202,14 @@ class EstablishmentEmploymentoneEdit extends Component
         'maldivian_female' => 'required|integer|max:3000',
         'foreign_male' => 'required|integer|max:3000',
         'foreign_female' => 'required|integer|max:3000',
-        'maldivian_male_commuting' => 'required|integer|max:' . $this->maldivian_male,
-        'maldivian_female_commuting' => 'required|integer|max:' . $this->maldivian_female,
-        'foreign_male_commuting' => 'required|integer|max:' . $this->foreign_male,
-        'foreign_female_commuting' => 'required|integer|max:' . $this->foreign_female,
-        'maldivian_male_permanent' => 'required|integer|max:' . $this->maldivian_male,
-        'maldivian_female_permanent' => 'required|integer|max:' . $this->maldivian_female,
-        'foreign_male_permanent' => 'required|integer|max:' . $this->foreign_male,
-        'foreign_female_permanent' => 'required|integer|max:' . $this->foreign_female,
+        'maldivian_male_commuting' => 'required|integer|max:3000',
+        'maldivian_female_commuting' => 'required|integer|max:3000',
+        'foreign_male_commuting' => 'required|integer|max:3000',
+        'foreign_female_commuting' => 'required|integer|max:3000',
+        'maldivian_male_permanent' => 'required|integer|max:3000',
+        'maldivian_female_permanent' => 'required|integer|max:3000',
+        'foreign_male_permanent' => 'required|integer|max:3000',
+        'foreign_female_permanent' => 'required|integer|max:3000',
         'accomo_maldivian_male' => 'required|integer|max:3000',
         'accomo_maldivian_female' => 'required|integer|max:3000',
         'accomo_foreign_male' => 'required|integer|max:3000',
@@ -254,8 +254,38 @@ class EstablishmentEmploymentoneEdit extends Component
         'bylevelother_maldivian_female' => 'required|integer|max:3000',
         'bylevelother_foreign_male' => 'required|integer|max:3000',
         'bylevelother_foreign_female' => 'required|integer|max:3000',
-        'bylevelother_foreign_female' => 'required|integer',
+        'bylevelother_foreign_female' => 'required|integer|max:3000',
         ]);
+
+        if ($this->maldivian_male_commuting > $this->maldivian_male) {
+            $this->addError('maldivian_male_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->maldivian_female_commuting > $this->maldivian_female) {
+            $this->addError('maldivian_female_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->foreign_male_commuting > $this->foreign_male) {
+            $this->addError('foreign_male_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->foreign_female_commuting > $this->foreign_female) {
+            $this->addError('foreign_female_commuting', 'Commuting values should not exceed the total values.');
+        }
+        if ($this->maldivian_male_permanent > $this->maldivian_male) {
+            $this->addError('maldivian_male_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->maldivian_female_permanent > $this->maldivian_female) {
+            $this->addError('maldivian_female_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->foreign_male_permanent > $this->foreign_male) {
+            $this->addError('foreign_male_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->foreign_female_permanent > $this->foreign_female) {
+            $this->addError('foreign_female_permanent', 'Permanent values should not exceed the total values.');
+        }
+        if ($this->getErrorBag()->isNotEmpty()) {
+            return;
+        }
+
+
 
         $estempone = EstEmpone::where('user_id', $this->user_id)->first();
 
