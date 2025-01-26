@@ -12,6 +12,7 @@ class EstablishmentIncome extends Component
 
     public $user_id;
     public $est_record_id;
+    public $estrecord;
     public $income_boarding;
     public $income_food;
     public $income_beverage;

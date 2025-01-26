@@ -43,8 +43,8 @@
 
                                 <div class="row mb-2">
                                     <div class="col-sm-6"></div>
-                                    <div class="col-sm-3 text-center"><label>Year First (January)</label></div> 
-                                    <div class="col-sm-3 text-center"><label>Year End (December)</label></div>
+                                    <div class="col-sm-3 text-center"><label>Year First (January {{ $this->est_record_id->collectionyear }})</label></div> 
+                                    <div class="col-sm-3 text-center"><label>Year End (December {{ $this->est_record_id->collectionyear }})</label></div>
 
                             </div>
 
@@ -200,9 +200,9 @@
 
                             <hr class="mt-5 mb-5">
 
-                            <h5>2. Profit & Loss (Accounting Year)</h5>
+                            <h5>2. Profit & Loss (Accounting Year {{ $this->est_record_id->collectionyear }})</h5>
                                 
-                                <small class="mb-5">Please state the total profit/loss for the reporting year</small>
+                                <small class="mb-5">Please state the total profit/loss for the {{ $this->est_record_id->collectionyear }}</small>
             
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="profit_loss">Profit/Loss</label>

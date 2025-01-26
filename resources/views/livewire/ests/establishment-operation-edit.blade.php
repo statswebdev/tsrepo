@@ -45,7 +45,7 @@
                                     </div> --}}
                                     <div class="mb-4 col-12 col-md-11">
                                     
-                                        <label for="months_operated" class="form-label">1. Select the months in operation during the reporting year</label>
+                                        <label for="months_operated" class="form-label">1. Select the months in operation during the year {{ $this->est_record_id->collectionyear }}</label>
                                         <br>
                                         @foreach(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Not Operated','All the Months'] as $index => $month)
                                             <div class="js-form-message form-check form-check-inline">
@@ -61,12 +61,12 @@
                                     <hr class="mt-5 mb-5">
 
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="rooms_yearend">2. How many rooms in total did the establishment have at the end of year?</label>
+                                    <label class="form-label" for="rooms_yearend">2. How many rooms in total did the establishment have at the end of year {{ $this->est_record_id->collectionyear }}?</label>
                                     <input type="number" id="rooms_yearend" class="form-control" placeholder="Rooms at the End of the Year End" wire:model="rooms_yearend">
                                     @error('rooms_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="beds_yearend">3. How many beds in total did the establishment have at the end of the year?</label>
+                                    <label class="form-label" for="beds_yearend">3. How many beds in total did the establishment have at the end of the year {{ $this->est_record_id->collectionyear }}?</label>
                                     <input type="number" id="beds_yearend" class="form-control" placeholder="Beds at the End of the Year End" wire:model="beds_yearend">
                                     @error('beds_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>

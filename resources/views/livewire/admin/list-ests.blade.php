@@ -13,7 +13,12 @@
 
     <section class="pt-6">
         <div class="container px-4 px-lg-0"> 
-            <div class="row">
+            
+            <div class="mb-5 d-flex justify-content-end">
+                <input type="search" class="form-control" placeholder="Search by Establishment Name or Email" wire:model.live.debounce.300ms="search">
+              </div>
+
+            <div class="row mb-5">
                 @foreach($estlists as $estlist)
                     @if($estlist->esttype !== 'gov')
                     <div class="col-md-4">
@@ -40,8 +45,10 @@
                     </div>
                     @endif
                 @endforeach
-
+                    <div class="mt-5">
                 {{ $estlists->links() }}
+                    </div>
+
             </div>    
         </div>
     </section>

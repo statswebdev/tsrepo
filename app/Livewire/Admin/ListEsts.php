@@ -10,6 +10,7 @@ class ListEsts extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
+    public $search;
 
     public function mount(){
         // Initialization if needed
@@ -18,7 +19,7 @@ class ListEsts extends Component
     public function render()
     {
     return view('livewire.admin.list-ests', [
-        'estlists' => User::paginate(5),
+        'estlists' => User::search($this->search)->paginate(3),
     ]);
 }
 

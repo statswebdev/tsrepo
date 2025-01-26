@@ -43,7 +43,7 @@
 
                                 <div class="row mb-2">
                                     <div class="col-sm-6"></div>
-                                    <div class="col-sm-3 text-center"><label>Accounting Year</label></div> 
+                                    <div class="col-sm-3 text-center"><label>Accounting Year {{ $this->est_record_id->collectionyear }}</label></div> 
                                     
  
                             </div>

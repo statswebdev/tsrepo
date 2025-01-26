@@ -39,11 +39,11 @@
                             <form wire:submit.prevent="submitRecord" class="row">
 
                                 <h5>1. Expenditure</h5>
-                                <small class="mb-5">Please state expenses for the reporting, accounting year</small>
+                                <small class="mb-5">Please state expenses for the year {{ $this->est_record_id->collectionyear }}</small>
 
                                 <div class="row mb-2">
                                     <div class="col-sm-6"></div>
-                                    <div class="col-sm-3 text-center"><label>Accounting Year</label></div> 
+                                    <div class="col-sm-3 text-center"><label>Accounting Year {{ $this->est_record_id->collectionyear }}</label></div> 
                                     
  
                             </div>
