@@ -34,12 +34,22 @@ class EstablishmentOperation extends Component
     {
         $this->validate([
             'months_operated' => 'required',
-            'rooms_yearend' => 'required',
-            'beds_yearend' => 'required',
+            'rooms_yearend' => 'required|integer|max:2500',
+            'beds_yearend' => 'required|integer|max:2500',
             'roomnights_sold' => 'required',
             'bednights_sold' => 'required',
-            'roomrate_annual' => 'required',
+            'roomrate_annual' => 'required|integer|max:100000',
         ]);
+
+        if ($this->roomnights_sold > $this->rooms_yearend * 365) {
+            $this->addError('roomnights_sold', 'The total room nights should not exceed the total number of rooms multiplied by 365');
+            return;
+        }
+
+        if ($this->bednights_sold > $this->beds_yearend * 365) {
+            $this->addError('bednights_sold', 'The total bed nights sold should not exceed the total number of beds multiplied by 365');
+            return;
+        }
 
         EstOpera::create([ // Use the aliased model
             'user_id' => $this->user_id,

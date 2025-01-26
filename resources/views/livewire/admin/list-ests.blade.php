@@ -40,6 +40,8 @@
                     </div>
                     @endif
                 @endforeach
+
+                {{ $estlists->links() }}
             </div>    
         </div>
     </section>

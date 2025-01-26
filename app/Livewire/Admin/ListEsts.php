@@ -4,16 +4,22 @@ namespace App\Livewire\Admin;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ListEsts extends Component
 {
-    public $estlists = [];
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public function mount(){
-        $this->estlists = User::all();
+        // Initialization if needed
     }
     
     public function render()
     {
-        return view('livewire.admin.list-ests');
-    }
+    return view('livewire.admin.list-ests', [
+        'estlists' => User::paginate(5),
+    ]);
+}
+
 }

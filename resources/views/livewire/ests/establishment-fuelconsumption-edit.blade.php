@@ -485,11 +485,166 @@
                
                 
             </div>
-            
+             <hr class="mb-5 mt-5">
 
-               
-                                
-                                <hr class="mb-5 mt-5">
+            <h5>4. Fuel Consumption (Monthly)</h5>
+                                <small class="mb-5">Enter the fuel consumption in Liters</small>
+        
+                                <div class="row  mb-2">
+                                    <div class="col-sm-2"></div>
+                                   
+        
+                                       
+                                   
+                            </div>
+        
+                            <div class="row mb-2">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-3 text-center">Diesel</div>
+                                <div class="col-sm-3 text-center">
+                                    <label>Lubricant</label> 
+                                </div>
+                               
+                               
+                                <div class="col-sm-3"></div>
+                        </div>
+
+
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-sm-2 text-end">January</label>
+                            <div class="col-sm-3">
+                                <input type="number" id="consume_jan_diesel" class="form-control" placeholder="Liters" wire:model="consume_jan_diesel">
+                                @error('consume_jan_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="number" id="consume_jan_lub" class="form-control" placeholder="Liters" wire:model="consume_jan_lub">
+                                @error('consume_jan_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                        </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">February</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_feb_diesel" class="form-control" placeholder="Liters" wire:model="consume_feb_diesel">
+                                        @error('consume_feb_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_feb_lub" class="form-control" placeholder="Liters" wire:model="consume_feb_lub">
+                                        @error('consume_feb_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">March</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_mar_diesel" class="form-control" placeholder="Liters" wire:model="consume_mar_diesel">
+                                        @error('consume_mar_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_mar_lub" class="form-control" placeholder="Liters" wire:model="consume_mar_lub">
+                                        @error('consume_mar_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">April</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_apr_diesel" class="form-control" placeholder="Liters" wire:model="consume_apr_diesel">
+                                        @error('consume_apr_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_apr_lub" class="form-control" placeholder="Liters" wire:model="consume_apr_lub">
+                                        @error('consume_apr_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">May</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_may_diesel" class="form-control" placeholder="Liters" wire:model="consume_may_diesel">
+                                        @error('consume_may_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_may_lub" class="form-control" placeholder="Liters" wire:model="consume_may_lub">
+                                        @error('consume_may_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">June</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_jun_diesel" class="form-control" placeholder="Liters" wire:model="consume_jun_diesel">
+                                        @error('consume_jun_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_jun_lub" class="form-control" placeholder="Liters" wire:model="consume_jun_lub">
+                                        @error('consume_jun_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">July</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_jul_diesel" class="form-control" placeholder="Liters" wire:model="consume_jul_diesel">
+                                        @error('consume_jul_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_jul_lub" class="form-control" placeholder="Liters" wire:model="consume_jul_lub">
+                                        @error('consume_jul_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">August</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_aug_diesel" class="form-control" placeholder="Liters" wire:model="consume_aug_diesel">
+                                        @error('consume_aug_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_aug_lub" class="form-control" placeholder="Liters" wire:model="consume_aug_lub">
+                                        @error('consume_aug_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">September</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_sep_diesel" class="form-control" placeholder="Liters" wire:model="consume_sep_diesel">
+                                        @error('consume_sep_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_sep_lub" class="form-control" placeholder="Liters" wire:model="consume_sep_lub">
+                                        @error('consume_sep_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">October</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_oct_diesel" class="form-control" placeholder="Liters" wire:model="consume_oct_diesel">
+                                        @error('consume_oct_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_oct_lub" class="form-control" placeholder="Liters" wire:model="consume_oct_lub">
+                                        @error('consume_oct_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">November</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_nov_diesel" class="form-control" placeholder="Liters" wire:model="consume_nov_diesel">
+                                        @error('consume_nov_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_nov_lub" class="form-control" placeholder="Liters" wire:model="consume_nov_lub">
+                                        @error('consume_nov_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label col-sm-2 text-end">December</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_dec_diesel" class="form-control" placeholder="Liters" wire:model="consume_dec_diesel">
+                                        @error('consume_dec_diesel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="number" id="consume_dec_lub" class="form-control" placeholder="Liters" wire:model="consume_dec_lub">
+                                        @error('consume_dec_lub')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                                    </div>
+                                </div>
+
+                                <hr class="mt-5 mb-5"> 
 
                                 <div class="mb-3 col-12 col-md-12">
                                 <button type="submit" class="btn btn-primary">

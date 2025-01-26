@@ -61,6 +61,30 @@ class EstablishmentFuelconsumption extends Component
     public $petrol_other_fuelconsumption;
     public $petrol_other_fuelconsumption_unit;
     public $petrol_other_fuelconsumption_qty;
+    public $consume_jan_diesel;
+    public $consume_feb_diesel;
+    public $consume_mar_diesel;
+    public $consume_apr_diesel;
+    public $consume_may_diesel;
+    public $consume_jun_diesel;
+    public $consume_jul_diesel;
+    public $consume_aug_diesel;
+    public $consume_sep_diesel;
+    public $consume_oct_diesel;
+    public $consume_nov_diesel;
+    public $consume_dec_diesel;
+    public $consume_jan_lub;
+    public $consume_feb_lub;
+    public $consume_mar_lub;
+    public $consume_apr_lub;
+    public $consume_may_lub;
+    public $consume_jun_lub;
+    public $consume_jul_lub;
+    public $consume_aug_lub;
+    public $consume_sep_lub;
+    public $consume_oct_lub;
+    public $consume_nov_lub;
+    public $consume_dec_lub;
     public $status = "submitted";
 
     public function mount($estrecordid)
@@ -123,6 +147,30 @@ class EstablishmentFuelconsumption extends Component
             'petrol_other_fuelconsumption' => 'nullable|string',
             'petrol_other_fuelconsumption_unit' => 'nullable|string',
             'petrol_other_fuelconsumption_qty' => 'nullable|integer',
+            'consume_jan_diesel' => 'required',
+                'consume_feb_diesel' => 'required',
+                'consume_mar_diesel' => 'required',
+                'consume_apr_diesel' => 'required',
+                'consume_may_diesel' => 'required',
+                'consume_jun_diesel' => 'required',
+                'consume_jul_diesel' => 'required',
+                'consume_aug_diesel' => 'required',
+                'consume_sep_diesel' => 'required',
+                'consume_oct_diesel' => 'required',
+                'consume_nov_diesel' => 'required',
+                'consume_dec_diesel' => 'required',
+                'consume_jan_lub' => 'required',
+                'consume_feb_lub' => 'required',
+                'consume_mar_lub' => 'required',
+                'consume_apr_lub' => 'required',
+                'consume_may_lub' => 'required',
+                'consume_jun_lub' => 'required',
+                'consume_jul_lub' => 'required',
+                'consume_aug_lub' => 'required',
+                'consume_sep_lub' => 'required',
+                'consume_oct_lub' => 'required',
+                'consume_nov_lub' => 'required',
+                'consume_dec_lub' => 'required',
         ]);
        
 
@@ -178,6 +226,30 @@ class EstablishmentFuelconsumption extends Component
             'petrol_other_fuelconsumption' => $this->petrol_other_fuelconsumption,
             'petrol_other_fuelconsumption_unit' => $this->petrol_other_fuelconsumption_unit,
             'petrol_other_fuelconsumption_qty' => $this->petrol_other_fuelconsumption_qty,
+            'consume_jan_diesel' => $this->consume_jan_diesel,
+            'consume_feb_diesel' => $this->consume_feb_diesel,
+            'consume_mar_diesel' => $this->consume_mar_diesel,
+            'consume_apr_diesel' => $this->consume_apr_diesel,
+            'consume_may_diesel' => $this->consume_may_diesel,
+            'consume_jun_diesel' => $this->consume_jun_diesel,
+            'consume_jul_diesel' => $this->consume_jul_diesel,
+            'consume_aug_diesel' => $this->consume_aug_diesel,
+            'consume_sep_diesel' => $this->consume_sep_diesel,
+            'consume_oct_diesel' => $this->consume_oct_diesel,
+            'consume_nov_diesel' => $this->consume_nov_diesel,
+            'consume_dec_diesel' => $this->consume_dec_diesel,
+            'consume_jan_lub' => $this->consume_jan_lub,
+            'consume_feb_lub' => $this->consume_feb_lub,
+            'consume_mar_lub' => $this->consume_mar_lub,
+            'consume_apr_lub' => $this->consume_apr_lub,
+            'consume_may_lub' => $this->consume_may_lub,
+            'consume_jun_lub' => $this->consume_jun_lub,
+            'consume_jul_lub' => $this->consume_jul_lub,
+            'consume_aug_lub' => $this->consume_aug_lub,
+            'consume_sep_lub' => $this->consume_sep_lub,
+            'consume_oct_lub' => $this->consume_oct_lub,
+            'consume_nov_lub' => $this->consume_nov_lub,
+            'consume_dec_lub' => $this->consume_dec_lub,
             'status' => $this->status,
         ]);
 
