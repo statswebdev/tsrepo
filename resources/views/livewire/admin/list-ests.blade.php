@@ -21,7 +21,7 @@
             <div class="row mb-5">
                 @foreach($estlists as $estlist)
                     @if($estlist->esttype !== 'gov')
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <div class="card card-border-primary rounded-4">
                             <!--card body-->
                             <div class="card-body d-flex flex-column gap-4 text-center">
