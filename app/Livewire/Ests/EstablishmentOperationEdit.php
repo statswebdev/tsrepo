@@ -5,10 +5,12 @@ namespace App\Livewire\Ests;
 use App\Models\EstOpera;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use App\Models\EstRecord;
 
 class EstablishmentOperationEdit extends Component
 {
     public $user_id;
+    public $est_record_id;
     public $months_operated = [];
     public $rooms_yearend;
     public $beds_yearend;
@@ -30,6 +32,8 @@ class EstablishmentOperationEdit extends Component
     {
         // Get the authenticated user's ID
         $this->user_id = Auth::id();
+
+        $this->est_record_id = EstRecord::first();
 
         // Retrieve the record from the estopera table for the authenticated user
         $est_opera = EstOpera::where('user_id', $this->user_id)->first();
