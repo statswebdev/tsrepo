@@ -81,7 +81,7 @@
                                     @error('bednights_sold')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
-                                    <label class="form-label" for="roomrate_annual">6. What was the average annual room rate per night?</label>
+                                    <label class="form-label" for="roomrate_annual">6. What was the average annual room rate per night? (MVR)</label>
                                     <input type="number" id="roomrate_annual" class="form-control" placeholder="Room Rate per Night (MVR)" wire:model="roomrate_annual">
                                     @error('roomrate_annual')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
