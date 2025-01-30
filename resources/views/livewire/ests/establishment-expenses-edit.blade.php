@@ -51,154 +51,154 @@
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Salaries and wages paid to Maldivians (excluding allowances and in-kind benefits)</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_salary" class="form-control" placeholder="MVR" wire:model="expense_salary">
+                                    <input type="number" step="0.01"  id="expense_salary" class="form-control" placeholder="MVR" wire:model="expense_salary">
                                     @error('expense_salary')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Allowances paid to Maldivians</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_allowance" class="form-control" placeholder="MVR" wire:model="expense_allowance">
+                                    <input type="number" step="0.01" id="expense_allowance" class="form-control" placeholder="MVR" wire:model="expense_allowance">
                                     @error('expense_allowance')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">In-kind benefit paid to Maldivians</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_inkind" class="form-control" placeholder="MVR" wire:model="expense_inkind">
+                                    <input type="number" step="0.01" id="expense_inkind" class="form-control" placeholder="MVR" wire:model="expense_inkind">
                                     @error('expense_inkind')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Salaries and wages paid to foreigners (excluding allowances and in-kind benefits)</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_salary_foreign" class="form-control" placeholder="MVR" wire:model="expense_salary_foreign">
+                                    <input type="number" step="0.01" id="expense_salary_foreign" class="form-control" placeholder="MVR" wire:model="expense_salary_foreign">
                                     @error('expense_salary_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Allowances paid to foreigners</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_allowance_foreign" class="form-control" placeholder="MVR" wire:model="expense_allowance_foreign">
+                                    <input type="number" step="0.01" id="expense_allowance_foreign" class="form-control" placeholder="MVR" wire:model="expense_allowance_foreign">
                                     @error('expense_allowance_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">In-kind benefit paid to foreigners</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_inkind_foreign" class="form-control" placeholder="MVR" wire:model="expense_inkind_foreign">
+                                    <input type="number" step="0.01" id="expense_inkind_foreign" class="form-control" placeholder="MVR" wire:model="expense_inkind_foreign">
                                     @error('expense_inkind_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Food and Beverages</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_food" class="form-control" placeholder="MVR" wire:model="expense_food">
+                                    <input type="number" step="0.01" id="expense_food" class="form-control" placeholder="MVR" wire:model="expense_food">
                                     @error('expense_food')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Expense Laundry</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_laundry" class="form-control" placeholder="MVR" wire:model="expense_laundry">
+                                    <input type="number" step="0.01" id="expense_laundry" class="form-control" placeholder="MVR" wire:model="expense_laundry">
                                     @error('expense_laundry')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Transportation</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_transport" class="form-control" placeholder="MVR" wire:model="expense_transport">
+                                    <input type="number" step="0.01" id="expense_transport" class="form-control" placeholder="MVR" wire:model="expense_transport">
                                     @error('expense_transport')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Water</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_water" class="form-control" placeholder="MVR" wire:model="expense_water">
+                                    <input type="number" step="0.01" id="expense_water" class="form-control" placeholder="MVR" wire:model="expense_water">
                                     @error('expense_water')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Electricity</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_electricity" class="form-control" placeholder="MVR" wire:model="expense_electricity">
+                                    <input type="number" step="0.01" id="expense_electricity" class="form-control" placeholder="MVR" wire:model="expense_electricity">
                                     @error('expense_electricity')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Fuel (petrol / diesel / gas..etc)</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_fuel" class="form-control" placeholder="MVR" wire:model="expense_fuel">
+                                    <input type="number" step="0.01" id="expense_fuel" class="form-control" placeholder="MVR" wire:model="expense_fuel">
                                     @error('expense_fuel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Telecommunication and internet</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_tele" class="form-control" placeholder="MVR" wire:model="expense_tele">
+                                    <input type="number" step="0.01" id="expense_tele" class="form-control" placeholder="MVR" wire:model="expense_tele">
                                     @error('expense_tele')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Annual Fee /other charges/ fine to government</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_fines" class="form-control" placeholder="MVR" wire:model="expense_fines">
+                                    <input type="number" step="0.01" id="expense_fines" class="form-control" placeholder="MVR" wire:model="expense_fines">
                                     @error('expense_fines')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Cost of sold goods (goods bought and sold in the same condition)</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_costofgoodssold" class="form-control" placeholder="MVR" wire:model="expense_costofgoodssold">
+                                    <input type="number" step="0.01" id="expense_costofgoodssold" class="form-control" placeholder="MVR" wire:model="expense_costofgoodssold">
                                     @error('expense_costofgoodssold')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Expense Lease</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_lease" class="form-control" placeholder="MVR" wire:model="expense_lease">
+                                    <input type="number" step="0.01" id="expense_lease" class="form-control" placeholder="MVR" wire:model="expense_lease">
                                     @error('expense_lease')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Depreciation</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_depreciation" class="form-control" placeholder="MVR" wire:model="expense_depreciation">
+                                    <input type="number" step="0.01" id="expense_depreciation" class="form-control" placeholder="MVR" wire:model="expense_depreciation">
                                     @error('expense_depreciation')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Financial Cost</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_financialcost" class="form-control" placeholder="MVR" wire:model="expense_financialcost">
+                                    <input type="number" step="0.01" id="expense_financialcost" class="form-control" placeholder="MVR" wire:model="expense_financialcost">
                                     @error('expense_financialcost')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Marketing expenses</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_marketing" class="form-control" placeholder="MVR" wire:model="expense_marketing">
+                                    <input type="number" step="0.01" id="expense_marketing" class="form-control" placeholder="MVR" wire:model="expense_marketing">
                                     @error('expense_marketing')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Administrative expenses</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_admin" class="form-control" placeholder="MVR" wire:model="expense_admin">
+                                    <input type="number" step="0.01" id="expense_admin" class="form-control" placeholder="MVR" wire:model="expense_admin">
                                     @error('expense_admin')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Management Fee</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_management" class="form-control" placeholder="MVR" wire:model="expense_management">
+                                    <input type="number" step="0.01" id="expense_management" class="form-control" placeholder="MVR" wire:model="expense_management">
                                     @error('expense_management')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Other expenses</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="expense_other" class="form-control" placeholder="MVR" wire:model="expense_other">
+                                    <input type="number" step="0.01" id="expense_other" class="form-control" placeholder="MVR" wire:model="expense_other">
                                     @error('expense_other')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>

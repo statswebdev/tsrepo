@@ -52,88 +52,88 @@
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Fuel (petrol / diesel / gas..etc)</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_fuel" class="form-control" placeholder="MVR" wire:model="stock_fuel">
+                                    <input type="number" step="0.01"  id="stock_fuel" class="form-control" placeholder="MVR" wire:model="stock_fuel">
                                     @error('stock_fuel')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_fuel_yearend" class="form-control" placeholder="MVR" wire:model="stock_fuel_yearend">
+                                    <input type="number" step="0.01" id="stock_fuel_yearend" class="form-control" placeholder="MVR" wire:model="stock_fuel_yearend">
                                     @error('stock_fuel_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Traded goods (goods bought to sold in the same condition)</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_tradedgoods" class="form-control" placeholder="MVR" wire:model="stock_tradedgoods">
+                                    <input type="number" step="0.01" id="stock_tradedgoods" class="form-control" placeholder="MVR" wire:model="stock_tradedgoods">
                                     @error('stock_tradedgoods')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_tradedgoods_yearend" class="form-control" placeholder="MVR" wire:model="stock_tradedgoods_yearend">
+                                    <input type="number" step="0.01" id="stock_tradedgoods_yearend" class="form-control" placeholder="MVR" wire:model="stock_tradedgoods_yearend">
                                     @error('stock_tradedgoods_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Food and beverages</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_food" class="form-control" placeholder="MVR" wire:model="stock_food">
+                                    <input type="number" step="0.01" id="stock_food" class="form-control" placeholder="MVR" wire:model="stock_food">
                                     @error('stock_food')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_food_yearend" class="form-control" placeholder="MVR" wire:model="stock_food_yearend">
+                                    <input type="number" step="0.01" id="stock_food_yearend" class="form-control" placeholder="MVR" wire:model="stock_food_yearend">
                                     @error('stock_food_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Chemicals and dyes</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_chemicals" class="form-control" placeholder="MVR" wire:model="stock_chemicals">
+                                    <input type="number" step="0.01" id="stock_chemicals" class="form-control" placeholder="MVR" wire:model="stock_chemicals">
                                     @error('stock_chemicals')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_chemicals_yearend" class="form-control" placeholder="MVR" wire:model="stock_chemicals_yearend">
+                                    <input type="number" step="0.01" id="stock_chemicals_yearend" class="form-control" placeholder="MVR" wire:model="stock_chemicals_yearend">
                                     @error('stock_chemicals_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Packing material</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_packing" class="form-control" placeholder="MVR" wire:model="stock_packing">
+                                    <input type="number" step="0.01" id="stock_packing" class="form-control" placeholder="MVR" wire:model="stock_packing">
                                     @error('stock_packing')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_packing_yearend" class="form-control" placeholder="MVR" wire:model="stock_packing_yearend">
+                                    <input type="number" step="0.01" id="stock_packing_yearend" class="form-control" placeholder="MVR" wire:model="stock_packing_yearend">
                                     @error('stock_packing_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Spare parts</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_spare" class="form-control" placeholder="MVR" wire:model="stock_spare">
+                                    <input type="number" step="0.01" id="stock_spare" class="form-control" placeholder="MVR" wire:model="stock_spare">
                                     @error('stock_spare')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_spare_yearend" class="form-control" placeholder="MVR" wire:model="stock_spare_yearend">
+                                    <input type="number" step="0.01" id="stock_spare_yearend" class="form-control" placeholder="MVR" wire:model="stock_spare_yearend">
                                     @error('stock_spare_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Uniform linen & textile products</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_textile" class="form-control" placeholder="MVR" wire:model="stock_textile">
+                                    <input type="number" step="0.01" id="stock_textile" class="form-control" placeholder="MVR" wire:model="stock_textile">
                                     @error('stock_textile')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_textile_yearend" class="form-control" placeholder="MVR" wire:model="stock_textile_yearend">
+                                    <input type="number" step="0.01" id="stock_textile_yearend" class="form-control" placeholder="MVR" wire:model="stock_textile_yearend">
                                     @error('stock_textile_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <label class="col-form-label col-sm-6 text-end">Stationaries, paper, printing & publishing materials</label>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_stationary" class="form-control" placeholder="MVR" wire:model="stock_stationary">
+                                    <input type="number" step="0.01" id="stock_stationary" class="form-control" placeholder="MVR" wire:model="stock_stationary">
                                     @error('stock_stationary')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_stationary_yearend" class="form-control" placeholder="MVR" wire:model="stock_stationary_yearend">
+                                    <input type="number" step="0.01" id="stock_stationary_yearend" class="form-control" placeholder="MVR" wire:model="stock_stationary_yearend">
                                     @error('stock_stationary_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
@@ -144,11 +144,11 @@
                                     @error('stock_other_one')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_one_value" class="form-control" placeholder="MVR" wire:model="stock_other_one_value">
+                                    <input type="number" step="0.01" id="stock_other_one_value" class="form-control" placeholder="MVR" wire:model="stock_other_one_value">
                                     @error('stock_other_one_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_one_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_one_value_yearend">
+                                    <input type="number" step="0.01" id="stock_other_one_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_one_value_yearend">
                                     @error('stock_other_one_value_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
@@ -159,11 +159,11 @@
                                     @error('stock_other_two')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_two_value" class="form-control" placeholder="MVR" wire:model="stock_other_two_value">
+                                    <input type="number" step="0.01" id="stock_other_two_value" class="form-control" placeholder="MVR" wire:model="stock_other_two_value">
                                     @error('stock_other_two_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_two_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_two_value_yearend">
+                                    <input type="number" step="0.01" id="stock_other_two_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_two_value_yearend">
                                     @error('stock_other_two_value_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
@@ -174,11 +174,11 @@
                                     @error('stock_other_three')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_three_value" class="form-control" placeholder="MVR" wire:model="stock_other_three_value">
+                                    <input type="number" step="0.01" id="stock_other_three_value" class="form-control" placeholder="MVR" wire:model="stock_other_three_value">
                                     @error('stock_other_three_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_three_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_three_value_yearend">
+                                    <input type="number" step="0.01" id="stock_other_three_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_three_value_yearend">
                                     @error('stock_other_three_value_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
@@ -189,11 +189,11 @@
                                     @error('stock_other_four')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_four_value" class="form-control" placeholder="MVR" wire:model="stock_other_four_value">
+                                    <input type="number" step="0.01" id="stock_other_four_value" class="form-control" placeholder="MVR" wire:model="stock_other_four_value">
                                     @error('stock_other_four_value')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" id="stock_other_four_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_four_value_yearend">
+                                    <input type="number" step="0.01" id="stock_other_four_value_yearend" class="form-control" placeholder="MVR" wire:model="stock_other_four_value_yearend">
                                     @error('stock_other_four_value_yearend')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
                             </div>
@@ -206,7 +206,7 @@
             
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="profit_loss">Profit/Loss</label>
-                                    <input type="number" id="profit_loss" class="form-control" placeholder="MVR" wire:model="profit_loss">
+                                    <input type="number" step="0.01" id="profit_loss" class="form-control" placeholder="MVR" wire:model="profit_loss">
                                     @error('profit_loss')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                                 </div>
 
