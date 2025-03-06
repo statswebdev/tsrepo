@@ -84,7 +84,7 @@ class EstablishmentStock extends Component
             'stock_other_four_value' => 'nullable|numeric|max:99999999999999999999999999.99',
             'stock_other_four_value_yearend' => 'nullable|numeric|max:99999999999999999999999999.99',
             'profit_loss' => 'required|numeric|max:99999999999999999999999999.99',
-            'remarks' => 'nullable|string'
+            'remarks' => 'required|string'
         ]);
 
         Eststk::create([ // Use the aliased model

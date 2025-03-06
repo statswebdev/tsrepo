@@ -71,12 +71,19 @@ class EstablishmentEmploymentone extends Component
     public $bylevelother_foreign_female;
     public $status = "submitted";
 
+    public $totalMaldivianMale = 0, $totalMaldivianFemale = 0, $totalForeignMale = 0, $totalForeignFemale = 0;
+
+
+
+  
+
     public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
         $this->est_record_id = EstRecord::findOrFail($estrecordid);
         
         //dd($est_record_id->id);
+
     }
 
     public function submitRecord()
@@ -142,32 +149,43 @@ class EstablishmentEmploymentone extends Component
             ]);
 
             if ($this->maldivian_male_commuting > $this->maldivian_male) {
-                $this->addError('maldivian_male_commuting', 'Commuting values should not exceed the total values.');
+                $this->addError('maldivian_male_commuting', 'Commuting values should not exceed the Q1 total values.');
             }
             if ($this->maldivian_female_commuting > $this->maldivian_female) {
-                $this->addError('maldivian_female_commuting', 'Commuting values should not exceed the total values.');
+                $this->addError('maldivian_female_commuting', 'Commuting values should not exceed the Q1 total values.');
             }
             if ($this->foreign_male_commuting > $this->foreign_male) {
-                $this->addError('foreign_male_commuting', 'Commuting values should not exceed the total values.');
+                $this->addError('foreign_male_commuting', 'Commuting values should not exceed the Q1 total values.');
             }
             if ($this->foreign_female_commuting > $this->foreign_female) {
-                $this->addError('foreign_female_commuting', 'Commuting values should not exceed the total values.');
+                $this->addError('foreign_female_commuting', 'Commuting values should not exceed the Q1 total values.');
             }
             if ($this->maldivian_male_permanent > $this->maldivian_male) {
-                $this->addError('maldivian_male_permanent', 'Permanent values should not exceed the total values.');
+                $this->addError('maldivian_male_permanent', 'Permanent values should not exceed the Q1 total values.');
             }
             if ($this->maldivian_female_permanent > $this->maldivian_female) {
-                $this->addError('maldivian_female_permanent', 'Permanent values should not exceed the total values.');
+                $this->addError('maldivian_female_permanent', 'Permanent values should not exceed the Q1 total values.');
             }
             if ($this->foreign_male_permanent > $this->foreign_male) {
-                $this->addError('foreign_male_permanent', 'Permanent values should not exceed the total values.');
+                $this->addError('foreign_male_permanent', 'Permanent values should not exceed the Q1 total values.');
             }
             if ($this->foreign_female_permanent > $this->foreign_female) {
-                $this->addError('foreign_female_permanent', 'Permanent values should not exceed the total values.');
+                $this->addError('foreign_female_permanent', 'Permanent values should not exceed the Q1 total values.');
             }
             if ($this->getErrorBag()->isNotEmpty()) {
                 return;
             }
+
+            $total_maldivian_male = $this->accomo_maldivian_male + $this->food_maldivian_male + $this->transport_maldivian_male + $this->sports_maldivian_male + $this->admin_maldivian_male + $this->other_maldivian_male;
+            if ($total_maldivian_male != $this->maldivian_male) {
+                $this->addError('totalMaldivianMale', 'The total of accommodation, food, transport, sports, admin, and other Maldivian male values should equal the total Maldivian male value in Q1.');
+                return;
+            }
+
+
+            
+
+            
 
            
         EstEmpone::create([ 
@@ -237,6 +255,24 @@ class EstablishmentEmploymentone extends Component
         
     
         }
+
+        public function updateTotals()
+    {
+        $this->totalMaldivianMale = $this->calculateTotal('maldivian_male');
+        $this->totalMaldivianFemale = $this->calculateTotal('maldivian_female');
+        $this->totalForeignMale = $this->calculateTotal('foreign_male');
+        $this->totalForeignFemale = $this->calculateTotal('foreign_female');
+    }
+
+    private function calculateTotal($type)
+    {
+        $categories = ['accomo', 'food', 'transport', 'sports', 'admin', 'other'];
+        $total = 0;
+        foreach ($categories as $category) {
+            $total += (int) ($this->{$category . '_' . $type} ?? 0);
+        }
+        return $total;
+    }
 
 
     public function render()

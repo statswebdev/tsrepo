@@ -227,7 +227,7 @@ class EstablishmentGuestEdit extends Component
             
         ]);
 
-        if ($this->maldivian_male_commuting > $this->maldivian_male) {
+       /*  if ($this->maldivian_male_commuting > $this->maldivian_male) {
             $this->addError('maldivian_male_commuting', 'Commuting values should not exceed the total values.');
         }
         if ($this->maldivian_female_commuting > $this->maldivian_female) {
@@ -238,7 +238,7 @@ class EstablishmentGuestEdit extends Component
         }
         if ($this->foreign_female_commuting > $this->foreign_female) {
             $this->addError('foreign_female_commuting', 'Commuting values should not exceed the total values.');
-        }
+        } */
         if ($this->maldivian_male_permanent > $this->maldivian_male) {
             $this->addError('maldivian_male_permanent', 'Permanent values should not exceed the total values.');
         }

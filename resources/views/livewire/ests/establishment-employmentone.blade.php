@@ -207,7 +207,7 @@
                                         <label>Foreign Female</label> 
                                     </div></div>
 
-                        <div class="form-group row mb-4 ">
+                       {{--  <div class="form-group row mb-4 ">
                             <label class="label col-sm-4 text-end">Accommodation Services
                             <br>
                             <small>Include all employees who works in the area of accomodation related services, including housekeeping, Concierge, Butler, Room cleaners, Janitors, and alike</small>    
@@ -353,8 +353,93 @@
                                                     </div>
                                                 </div>
 
+                                                 --}}
+
+
+                                                
+
                                                 <hr class="mt-5 mb-5">
-    
+
+                                                @php
+                                                $categories = [
+                                                    'accomo' => [
+                                                        'label' => 'Accommodation Services',
+                                                        'description' => 'Include all employees who work in accommodation-related services, including housekeeping, concierge, butler, room cleaners, janitors, and alike.'
+                                                    ],
+                                                    'food' => [
+                                                        'label' => 'Food & Beverage Services',
+                                                        'description' => 'Include all employees who work in food preparation and related services, including chefs, cooks, stewards, and alike.'
+                                                    ],
+                                                    'transport' => [
+                                                        'label' => 'Passenger Transport Services',
+                                                        'description' => 'Include all employees who work in transport services, including launch/buggy/ferry drivers and crews.'
+                                                    ],
+                                                    'sports' => [
+                                                        'label' => 'Sports, Cultural, Recreational, etc.',
+                                                        'description' => 'Include all employees who work in sports and recreational activities, including sports instructors, dive instructors, water sports instructors, and alike.'
+                                                    ],
+                                                    'admin' => [
+                                                        'label' => 'Administrative Services',
+                                                        'description' => 'Include all employees who work in management, including reservations, front desks, guest relations, HR, finance, sales, marketing, and alike.'
+                                                    ],
+                                                    'other' => [
+                                                        'label' => 'Other Services',
+                                                        'description' => 'Include all employees not covered above, such as maintenance officers, security, hairdressers, child care, spa workers, engineers, and alike.'
+                                                    ],
+                                                ];
+                                            
+                                                $employeeTypes = [
+                                                    'maldivian_male' => 'Maldivian Male',
+                                                    'maldivian_female' => 'Maldivian Female',
+                                                    'foreign_male' => 'Foreign Male',
+                                                    'foreign_female' => 'Foreign Female',
+                                                ];
+                                            @endphp
+                                            
+                                            @foreach ($categories as $key => $category)
+                    <div class="form-group row mb-4">
+                        <label class="label col-sm-4 text-end">
+                            {{ $category['label'] }}
+                            <br>
+                            <small class="text-muted">{{ $category['description'] }}</small>
+                        </label>
+
+                        @foreach ($employeeTypes as $typeKey => $typeLabel)
+                            <div class="col-sm-2">
+                                <input type="number" id="{{ $key . '_' . $typeKey }}" class="form-control"
+                                    placeholder="{{ $typeLabel }}" 
+                                    wire:model.lazy="{{ $key . '_' . $typeKey }}" 
+                                    wire:change="updateTotals">
+                                @error($key . '_' . $typeKey)
+                                    <div class="invalid-feedback d-flex">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
+
+                {{-- Total Employees Summary --}}
+                <div class="form-group row mt-4">
+                    <label class="col-sm-4 text-end fw-bold">Total Employees</label>
+
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control fw-bold" wire:model.defer="totalMaldivianMale" readonly>
+                        @error('totalMaldivianMale')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                    </div>
+
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control fw-bold" wire:model.defer="totalMaldivianFemale" readonly>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control fw-bold" wire:model.defer="totalForeignMale" readonly>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control fw-bold" wire:model.defer="totalForeignFemale" readonly>
+                    </div>
+                </div>
+
 
                                 <h5>5. Employment by Level (Year End) </h5>
                                 <small class="mb-3">Enter the count of employees by employment by level (december)</small>

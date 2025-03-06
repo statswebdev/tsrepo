@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Ests;
 
+use App\Models\EstEmpone;
 use App\Models\EstEmptwo;
 use Livewire\Component;
 use App\Models\EstRecord;
@@ -145,6 +146,8 @@ class EstablishmentEmploymenttwo extends Component
     public $otherthree_male;
     public $otherthree_female;
     public $status = 'submitted';
+
+    public $totalMaldivian = 0, $totalForeign = 0;
 
     public function mount($estrecordid)
     {
@@ -431,10 +434,66 @@ class EstablishmentEmploymenttwo extends Component
 
             ]);
 
+            $empone = EstEmpone::where('est_record_id', $this->est_record_id->id)
+            ->with('user')
+            ->first();
+
+            if (!$empone) {
+                $this->addError('totalerror', 'Please Fill the Employment Part 1 to compare total values.');
+                return;
+            }
+            
+            $total_maldivian = $this->hundred_maldivian + $this->threehundred_maldivian + $this->fivehundred_maldivian +
+                               $this->sevenhundred_maldivian + $this->ninehundred_maldivian + $this->thausand_maldivian +
+                               $this->threethausand_maldivian + $this->fivethausand_maldivian + $this->seventhausand_maldivian +
+                               $this->tenthausand_maldivian;
+            
+            if ($total_maldivian != (($empone->maldivian_male ?? 0) + ($empone->maldivian_female ?? 0))) {
+                $this->addError('totalerror', 'Total Maldivian values do not match with the previous record.');
+                return;
+            }
+
+            $total_foreign = $this->hundred_foreign + $this->threehundred_foreign + $this->fivehundred_foreign +
+                             $this->sevenhundred_foreign + $this->ninehundred_foreign + $this->thausand_foreign +
+                             $this->threethausand_foreign + $this->fivethausand_foreign + $this->seventhausand_foreign +
+                             $this->tenthausand_foreign;
+
+            if ($total_foreign != (($empone->foreign_male ?? 0) + ($empone->foreign_female ?? 0))) {
+                $this->addError('totalerror', 'Total Maldivian values do not match with the previous record.');
+                return;
+            }
+                
+            
+
+
+
+
+
         session()->flash('success', 'Employment Part 2 Submitted successfully');
         return redirect()->route('dashboard');
         
     
+        }
+
+
+        public function updateTotals()
+        {
+            $this->totalMaldivian = $this->calculateTotal('maldivian');
+            $this->totalForeign = $this->calculateTotal('foreign');
+        }
+
+        private function calculateTotal($type)
+        {
+            $ranges = [
+                'hundred', 'threehundred', 'fivehundred', 'sevenhundred', 
+                'ninehundred', 'thausand', 'threethausand', 'fivethausand', 
+                'seventhausand', 'tenthausand'
+            ];
+            $total = 0;
+            foreach ($ranges as $range) {
+                $total += (int) ($this->{$range . '_' . $type} ?? 0);
+            }
+            return $total;
         }
 
 

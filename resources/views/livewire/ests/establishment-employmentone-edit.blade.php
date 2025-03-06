@@ -353,6 +353,28 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="form-group row mt-4">
+                                                    <label class="col-sm-4 text-end fw-bold">Total Employees</label>
+                                                    
+                                                    <div class="col-sm-2">
+                                                        <input type="number" class="form-control fw-bold" value="{{ $this->totalMaldivianMale }}" readonly>
+                                                    </div>
+                                                    
+                                                    <div class="col-sm-2">
+                                                        <input type="number" class="form-control fw-bold" value="{{ $this->totalMaldivianFemale }}" readonly>
+                                                    </div>
+                                                    
+                                                    <div class="col-sm-2">
+                                                        <input type="number" class="form-control fw-bold" value="{{ $this->totalForeignMale }}" readonly>
+                                                    </div>
+                                                    
+                                                    <div class="col-sm-2">
+                                                        <input type="number" class="form-control fw-bold" value="{{ $this->totalForeignFemale }}" readonly>
+                                                    </div>
+                                                </div>
+                                                
+
+
                                                 <hr class="mt-5 mb-5">
     
 

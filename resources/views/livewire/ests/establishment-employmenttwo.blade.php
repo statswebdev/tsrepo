@@ -32,6 +32,7 @@
                             <!-- Card Header -->
                             <div class="card-header">
                             <h3 class="mb-0">Fill the information</h3>
+                            <small>Please fill Employment Part 1 before filling Part 2</small>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
@@ -59,7 +60,7 @@
                                 <div class="col-sm-3"></div>
                         </div>
 
-                        <div class="form-group row mb-2">
+                       {{--  <div class="form-group row mb-2">
                             <label class="col-form-label col-sm-2 text-end">Less than 100</label>
                             <div class="col-sm-3">
                                 <input type="number" id="hundred_maldivian" class="form-control" placeholder="number of employees" wire:model="hundred_maldivian">
@@ -169,7 +170,58 @@
                                 <input type="number" id="tenthausand_foreign" class="form-control" placeholder="number of employees" wire:model="tenthausand_foreign">
                                     @error('tenthausand_foreign')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </div>
+                        </div> --}}
+
+                        @php
+                        $employeeRanges = [
+                            'hundred' => 'Less than 100',
+                            'threehundred' => '100 - 299',
+                            'fivehundred' => '300 - 499',
+                            'sevenhundred' => '500 - 699',
+                            'ninehundred' => '700 - 999',
+                            'thausand' => '1000 - 2999',
+                            'threethausand' => '3000 - 4999',
+                            'fivethausand' => '5000 - 6999',
+                            'seventhausand' => '7000 - 9999',
+                            'tenthausand' => '10,000+',
+                        ];
+
+                        $employeeTypes = [
+                            'maldivian' => 'Maldivian',
+                            'foreign' => 'Foreign',
+                        ];
+                        @endphp
+
+                        @foreach ($employeeRanges as $key => $label)
+                            <div class="form-group row mb-2">
+                                <label class="col-form-label col-sm-2 text-end">{{ $label }}</label>
+                                @foreach ($employeeTypes as $typeKey => $typeLabel)
+                                    <div class="col-sm-3">
+                                        <input type="number" id="{{ $key . '_' . $typeKey }}" class="form-control"
+                                            placeholder="Number of employees" wire:model="{{ $key . '_' . $typeKey }}">
+                                        @error($key . '_' . $typeKey)
+                                            <div class="invalid-feedback d-flex">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endforeach
+
+                        {{-- Total Employees Summary --}}
+                        <div class="form-group row mt-4">
+                            <label class="col-sm-2 text-end fw-bold">Total Employees</label>
+
+                            <div class="col-sm-3">
+                                <input type="number" class="form-control fw-bold" wire:model.defer="totalMaldivianMale" readonly>
+                                @error('totalMaldivianMale')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="col-sm-3">
+                                <input type="number" class="form-control fw-bold" wire:model.defer="totalMaldivianFemale" readonly>
+                            </div>
+
                         </div>
+
 
                         <hr class="mt-5 mb-5">
                                 <h5>2. Employment by duration of employment - Year End (december) </h5>
@@ -847,6 +899,8 @@
                                     Submit
                                 </button>
                                 </div>
+
+                                @error('totalerror')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
                             </form>
                             </div>
                         </div>

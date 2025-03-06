@@ -74,7 +74,7 @@ class EstablishmentStockEdit extends Component
             'stock_other_four_value' => 'nullable|numeric',
             'stock_other_four_value_yearend' => 'nullable|numeric',
             'profit_loss' => 'required|numeric',
-            'remarks' => 'nullable|string'
+            'remarks' => 'required|string'
     ];
 
     public function mount()
@@ -152,7 +152,7 @@ class EstablishmentStockEdit extends Component
             'stock_other_four_value' => 'nullable|numeric|max:99999999999999999999999999.99',
             'stock_other_four_value_yearend' => 'nullable|numeric|max:99999999999999999999999999.99',
             'profit_loss' => 'required|numeric|max:99999999999999999999999999.99',
-            'remarks' => 'nullable|string'
+            'remarks' => 'required|string'
             
         ]);
 
