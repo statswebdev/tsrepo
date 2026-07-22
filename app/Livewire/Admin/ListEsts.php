@@ -11,6 +11,7 @@ class ListEsts extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     public $search;
+    
 
     public function mount(){
         // Initialization if needed

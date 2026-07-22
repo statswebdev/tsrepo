@@ -12,6 +12,8 @@ class ViewEstotherservices extends Component
     public $estrecord;
     public $query;
     public $status;
+    public $statusComment;
+
     public function mount($estrecordid, $userid)
     {
         $this->query = Estotherser::join('users', 'estothersers.user_id', '=', 'users.id')
@@ -24,27 +26,35 @@ class ViewEstotherservices extends Component
         $this->estrecord = EstRecord::findOrFail($estrecordid);
         $this->status = $this->query->status;
     }
-    public function updateStatus(){
+    public function updateStatus()
+{
+    $this->validate([
+        'status' => 'required|in:completed,review',
+        'statusComment' => 'nullable|string|max:1000',
+    ]);
 
-        $this->validate([
-            'status' => 'required|in:completed,review',
-        ]);
-
-        if ($this->query) {
-            $this->query->status = $this->status;
-            $this->query->save();
-        } else {
-            session()->flash('error', 'Record not found or invalid.');
-            return;
-        }
-
-        session()->flash('updated', 'Status updated successfully.');
-        return redirect()->route('est.otherservices.view', [
-            'estrecordid' => $this->estrecord->id,
-            'userid' => $this->query->user_id,
-        ]); 
-        
+    if (!$this->query) {
+        session()->flash('error', 'Record not found or invalid.');
+        return;
     }
+
+    $this->query->status = $this->status;
+    $this->query->status_comment = filled($this->statusComment)
+        ? trim($this->statusComment)
+        : null;
+
+    $this->query->save();
+
+    session()->flash(
+        'updated',
+        'Status and comment updated successfully.'
+    );
+
+    return redirect()->route('est.otherservices.view', [
+        'estrecordid' => $this->estrecord->id,
+        'userid' => $this->query->user_id,
+    ]);
+}
     public function render()
     {
         $this->query = Estotherser::join('users', 'estothersers.user_id', '=', 'users.id')

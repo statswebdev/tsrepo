@@ -46,48 +46,102 @@
                         <div id="collapse{{ $estrecord->collectionyear }}" class="collapse" aria-labelledby="heading{{ $estrecord->collectionyear }}" data-bs-parent="#accordion{{ $estrecord->collectionyear }}">
                         <div class="py-3 fs-4">
                             @foreach($estforms as $title => $form)
-                            @if(!(
-                                in_array($user->esttype, ['safari', 'guesthouse']) && 
-                                in_array($title, ['3. Employment Information P1', '3. Employment Information P2', '5. Agricultural Products', '6. Fish Products'])
-                            ))
-                            @if(!($user->esttype === 'resort' && $title === '3. Employment Information'))
-                                <span class="d-flex justify-content-between align-items-center mb-3">
-                                    @if($estrecord->{$form})
-                                    <span>{{ $title }}
-                                        <span class="badge 
-                                            @if($estrecord->{$form}->status === 'incomplete') bg-warning
-                                            @elseif($estrecord->{$form}->status === 'submitted') bg-primary
-                                            @elseif($estrecord->{$form}->status === 'review') bg-danger
-                                            @elseif($estrecord->{$form}->status === 'completed') bg-success
-                                            @endif 
-                                            ms-2">{{ $estrecord->{$form}->status }}
-                                        </span>
-                                    </span>
-                                @else
-                                    <span>{{ $title }}</span>
-                                @endif
-                                <div class="ms-auto"> 
-                                    @if(!$estrecord->{$form})
-                                        <a href="{{ route($form, $estrecord->id) }}">
-                                            <span class="badge bg-info ms-2">Submit Form</span>
-                                        </a>
+
+    @if(!(
+        in_array($user->esttype, ['safari', 'guesthouse']) &&
+        in_array($title, [
+            '3. Employment Information P1',
+            '3. Employment Information P2',
+            '5. Agricultural Products',
+            '6. Fish Products'
+        ])
+    ))
+
+        @if(!($user->esttype === 'resort' && $title === '3. Employment Information'))
+
+            @php
+                $formRecord = $estrecord->{$form};
+            @endphp
+
+            <div class="mb-3">
+
+                <div class="d-flex justify-content-between align-items-start">
+
+                    <div class="me-3">
+
+                        {{-- Form title and status --}}
+                        <div>
+                            <span>{{ $title }}</span>
+
+                            @if($formRecord)
+                                <span class="badge
+                                    @if($formRecord->status === 'incomplete') bg-warning
+                                    @elseif($formRecord->status === 'submitted') bg-primary
+                                    @elseif($formRecord->status === 'review') bg-danger
+                                    @elseif($formRecord->status === 'completed') bg-success
+                                    @else bg-secondary
                                     @endif
-                                    @if($estrecord->{$form})
-                                        <a href="/view/{{$form}}/{{ $estrecord->id }}/{{ $user->id }}">
-                                        <span class="badge bg-primary ms-2">View Form</span>
-                                        </a>
-                                    @endif
-                                    @if($estrecord->{$form} && $estrecord->{$form}->status === 'review')
-                                        <a href="{{ route('edit-'.$form, $estrecord->id) }}">
-                                            <span class="badge bg-secondary ms-2">Edit Form</span>
-                                        </a>
-                                    @endif
+                                    ms-2">
+
+                                    {{ ucfirst($formRecord->status ?? 'Unknown') }}
+                                </span>
+                            @endif
+                        </div>
+
+                        {{-- Status comment --}}
+                        @if($formRecord && filled($formRecord->status_comment))
+                            <div class="mt-2 p-3 bg-light rounded border">
+                                <div class="small fw-semibold text-muted mb-1">
+                                    Comment
                                 </div>
-                            </span>
-                            <hr>
-                            @endif
-                            @endif
-                            @endforeach
+
+                                <div class="fs-5 text-dark">
+                                    {!! nl2br(e($formRecord->status_comment)) !!}
+                                </div>
+                            </div>
+                        @endif
+
+                    </div>
+
+                    {{-- Form buttons --}}
+                    <div class="ms-auto flex-shrink-0">
+
+                        @if(!$formRecord)
+                            <a href="{{ route($form, $estrecord->id) }}">
+                                <span class="badge bg-info ms-2">
+                                    Submit Form
+                                </span>
+                            </a>
+                        @endif
+
+                        @if($formRecord)
+                            <a href="/view/{{ $form }}/{{ $estrecord->id }}/{{ $user->id }}">
+                                <span class="badge bg-primary ms-2">
+                                    View Form
+                                </span>
+                            </a>
+                        @endif
+
+                        @if($formRecord && $formRecord->status === 'review')
+                            <a href="{{ route('edit-'.$form, $estrecord->id) }}">
+                                <span class="badge bg-secondary ms-2">
+                                    Edit Form
+                                </span>
+                            </a>
+                        @endif
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+        @endif
+    @endif
+
+@endforeach
                         </div>
                         </div>
                     </div>

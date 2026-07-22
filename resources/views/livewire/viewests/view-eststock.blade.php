@@ -284,20 +284,58 @@
                           <div class="card-body">
                               <!-- Form -->
                               <form wire:submit.prevent="updateStatus">
-                                <div class="mb-3 col-12 col-md-6">
-                                  <label class="form-label" for="selectStatus">Select Status</label>
-                                  <select class="form-select" aria-label="selectStatus" wire:model="status">
-                                    <option selected>Select Status</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="review">Review</option>
-                                  </select>
-                                  @error('status')<div class="invalid-feedback d-flex">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="col-12">
-                                  <!-- Button -->
-                                  <button class="btn btn-primary" type="submit">Update Status</button>
-                                </div>
-                              </form>
+    <div class="row">
+        {{-- Status --}}
+        <div class="mb-3 col-12 col-md-6">
+            <label class="form-label" for="selectStatus">
+                Select Status
+            </label>
+
+            <select
+                id="selectStatus"
+                class="form-select @error('status') is-invalid @enderror"
+                wire:model="status"
+            >
+                <option value="">Select Status</option>
+                <option value="completed">Completed</option>
+                <option value="review">Review</option>
+            </select>
+
+            @error('status')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        {{-- Comment --}}
+        <div class="mb-3 col-12 col-md-6">
+            <label class="form-label" for="statusComment">
+                Comment
+            </label>
+
+            <textarea
+                id="statusComment"
+                class="form-control @error('statusComment') is-invalid @enderror"
+                wire:model.defer="statusComment"
+                rows="3"
+                placeholder="Enter a comment about this status"
+            ></textarea>
+
+            @error('statusComment')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">
+            Update Status
+        </button>
+    </div>
+</form>
                           </div>
                         </div>
                       </div>

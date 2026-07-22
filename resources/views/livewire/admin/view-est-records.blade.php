@@ -53,45 +53,67 @@
                                 <div class="py-3 fs-4">
 
                                     @foreach($estforms as $title => $form)
-                                        @php
-                                            $existsField = "{$form}_exists";
-                                            $statusField = "{$form}_status";
+    @php
+        $existsField = "{$form}_exists";
+        $statusField = "{$form}_status";
+        $commentField = "{$form}_comment";
 
-                                            $hasForm = (bool) ($estrecord->$existsField ?? false);
-                                            $status = $estrecord->$statusField; // can be null
-                                        @endphp
+        $hasForm = (bool) ($estrecord->$existsField ?? false);
+        $status = $estrecord->$statusField ?? null;
+        $comment = $estrecord->$commentField ?? null;
+    @endphp
 
-                                        <span class="d-flex justify-content-between align-items-center mb-3">
-                                            <span>
-                                                {{ $title }}
+    <div class="mb-3">
+        <div class="d-flex justify-content-between align-items-start">
+            <div class="me-3">
+                <div>
+                    {{ $title }}
 
-                                                @if($hasForm)
-                                                    <span class="badge
-                                                        @if($status === 'incomplete') bg-warning
-                                                        @elseif($status === 'submitted') bg-primary
-                                                        @elseif($status === 'review') bg-danger
-                                                        @elseif($status === 'completed') bg-success
-                                                        @else bg-secondary
-                                                        @endif
-                                                        ms-2">
-                                                        {{ $status ?? 'unknown' }}
-                                                    </span>
-                                                @endif
-                                            </span>
+                    @if($hasForm)
+                        <span class="badge
+                            @if($status === 'incomplete') bg-warning
+                            @elseif($status === 'submitted') bg-primary
+                            @elseif($status === 'review') bg-danger
+                            @elseif($status === 'completed') bg-success
+                            @else bg-secondary
+                            @endif
+                            ms-2">
+                            {{ ucfirst($status ?? 'unknown') }}
+                        </span>
+                    @endif
+                </div>
 
-                                            <div class="ms-auto">
-                                                @if($hasForm)
-                                                    <a href="/view/{{ $form }}/{{ $estrecord->id }}/{{ $est->id }}">
-                                                        <span class="badge bg-primary ms-2">View Form</span>
-                                                    </a>
-                                                @else
-                                                    <span class="badge bg-light ms-2 text-primary">Form Not Submitted</span>
-                                                @endif
-                                            </div>
-                                        </span>
+                @if($hasForm && filled($comment))
+                    <div class="mt-2">
+                        <small class="text-muted fw-semibold">
+                            Comment:
+                        </small>
 
-                                        <hr>
-                                    @endforeach
+                        <div class="text-muted fs-5">
+                            {!! nl2br(e($comment)) !!}
+                        </div>
+                    </div>
+                @endif
+            </div>
+
+            <div class="ms-auto flex-shrink-0">
+                @if($hasForm)
+                    <a href="/view/{{ $form }}/{{ $estrecord->id }}/{{ $est->id }}">
+                        <span class="badge bg-primary ms-2">
+                            View Form
+                        </span>
+                    </a>
+                @else
+                    <span class="badge bg-light ms-2 text-primary">
+                        Form Not Submitted
+                    </span>
+                @endif
+            </div>
+        </div>
+    </div>
+
+    <hr>
+@endforeach
 
                                 </div>
                             </div>
