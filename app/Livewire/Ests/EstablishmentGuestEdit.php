@@ -114,12 +114,15 @@ class EstablishmentGuestEdit extends Component
             'age_old_foreign_female' => 'required|numeric',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $estguest = Estguest::where('user_id', $this->user_id)->first();
+        $estguest = Estguest::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estguest) {
             $this->maldivian_male = $estguest->maldivian_male;
@@ -255,7 +258,9 @@ class EstablishmentGuestEdit extends Component
             return;
         }
 
-        $estguest = Estguest::where('user_id', $this->user_id)->first();
+        $estguest = Estguest::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estguest) {
             // Update the fields in the estopera record

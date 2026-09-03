@@ -66,12 +66,15 @@ class EstablishmentFishEdit extends Component
         'otherfish_purchased_value' => 'nullable|integer',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $fish = Estfish::where('user_id', $this->user_id)->first();
+        $fish = Estfish::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($fish) {
             $this->skipjacktuna_inhouse = $fish->skipjacktuna_inhouse;
@@ -132,7 +135,9 @@ class EstablishmentFishEdit extends Component
         'otherfish_purchased_value' => 'nullable|integer',
         ]);
 
-        $fish = Estfish::where('user_id', $this->user_id)->first();
+        $fish = Estfish::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($fish) {
             // Update the fields in the estopera record

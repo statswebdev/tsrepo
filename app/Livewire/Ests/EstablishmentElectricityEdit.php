@@ -238,9 +238,12 @@ class EstablishmentElectricityEdit extends Component
     {
         // Get the authenticated user's ID
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $estelec = Estelec::where('user_id', $this->user_id)->first();
+        $estelec = Estelec::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estelec) {
             $this->generated_inhouse = $estelec->generated_inhouse;
@@ -354,7 +357,6 @@ class EstablishmentElectricityEdit extends Component
             $this->demand_dec_min = $estelec->demand_dec_min;
         }
 
-        $this->est_record_id = $estrecordid;
     }
 
     public function save()
@@ -472,7 +474,9 @@ class EstablishmentElectricityEdit extends Component
         ]);
 
         // Retrieve the estopera record for the authenticated user
-        $estelec = Estelec::where('user_id', $this->user_id)->first();
+        $estelec = Estelec::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estelec) {
             // Update the fields in the related `estelec` model

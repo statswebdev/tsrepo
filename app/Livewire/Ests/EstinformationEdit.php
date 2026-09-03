@@ -51,9 +51,12 @@ class EstinformationEdit extends Component
     public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the info table for the authenticated user
-        $est_info = EstInfo::where('user_id', $this->user_id)->first();
+        $est_info = EstInfo::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($est_info) {
             $this->info_provider = $est_info->info_provider;
@@ -109,7 +112,9 @@ class EstinformationEdit extends Component
         }
 
         //$estRecord = EstRecord::with('estinfo')->findOrFail($this->est_record_id);
-        $est_info = EstInfo::where('user_id', $this->user_id)->first();
+        $est_info = EstInfo::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
        
 

@@ -23,6 +23,7 @@ return new class extends Migration
         'estothersers',
         'estincs',
         'estexps',
+        'eststks',
         'estitks',
         'estguests',
     ];

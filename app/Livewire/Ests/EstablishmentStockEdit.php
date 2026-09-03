@@ -77,14 +77,16 @@ class EstablishmentStockEdit extends Component
             'remarks' => 'required|string'
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
 
-        $this->est_record_id = EstRecord::first();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $eststock = Eststk::where('user_id', $this->user_id)->first();
+        $eststock = Eststk::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($eststock) {
             $this->stock_fuel = $eststock->stock_fuel;
@@ -156,7 +158,9 @@ class EstablishmentStockEdit extends Component
             
         ]);
 
-        $eststock = Eststk::where('user_id', $this->user_id)->first();
+        $eststock = Eststk::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
 
         if ($eststock) {

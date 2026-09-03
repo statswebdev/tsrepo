@@ -163,16 +163,18 @@ class EstablishmentFuelconsumptionEdit extends Component
                 'consume_dec_lub' => 'required',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $estfuelconsumption = Estfuelconsum::where('user_id', $this->user_id)->first();
+        $estfuelconsumption = Estfuelconsum::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
 
         if ($estfuelconsumption) {
-            $this->est_record_id = $estfuelconsumption->est_record_id;
             $this->diesel_bought_qty = $estfuelconsumption->diesel_bought_qty;
             $this->diesel_bought_year = $estfuelconsumption->diesel_bought_year;
             $this->petrol_bought_qty = $estfuelconsumption->petrol_bought_qty;
@@ -328,7 +330,9 @@ class EstablishmentFuelconsumptionEdit extends Component
             
         ]);
 
-        $estfuelconsumption = Estfuelconsum::where('user_id', $this->user_id)->first();
+        $estfuelconsumption = Estfuelconsum::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estfuelconsumption) {
             // Update the fields in the estopera record

@@ -5,6 +5,7 @@ namespace App\Livewire\Ests;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\EstEmpone;
+use App\Models\EstRecord;
 
 class EstablishmentEmploymentoneEdit extends Component
 {
@@ -128,13 +129,16 @@ class EstablishmentEmploymentoneEdit extends Component
         
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
          // Get the authenticated user's ID
          $this->user_id = Auth::id();
+         $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
          // Retrieve the record from the estopera table for the authenticated user
-         $estempone = EstEmpone::where('user_id', $this->user_id)->first();
+         $estempone = EstEmpone::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
          if ($estempone) {
                 $this->maldivian_male = $estempone->maldivian_male;
                 $this->maldivian_female = $estempone->maldivian_female;
@@ -287,7 +291,9 @@ class EstablishmentEmploymentoneEdit extends Component
 
 
 
-        $estempone = EstEmpone::where('user_id', $this->user_id)->first();
+        $estempone = EstEmpone::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
 
         if ($estempone) {

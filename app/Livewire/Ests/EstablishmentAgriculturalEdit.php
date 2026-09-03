@@ -3,6 +3,7 @@
 namespace App\Livewire\Ests;
 
 use App\Models\Estagri;
+use App\Models\EstRecord;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
@@ -185,13 +186,16 @@ class EstablishmentAgriculturalEdit extends Component
             'otheragrifour_farmers_value' => 'nullable|integer',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         // Get the authenticated user's ID
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $agri = Estagri::where('user_id', $this->user_id)->first();
+        $agri = Estagri::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($agri) {
             $this->watermelon_inhouse = $agri->watermelon_inhouse;
@@ -372,7 +376,9 @@ class EstablishmentAgriculturalEdit extends Component
             'otheragrifour_farmers_value' => 'nullable|integer',
         ]);
 
-        $agri = Estagri::where('user_id', $this->user_id)->first();
+        $agri = Estagri::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
        
 
         if ($agri) {

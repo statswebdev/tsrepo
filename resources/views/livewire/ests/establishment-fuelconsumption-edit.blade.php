@@ -17,6 +17,7 @@
                 <div class="col-md-6">
                     <!-- heading -->
                     <h1 class="display-4 fw-bold">Fuel Consumption</h1>
+                    <p class="lead mb-0">Update fuel consumption information for {{ $this->est_record_id->collectionyear }}.</p>
                 </div>
             </div>    
         </div>
@@ -31,7 +32,7 @@
                         <div class="card mb-4">
                             <!-- Card Header -->
                             <div class="card-header">
-                            <h3 class="mb-0">Fill the information</h3>
+                            <h3 class="mb-0">Fill the information for {{ $this->est_record_id->collectionyear }}</h3>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">

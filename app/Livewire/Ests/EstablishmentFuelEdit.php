@@ -44,12 +44,15 @@ class EstablishmentFuelEdit extends Component
             'other_energy_capacity' => 'nullable|integer',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $estfuel = Estfue::where('user_id', $this->user_id)->first();
+        $estfuel = Estfue::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estfuel) {
             $this->generator_capacity_unit = $estfuel->generator_capacity_unit;
@@ -89,7 +92,9 @@ class EstablishmentFuelEdit extends Component
             
         ]);
 
-        $estfuel = Estfue::where('user_id', $this->user_id)->first();
+        $estfuel = Estfue::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estfuel) {
             // Update the fields in the estopera record

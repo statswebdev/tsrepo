@@ -19,7 +19,7 @@
                 <div class="col-lg-8">
                     <span class="badge bg-light-primary text-primary mb-3">Annual tourism survey</span>
                     <h1 class="display-5 fw-bold mb-2">Establishment Information</h1>
-                    <p class="lead mb-0">Update the operator, ownership, tax, and capacity details for this establishment.</p>
+                    <p class="lead mb-0">Update the operator, ownership, tax, and capacity details for {{ $this->est_record_id->collectionyear }}.</p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                         <div class="card-header d-flex flex-column flex-md-row justify-content-between gap-2">
                             <div>
                                 <h3 class="mb-1">Review the information</h3>
-                                <p class="mb-0 text-muted">Fields marked as optional can be left blank when they do not apply.</p>
+                                <p class="mb-0 text-muted">Review the information for {{ $this->est_record_id->collectionyear }}. Fields marked as optional can be left blank when they do not apply.</p>
                             </div>
                             <span class="badge bg-light text-dark align-self-md-center">11 questions</span>
                         </div>

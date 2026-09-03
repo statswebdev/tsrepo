@@ -3,6 +3,7 @@
 namespace App\Livewire\Ests;
 
 use App\Models\EstEmptwo;
+use App\Models\EstRecord;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
@@ -280,16 +281,18 @@ class EstablishmentEmploymenttwoEdit extends Component
             
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
          // Get the authenticated user's ID
          $this->user_id = Auth::id();
+         $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
          // Retrieve the record from the estopera table for the authenticated user
-         $estemptwo = EstEmptwo::where('user_id', $this->user_id)->first();
+         $estemptwo = EstEmptwo::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
     if ($estemptwo) {
-        $this->est_record_id = $estemptwo->id;
         $this->hundred_maldivian = $estemptwo->hundred_maldivian;
         $this->hundred_foreign = $estemptwo->hundred_foreign;
         $this->threehundred_maldivian = $estemptwo->threehundred_maldivian;
@@ -563,7 +566,9 @@ class EstablishmentEmploymenttwoEdit extends Component
         ]);
 
          // Retrieve the estopera record for the authenticated user
-         $estemptwo = EstEmptwo::where('user_id', $this->user_id)->first();
+         $estemptwo = EstEmptwo::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
 
          if ($estemptwo) {

@@ -28,15 +28,17 @@ class EstablishmentOperationEdit extends Component
         'roomrate_annual' => 'required',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         // Get the authenticated user's ID
         $this->user_id = Auth::id();
 
-        $this->est_record_id = EstRecord::first();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $est_opera = EstOpera::where('user_id', $this->user_id)->first();
+        $est_opera = EstOpera::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($est_opera) {
             $this->months_operated = json_decode($est_opera->months_operated, true) ?? [];
@@ -71,7 +73,9 @@ class EstablishmentOperationEdit extends Component
 
 
         // Retrieve the estopera record for the authenticated user
-        $est_opera = EstOpera::where('user_id', $this->user_id)->first();
+        $est_opera = EstOpera::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($est_opera) {
             // Update the fields in the estopera record

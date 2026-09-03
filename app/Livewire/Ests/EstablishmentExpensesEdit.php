@@ -61,15 +61,17 @@ class EstablishmentExpensesEdit extends Component
             'expense_other' => 'required|numeric',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         // Get the authenticated user's ID
         $this->user_id = Auth::id();
 
-        $this->est_record_id = EstRecord::first();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $estexp = Estexp::where('user_id', $this->user_id)->first();
+        $estexp = Estexp::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estexp) {
             $this->expense_salary = $estexp->expense_salary;
@@ -125,7 +127,9 @@ class EstablishmentExpensesEdit extends Component
             
         ]);
 
-        $estexp = Estexp::where('user_id', $this->user_id)->first();
+        $estexp = Estexp::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estexp) {
             // Update the fields in the estopera record

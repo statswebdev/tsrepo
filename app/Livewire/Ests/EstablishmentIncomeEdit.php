@@ -57,14 +57,16 @@ class EstablishmentIncomeEdit extends Component
             'income_other' => 'required|numeric',
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         $this->user_id = Auth::id();
 
-        $this->est_record_id = EstRecord::first();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $estincome = Estinc::where('user_id', $this->user_id)->first();
+        $estincome = Estinc::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
 
         if ($estincome) {
@@ -116,7 +118,9 @@ class EstablishmentIncomeEdit extends Component
             'income_other' => 'required|numeric|max:99999999999999999999999999.99',
         ]);
 
-        $estincome = Estinc::where('user_id', $this->user_id)->first();
+        $estincome = Estinc::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($estincome) {
             // Update the fields in the estopera record

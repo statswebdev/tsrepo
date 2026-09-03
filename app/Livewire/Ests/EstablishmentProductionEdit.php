@@ -3,6 +3,7 @@
 namespace App\Livewire\Ests;
 
 use App\Models\EstEmppro;
+use App\Models\EstRecord;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
@@ -97,15 +98,17 @@ class EstablishmentProductionEdit extends Component
             'other_waste_method' => 'required|string', 
     ];
 
-    public function mount()
+    public function mount($estrecordid)
     {
         // Get the authenticated user's ID
         $this->user_id = Auth::id();
+        $this->est_record_id = EstRecord::findOrFail($estrecordid);
 
         // Retrieve the record from the estopera table for the authenticated user
-        $production = EstEmppro::where('user_id', $this->user_id)->first();
+        $production = EstEmppro::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
     if ($production) {
-        $this->est_record_id = $production->id;
         // $this->generated_inhouse = $production->generated_inhouse;
         // $this->electricity_generated = $production->electricity_generated;
         // $this->electricity_outsourced = $production->electricity_outsourced;
@@ -140,13 +143,13 @@ class EstablishmentProductionEdit extends Component
         $this->waste_disposalother = $production->waste_disposalother;
         $this->waste_monthly = $production->waste_monthly;
         $this->plastic_waste = $production->plastic_waste;
-        $this->plastic_waste_method = json_decode($production->plastic_waste_method, true);
+        $this->plastic_waste_method = json_decode($production->plastic_waste_method, true) ?? [];
         $this->organic_waste = $production->organic_waste;
-        $this->organic_waste_method = json_decode($production->organic_waste_method, true);
+        $this->organic_waste_method = json_decode($production->organic_waste_method, true) ?? [];
         $this->metal_waste = $production->metal_waste;
-        $this->metal_waste_method = json_decode($production->metal_waste_method, true);
+        $this->metal_waste_method = json_decode($production->metal_waste_method, true) ?? [];
         $this->other_waste = $production->other_waste;
-        $this->other_waste_method = json_decode($production->other_waste_method, true);
+        $this->other_waste_method = json_decode($production->other_waste_method, true) ?? [];
     }
 }
 
@@ -196,7 +199,9 @@ class EstablishmentProductionEdit extends Component
             'other_waste_method' => 'required',
         ]);
 
-        $production = EstEmppro::where('user_id', $this->user_id)->first();
+        $production = EstEmppro::where('user_id', $this->user_id)
+            ->where('est_record_id', $this->est_record_id->id)
+            ->first();
 
         if ($production) {
             // Update the fields in the estopera record
